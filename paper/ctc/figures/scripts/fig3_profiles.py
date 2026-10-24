@@ -10,7 +10,11 @@ exactly as optc/src/analyse.py lowest_per_target (copied below).  Curves: PCHIP 
 constrained path (P0-P4 and X); P4r, a relaxed geometry (frame relaxed too), is drawn as a star and not joined, so the
 curve does not jump between P3 and P4r where they lie 0.01 A apart (dapsone).  analyse.py classifies on the PCHIP
 with P4r included; the class is not redrawn here.  Markers: pre-registered P0-P4 filled, extra points X (19-20 Oct) open, P4r (the relax from P4)
-a star.  Grey band: the |delta| <= 0.1 A window of the classification rule.
+a star.  P4r is one geometry: its five stars (one per level) share one delta; stars closer in energy than one star
+height are spread sideways about that delta, one star width apart, in the order of the legend (dodge_stars), so that
+none hides another; the caption says so.  Grey band:
+the |delta| <= 0.1 A window of the classification rule.  y ticks on 1-2-5 steps (no 2.5 steps: they would print
+rounded, 2.5 as '2').
 Main figure: saph, dapsone, pcplut, perchlorate.  SI: all 13, ordered by dpKa.
 """
 from __future__ import annotations
@@ -21,6 +25,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import numpy as np  # noqa: E402
 from matplotlib.lines import Line2D  # noqa: E402
+from matplotlib.ticker import MaxNLocator  # noqa: E402
 from scipy.interpolate import PchipInterpolator  # noqa: E402
 
 import _ctc as S  # noqa: E402
@@ -28,6 +33,7 @@ from figkit import style  # noqa: E402
 
 FS = style.SMALL_PT
 MAIN = ['saph', 'dapsone', 'pcplut', 'perchlorate']
+
 
 
 def lowest_per_target(prof, lev):
@@ -50,6 +56,26 @@ def sides(k):
     return ('ion pair', 'neutral pair') if c['observed'] == 'salt' else ('neutral pair', 'ion pair')
 
 
+def dodge_stars(ax, stars, ms_pt):
+    """(level, delta, E) of the P4r stars -> (level, x, E): stars less than one star height apart (in print mm) form
+    a group, spread sideways about delta one star width apart, in legend order; a lone star stays at delta."""
+    W, H = ax.figure._mm
+    pos = ax.get_position()
+    y0, y1 = ax.get_ylim()
+    x0, x1 = ax.get_xlim()
+    mm_y, mm_x = pos.height * H / (y1 - y0), pos.width * W / (x1 - x0)      # mm per kJ/mol, per A
+    size = ms_pt * 25.4 / 72 * 0.9                                          # a star's height and width (mm)
+    order = sorted(stars, key=lambda t: t[2])
+    groups, out = [[order[0]]] if order else [], []
+    for t in order[1:]:
+        (groups[-1].append(t) if (t[2] - groups[-1][-1][2]) * mm_y < size else groups.append([t]))
+    for g in groups:
+        g.sort(key=lambda t: S.LEVELS.index(t[0]))
+        for i, (lev, dl, en) in enumerate(g):
+            out.append((lev, dl + (i - (len(g) - 1) / 2) * size / mm_x, en))
+    return out
+
+
 def draw(ax, k, small=False):
     prof = S.V(k, 'profile')
     S.mark(k, 'profile')
@@ -57,6 +83,7 @@ def draw(ax, k, small=False):
     ax.axvspan(-0.1, 0.1, color='0.92', lw=0, zorder=0)
     ax.axhline(0, color='0.6', lw=0.5, zorder=1)
     ms = 2.6 if small else 3.2
+    stars = []
     for lev in S.LEVELS:
         pts = lowest_per_target(prof, lev)
         d = np.array([p[0] for p in pts])
@@ -68,16 +95,19 @@ def draw(ax, k, small=False):
         for dl, en, pt in pts:
             extra = prof[pt].get('extra', False)
             if pt == 'P4r':
-                ax.plot(dl, en, marker='*', ms=ms * 1.9, mfc=col, mec='black', mew=0.4, ls='none', zorder=5)
+                stars.append((lev, dl, en))
             else:
                 ax.plot(dl, en, marker=S.LEVEL_MARKERS[lev], ms=ms * (0.85 if extra else 1.0),
                         mfc='white' if extra else col, mec=col, mew=0.6, ls='none', zorder=4)
         lo, hi = min(lo, e.min()), max(hi, e.max())
     pad = 0.08 * (hi - lo)
     ax.set_ylim(lo - pad, hi + 2.6 * pad)
+    for lev, x, en in dodge_stars(ax, stars, ms * 1.7):
+        ax.plot(x, en, marker='*', ms=ms * 1.7, mfc=S.LEVEL_COLOURS[lev], mec='black', mew=0.4, ls='none', zorder=5)
     ax.set_xlim(-0.9, 0.85)
     ax.set_xticks([-0.8, -0.4, 0, 0.4, 0.8])
     ax.xaxis.set_major_formatter(lambda v, p: S.num(v, 1))
+    ax.yaxis.set_major_locator(MaxNLocator(nbins=6, steps=[1, 2, 5, 10], integer=True))
     ax.yaxis.set_major_formatter(lambda v, p: S.num(v, 0))
     a, b = sides(k)
     ax.text(0.03, 0.97, a, transform=ax.transAxes, ha='left', va='top', fontsize=FS, color='0.3')

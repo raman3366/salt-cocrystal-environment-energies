@@ -28,50 +28,65 @@ REF = {'cyano': 'zhang20092', 'saph': 'muthuselvi2014crystal', 'carboxy': 'benal
 ORDER = [k for k in F['s.order']['value']]
 
 
+def widths(path, w):
+    """relative column widths for pandoc (the dashes of the separator row), keeping each column's alignment"""
+    L = path.read_text().split('\n')
+    i = next(i for i, l in enumerate(L) if l.startswith('|:') or l.startswith('|-'))
+    cols = [c.strip() for c in L[i].strip('|').split('|')]
+    assert len(cols) == len(w), (path.name, len(cols), len(w))
+    L[i] = '|' + '|'.join((':' if c.startswith(':') else '') + '-' * n + (':' if c.endswith(':') else '') for c, n in zip(cols, w)) + '|'
+    path.write_text('\n'.join(L))
+
+
 def t(key):
     return F[key]['text']
 
 
 def evidence(k):
     e = F.get(f'x.{k}.proton_evidence', {}).get('value') or ''
-    temp = re.search(r'(\d+(?:\.\d+)?)\(\d+\) K|(\d+) K', e)
-    T = (temp.group(1) or temp.group(2)) if temp else ''
     if 'ssNMR' in e:
-        return f'¹⁵N–¹H ssNMR [@{REF[k]}]'
+        return f'¹⁵N ssNMR [@{REF[k]}]'
     if 'NPD' in e or 'neutron powder' in e:
-        return 'neutron powder + X-ray, 100 K [@schmidtmann2014determining]'
+        return 'neutron powder [@schmidtmann2014determining]'
     if e.startswith('neutron'):
-        return f'neutron, {T} K'
+        return 'neutron, 30 K'
     if 'constr' in e or 'riding' in e:
-        return f'X-ray, {T} K, H riding'
-    return f'X-ray, {T} K, H located'
+        return 'X-ray, H riding'
+    return 'X-ray, H located'
+
+
+ROLE = {'test': '', 'test (the paper\'s crystal)': '', 'positive control': 'positive control',
+        'regular negative control': 'negative control', 'short-bond negative control': 'short-bond control',
+        'polymorph pair (salt)': 'polymorph pair', 'optional': '', 'added negative control (neutron)': 'negative control',
+        'added negative control (ssNMR)': 'negative control'}
 
 
 def table1():
-    rows = ['| Name | Crystal | CCDC | Set | Role | ΔpK~a~ | Observed | Evidence | Transferring bond | D···A (Å) |',
-            '|:---|:---|:---|:---|:---|---:|:---|:---|:---|---:|']
+    rows = ['| Name | Crystal | CCDC | Set, role | ΔpK~a~ | Observed (evidence) | Transferring bond | D···A (Å) |',
+            '|:---|:---|:---|:---|---:|:---|:---|---:|']
     for k in ORDER:
         cc = F[f'x.{k}.ccdc']['value'] if f'x.{k}.ccdc' in F and F[f'x.{k}.ccdc']['value'] else '–'
         v = F[f'x.{k}.dpka']['value']
         dp = ('+' if v > 0 else '') + t(f'x.{k}.dpka')
         fl = F.get(f'x.{k}.dpka_flags', {}).get('value') or []
         mark = ''.join({'compilation': '^c^', 'off-axis': '^o^', 'site value': '^s^', 'alternative': '^a^'}[f] for f in fl)
-        role = F.get(f'x.{k}.role', {}).get('value') or ''
-        role = {'test': 'test', 'test (the paper\'s crystal)': 'test'}.get(role, role)
         if k == 'brcoc':
-            rows.append(f'| {NAME[k]} | {CHEM[k]} [@{REF[k]}] | {cc} | core | polymorph of BMA–DNB | {dp}{mark} | cocrystal | '
-                        'X-ray, 150 K | – (ranking only) | – |')
+            rows.append(f'| {NAME[k]} | {CHEM[k]} [@{REF[k]}] | {cc} | core, polymorph pair | {dp}{mark} | cocrystal (X-ray) | '
+                        '– (ranking only) | – |')
             continue
+        role = ROLE.get(F.get(f'x.{k}.role', {}).get('value') or '', '')
+        sr = F[f'x.{k}.set']['value'] + (f', {role}' if role else '')
         bond = F[f'x.{k}.bond']['value'].replace("'", '′').replace('...', '···').replace('-', '–')
-        rows.append(f"| {NAME[k]} | {CHEM[k]} [@{REF[k]}] | {cc} | {F[f'x.{k}.set']['value']} | {role} | {dp}{mark} | "
-                    f"{F[f'x.{k}.observed']['value']} | {evidence(k)} | {bond} | {t(f'x.{k}.DA.xray')} |")
+        rows.append(f"| {NAME[k]} | {CHEM[k]} [@{REF[k]}] | {cc} | {sr} | {dp}{mark} | "
+                    f"{F[f'x.{k}.observed']['value']} ({evidence(k)}) | {bond} | {t(f'x.{k}.DA.xray')} |")
     rows += ['', 'Table: The crystal set, ordered by family and ΔpK~a~. {#tbl:set}', '',
              'ΔpK~a~ = pK~a~(BH^+^) − pK~a~(HA), aqueous, 25 °C, fixed in the dated plan before the production '
              'calculations. ^c^ Compilation value, no primary measurement located. ^o^ Off-axis: the sulfamic acid pK~a~ '
              'refers to N–H deprotonation, while the computed transfer protonates O. ^s^ Macroscopic value (site constant '
              '+1.03). ^a^ An alternative estimate is +17. Set: core (fixed in the plan), optional, extension (two negative '
-             'controls added by a rule fixed before their calculations). D···A: X-ray structure, transferring bond. '
-             'BMA·DNBA has no acid–base hydrogen bond and enters the polymorph ranking only.']
+             'controls added by a rule fixed before their calculations). Evidence for the proton position: X-ray with the '
+             'transferring H riding or located in the difference map, neutron diffraction, or solid-state NMR. D···A: X-ray '
+             'structure, transferring bond. BMA·DNBA has no acid–base hydrogen bond and enters the polymorph ranking only.']
     (HERE / 'table1.md').write_text('\n'.join(rows) + '\n')
 
 
@@ -118,9 +133,13 @@ def table3():
     s = (NUM / 'tables' / 'table3_energies.md').read_text()
     for k, v in NAME.items():
         s = re.sub(rf'^\| {k} \|', f'| {v} |', s, flags=re.M)
+    s = s.replace('ΔE_PT', 'ΔE~PT~').replace('ΔE_env', 'ΔE~env~')
     (HERE / 'table3.md').write_text(s)
 
 
 if __name__ == '__main__':
     table1(); table2(); table3()
+    widths(HERE / 'table1.md', [12, 25, 8, 13, 7, 16, 17, 6])
+    widths(HERE / 'table2.md', [22, 15, 13, 6, 6, 8, 6, 9, 16])
+    widths(HERE / 'table3.md', [9, 7, 8, 6, 6, 6, 6, 6, 6, 14, 10, 10])
     print('wrote', ', '.join(p.name for p in sorted(HERE.glob('table*.md'))))

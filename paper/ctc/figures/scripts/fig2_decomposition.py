@@ -14,6 +14,8 @@ transferring pair; > 0: the neutral pair is lower):
 Whiskers: budget envelopes (budget.dE_env, budget.R5_P4; stored other - observed, drawn as dE_PT).  R1f has no budget
 in summary.json (no whisker).  dapsone and pcplut, whose resolution is the margin at P4r (resolution.quantity), also
 show that margin (budget.margin) as an open diamond with its envelope.  Salts first, then cocrystals, each by dpKa.
+The values are printed in columns right of the plot (R1f, dE_env, R5 = their sum, budget verdict), none in the plot,
+so no number sits on a bar or a whisker; each group label has its own strip above its first crystal.
 """
 from __future__ import annotations
 
@@ -59,9 +61,9 @@ def main():
     plt = S.setup()
     R = rows()
     n_s = len(S.SALTS)
-    pitch, gap = 7.2, 5.0                      # mm per crystal, extra gap between the groups
-    L, AW, top = 37.0, 98.0, 12.0
-    ys = [i * pitch + (gap if i >= n_s else 0) for i in range(len(R))]
+    pitch, gap, head = 7.2, 4.0, 3.6           # mm per crystal, extra gap between the groups, group-label strip
+    L, AW, top = 37.0, 85.0, 12.0
+    ys = [head + i * pitch + (gap + head if i >= n_s else 0) for i in range(len(R))]
     AH = ys[-1] + pitch
     H = AH + top + 13.0
     fig = S.figure_mm(W_MM, H)
@@ -75,7 +77,9 @@ def main():
     ax.xaxis.set_major_formatter(plt.FuncFormatter(lambda v, p: S.num(v, 0, sign=v > 0)))
     ax.set_xlabel('$\\Delta E_\\mathrm{PT}$ = E(ion pair) − E(neutral pair)  (kJ mol$^{-1}$ per transferring pair)')
     ax.grid(axis='x', which='major', color='0.90', lw=0.5, zorder=0)
-    ax.axhline(n_s * pitch + gap / 2, color='0.55', lw=0.5, ls=(0, (3, 2)))
+    ax.axhline(head + n_s * pitch + gap / 2, color='0.55', lw=0.5, ls=(0, (3, 2)))
+    lx = {'name': -35.0 / AW, 'set': -17.5 / AW, 'dpka': -1.2 / AW}                             # left columns (mm)
+    cx = {'R1f': 1 + 12.0 / AW, 'de': 1 + 23.5 / AW, 'r5': 1 + 34.0 / AW, 'bud': 1 + 36.0 / AW}  # columns (mm)
     bh = 1.55
     off = {'r1': 1.35, 'de': 3.15, 'r5': 4.95}
     ek = dict(color='black', lw=0.6, capsize=1.6, capthick=0.6, zorder=6)
@@ -94,22 +98,14 @@ def main():
                   ('budget', 'dE_env', 'envelope')):
             S.mark(k, *p)
         # left labels: name, set, dpKa
-        ax.text(-0.335, y0 + 3.15, S.NAME[k], transform=ax.get_yaxis_transform(), ha='left', va='center', fontsize=style.TICK_PT,
+        ax.text(lx['name'], y0 + 3.15, S.NAME[k], transform=ax.get_yaxis_transform(), ha='left', va='center', fontsize=style.TICK_PT,
                 color=S.CLASS_DARK[r['cls']], fontweight='bold')
-        ax.text(-0.155, y0 + 3.15, S.SET_TAG[r['set']], transform=ax.get_yaxis_transform(), ha='left', va='center',
+        ax.text(lx['set'], y0 + 3.15, S.SET_TAG[r['set']], transform=ax.get_yaxis_transform(), ha='left', va='center',
                 fontsize=FS, color='0.35', style='italic')
         dp = S.num(r['dpka'], 2, sign=True)
-        ax.text(-0.012, y0 + 3.15, dp, transform=ax.get_yaxis_transform(), ha='right', va='center', fontsize=FS)
+        ax.text(lx['dpka'], y0 + 3.15, dp, transform=ax.get_yaxis_transform(), ha='right', va='center', fontsize=FS)
         S.mark(k, 'dpka', printed=dp)
-        # value of R5 at the bar end (outside the whisker), and the margin of the unresolved crystals
-        e = r['env_r5']
-        s5 = S.num(r['r5'], 1, sign=True)
-        if r['r5'] < 0:
-            ax.text(e[0] - 2.5, y0 + off['r5'], s5, ha='right', va='center', fontsize=FS, color=S.CLASS_DARK[r['cls']])
-        else:
-            xr = max(e[1], r['margin'][1][1] if r['margin'] else e[1])
-            ax.text(xr + 2.5, y0 + off['r5'], s5, ha='left', va='center', fontsize=FS, color=S.CLASS_DARK[r['cls']])
-        S.mark(k, 'fixed_ion_minus_neutral', 'R5_PBE0+MP2', printed=s5)
+        # the margin of the two crystals resolved on it
         if r['margin']:
             m, me = r['margin']
             ym = y0 + off['r5'] + 0.0
@@ -117,30 +113,33 @@ def main():
                         mew=0.6, ecolor='black', elinewidth=0.6, capsize=1.6, capthick=0.6, zorder=7)
             S.mark(k, 'budget', 'margin', 'central')
             S.mark(k, 'budget', 'margin', 'envelope')
-        # right column: R1f and dE_env values, resolution
-        s1, sd = S.num(r['r1'], 1, sign=True), S.num(r['de'], 1, sign=True)
-        ax.text(1.085, y0 + 3.15, s1, transform=ax.get_yaxis_transform(), ha='right', va='center', fontsize=FS)
-        ax.text(1.19, y0 + 3.15, sd, transform=ax.get_yaxis_transform(), ha='right', va='center', fontsize=FS,
-                color='0.30')
+        # right columns: R1f, dE_env, R5 (= R1f + dE_env) and the budget verdict
+        s1, sd, s5 = (S.num(r[q], 1, sign=True) for q in ('r1', 'de', 'r5'))
+        yt = ax.get_yaxis_transform()
+        ax.text(cx['R1f'], y0 + 3.15, s1, transform=yt, ha='right', va='center', fontsize=FS)
+        ax.text(cx['de'], y0 + 3.15, sd, transform=yt, ha='right', va='center', fontsize=FS, color='0.30')
+        ax.text(cx['r5'], y0 + 3.15, s5, transform=yt, ha='right', va='center', fontsize=FS,
+                color=S.CLASS_DARK[r['cls']], fontweight='bold')
         S.mark(k, 'R1f', 'MP2', printed=s1)
         S.mark(k, 'fixed_ion_minus_neutral', 'dE_env_PBE0', printed=sd)
+        S.mark(k, 'fixed_ion_minus_neutral', 'R5_PBE0+MP2', printed=s5)
         ok = r['verdict'].startswith('resolved')
         S.mark(k, 'resolution', printed=r['verdict'])
-        ax.text(1.215, y0 + 3.15, 'resolved' if ok else 'unresolved', transform=ax.get_yaxis_transform(),
+        ax.text(cx['bud'], y0 + 3.15, 'resolved' if ok else 'unresolved', transform=yt,
                 ha='left', va='center', fontsize=FS, color='0.35' if ok else '#B4202A',
                 fontweight='normal' if ok else 'bold')
     # group labels inside the plot, on the empty side
-    ax.text(-176, 0.25, 'salts (observed: ion pair)', ha='left', va='top', fontsize=style.TICK_PT,
+    ax.text(-176, head - 0.35, 'salts (observed: ion pair)', ha='left', va='bottom', fontsize=style.TICK_PT,
             color=S.CLASS_DARK['salt'], fontweight='bold')
-    ax.text(-176, n_s * pitch + gap - 0.1, 'cocrystals (observed: neutral pair)', ha='left', va='top',
+    ax.text(-176, ys[n_s] - 0.35, 'cocrystals (observed: neutral pair)', ha='left', va='bottom',
             fontsize=style.TICK_PT, color=S.CLASS_DARK['cocrystal'], fontweight='bold')
     ax.text(3, -1.4, 'neutral pair lower →', ha='left', va='bottom', fontsize=FS, color='0.35')
     ax.text(-3, -1.4, '← ion pair lower', ha='right', va='bottom', fontsize=FS, color='0.35')
     # column headers
     yh = -1.4
-    for x, s, ha in ((-0.335, 'crystal', 'left'), (-0.155, 'set', 'left'), (-0.012, 'ΔpK$_a$', 'right'),
-                     (1.085, '$R1f$', 'right'), (1.19, '$\\Delta E_\\mathrm{env}$', 'right'),
-                     (1.215, 'R5 budget', 'left')):
+    for x, s, ha in ((lx['name'], 'crystal', 'left'), (lx['set'], 'set', 'left'), (lx['dpka'], 'ΔpK$_a$', 'right'),
+                     (cx['R1f'], '$R1f$', 'right'), (cx['de'], '$\\Delta E_\\mathrm{env}$', 'right'),
+                     (cx['r5'], '$R5$', 'right'), (cx['bud'], 'R5 budget', 'left')):
         ax.text(x, yh, s, transform=ax.get_yaxis_transform(), ha=ha, va='bottom', fontsize=FS, color='0.25')
     # legend above
     hd = [Patch(facecolor='white', edgecolor='0.25', lw=0.6, label='$R1f$: isolated pair (PBE0 + MP2 pair)'),

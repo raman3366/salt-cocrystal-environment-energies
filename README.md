@@ -1,8 +1,8 @@
 # Environment energies of proton transfer in thirteen acid–base crystals: data and code
 
-Data and code of the study "Even in cocrystals the lattice favours the ion pair: environment energies of proton transfer
-in thirteen acid–base crystals" (C. Muthuselvi, Anantha Raman Lakshmipathi, D. Saravanakkumar, Venkatramanan
-Varadharajan; manuscript submitted to Computational and Theoretical Chemistry).
+Data and code of the study "Quantifying the crystal-environment contribution to proton transfer in acid–base salts
+and cocrystals" (C. Muthuselvi, Anantha Raman Lakshmipathi, D. Saravanakkumar, Venkatramanan Varadharajan; manuscript
+submitted to Computational and Theoretical Chemistry).
 
 For thirteen acid–base crystals with ΔpKa between −1.4 and +2.4 (nine salts, four cocrystals) and a polymorph pair,
 every crystal was taken through one ladder of models: the acid–base pair alone at the crystal geometry (R1f), the pair
@@ -43,7 +43,8 @@ redistributed from the Crystallography Open Database; cite the original structur
 
 ## Citation
 
-Please cite the article and this deposit (`CITATION.cff`). The earlier single-crystal study of 4-sulfamoylanilinium
-dihydrogen phosphate is deposited at https://doi.org/10.5281/zenodo.23335995.
+Please cite the article and this deposit (`CITATION.cff`): https://doi.org/10.5281/zenodo.23608941 (v1.0.0; all
+versions: https://doi.org/10.5281/zenodo.23608940). The earlier single-crystal study of 4-sulfamoylanilinium dihydrogen
+phosphate is deposited at https://doi.org/10.5281/zenodo.23335995.
 
 The code and analysis scripts were written and run with an AI tool (Claude, Anthropic) under the authors' direction.

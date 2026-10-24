@@ -13,7 +13,9 @@
 (b) The periodic closure cycle R1f -> R4 -> T1 -> N_vert -> R5 at PBE0 (closure.cycle_pbe0; each step a difference,
     sum = R5 asserted), drawn cumulatively as dE_PT = E(ion pair) - E(neutral pair) (stored other - observed,
     converted with the summary.json factor of _ctc.sign_pt).  R4: embedded cluster (single site); T1: periodic single
-    site (one pair of the Z moved); N_vert: every pair moved, vertical; R5: relaxed periodic crystal.
+    site (one pair of the Z moved); N_vert: every pair moved, vertical; R5: relaxed periodic crystal.  Line ends are
+    named in one column right of the panel (end_column), every name joined to its point by a leader, so no leader
+    crosses a name (figkit plots.end_labels starts undisplaced names closer to the axis than the leaders end).
 """
 from __future__ import annotations
 
@@ -24,7 +26,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from matplotlib.lines import Line2D  # noqa: E402
 
 import _ctc as S  # noqa: E402
-from figkit import style, plots  # noqa: E402
+import numpy as np  # noqa: E402
+from figkit import style  # noqa: E402
+from figkit.labels import freeze_layout  # noqa: E402
 
 STEM = 'fig4_reverse_gaps'
 FS = style.SMALL_PT
@@ -32,6 +36,43 @@ MODELS = [('pair_repeat', 'REPEAT', '#0B4F8A'), ('pair_sc', 'in-crystal CHELPG',
           ('pair_gas', 'gas-phase CHELPG', '#D55E00'), ('site_repeat', 'site cluster (REPEAT)', 'black')]
 STEPS = [('R1f', 'R1f'), ('R4_minus_R1f', 'R4'), ('T1_minus_R4', 'T1'), ('Nv_minus_T1', 'N$_\\mathrm{vert}$'),
          ('R5_minus_Nv', 'R5')]
+
+
+def end_column(ax, items, x_pt=9.0, gap_pt=0.6, fontsize=None):
+    """Names of the line ends in one column x_pt right of the last point, spread vertically so that none overlaps
+    (the 1-D repulsion of figkit plots.end_labels), each joined to its point by a straight leader that stops 1.5 pt
+    short of the column.  items: (text, x_last, y_last, colour)."""
+    fig = ax.figure
+    freeze_layout(fig)
+    r = fig.canvas.get_renderer()
+    ppt = fig.dpi / 72
+    arts = [ax.annotate(t, (x, y), xytext=(x_pt, 0), textcoords='offset points', ha='left', va='center',
+                        fontsize=fontsize or FS, color=c, annotation_clip=False) for t, x, y, c in items]
+    want = np.array([ax.transData.transform((x, y))[1] for _, x, y, _ in items])
+    h = np.array([a.get_window_extent(r).height for a in arts]) + gap_pt * ppt
+    order = np.argsort(want)
+    y, hh = want[order].astype(float), h[order]
+    lo, hi = ax.bbox.y0 + hh[0] / 2, ax.bbox.y1 - hh[-1] / 2
+    for _ in range(500):
+        moved = False
+        for k in range(1, len(y)):
+            need = (hh[k] + hh[k - 1]) / 2
+            if y[k] - y[k - 1] < need - 1e-6:
+                d = (need - (y[k] - y[k - 1])) / 2
+                y[k] += d
+                y[k - 1] -= d
+                moved = True
+        y += max(0.0, lo - y[0]) - max(0.0, y[-1] - hi)
+        if not moved:
+            break
+    for k, i in enumerate(order):
+        dy = (y[k] - want[i]) / ppt
+        arts[i].xyann = (x_pt, dy)
+        p0 = ax.transData.transform(arts[i].xy)
+        seg = [p0 + np.array([1.5 * ppt, 0.0]), p0 + np.array([(x_pt - 1.5) * ppt, dy * ppt])]
+        ax.plot(*ax.transData.inverted().transform(seg).T, color=arts[i].get_color(), lw=0.4, clip_on=False,
+                zorder=1)
+    return arts
 
 
 def main():
@@ -133,7 +174,7 @@ def main():
         groups_axes.append(a2)
         fig._b = groups_axes
     for a2 in fig._b:
-        plots.end_labels(a2, a2._items, pad_pt=2.0, gap_pt=0.2, fontsize=FS)
+        end_column(a2, a2._items)
     S.save(fig, STEM, W, extra={'derived': {'counts': {lab: f'{wins[m][0]}/{wins[m][1]}' for m, lab, _ in MODELS},
                                             'lr_mean_below_0': lrneg}})
 

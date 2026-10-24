@@ -10,7 +10,8 @@ stored sign (other - observed) equals dE_PT (asserted through _ctc.sign_pt = +1)
 Points: the central value (PBE0+MP2), central + each check shift (components), the computed combinations
 (combined, absolute values), and, not part of the envelope, the definition alternatives and the frozen-frame
 zero-point lower bound (bounds).  Band: the budget envelope (asserted = min/max of central, central + shifts and
-combinations).  Zero marked.
+combinations).  Zero marked.  Panel headers: three lines each (name, quantity, value [envelope]) under the verdict,
+so the four headers align; the quantity of mppcp / nbaetpy is 'P4r − P0*', the asterisk explained top left.
 """
 from __future__ import annotations
 
@@ -127,13 +128,13 @@ def main():
         res = S.V(k, 'resolution')
         ok = res['verdict'].startswith('resolved')
         S.mark(k, 'resolution', printed=res['verdict'])
-        what = 'margin at P4r' if q == 'margin' else 'P4r − P0, no other-\nside minimum'
+        what = 'margin at P4r' if q == 'margin' else 'P4r − P0*'
         ttl = f"{S.NAME[k]}\n{what}\n{S.num(c, 1, sign=True)} [{S.num(env[0], 1)}, {S.num(env[1], 1)}]"
         S.mark(k, 'budget', q, 'central', printed=S.num(c, 1, sign=True))
         S.mark(k, 'budget', q, 'envelope', printed=f'[{S.num(env[0], 1)}, {S.num(env[1], 1)}]')
         ax.set_title(ttl, fontsize=FS, loc='left', pad=2.0, linespacing=1.1)
         ax.text(0.0, 1.0 + 10.2 / AH, ('resolved (on R5 at P4)' if q != 'margin' else 'resolved') if ok else
-                'unresolved', transform=ax.transAxes, ha='left', va='bottom', fontsize=FS, linespacing=1.1,
+                'unresolved', transform=ax.transAxes, ha='left', va='baseline', fontsize=FS, linespacing=1.1,
                 color='0.35' if ok else '#B4202A', fontweight='normal' if ok else 'bold')
     hd = [Line2D([], [], ls='none', marker='D', ms=4.0, mfc='black', mec='black', label='central value'),
           Line2D([], [], ls='none', marker='o', ms=3.0, mfc='0.25', mec='0.25', label='central + one check'),
@@ -145,7 +146,8 @@ def main():
           Line2D([], [], color='#B4202A', lw=0.8, label='0 (states equal)')]
     fig.legend(handles=hd, loc='lower left', bbox_to_anchor=(1.0 / W, (B + AH + 17.0) / H), ncol=6, fontsize=FS,
                handlelength=1.4, columnspacing=1.0, handletextpad=0.4, borderaxespad=0.0)
-    fig.text(1.0 / W, (B + AH + 2.0) / H, 'E(ion pair) − E(neutral pair)\nat P4r, kJ mol$^{-1}$ per pair',
+    fig.text(1.0 / W, (B + AH + 2.0) / H, 'E(ion pair) − E(neutral pair)\nat P4r, kJ mol$^{-1}$ per pair\n'
+             '* no other-side minimum: P4r − P0,\n   not a margin; resolved on R5 at P4',
              fontsize=FS, ha='left', va='bottom', color='0.3', linespacing=1.1)
     S.save(fig, STEM, W)
 

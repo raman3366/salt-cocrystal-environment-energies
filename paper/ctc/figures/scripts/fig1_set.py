@@ -10,9 +10,12 @@
     across the cell by minimum image, covalent radii x 1.15), matched to its Hill formula in crystals.json and given
     bond orders by RDKit rdDetermineBonds with the crystals.json charge; formula, net charge and sanitisation are
     asserted, the SMILES are written to the facts file.  Perchlorate is redrawn from RDKit's [Cl+3]([O-])4 form to
-    O=Cl(=O)(=O)[O-] (same species, conventional drawing).  2D layout: RDKit CoordGen, principal axis horizontal.
+    O=Cl(=O)(=O)[O-] (same species, conventional drawing).  2D layout: RDKit CoordGen, principal axis horizontal,
+    turned by up to 60 deg where an NH2 / NH3+ bond would be steep (turn); the tetrahedral oxo-anions as a square cross;
+    nitro groups drawn as NO2 (drawn); bonds 2.6 mm, 2.3 mm where a pair does not fit its tile (dapsone).
     The proton is drawn where the crystal has it (salts: cation and anion; cocrystals: neutral partners).
-(b) the model ladder R1f -> R4a -> R3 -> R4 -> R5 (definitions as optc/G4_RESULTS.md section 2).
+(b) the model ladder R1f -> R4a -> R3 -> R4 -> R5 (definitions as optc/G4_RESULTS.md section 2); name and
+    description centred in each box as one block, measured from the rendered text.
 (c) the cycle: R5 = R1f + dE_env, all terms E(ion pair) - E(neutral pair).
 nitrate (optional, no results) is not shown.
 """
@@ -26,7 +29,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import numpy as np  # noqa: E402
 from matplotlib.patches import FancyBboxPatch, FancyArrowPatch  # noqa: E402
 from rdkit import Chem  # noqa: E402
-from rdkit.Chem import rdDepictor, rdDetermineBonds  # noqa: E402
+from rdkit.Chem import rdAbbreviations, rdDepictor, rdDetermineBonds  # noqa: E402
 
 import _ctc as S  # noqa: E402
 from figkit import style, rdkit2mpl  # noqa: E402
@@ -113,11 +116,46 @@ def species_mol(xyz, formula, charge):
     conf = m.GetConformer()
     P = conf.GetPositions()[:, :2]
     P -= P.mean(0)
-    _, v = np.linalg.eigh(P.T @ P)
-    P = P @ v[:, ::-1]
+    centre = [a for a in m.GetAtoms() if a.GetDegree() == m.GetNumAtoms() - 1 and a.GetSymbol() in ('P', 'Cl', 'S')]
+    if m.GetNumAtoms() <= 5 and centre:
+        # a tetrahedral oxo-anion: a square cross (PCA has no preferred axis here and tilts it); anionic O on the
+        # right, a single NH2 / OH on the left (sulfamate), else a neutral O; the rest above and below
+        c = centre[0]
+        bare = sorted((n for n in c.GetNeighbors() if not n.GetTotalNumHs()), key=lambda n: -n.GetFormalCharge())
+        hyd = [n for n in c.GetNeighbors() if n.GetTotalNumHs()]
+        left = hyd[0] if len(hyd) == 1 else bare[0]
+        right = bare[-1]
+        rest = [n for n in bare + hyd if n.GetIdx() not in (left.GetIdx(), right.GetIdx())]
+        P = np.zeros((m.GetNumAtoms(), 2))
+        for n, xy in zip([left, right] + rest, [(-1.5, 0.0), (1.5, 0.0), (0.0, 1.5), (0.0, -1.5)]):
+            P[n.GetIdx()] = xy
+    else:
+        _, v = np.linalg.eigh(P.T @ P)
+        P = P @ v[:, ::-1]
+        P = turn(m, P)
     for i, p in enumerate(P):
         conf.SetAtomPosition(i, (float(p[0]), float(p[1]), 0.0))
     return m
+
+
+def turn(m, P):
+    """Smallest turn of the PCA layout (0, +-30, +-60 deg) that leaves every terminal NH2 / NH3+ bond within 40 deg of
+    horizontal: steeper, RDKit stacks the hydrogens over the N (as 'H3+' above 'N'), hard to read at this size."""
+    term = [(a.GetIdx(), a.GetNeighbors()[0].GetIdx()) for a in m.GetAtoms()
+            if a.GetSymbol() == 'N' and a.GetDegree() == 1 and a.GetTotalNumHs() >= 2]
+    for deg in (0, 30, -30, 60, -60):
+        t = np.radians(deg)
+        Q = P @ np.array([[np.cos(t), np.sin(t)], [-np.sin(t), np.cos(t)]])
+        if not any(40 < abs(np.degrees(np.arctan2(*(Q[i] - Q[j])[::-1]))) % 180 < 140 for i, j in term):
+            return Q
+    return P
+
+
+def drawn(m):
+    """The molecule as drawn: nitro groups condensed to NO2 (RDKit abbreviation), whose charge-separated form puts the
+    '+' of N on the N=O bond at this size; the species itself (formula, charge, SMILES) is the full m."""
+    no2 = [a for a in rdAbbreviations.GetDefaultAbbreviations() if a.label == 'NO2']
+    return rdAbbreviations.CondenseMolAbbreviations(m, no2, maxCoverage=0.9)
 
 
 def pairs():
@@ -150,7 +188,8 @@ def arrow(ax, p0, p1, col='0.2', lw=0.7):
 def main():
     S.setup()
     P = pairs()
-    ncol, tw, th, g = 5, 33.8, 29.0, 1.5
+    ncol, th, g = 5, 29.0, 1.5
+    tw = (W - 1.2 - (ncol - 1) * g) / ncol             # five tiles and 0.6 mm margins fill the width
     nrow = -(-(len(P) + 1) // ncol)
     hb = 37.2                                       # schematic strip
     top = 6.0
@@ -181,9 +220,14 @@ def main():
         tag = 'polymorph; ranking only' if is_poly else f"{cls} · {SET_NAME[st]}"
         ax.text(x0 + 1.4, y0 + 1.0, tag, ha='left', va='bottom', fontsize=FS, color=col, style='italic')
         # the two partners: side by side if they fit, else stacked
-        deps = [rdkit2mpl.Depiction(mols[role][1], bond_mm=2.3, font_pt=6.0, line_pt=0.5) for role in ('base', 'acid')]
+        # bonds of 2.6 mm where the pair fits (side by side or stacked), else 2.3 mm (dapsone)
+        for bond in (2.6, 2.3):
+            deps = [rdkit2mpl.Depiction(drawn(mols[role][1]), bond_mm=bond, font_pt=6.0, line_pt=0.5)
+                    for role in ('base', 'acid')]
+            (wa, ha_), (wb, hb_) = deps[0].size_mm, deps[1].size_mm
+            if wa + wb + 2.5 <= tw - 1.0 or (ha_ + hb_ + 0.5 <= th - 8.0 and max(wa, wb) <= tw - 1.0):
+                break
         smiles[k] = {mols[role][0]: Chem.MolToSmiles(mols[role][1]) for role in ('base', 'acid')}
-        (wa, ha_), (wb, hb_) = deps[0].size_mm, deps[1].size_mm
         ymid = y0 + 4.2 + (th - 9.6) / 2
         if wa + wb + 2.5 <= tw - 1.0:
             gap = (tw - wa - wb) / 3
@@ -220,13 +264,19 @@ def main():
     rungs = [('R1f', 'pair in vacuum,\ncrystal geometry'), ('R4a', 'pair in the\nlattice field'),
              ('R3', 'pair + H-bonded\nshell, vacuum'), ('R4', 'R3 in the\nlattice field'),
              ('R5', 'periodic crystal\n+ pair correction')]
-    bw, bh, bg = 18.4, 15.0, 3.6
+    bw, bh, bg = 19.4, 15.0, 3.0
+    rend = fig.canvas.get_renderer()
     for i, (name, desc) in enumerate(rungs):
         x = 1.0 + i * (bw + bg)
         last = name == 'R5'
         box(ax, x, yb - bh - 1.5, bw, bh, '#EAF4EF' if last else 'white', '#00664A' if last else '0.35', lw=0.7)
-        ax.text(x + bw / 2, yb - 3.2, name, ha='center', va='center', fontsize=style.BASE_PT, fontweight='bold')
-        ax.text(x + bw / 2, yb - 10.2, desc, ha='center', va='center', fontsize=FS, linespacing=1.1)
+        t1 = ax.text(x + bw / 2, 0, name, ha='center', va='top', fontsize=style.BASE_PT, fontweight='bold')
+        t2 = ax.text(x + bw / 2, 0, desc, ha='center', va='top', fontsize=FS, linespacing=1.1)
+        # the name and the two-line description as one block, centred in the box (measured, not guessed)
+        h1, h2 = (np.ptp(ax.transData.inverted().transform(t.get_window_extent(rend)), 0)[1] for t in (t1, t2))
+        top = yb - 1.5 - (bh - (h1 + 1.6 + h2)) / 2
+        t1.set_y(top)
+        t2.set_y(top - h1 - 1.6)
         if i:
             arrow(ax, (x - bg + 0.4, yb - bh / 2 - 1.5), (x - 0.4, yb - bh / 2 - 1.5))
     ax.text(1.0, yb - bh - 3.2, 'R4a, R4: point charges (REPEAT; in-crystal and gas-phase CHELPG as checks).\n'
