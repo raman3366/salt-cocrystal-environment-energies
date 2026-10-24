@@ -1,0 +1,50 @@
+{
+ "key": "cyano",
+ "which": "pairshellq",
+ "model": "repeat_site",
+ "runs": {
+  "S_pairshellq_emb": {
+   "E": -1023.5998012881194,
+   "converged": true,
+   "nao": 494,
+   "natm": 23,
+   "charge": 0,
+   "E_int": -0.23035575576023248,
+   "E_int_el": 12.172984423759882,
+   "E_int_nuc": -12.403340179520114,
+   "n_charges": 30,
+   "sum_charges": -0.9999999999999999
+  },
+  "T_pairshellq_emb": {
+   "E": -1023.58482846393,
+   "converged": true,
+   "nao": 494,
+   "natm": 23,
+   "charge": 0,
+   "radii_from": "S",
+   "E_int": -0.1660367218060177,
+   "E_int_el": 12.459091822566597,
+   "E_int_nuc": -12.625128544372615,
+   "n_charges": 30,
+   "sum_charges": -0.9999999999999999
+  }
+ },
+ "basis": "def2-TZVP",
+ "superseded": {
+  "T_pairshellq_emb": {
+   "E": -1023.5848285181901,
+   "converged": true,
+   "nao": 494,
+   "natm": 23,
+   "charge": 0,
+   "E_int": -0.16603558916917116,
+   "E_int_el": 12.45909295520333,
+   "E_int_nuc": -12.625128544372501,
+   "n_charges": 30,
+   "sum_charges": -0.9999999999999999
+  }
+ },
+ "derived": {
+  "embedded_single_site_kJ": 39.311
+ }
+}

@@ -1,0 +1,147 @@
+{
+ "key": "dapsone",
+ "model": "repeat",
+ "runs": {
+  "S_pair": {
+   "E_PBE0_D3": -1951.3761096815156,
+   "E_wB97X_D3BJ": -1953.6816467821093,
+   "E_HF": -1943.4701168405559,
+   "E_MP2": -1949.297681700847,
+   "E_SCS_MP2": -1949.1122831146188,
+   "converged": [
+    true,
+    true,
+    true
+   ],
+   "done": true
+  },
+  "T_pair": {
+   "E_PBE0_D3": -1951.3542128221773,
+   "E_wB97X_D3BJ": -1953.661199241595,
+   "E_HF": -1943.450504479751,
+   "E_MP2": -1949.277260289501,
+   "E_SCS_MP2": -1949.092317745053,
+   "converged": [
+    true,
+    true,
+    true
+   ],
+   "done": true
+  },
+  "N_pair": {
+   "E_PBE0_D3": -1951.4208858845811,
+   "E_wB97X_D3BJ": -1953.728279471935,
+   "E_HF": -1943.519368425148,
+   "E_MP2": -1949.3440988748462,
+   "E_SCS_MP2": -1949.1593665906196,
+   "converged": [
+    true,
+    true,
+    true
+   ],
+   "done": true
+  },
+  "R_pair": {
+   "E_PBE0_D3": -1951.3610812375866,
+   "E_wB97X_D3BJ": -1953.6672092574815,
+   "E_HF": -1943.45330381961,
+   "E_MP2": -1949.2834776655518,
+   "E_SCS_MP2": -1949.0979183593604,
+   "converged": [
+    true,
+    true,
+    true
+   ],
+   "done": true
+  },
+  "NR_pair": {
+   "E_PBE0_D3": -1951.4166359003432,
+   "E_wB97X_D3BJ": -1953.7230811424276,
+   "E_HF": -1943.510521781514,
+   "E_MP2": -1949.3391837087397,
+   "E_SCS_MP2": -1949.1537773611142,
+   "converged": [
+    true,
+    true,
+    true
+   ],
+   "done": true
+  },
+  "VS_pair": {
+   "E_PBE0_D3": -1951.3760776716783,
+   "E_wB97X_D3BJ": -1953.6816020169063,
+   "E_HF": -1943.470510430238,
+   "E_MP2": -1949.2974727261435,
+   "E_SCS_MP2": -1949.1121824168565,
+   "converged": [
+    true,
+    true,
+    true
+   ],
+   "done": true
+  },
+  "VR_pair": {
+   "E_PBE0_D3": -1951.4188333977881,
+   "E_wB97X_D3BJ": -1953.7250991442015,
+   "E_HF": -1943.5130745049596,
+   "E_MP2": -1949.3409531170516,
+   "E_SCS_MP2": -1949.1556273047586,
+   "converged": [
+    true,
+    true,
+    true
+   ],
+   "done": true
+  }
+ },
+ "derived": {
+  "T": {
+   "corr_wB97X_D3BJ_kJ": -3.805,
+   "corr_MP2_kJ": -3.874,
+   "corr_SCS_MP2_kJ": -5.071,
+   "dPBE0_kJ": 57.49
+  },
+  "N": {
+   "corr_wB97X_D3BJ_kJ": -4.874,
+   "corr_MP2_kJ": -4.308,
+   "corr_SCS_MP2_kJ": -6.058,
+   "dPBE0_kJ": -117.56
+  },
+  "R": {
+   "corr_wB97X_D3BJ_kJ": -1.551,
+   "corr_MP2_kJ": -2.164,
+   "corr_SCS_MP2_kJ": -1.743,
+   "dPBE0_kJ": 39.457
+  },
+  "NR": {
+   "corr_wB97X_D3BJ_kJ": -2.384,
+   "corr_MP2_kJ": -2.562,
+   "corr_SCS_MP2_kJ": -2.542,
+   "dPBE0_kJ": -106.402
+  },
+  "VS": {
+   "corr_wB97X_D3BJ_kJ": 0.033,
+   "corr_MP2_kJ": 0.465,
+   "corr_SCS_MP2_kJ": 0.18,
+   "dPBE0_kJ": 0.084
+  },
+  "VR": {
+   "corr_wB97X_D3BJ_kJ": -1.913,
+   "corr_MP2_kJ": -1.438,
+   "corr_SCS_MP2_kJ": -1.629,
+   "dPBE0_kJ": -112.171
+  },
+  "VR_minus_VS": {
+   "corr_wB97X_D3BJ_kJ": -1.946,
+   "corr_MP2_kJ": -1.903,
+   "corr_SCS_MP2_kJ": -1.809
+  }
+ },
+ "note": "every entry: [E(level) - E(PBE0)] of the configuration minus that of S_pair (the P0 pair in the P0 field), plain differences, no E_int/2. T: single site (P4 pair in the P0 field); N: every atom at P4 with the P4 field. Added 21 Oct 2026 (embed.py POINT_CONFIGS): R: the P4r pair in the P0 field; NR: every atom at P4r with the P4r field, the in-field counterpart of pair.json corr at P4r; VS / VR: the vcS / vcP4r pairs in their relaxed cells with the X-ray-cell P0 / P4r charges, counterparts of pair.json corr at vcS / vcP4r; VR_minus_VS: the relaxed-cell correction difference.",
+ "configs_note": {
+  "R": "the P4r pair (aligned on P0) in the P0 environment with the P0 charges: single site at P4r, as T at P4",
+  "NR": "every atom at P4r (aligned on P0), the N composition, the P4r charges: the P4r pair in its own field, as N at P4 (its pair geometry is pair.json P4r)",
+  "VS": "every atom at vcS in the relaxed S lattice (own Ewald sum), the P0 charges fitted in the X-ray cell: the vcS pair in its own field (its pair geometry is pair.json vcS)",
+  "VR": "every atom at vcP4r in the relaxed P4r lattice (own Ewald sum), the N composition, the P4r charges fitted in the X-ray cell: the vcP4r pair in its own field (its pair geometry is pair.json vcP4r)"
+ }
+}

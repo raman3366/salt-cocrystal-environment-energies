@@ -1,0 +1,21 @@
+{
+ "key": "pcplut",
+ "E_Ry": {
+  "x80_P0": -960.17565187,
+  "x80_P4r": -960.18507987,
+  "vc_S": -960.17597471,
+  "vc_P4r": -960.18626585,
+  "pbe_sg15_vcS": -726.05491163,
+  "pbe_sg15_vcP4r": -726.06610413,
+  "pbe0_sg15_vcS": -726.09327422,
+  "pbe0_sg15_vcP4r": -726.09992011
+ },
+ "units": "kJ/mol per formula unit, E(P4r state) - E(S state)",
+ "dE_xray_cell_pbe80": -6.188,
+ "dE_relaxed_cells_pbe80": -6.755,
+ "dE_relaxed_cells_pbe0": -3.771,
+ "volume_change_pct": {
+  "vc_S": 1.04,
+  "vc_P4r": 0.43
+ }
+}

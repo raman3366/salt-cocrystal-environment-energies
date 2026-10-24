@@ -1,0 +1,35 @@
+{
+ "key": "carboxy",
+ "which": "pairout",
+ "model": "sc_site",
+ "runs": {
+  "S_pairout_emb": {
+   "E": -1119.7994577941981,
+   "converged": true,
+   "nao": 531,
+   "natm": 25,
+   "charge": 0,
+   "E_int": -0.13363754697656027,
+   "E_int_el": 3.4555315728605915,
+   "E_int_nuc": -3.589169119837152,
+   "n_charges": 7450,
+   "sum_charges": 5.999999993511196e-06
+  },
+  "T_pairout_emb": {
+   "E": -1119.847209368919,
+   "converged": true,
+   "nao": 531,
+   "natm": 25,
+   "charge": 0,
+   "E_int": -0.13374011152121268,
+   "E_int_el": 3.1220242758537258,
+   "E_int_nuc": -3.2557643873749385,
+   "n_charges": 7450,
+   "sum_charges": 5.999999993511196e-06
+  }
+ },
+ "basis": "def2-TZVP",
+ "derived": {
+  "embedded_single_site_kJ": -125.372
+ }
+}

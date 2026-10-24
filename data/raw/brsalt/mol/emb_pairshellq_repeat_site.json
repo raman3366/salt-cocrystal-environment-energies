@@ -1,0 +1,50 @@
+{
+ "key": "brsalt",
+ "which": "pairshellq",
+ "model": "repeat_site",
+ "runs": {
+  "S_pairshellq_emb": {
+   "E": -3729.376357726316,
+   "converged": true,
+   "nao": 833,
+   "natm": 36,
+   "charge": 0,
+   "E_int": -0.2301397252001749,
+   "E_int_el": 32.13145405017188,
+   "E_int_nuc": -32.36159377537206,
+   "n_charges": 36,
+   "sum_charges": -2.0000020000000003
+  },
+  "T_pairshellq_emb": {
+   "E": -3729.336071945655,
+   "converged": true,
+   "nao": 833,
+   "natm": 36,
+   "charge": 0,
+   "radii_from": "S",
+   "E_int": -0.15329187549676604,
+   "E_int_el": 31.65782796441837,
+   "E_int_nuc": -31.811119839915136,
+   "n_charges": 36,
+   "sum_charges": -2.0000020000000003
+  }
+ },
+ "basis": "def2-TZVP",
+ "superseded": {
+  "T_pairshellq_emb": {
+   "E": -3729.3360718666527,
+   "converged": true,
+   "nao": 833,
+   "natm": 36,
+   "charge": 0,
+   "E_int": -0.15329170528053027,
+   "E_int_el": 31.657828134634606,
+   "E_int_nuc": -31.811119839915136,
+   "n_charges": 36,
+   "sum_charges": -2.0000020000000003
+  }
+ },
+ "derived": {
+  "embedded_single_site_kJ": 105.77
+ }
+}

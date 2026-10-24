@@ -1,0 +1,35 @@
+{
+ "key": "saph",
+ "which": "pairout",
+ "model": "repeat_site",
+ "runs": {
+  "S_pairout_emb": {
+   "E": -1535.139996118177,
+   "converged": true,
+   "nao": 574,
+   "natm": 27,
+   "charge": 0,
+   "E_int": -0.1909196129886368,
+   "E_int_el": -45.2208694923429,
+   "E_int_nuc": 45.02994987935426,
+   "n_charges": 7329,
+   "sum_charges": 3.0000039999999855
+  },
+  "T_pairout_emb": {
+   "E": -1535.1556552495176,
+   "converged": true,
+   "nao": 574,
+   "natm": 27,
+   "charge": 0,
+   "E_int": -0.16393960875880964,
+   "E_int_el": -45.06528370094826,
+   "E_int_nuc": 44.90134409218945,
+   "n_charges": 7329,
+   "sum_charges": 3.0000039999999855
+  }
+ },
+ "basis": "def2-TZVP",
+ "derived": {
+  "embedded_single_site_kJ": -41.113
+ }
+}

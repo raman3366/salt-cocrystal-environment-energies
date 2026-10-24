@@ -1,0 +1,50 @@
+{
+ "key": "saph",
+ "which": "cluster",
+ "model": "repeat_site",
+ "runs": {
+  "S_cluster_vac": {
+   "E": -3464.934202690319,
+   "converged": true,
+   "nao": 1093,
+   "natm": 48,
+   "charge": -3
+  },
+  "S_cluster_emb": {
+   "E": -3466.4925736677956,
+   "converged": true,
+   "nao": 1093,
+   "natm": 48,
+   "charge": -3,
+   "E_int": -1.645990994723718,
+   "E_int_el": -111.24063324606533,
+   "E_int_nuc": 109.59464225134161,
+   "n_charges": 7329,
+   "sum_charges": 3.0000039999999855
+  },
+  "T_cluster_vac": {
+   "E": -3464.916360529861,
+   "converged": true,
+   "nao": 1093,
+   "natm": 48,
+   "charge": -3
+  },
+  "T_cluster_emb": {
+   "E": -3466.447690518652,
+   "converged": true,
+   "nao": 1093,
+   "natm": 48,
+   "charge": -3,
+   "E_int": -1.617952746196707,
+   "E_int_el": -111.08398921037532,
+   "E_int_nuc": 109.46603646417861,
+   "n_charges": 7329,
+   "sum_charges": 3.0000039999999855
+  }
+ },
+ "basis": "def2-TZVP",
+ "derived": {
+  "vacuum_kJ": 46.845,
+  "embedded_single_site_kJ": 117.841
+ }
+}

@@ -1,0 +1,6554 @@
+[
+ {
+  "id": "chloro_runner",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py runner --key chloro --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 12
+ },
+ {
+  "id": "carboxy_runner",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py runner --key carboxy --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 12
+ },
+ {
+  "id": "cyano_emb_pairshellq",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key cyano --which pairshellq --model repeat_site --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 4
+ },
+ {
+  "id": "saph_emb_pairshellq",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key saph --which pairshellq --model repeat_site --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 4
+ },
+ {
+  "id": "carboxy_emb_pairshellq",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key carboxy --which pairshellq --model repeat_site --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 4
+ },
+ {
+  "id": "anis_emb_pairshellq",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key anis --which pairshellq --model repeat_site --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 4
+ },
+ {
+  "id": "perchlorate_emb_pairshellq",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key perchlorate --which pairshellq --model repeat_site --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 4
+ },
+ {
+  "id": "sulfamate_emb_pairshellq",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key sulfamate --which pairshellq --model repeat_site --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 4
+ },
+ {
+  "id": "brsalt_emb_pairshellq",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key brsalt --which pairshellq --model repeat_site --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 8
+ },
+ {
+  "id": "mppcp_pair_qzvp",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=12 tools/env/bin/python optc/src/mol.py pair --key mppcp --basis def2-qzvp --threads 12 --mem 80000",
+  "threads": 12,
+  "deps": [],
+  "est_min": 40
+ },
+ {
+  "id": "pcplut_kcheck_P4r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py kcheck --key pcplut --np 12 --point P4r",
+  "threads": 12,
+  "deps": [],
+  "est_min": 15
+ },
+ {
+  "id": "nbaetpy_kcheck_P4r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py kcheck --key nbaetpy --np 12 --point P4r",
+  "threads": 12,
+  "deps": [],
+  "est_min": 18
+ },
+ {
+  "id": "pcplut_esp_P4r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py esp --key pcplut --point P4r --np 12",
+  "threads": 12,
+  "deps": [],
+  "est_min": 40
+ },
+ {
+  "id": "pcplut_fit_P4r",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/charges.py fit --key pcplut --point P4r",
+  "threads": 4,
+  "deps": [
+   "pcplut_esp_P4r"
+  ],
+  "est_min": 8
+ },
+ {
+  "id": "pcplut_embed_P4r",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key pcplut --model repeat --configs R_pair,NR_pair",
+  "threads": 4,
+  "deps": [
+   "pcplut_fit_P4r"
+  ],
+  "est_min": 3
+ },
+ {
+  "id": "pcplut_embcorr_P4r",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py embcorr --key pcplut --model repeat --configs R,NR --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "pcplut_embed_P4r"
+  ],
+  "est_min": 20
+ },
+ {
+  "id": "nbaetpy_esp_P4r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py esp --key nbaetpy --point P4r --np 12",
+  "threads": 12,
+  "deps": [],
+  "est_min": 65
+ },
+ {
+  "id": "nbaetpy_fit_P4r",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/charges.py fit --key nbaetpy --point P4r",
+  "threads": 4,
+  "deps": [
+   "nbaetpy_esp_P4r"
+  ],
+  "est_min": 8
+ },
+ {
+  "id": "nbaetpy_embed_P4r",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key nbaetpy --model repeat --configs R_pair,NR_pair",
+  "threads": 4,
+  "deps": [
+   "nbaetpy_fit_P4r"
+  ],
+  "est_min": 3
+ },
+ {
+  "id": "nbaetpy_embcorr_P4r",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py embcorr --key nbaetpy --model repeat --configs R,NR --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "nbaetpy_embed_P4r"
+  ],
+  "est_min": 20
+ },
+ {
+  "id": "mppcp_esp_P4r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py esp --key mppcp --point P4r --np 12",
+  "threads": 12,
+  "deps": [],
+  "est_min": 40
+ },
+ {
+  "id": "mppcp_fit_P4r",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/charges.py fit --key mppcp --point P4r",
+  "threads": 4,
+  "deps": [
+   "mppcp_esp_P4r"
+  ],
+  "est_min": 8
+ },
+ {
+  "id": "mppcp_embed_P4r",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key mppcp --model repeat --configs R_pair,NR_pair,VS_pair,VR_pair",
+  "threads": 4,
+  "deps": [
+   "mppcp_fit_P4r"
+  ],
+  "est_min": 3
+ },
+ {
+  "id": "mppcp_embcorr_P4r",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py embcorr --key mppcp --model repeat --configs R,NR,VS,VR --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "mppcp_embed_P4r"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "dapsone_esp_P4r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py esp --key dapsone --point P4r --np 12",
+  "threads": 12,
+  "deps": [],
+  "est_min": 140
+ },
+ {
+  "id": "dapsone_fit_P4r",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/charges.py fit --key dapsone --point P4r",
+  "threads": 4,
+  "deps": [
+   "dapsone_esp_P4r"
+  ],
+  "est_min": 8
+ },
+ {
+  "id": "dapsone_embed_P4r",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key dapsone --model repeat --configs R_pair,NR_pair,VS_pair,VR_pair",
+  "threads": 4,
+  "deps": [
+   "dapsone_fit_P4r"
+  ],
+  "est_min": 3
+ },
+ {
+  "id": "dapsone_embcorr_P4r",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py embcorr --key dapsone --model repeat --configs R,NR,VS,VR --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "dapsone_embed_P4r"
+  ],
+  "est_min": 100
+ },
+ {
+  "id": "pcplut_hscanpair_wb97x_P0",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py hscanpair --key pcplut --point P0 --wb97x --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 55
+ },
+ {
+  "id": "pcplut_hscanpair_wb97x_P4r",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py hscanpair --key pcplut --point P4r --wb97x --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 55
+ },
+ {
+  "id": "pcplut_cc_P0",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=12 tools/env/bin/python optc/src/mol.py cc --key pcplut --threads 12 --mem 80000 --points P0",
+  "threads": 12,
+  "deps": [],
+  "est_min": 560
+ },
+ {
+  "id": "pcplut_embed_sitesym",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key pcplut --model repeat --site --site-sym --tag sitesym",
+  "threads": 4,
+  "deps": [],
+  "est_min": 10
+ },
+ {
+  "id": "pcplut_emb_cluster_sitesym",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=12 tools/env/bin/python optc/src/mol.py emb --key pcplut --which cluster --model repeat_sitesym --threads 12 --mem 80000",
+  "threads": 12,
+  "deps": [
+   "pcplut_embed_sitesym"
+  ],
+  "est_min": 300
+ },
+ {
+  "id": "pcplut_emb_pairout_sitesym",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key pcplut --which pairout --model repeat_sitesym --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "pcplut_embed_sitesym"
+  ],
+  "est_min": 45
+ },
+ {
+  "id": "nbaetpy_embed_sitesym",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key nbaetpy --model repeat --site --site-sym --tag sitesym",
+  "threads": 4,
+  "deps": [],
+  "est_min": 10
+ },
+ {
+  "id": "nbaetpy_emb_cluster_sitesym",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=12 tools/env/bin/python optc/src/mol.py emb --key nbaetpy --which cluster --model repeat_sitesym --threads 12 --mem 80000",
+  "threads": 12,
+  "deps": [
+   "nbaetpy_embed_sitesym"
+  ],
+  "est_min": 300
+ },
+ {
+  "id": "nbaetpy_emb_pairout_sitesym",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key nbaetpy --which pairout --model repeat_sitesym --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "nbaetpy_embed_sitesym"
+  ],
+  "est_min": 45
+ },
+ {
+  "id": "pcplut_vc",
+  "cmd": "tools/qe/bin/python optc/src/qe.py vc --key pcplut --np 12",
+  "threads": 12,
+  "deps": [],
+  "est_min": 200
+ },
+ {
+  "id": "pcplut_vcfree_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py vcfree --key pcplut --np 12 --point P0",
+  "threads": 12,
+  "deps": [
+   "pcplut_vc"
+  ],
+  "est_min": 45
+ },
+ {
+  "id": "pcplut_vcfree_P4r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py vcfree --key pcplut --np 12 --point P4r",
+  "threads": 12,
+  "deps": [],
+  "est_min": 180
+ },
+ {
+  "id": "pcplut_pair_vc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py pair --key pcplut --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "pcplut_vcfree_P0",
+   "pcplut_vcfree_P4r"
+  ],
+  "est_min": 20
+ },
+ {
+  "id": "pcplut_embed_vc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key pcplut --model repeat --configs VS_pair,VR_pair",
+  "threads": 4,
+  "deps": [
+   "pcplut_vcfree_P0",
+   "pcplut_vcfree_P4r",
+   "pcplut_embed_P4r"
+  ],
+  "est_min": 3
+ },
+ {
+  "id": "pcplut_embcorr_vc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py embcorr --key pcplut --model repeat --configs VS,VR --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "pcplut_embed_vc",
+   "pcplut_embcorr_P4r"
+  ],
+  "est_min": 20
+ },
+ {
+  "id": "chloro_runner_periodic",
+  "cmd": "tools/qe/bin/python optc/src/qe.py runner --key chloro --np 12",
+  "threads": 12,
+  "deps": [],
+  "est_min": 30
+ },
+ {
+  "id": "carboxy_runner_periodic",
+  "cmd": "tools/qe/bin/python optc/src/qe.py runner --key carboxy --np 12",
+  "threads": 12,
+  "deps": [],
+  "est_min": 20
+ },
+ {
+  "id": "brsalt_runner_periodic",
+  "cmd": "tools/qe/bin/python optc/src/qe.py runner --key brsalt --np 12",
+  "threads": 12,
+  "deps": [],
+  "est_min": 25
+ },
+ {
+  "id": "clsalt_runner_periodic",
+  "cmd": "tools/qe/bin/python optc/src/qe.py runner --key clsalt --np 12",
+  "threads": 12,
+  "deps": [],
+  "est_min": 25
+ },
+ {
+  "id": "saph_runner_periodic",
+  "cmd": "tools/qe/bin/python optc/src/qe.py runner --key saph --np 12",
+  "threads": 12,
+  "deps": [],
+  "est_min": 20
+ },
+ {
+  "id": "cyano_runner_periodic",
+  "cmd": "tools/qe/bin/python optc/src/qe.py runner --key cyano --np 12",
+  "threads": 12,
+  "deps": [],
+  "est_min": 20
+ },
+ {
+  "id": "anis_runner_periodic",
+  "cmd": "tools/qe/bin/python optc/src/qe.py runner --key anis --np 12",
+  "threads": 12,
+  "deps": [],
+  "est_min": 20
+ },
+ {
+  "id": "chloro_runner_periodic_pbe0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py runner --key chloro --np 12 --pbe0",
+  "threads": 12,
+  "deps": [
+   "chloro_runner_periodic"
+  ],
+  "est_min": 180
+ },
+ {
+  "id": "anis_runner_periodic_pbe0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py runner --key anis --np 12 --pbe0",
+  "threads": 12,
+  "deps": [
+   "anis_runner_periodic"
+  ],
+  "est_min": 180
+ },
+ {
+  "id": "dapsone_hyb_nq_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key dapsone --point P0 --nq 2,1,1 --np 12",
+  "threads": 12,
+  "deps": [],
+  "est_min": 290
+ },
+ {
+  "id": "pcplut_hyb_nq_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key pcplut --point P0 --nq 2,1,1 --np 12",
+  "threads": 12,
+  "deps": [],
+  "est_min": 70
+ },
+ {
+  "id": "pcplut_hyb_nq_P4r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key pcplut --point P4r --nq 2,1,1 --np 12",
+  "threads": 12,
+  "deps": [],
+  "est_min": 70
+ },
+ {
+  "id": "mppcp_hyb_nq_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key mppcp --point P0 --nq 1,1,2 --np 12",
+  "threads": 12,
+  "deps": [],
+  "est_min": 70
+ },
+ {
+  "id": "brsalt_hyb_nq_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key brsalt --point P0 --nq 1,2,1 --np 12",
+  "threads": 12,
+  "deps": [],
+  "est_min": 220
+ },
+ {
+  "id": "brsalt_emb_cluster_repeat_field_T",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=12 timeout 30h tools/env/bin/python optc/src/mol.py emb --key brsalt --which cluster --model repeat --threads 12 --mem 205000 --ldb --max-atoms 150 --level-shift 0.3 --dm0-chk /mnt/scratch/brsalt_S_cluster_emb.chk --field-only 'negative HOMO-LUMO gap of the whole-shell cluster in vacuum at PBE0 (HOMO -0.0003 Eh, LUMO 1.5 eV below it after ~45 cycles with a 0.3 Eh level shift, energy still falling 3-4e-4 Eh per cycle; 21 Oct 2026): the vacuum state is charge-transferred, R3 whole shell not obtainable'",
+  "threads": 12,
+  "deps": [],
+  "est_min": 120
+ },
+ {
+  "id": "g2_resize_gate",
+  "cmd": "while [ $(awk '/MemTotal/{print int($2/1048576)}' /proc/meminfo) -gt 150 ]; do sleep 60; done; echo memory now $(awk '/MemTotal/{print int($2/1048576)}' /proc/meminfo) GiB",
+  "threads": 1,
+  "deps": [],
+  "est_min": 60
+ },
+ {
+  "id": "nbaetpy_vc",
+  "cmd": "tools/qe/bin/python optc/src/qe.py vc --key nbaetpy --np 12",
+  "threads": 12,
+  "deps": [],
+  "est_min": 330
+ },
+ {
+  "id": "nbaetpy_vcfree_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py vcfree --key nbaetpy --np 12 --point P0",
+  "threads": 12,
+  "deps": [
+   "nbaetpy_vc"
+  ],
+  "est_min": 70
+ },
+ {
+  "id": "nbaetpy_vcfree_P4r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py vcfree --key nbaetpy --np 12 --point P4r",
+  "threads": 12,
+  "deps": [],
+  "est_min": 300
+ },
+ {
+  "id": "nbaetpy_pair_vc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py pair --key nbaetpy --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "nbaetpy_vcfree_P0",
+   "nbaetpy_vcfree_P4r"
+  ],
+  "est_min": 20
+ },
+ {
+  "id": "nbaetpy_embed_vc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key nbaetpy --model repeat --configs VS_pair,VR_pair",
+  "threads": 4,
+  "deps": [
+   "nbaetpy_vcfree_P0",
+   "nbaetpy_vcfree_P4r"
+  ],
+  "est_min": 3
+ },
+ {
+  "id": "nbaetpy_embcorr_vc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py embcorr --key nbaetpy --model repeat --configs VS,VR --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "nbaetpy_embed_vc"
+  ],
+  "est_min": 20
+ },
+ {
+  "id": "nbaetpy_hyb_nq_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key nbaetpy --point P0 --nq 2,2,1 --np 12",
+  "threads": 12,
+  "deps": [],
+  "est_min": 240
+ },
+ {
+  "id": "nbaetpy_hyb_nq_P4r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key nbaetpy --point P4r --nq 2,2,1 --np 12",
+  "threads": 12,
+  "deps": [],
+  "est_min": 240
+ },
+ {
+  "id": "brcoc_hyb_nq_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key brcoc --point P0 --nq 2,2,1 --np 12",
+  "threads": 12,
+  "deps": [],
+  "est_min": 430
+ },
+ {
+  "id": "mppcp_hyb_nq_P4r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key mppcp --point P4r --nq 1,1,2 --np 12",
+  "threads": 12,
+  "deps": [],
+  "est_min": 70
+ },
+ {
+  "id": "mppcp_cc_P4",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=12 tools/env/bin/python optc/src/mol.py cc --key mppcp --threads 12 --mem 60000 --points P4",
+  "threads": 12,
+  "deps": [],
+  "est_min": 380
+ },
+ {
+  "id": "pcplut_cc_P4r",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=12 tools/env/bin/python optc/src/mol.py cc --key pcplut --threads 12 --mem 80000 --points P4r",
+  "threads": 12,
+  "deps": [],
+  "est_min": 560
+ },
+ {
+  "id": "dapsone_hyb_nq_P4r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key dapsone --point P4r --nq 2,1,1 --np 12",
+  "threads": 12,
+  "deps": [],
+  "est_min": 290
+ },
+ {
+  "id": "dapsone_pair",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py pair --key dapsone --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "dapsone_relax",
+   "dapsone_P1",
+   "dapsone_P2",
+   "dapsone_P3",
+   "dapsone_P4"
+  ],
+  "est_min": 40
+ },
+ {
+  "id": "dapsone_fit_P0",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/charges.py fit --key dapsone --point P0",
+  "threads": 4,
+  "deps": [
+   "dapsone_esp_P0"
+  ],
+  "est_min": 5
+ },
+ {
+  "id": "dapsone_fit_P4",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/charges.py fit --key dapsone --point P4",
+  "threads": 4,
+  "deps": [
+   "dapsone_esp_P4"
+  ],
+  "est_min": 5
+ },
+ {
+  "id": "dapsone_sc_P0",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/charges.py sc --key dapsone --point P0 --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "dapsone_relax"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "dapsone_sc_P4",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/charges.py sc --key dapsone --point P4 --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "dapsone_P4"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "dapsone_embed_repeat",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key dapsone --model repeat",
+  "threads": 4,
+  "deps": [
+   "dapsone_fit_P0",
+   "dapsone_fit_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "dapsone_emb_pair_repeat",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key dapsone --which pair --model repeat --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "dapsone_embed_repeat"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "dapsone_embed_sc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key dapsone --model sc",
+  "threads": 4,
+  "deps": [
+   "dapsone_sc_P0",
+   "dapsone_sc_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "dapsone_emb_pair_sc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key dapsone --which pair --model sc --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "dapsone_embed_sc"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "dapsone_embed_gas",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key dapsone --model gas",
+  "threads": 4,
+  "deps": [
+   "dapsone_sc_P0",
+   "dapsone_sc_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "dapsone_emb_pair_gas",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key dapsone --which pair --model gas --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "dapsone_embed_gas"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "mppcp_pair",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py pair --key mppcp --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "mppcp_relax",
+   "mppcp_P1",
+   "mppcp_P2",
+   "mppcp_P3",
+   "mppcp_P4"
+  ],
+  "est_min": 40
+ },
+ {
+  "id": "mppcp_fit_P0",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/charges.py fit --key mppcp --point P0",
+  "threads": 4,
+  "deps": [
+   "mppcp_esp_P0"
+  ],
+  "est_min": 5
+ },
+ {
+  "id": "mppcp_fit_P4",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/charges.py fit --key mppcp --point P4",
+  "threads": 4,
+  "deps": [
+   "mppcp_esp_P4"
+  ],
+  "est_min": 5
+ },
+ {
+  "id": "mppcp_sc_P0",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/charges.py sc --key mppcp --point P0 --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "mppcp_relax"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "mppcp_sc_P4",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/charges.py sc --key mppcp --point P4 --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "mppcp_P4"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "mppcp_embed_repeat",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key mppcp --model repeat",
+  "threads": 4,
+  "deps": [
+   "mppcp_fit_P0",
+   "mppcp_fit_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "mppcp_emb_pair_repeat",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key mppcp --which pair --model repeat --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "mppcp_embed_repeat"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "mppcp_embed_sc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key mppcp --model sc",
+  "threads": 4,
+  "deps": [
+   "mppcp_sc_P0",
+   "mppcp_sc_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "mppcp_emb_pair_sc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key mppcp --which pair --model sc --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "mppcp_embed_sc"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "mppcp_embed_gas",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key mppcp --model gas",
+  "threads": 4,
+  "deps": [
+   "mppcp_sc_P0",
+   "mppcp_sc_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "mppcp_emb_pair_gas",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key mppcp --which pair --model gas --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "mppcp_embed_gas"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "mppcp_hyb_P4r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key mppcp --point P4r --np 12",
+  "threads": 12,
+  "deps": [
+   "mppcp_P4r"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "mppcp_pair_P4r",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py pair --key mppcp --threads 8 --mem 60000",
+  "threads": 8,
+  "deps": [
+   "mppcp_P4r",
+   "mppcp_pair"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "mppcp_summary_P4r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py summary --key mppcp",
+  "threads": 1,
+  "deps": [
+   "mppcp_hyb_P4r"
+  ],
+  "est_min": 1
+ },
+ {
+  "id": "dapsone_relax",
+  "cmd": "tools/qe/bin/python optc/src/qe.py relax --key dapsone --np 12",
+  "threads": 12,
+  "deps": [],
+  "est_min": 200
+ },
+ {
+  "id": "dapsone_hyb_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key dapsone --point P0 --np 12 --keep",
+  "threads": 12,
+  "deps": [
+   "dapsone_relax"
+  ],
+  "est_min": 120
+ },
+ {
+  "id": "dapsone_esp_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py esp --key dapsone --point P0 --np 8",
+  "threads": 8,
+  "deps": [
+   "dapsone_hyb_P0"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "dapsone_req",
+  "cmd": "OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py req --key dapsone --threads 8",
+  "threads": 8,
+  "deps": [],
+  "est_min": 15
+ },
+ {
+  "id": "dapsone_P1",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key dapsone --point P1 --np 12",
+  "threads": 12,
+  "deps": [
+   "dapsone_relax",
+   "dapsone_req"
+  ],
+  "est_min": 90
+ },
+ {
+  "id": "dapsone_P2",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key dapsone --point P2 --np 12",
+  "threads": 12,
+  "deps": [
+   "dapsone_relax",
+   "dapsone_req"
+  ],
+  "est_min": 90
+ },
+ {
+  "id": "dapsone_P3",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key dapsone --point P3 --np 12",
+  "threads": 12,
+  "deps": [
+   "dapsone_relax",
+   "dapsone_req"
+  ],
+  "est_min": 90
+ },
+ {
+  "id": "dapsone_P4",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key dapsone --point P4 --np 12",
+  "threads": 12,
+  "deps": [
+   "dapsone_relax",
+   "dapsone_req"
+  ],
+  "est_min": 90
+ },
+ {
+  "id": "dapsone_hyb_P1",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key dapsone --point P1 --np 12",
+  "threads": 12,
+  "deps": [
+   "dapsone_P1"
+  ],
+  "est_min": 120
+ },
+ {
+  "id": "dapsone_hyb_P2",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key dapsone --point P2 --np 12",
+  "threads": 12,
+  "deps": [
+   "dapsone_P2"
+  ],
+  "est_min": 120
+ },
+ {
+  "id": "dapsone_hyb_P3",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key dapsone --point P3 --np 12",
+  "threads": 12,
+  "deps": [
+   "dapsone_P3"
+  ],
+  "est_min": 120
+ },
+ {
+  "id": "dapsone_hyb_P4",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key dapsone --point P4 --np 12 --keep",
+  "threads": 12,
+  "deps": [
+   "dapsone_P4"
+  ],
+  "est_min": 120
+ },
+ {
+  "id": "dapsone_esp_P4",
+  "cmd": "tools/qe/bin/python optc/src/qe.py esp --key dapsone --point P4 --np 8",
+  "threads": 8,
+  "deps": [
+   "dapsone_hyb_P4"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "dapsone_kcheck",
+  "cmd": "tools/qe/bin/python optc/src/qe.py kcheck --key dapsone --np 12",
+  "threads": 12,
+  "deps": [
+   "dapsone_relax",
+   "dapsone_P4"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "dapsone_summary",
+  "cmd": "tools/qe/bin/python optc/src/qe.py summary --key dapsone",
+  "threads": 1,
+  "deps": [
+   "dapsone_hyb_P0",
+   "dapsone_hyb_P1",
+   "dapsone_hyb_P2",
+   "dapsone_hyb_P3",
+   "dapsone_hyb_P4",
+   "dapsone_kcheck",
+   "dapsone_esp_P0",
+   "dapsone_esp_P4"
+  ],
+  "est_min": 1
+ },
+ {
+  "id": "mppcp_relax",
+  "cmd": "tools/qe/bin/python optc/src/qe.py relax --key mppcp --np 12",
+  "threads": 12,
+  "deps": [],
+  "est_min": 30
+ },
+ {
+  "id": "mppcp_hyb_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key mppcp --point P0 --np 12 --keep",
+  "threads": 12,
+  "deps": [
+   "mppcp_relax"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "mppcp_esp_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py esp --key mppcp --point P0 --np 8",
+  "threads": 8,
+  "deps": [
+   "mppcp_hyb_P0"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "mppcp_req",
+  "cmd": "OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py req --key mppcp --threads 8",
+  "threads": 8,
+  "deps": [],
+  "est_min": 15
+ },
+ {
+  "id": "mppcp_P1",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key mppcp --point P1 --np 12",
+  "threads": 12,
+  "deps": [
+   "mppcp_relax",
+   "mppcp_req"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "mppcp_P2",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key mppcp --point P2 --np 12",
+  "threads": 12,
+  "deps": [
+   "mppcp_relax",
+   "mppcp_req"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "mppcp_P3",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key mppcp --point P3 --np 12",
+  "threads": 12,
+  "deps": [
+   "mppcp_relax",
+   "mppcp_req"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "mppcp_P4",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key mppcp --point P4 --np 12",
+  "threads": 12,
+  "deps": [
+   "mppcp_relax",
+   "mppcp_req"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "mppcp_hyb_P1",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key mppcp --point P1 --np 12",
+  "threads": 12,
+  "deps": [
+   "mppcp_P1"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "mppcp_hyb_P2",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key mppcp --point P2 --np 12",
+  "threads": 12,
+  "deps": [
+   "mppcp_P2"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "mppcp_hyb_P3",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key mppcp --point P3 --np 12",
+  "threads": 12,
+  "deps": [
+   "mppcp_P3"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "mppcp_hyb_P4",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key mppcp --point P4 --np 12 --keep",
+  "threads": 12,
+  "deps": [
+   "mppcp_P4"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "mppcp_esp_P4",
+  "cmd": "tools/qe/bin/python optc/src/qe.py esp --key mppcp --point P4 --np 8",
+  "threads": 8,
+  "deps": [
+   "mppcp_hyb_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "mppcp_kcheck",
+  "cmd": "tools/qe/bin/python optc/src/qe.py kcheck --key mppcp --np 12",
+  "threads": 12,
+  "deps": [
+   "mppcp_relax",
+   "mppcp_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "mppcp_summary",
+  "cmd": "tools/qe/bin/python optc/src/qe.py summary --key mppcp",
+  "threads": 1,
+  "deps": [
+   "mppcp_hyb_P0",
+   "mppcp_hyb_P1",
+   "mppcp_hyb_P2",
+   "mppcp_hyb_P3",
+   "mppcp_hyb_P4",
+   "mppcp_kcheck",
+   "mppcp_esp_P0",
+   "mppcp_esp_P4"
+  ],
+  "est_min": 1
+ },
+ {
+  "id": "perchlorate_relax",
+  "cmd": "tools/qe/bin/python optc/src/qe.py relax --key perchlorate --np 12",
+  "threads": 12,
+  "deps": [],
+  "est_min": 30
+ },
+ {
+  "id": "perchlorate_hyb_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key perchlorate --point P0 --np 12 --keep",
+  "threads": 12,
+  "deps": [
+   "perchlorate_relax"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "perchlorate_esp_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py esp --key perchlorate --point P0 --np 8",
+  "threads": 8,
+  "deps": [
+   "perchlorate_hyb_P0"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "perchlorate_req",
+  "cmd": "OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py req --key perchlorate --threads 8",
+  "threads": 8,
+  "deps": [],
+  "est_min": 15
+ },
+ {
+  "id": "perchlorate_P1",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key perchlorate --point P1 --np 12",
+  "threads": 12,
+  "deps": [
+   "perchlorate_relax",
+   "perchlorate_req"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "perchlorate_P2",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key perchlorate --point P2 --np 12",
+  "threads": 12,
+  "deps": [
+   "perchlorate_relax",
+   "perchlorate_req"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "perchlorate_P3",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key perchlorate --point P3 --np 12",
+  "threads": 12,
+  "deps": [
+   "perchlorate_relax",
+   "perchlorate_req"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "perchlorate_P4",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key perchlorate --point P4 --np 12",
+  "threads": 12,
+  "deps": [
+   "perchlorate_relax",
+   "perchlorate_req"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "perchlorate_hyb_P1",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key perchlorate --point P1 --np 12",
+  "threads": 12,
+  "deps": [
+   "perchlorate_P1"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "perchlorate_hyb_P2",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key perchlorate --point P2 --np 12",
+  "threads": 12,
+  "deps": [
+   "perchlorate_P2"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "perchlorate_hyb_P3",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key perchlorate --point P3 --np 12",
+  "threads": 12,
+  "deps": [
+   "perchlorate_P3"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "perchlorate_hyb_P4",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key perchlorate --point P4 --np 12 --keep",
+  "threads": 12,
+  "deps": [
+   "perchlorate_P4"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "perchlorate_esp_P4",
+  "cmd": "tools/qe/bin/python optc/src/qe.py esp --key perchlorate --point P4 --np 8",
+  "threads": 8,
+  "deps": [
+   "perchlorate_hyb_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "perchlorate_kcheck",
+  "cmd": "tools/qe/bin/python optc/src/qe.py kcheck --key perchlorate --np 12",
+  "threads": 12,
+  "deps": [
+   "perchlorate_relax",
+   "perchlorate_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "perchlorate_summary",
+  "cmd": "tools/qe/bin/python optc/src/qe.py summary --key perchlorate",
+  "threads": 1,
+  "deps": [
+   "perchlorate_hyb_P0",
+   "perchlorate_hyb_P1",
+   "perchlorate_hyb_P2",
+   "perchlorate_hyb_P3",
+   "perchlorate_hyb_P4",
+   "perchlorate_kcheck",
+   "perchlorate_esp_P0",
+   "perchlorate_esp_P4"
+  ],
+  "est_min": 1
+ },
+ {
+  "id": "saph_relax",
+  "cmd": "tools/qe/bin/python optc/src/qe.py relax --key saph --np 12",
+  "threads": 12,
+  "deps": [],
+  "est_min": 30
+ },
+ {
+  "id": "saph_hyb_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key saph --point P0 --np 12 --keep",
+  "threads": 12,
+  "deps": [
+   "saph_relax"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "saph_esp_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py esp --key saph --point P0 --np 8",
+  "threads": 8,
+  "deps": [
+   "saph_hyb_P0"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "saph_req",
+  "cmd": "OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py req --key saph --threads 8",
+  "threads": 8,
+  "deps": [],
+  "est_min": 15
+ },
+ {
+  "id": "saph_P1",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key saph --point P1 --np 12",
+  "threads": 12,
+  "deps": [
+   "saph_relax",
+   "saph_req"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "saph_P2",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key saph --point P2 --np 12",
+  "threads": 12,
+  "deps": [
+   "saph_relax",
+   "saph_req"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "saph_P3",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key saph --point P3 --np 12",
+  "threads": 12,
+  "deps": [
+   "saph_relax",
+   "saph_req"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "saph_P4",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key saph --point P4 --np 12",
+  "threads": 12,
+  "deps": [
+   "saph_relax",
+   "saph_req"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "saph_hyb_P1",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key saph --point P1 --np 12",
+  "threads": 12,
+  "deps": [
+   "saph_P1"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "saph_hyb_P2",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key saph --point P2 --np 12",
+  "threads": 12,
+  "deps": [
+   "saph_P2"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "saph_hyb_P3",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key saph --point P3 --np 12",
+  "threads": 12,
+  "deps": [
+   "saph_P3"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "saph_hyb_P4",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key saph --point P4 --np 12 --keep",
+  "threads": 12,
+  "deps": [
+   "saph_P4"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "saph_esp_P4",
+  "cmd": "tools/qe/bin/python optc/src/qe.py esp --key saph --point P4 --np 8",
+  "threads": 8,
+  "deps": [
+   "saph_hyb_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "saph_kcheck",
+  "cmd": "tools/qe/bin/python optc/src/qe.py kcheck --key saph --np 12",
+  "threads": 12,
+  "deps": [
+   "saph_relax",
+   "saph_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "saph_summary",
+  "cmd": "tools/qe/bin/python optc/src/qe.py summary --key saph",
+  "threads": 1,
+  "deps": [
+   "saph_hyb_P0",
+   "saph_hyb_P1",
+   "saph_hyb_P2",
+   "saph_hyb_P3",
+   "saph_hyb_P4",
+   "saph_kcheck",
+   "saph_esp_P0",
+   "saph_esp_P4"
+  ],
+  "est_min": 1
+ },
+ {
+  "id": "dapsone_P4r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py p4r --key dapsone --np 12",
+  "threads": 12,
+  "deps": [
+   "dapsone_P4"
+  ],
+  "est_min": 150
+ },
+ {
+  "id": "mppcp_P4r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py p4r --key mppcp --np 12",
+  "threads": 12,
+  "deps": [
+   "mppcp_P4"
+  ],
+  "est_min": 60
+ },
+ {
+  "id": "perchlorate_P4r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py p4r --key perchlorate --np 12",
+  "threads": 12,
+  "deps": [
+   "perchlorate_P4"
+  ],
+  "est_min": 60
+ },
+ {
+  "id": "saph_P4r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py p4r --key saph --np 12",
+  "threads": 12,
+  "deps": [
+   "saph_P4"
+  ],
+  "est_min": 60
+ },
+ {
+  "id": "dapsone_embed_repeat_site",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key dapsone --model repeat --site --tag site",
+  "threads": 4,
+  "deps": [
+   "dapsone_fit_P0",
+   "dapsone_fit_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "mppcp_embed_repeat_site",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key mppcp --model repeat --site --tag site",
+  "threads": 4,
+  "deps": [
+   "mppcp_fit_P0",
+   "mppcp_fit_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "cyano_pair",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py pair --key cyano --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "cyano_relax",
+   "cyano_P1",
+   "cyano_P2",
+   "cyano_P3",
+   "cyano_P4"
+  ],
+  "est_min": 40
+ },
+ {
+  "id": "cyano_pcm",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py pcm --key cyano --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "cyano_relax",
+   "cyano_P4"
+  ],
+  "est_min": 90
+ },
+ {
+  "id": "cyano_pcm_r1.1",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py pcm --key cyano --threads 8 --mem 28000 --radii-scale 1.1",
+  "threads": 8,
+  "deps": [
+   "cyano_relax",
+   "cyano_P4"
+  ],
+  "est_min": 90
+ },
+ {
+  "id": "cyano_pcm_r1.3",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py pcm --key cyano --threads 8 --mem 28000 --radii-scale 1.3",
+  "threads": 8,
+  "deps": [
+   "cyano_relax",
+   "cyano_P4"
+  ],
+  "est_min": 90
+ },
+ {
+  "id": "cyano_fit_P0",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/charges.py fit --key cyano --point P0",
+  "threads": 4,
+  "deps": [
+   "cyano_esp_P0"
+  ],
+  "est_min": 5
+ },
+ {
+  "id": "cyano_fit_P4",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/charges.py fit --key cyano --point P4",
+  "threads": 4,
+  "deps": [
+   "cyano_esp_P4"
+  ],
+  "est_min": 5
+ },
+ {
+  "id": "cyano_sc_P0",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/charges.py sc --key cyano --point P0 --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "cyano_relax"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "cyano_sc_P4",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/charges.py sc --key cyano --point P4 --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "cyano_P4"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "cyano_embed_repeat",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key cyano --model repeat",
+  "threads": 4,
+  "deps": [
+   "cyano_fit_P0",
+   "cyano_fit_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "cyano_emb_pair_repeat",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key cyano --which pair --model repeat --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "cyano_embed_repeat"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "cyano_embed_sc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key cyano --model sc",
+  "threads": 4,
+  "deps": [
+   "cyano_sc_P0",
+   "cyano_sc_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "cyano_emb_pair_sc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key cyano --which pair --model sc --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "cyano_embed_sc"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "cyano_embed_gas",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key cyano --model gas",
+  "threads": 4,
+  "deps": [
+   "cyano_sc_P0",
+   "cyano_sc_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "cyano_emb_pair_gas",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key cyano --which pair --model gas --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "cyano_embed_gas"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "carboxy_pair",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py pair --key carboxy --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "carboxy_relax",
+   "carboxy_P1",
+   "carboxy_P2",
+   "carboxy_P3",
+   "carboxy_P4"
+  ],
+  "est_min": 40
+ },
+ {
+  "id": "carboxy_pcm",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py pcm --key carboxy --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "carboxy_relax",
+   "carboxy_P4"
+  ],
+  "est_min": 90
+ },
+ {
+  "id": "carboxy_fit_P0",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/charges.py fit --key carboxy --point P0",
+  "threads": 4,
+  "deps": [
+   "carboxy_esp_P0"
+  ],
+  "est_min": 5
+ },
+ {
+  "id": "carboxy_fit_P4",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/charges.py fit --key carboxy --point P4",
+  "threads": 4,
+  "deps": [
+   "carboxy_esp_P4"
+  ],
+  "est_min": 5
+ },
+ {
+  "id": "carboxy_sc_P0",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/charges.py sc --key carboxy --point P0 --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "carboxy_relax"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "carboxy_sc_P4",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/charges.py sc --key carboxy --point P4 --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "carboxy_P4"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "carboxy_embed_repeat",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key carboxy --model repeat",
+  "threads": 4,
+  "deps": [
+   "carboxy_fit_P0",
+   "carboxy_fit_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "carboxy_emb_pair_repeat",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key carboxy --which pair --model repeat --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "carboxy_embed_repeat"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "carboxy_embed_sc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key carboxy --model sc",
+  "threads": 4,
+  "deps": [
+   "carboxy_sc_P0",
+   "carboxy_sc_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "carboxy_emb_pair_sc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key carboxy --which pair --model sc --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "carboxy_embed_sc"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "carboxy_embed_gas",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key carboxy --model gas",
+  "threads": 4,
+  "deps": [
+   "carboxy_sc_P0",
+   "carboxy_sc_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "carboxy_emb_pair_gas",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key carboxy --which pair --model gas --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "carboxy_embed_gas"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "carboxy_emb_cluster_repeat",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=24 tools/env/bin/python optc/src/mol.py emb --key carboxy --which cluster --model repeat --threads 24 --mem 140000 --ldb --max-atoms 150",
+  "threads": 24,
+  "deps": [
+   "carboxy_embed_repeat"
+  ],
+  "est_min": 80
+ },
+ {
+  "id": "anis_pair",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py pair --key anis --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "anis_relax",
+   "anis_P1",
+   "anis_P2",
+   "anis_P3",
+   "anis_P4"
+  ],
+  "est_min": 40
+ },
+ {
+  "id": "anis_pcm",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py pcm --key anis --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "anis_relax",
+   "anis_P4"
+  ],
+  "est_min": 90
+ },
+ {
+  "id": "anis_fit_P0",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/charges.py fit --key anis --point P0",
+  "threads": 4,
+  "deps": [
+   "anis_esp_P0"
+  ],
+  "est_min": 5
+ },
+ {
+  "id": "anis_fit_P4",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/charges.py fit --key anis --point P4",
+  "threads": 4,
+  "deps": [
+   "anis_esp_P4"
+  ],
+  "est_min": 5
+ },
+ {
+  "id": "anis_sc_P0",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/charges.py sc --key anis --point P0 --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "anis_relax"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "anis_sc_P4",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/charges.py sc --key anis --point P4 --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "anis_P4"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "anis_embed_repeat",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key anis --model repeat",
+  "threads": 4,
+  "deps": [
+   "anis_fit_P0",
+   "anis_fit_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "anis_emb_pair_repeat",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key anis --which pair --model repeat --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "anis_embed_repeat"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "anis_embed_sc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key anis --model sc",
+  "threads": 4,
+  "deps": [
+   "anis_sc_P0",
+   "anis_sc_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "anis_emb_pair_sc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key anis --which pair --model sc --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "anis_embed_sc"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "anis_embed_gas",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key anis --model gas",
+  "threads": 4,
+  "deps": [
+   "anis_sc_P0",
+   "anis_sc_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "anis_emb_pair_gas",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key anis --which pair --model gas --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "anis_embed_gas"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "anis_emb_cluster_repeat",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=24 tools/env/bin/python optc/src/mol.py emb --key anis --which cluster --model repeat --threads 24 --mem 140000 --ldb --max-atoms 150",
+  "threads": 24,
+  "deps": [
+   "anis_embed_repeat"
+  ],
+  "est_min": 80
+ },
+ {
+  "id": "brsalt_pair",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py pair --key brsalt --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "brsalt_relax",
+   "brsalt_P1",
+   "brsalt_P2",
+   "brsalt_P3",
+   "brsalt_P4"
+  ],
+  "est_min": 40
+ },
+ {
+  "id": "brsalt_pcm",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py pcm --key brsalt --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "brsalt_relax",
+   "brsalt_P4"
+  ],
+  "est_min": 120
+ },
+ {
+  "id": "brsalt_fit_P0",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/charges.py fit --key brsalt --point P0",
+  "threads": 4,
+  "deps": [
+   "brsalt_esp_P0"
+  ],
+  "est_min": 5
+ },
+ {
+  "id": "brsalt_fit_P4",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/charges.py fit --key brsalt --point P4",
+  "threads": 4,
+  "deps": [
+   "brsalt_esp_P4"
+  ],
+  "est_min": 5
+ },
+ {
+  "id": "brsalt_sc_P0",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/charges.py sc --key brsalt --point P0 --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "brsalt_relax"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "brsalt_sc_P4",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/charges.py sc --key brsalt --point P4 --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "brsalt_P4"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "brsalt_embed_repeat",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key brsalt --model repeat",
+  "threads": 4,
+  "deps": [
+   "brsalt_fit_P0",
+   "brsalt_fit_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "brsalt_emb_pair_repeat",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key brsalt --which pair --model repeat --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "brsalt_embed_repeat"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "brsalt_embed_sc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key brsalt --model sc",
+  "threads": 4,
+  "deps": [
+   "brsalt_sc_P0",
+   "brsalt_sc_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "brsalt_emb_pair_sc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key brsalt --which pair --model sc --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "brsalt_embed_sc"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "brsalt_embed_gas",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key brsalt --model gas",
+  "threads": 4,
+  "deps": [
+   "brsalt_sc_P0",
+   "brsalt_sc_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "brsalt_emb_pair_gas",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key brsalt --which pair --model gas --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "brsalt_embed_gas"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "cyano_emb_cluster_repeat_ldb",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=24 tools/env/bin/python optc/src/mol.py emb --key cyano --which cluster --model repeat --threads 24 --mem 140000 --ldb --max-atoms 150",
+  "threads": 24,
+  "deps": [
+   "cyano_embed_repeat"
+  ],
+  "est_min": 80
+ },
+ {
+  "id": "cyano_embed_sub4",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key cyano --model repeat --nshell 4 --tag sub4",
+  "threads": 4,
+  "deps": [
+   "cyano_embed_repeat"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "cyano_emb_cluster_sub4_tz",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=24 tools/env/bin/python optc/src/mol.py emb --key cyano --which cluster --model repeat_sub4 --threads 24 --mem 100000",
+  "threads": 24,
+  "deps": [
+   "cyano_embed_sub4"
+  ],
+  "est_min": 90
+ },
+ {
+  "id": "cyano_emb_cluster_sub4_ldb",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=24 tools/env/bin/python optc/src/mol.py emb --key cyano --which cluster --model repeat_sub4 --threads 24 --mem 100000 --ldb",
+  "threads": 24,
+  "deps": [
+   "cyano_embed_sub4"
+  ],
+  "est_min": 40
+ },
+ {
+  "id": "cyano_relax",
+  "cmd": "tools/qe/bin/python optc/src/qe.py relax --key cyano --np 12",
+  "threads": 12,
+  "deps": [],
+  "est_min": 30
+ },
+ {
+  "id": "cyano_hyb_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key cyano --point P0 --np 12 --keep",
+  "threads": 12,
+  "deps": [
+   "cyano_relax"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "cyano_esp_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py esp --key cyano --point P0 --np 8",
+  "threads": 8,
+  "deps": [
+   "cyano_hyb_P0"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "cyano_req",
+  "cmd": "OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py req --key cyano --threads 8",
+  "threads": 8,
+  "deps": [],
+  "est_min": 15
+ },
+ {
+  "id": "cyano_P1",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key cyano --point P1 --np 12",
+  "threads": 12,
+  "deps": [
+   "cyano_relax",
+   "cyano_req"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "cyano_P2",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key cyano --point P2 --np 12",
+  "threads": 12,
+  "deps": [
+   "cyano_relax",
+   "cyano_req"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "cyano_P3",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key cyano --point P3 --np 12",
+  "threads": 12,
+  "deps": [
+   "cyano_relax",
+   "cyano_req"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "cyano_P4",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key cyano --point P4 --np 12",
+  "threads": 12,
+  "deps": [
+   "cyano_relax",
+   "cyano_req"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "cyano_hyb_P1",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key cyano --point P1 --np 12",
+  "threads": 12,
+  "deps": [
+   "cyano_P1"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "cyano_hyb_P2",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key cyano --point P2 --np 12",
+  "threads": 12,
+  "deps": [
+   "cyano_P2"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "cyano_hyb_P3",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key cyano --point P3 --np 12",
+  "threads": 12,
+  "deps": [
+   "cyano_P3"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "cyano_hyb_P4",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key cyano --point P4 --np 12 --keep",
+  "threads": 12,
+  "deps": [
+   "cyano_P4"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "cyano_esp_P4",
+  "cmd": "tools/qe/bin/python optc/src/qe.py esp --key cyano --point P4 --np 8",
+  "threads": 8,
+  "deps": [
+   "cyano_hyb_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "cyano_kcheck",
+  "cmd": "tools/qe/bin/python optc/src/qe.py kcheck --key cyano --np 12",
+  "threads": 12,
+  "deps": [
+   "cyano_relax",
+   "cyano_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "cyano_summary",
+  "cmd": "tools/qe/bin/python optc/src/qe.py summary --key cyano",
+  "threads": 1,
+  "deps": [
+   "cyano_hyb_P0",
+   "cyano_hyb_P1",
+   "cyano_hyb_P2",
+   "cyano_hyb_P3",
+   "cyano_hyb_P4",
+   "cyano_kcheck",
+   "cyano_esp_P0",
+   "cyano_esp_P4"
+  ],
+  "est_min": 1
+ },
+ {
+  "id": "carboxy_relax",
+  "cmd": "tools/qe/bin/python optc/src/qe.py relax --key carboxy --np 12",
+  "threads": 12,
+  "deps": [],
+  "est_min": 30
+ },
+ {
+  "id": "carboxy_hyb_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key carboxy --point P0 --np 12 --keep",
+  "threads": 12,
+  "deps": [
+   "carboxy_relax"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "carboxy_esp_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py esp --key carboxy --point P0 --np 8",
+  "threads": 8,
+  "deps": [
+   "carboxy_hyb_P0"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "carboxy_req",
+  "cmd": "OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py req --key carboxy --threads 8",
+  "threads": 8,
+  "deps": [],
+  "est_min": 15
+ },
+ {
+  "id": "carboxy_P1",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key carboxy --point P1 --np 12",
+  "threads": 12,
+  "deps": [
+   "carboxy_relax",
+   "carboxy_req"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "carboxy_P2",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key carboxy --point P2 --np 12",
+  "threads": 12,
+  "deps": [
+   "carboxy_relax",
+   "carboxy_req"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "carboxy_P3",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key carboxy --point P3 --np 12",
+  "threads": 12,
+  "deps": [
+   "carboxy_relax",
+   "carboxy_req"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "carboxy_P4",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key carboxy --point P4 --np 12",
+  "threads": 12,
+  "deps": [
+   "carboxy_relax",
+   "carboxy_req"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "carboxy_hyb_P1",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key carboxy --point P1 --np 12",
+  "threads": 12,
+  "deps": [
+   "carboxy_P1"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "carboxy_hyb_P2",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key carboxy --point P2 --np 12",
+  "threads": 12,
+  "deps": [
+   "carboxy_P2"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "carboxy_hyb_P3",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key carboxy --point P3 --np 12",
+  "threads": 12,
+  "deps": [
+   "carboxy_P3"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "carboxy_hyb_P4",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key carboxy --point P4 --np 12 --keep",
+  "threads": 12,
+  "deps": [
+   "carboxy_P4"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "carboxy_esp_P4",
+  "cmd": "tools/qe/bin/python optc/src/qe.py esp --key carboxy --point P4 --np 8",
+  "threads": 8,
+  "deps": [
+   "carboxy_hyb_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "carboxy_kcheck",
+  "cmd": "tools/qe/bin/python optc/src/qe.py kcheck --key carboxy --np 12",
+  "threads": 12,
+  "deps": [
+   "carboxy_relax",
+   "carboxy_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "carboxy_summary",
+  "cmd": "tools/qe/bin/python optc/src/qe.py summary --key carboxy",
+  "threads": 1,
+  "deps": [
+   "carboxy_hyb_P0",
+   "carboxy_hyb_P1",
+   "carboxy_hyb_P2",
+   "carboxy_hyb_P3",
+   "carboxy_hyb_P4",
+   "carboxy_kcheck",
+   "carboxy_esp_P0",
+   "carboxy_esp_P4"
+  ],
+  "est_min": 1
+ },
+ {
+  "id": "anis_relax",
+  "cmd": "tools/qe/bin/python optc/src/qe.py relax --key anis --np 12",
+  "threads": 12,
+  "deps": [],
+  "est_min": 30
+ },
+ {
+  "id": "anis_hyb_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key anis --point P0 --np 12 --keep",
+  "threads": 12,
+  "deps": [
+   "anis_relax"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "anis_esp_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py esp --key anis --point P0 --np 8",
+  "threads": 8,
+  "deps": [
+   "anis_hyb_P0"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "anis_req",
+  "cmd": "OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py req --key anis --threads 8",
+  "threads": 8,
+  "deps": [],
+  "est_min": 15
+ },
+ {
+  "id": "anis_P1",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key anis --point P1 --np 12",
+  "threads": 12,
+  "deps": [
+   "anis_relax",
+   "anis_req"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "anis_P2",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key anis --point P2 --np 12",
+  "threads": 12,
+  "deps": [
+   "anis_relax",
+   "anis_req"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "anis_P3",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key anis --point P3 --np 12",
+  "threads": 12,
+  "deps": [
+   "anis_relax",
+   "anis_req"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "anis_P4",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key anis --point P4 --np 12",
+  "threads": 12,
+  "deps": [
+   "anis_relax",
+   "anis_req"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "anis_hyb_P1",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key anis --point P1 --np 12",
+  "threads": 12,
+  "deps": [
+   "anis_P1"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "anis_hyb_P2",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key anis --point P2 --np 12",
+  "threads": 12,
+  "deps": [
+   "anis_P2"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "anis_hyb_P3",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key anis --point P3 --np 12",
+  "threads": 12,
+  "deps": [
+   "anis_P3"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "anis_hyb_P4",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key anis --point P4 --np 12 --keep",
+  "threads": 12,
+  "deps": [
+   "anis_P4"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "anis_esp_P4",
+  "cmd": "tools/qe/bin/python optc/src/qe.py esp --key anis --point P4 --np 8",
+  "threads": 8,
+  "deps": [
+   "anis_hyb_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "anis_kcheck",
+  "cmd": "tools/qe/bin/python optc/src/qe.py kcheck --key anis --np 12",
+  "threads": 12,
+  "deps": [
+   "anis_relax",
+   "anis_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "anis_summary",
+  "cmd": "tools/qe/bin/python optc/src/qe.py summary --key anis",
+  "threads": 1,
+  "deps": [
+   "anis_hyb_P0",
+   "anis_hyb_P1",
+   "anis_hyb_P2",
+   "anis_hyb_P3",
+   "anis_hyb_P4",
+   "anis_kcheck",
+   "anis_esp_P0",
+   "anis_esp_P4"
+  ],
+  "est_min": 1
+ },
+ {
+  "id": "brsalt_relax",
+  "cmd": "tools/qe/bin/python optc/src/qe.py relax --key brsalt --np 12",
+  "threads": 12,
+  "deps": [],
+  "est_min": 90
+ },
+ {
+  "id": "brsalt_hyb_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key brsalt --point P0 --np 12 --keep",
+  "threads": 12,
+  "deps": [
+   "brsalt_relax"
+  ],
+  "est_min": 60
+ },
+ {
+  "id": "brsalt_esp_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py esp --key brsalt --point P0 --np 8",
+  "threads": 8,
+  "deps": [
+   "brsalt_hyb_P0"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "brsalt_req",
+  "cmd": "OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py req --key brsalt --threads 8",
+  "threads": 8,
+  "deps": [],
+  "est_min": 15
+ },
+ {
+  "id": "brsalt_P1",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key brsalt --point P1 --np 12",
+  "threads": 12,
+  "deps": [
+   "brsalt_relax",
+   "brsalt_req"
+  ],
+  "est_min": 60
+ },
+ {
+  "id": "brsalt_P2",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key brsalt --point P2 --np 12",
+  "threads": 12,
+  "deps": [
+   "brsalt_relax",
+   "brsalt_req"
+  ],
+  "est_min": 60
+ },
+ {
+  "id": "brsalt_P3",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key brsalt --point P3 --np 12",
+  "threads": 12,
+  "deps": [
+   "brsalt_relax",
+   "brsalt_req"
+  ],
+  "est_min": 60
+ },
+ {
+  "id": "brsalt_P4",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key brsalt --point P4 --np 12",
+  "threads": 12,
+  "deps": [
+   "brsalt_relax",
+   "brsalt_req"
+  ],
+  "est_min": 60
+ },
+ {
+  "id": "brsalt_hyb_P1",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key brsalt --point P1 --np 12",
+  "threads": 12,
+  "deps": [
+   "brsalt_P1"
+  ],
+  "est_min": 60
+ },
+ {
+  "id": "brsalt_hyb_P2",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key brsalt --point P2 --np 12",
+  "threads": 12,
+  "deps": [
+   "brsalt_P2"
+  ],
+  "est_min": 60
+ },
+ {
+  "id": "brsalt_hyb_P3",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key brsalt --point P3 --np 12",
+  "threads": 12,
+  "deps": [
+   "brsalt_P3"
+  ],
+  "est_min": 60
+ },
+ {
+  "id": "brsalt_hyb_P4",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key brsalt --point P4 --np 12 --keep",
+  "threads": 12,
+  "deps": [
+   "brsalt_P4"
+  ],
+  "est_min": 60
+ },
+ {
+  "id": "brsalt_esp_P4",
+  "cmd": "tools/qe/bin/python optc/src/qe.py esp --key brsalt --point P4 --np 8",
+  "threads": 8,
+  "deps": [
+   "brsalt_hyb_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "brsalt_kcheck",
+  "cmd": "tools/qe/bin/python optc/src/qe.py kcheck --key brsalt --np 12",
+  "threads": 12,
+  "deps": [
+   "brsalt_relax",
+   "brsalt_P4"
+  ],
+  "est_min": 20
+ },
+ {
+  "id": "brsalt_summary",
+  "cmd": "tools/qe/bin/python optc/src/qe.py summary --key brsalt",
+  "threads": 1,
+  "deps": [
+   "brsalt_hyb_P0",
+   "brsalt_hyb_P1",
+   "brsalt_hyb_P2",
+   "brsalt_hyb_P3",
+   "brsalt_hyb_P4",
+   "brsalt_kcheck",
+   "brsalt_esp_P0",
+   "brsalt_esp_P4"
+  ],
+  "est_min": 1
+ },
+ {
+  "id": "cyano_P4r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py p4r --key cyano --np 12",
+  "threads": 12,
+  "deps": [
+   "cyano_P4"
+  ],
+  "est_min": 60
+ },
+ {
+  "id": "carboxy_P4r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py p4r --key carboxy --np 12",
+  "threads": 12,
+  "deps": [
+   "carboxy_P4"
+  ],
+  "est_min": 60
+ },
+ {
+  "id": "anis_P4r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py p4r --key anis --np 12",
+  "threads": 12,
+  "deps": [
+   "anis_P4"
+  ],
+  "est_min": 60
+ },
+ {
+  "id": "brsalt_P4r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py p4r --key brsalt --np 12",
+  "threads": 12,
+  "deps": [
+   "brsalt_P4"
+  ],
+  "est_min": 100
+ },
+ {
+  "id": "perchlorate_fit_P0",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/charges.py fit --key perchlorate --point P0",
+  "threads": 4,
+  "deps": [],
+  "est_min": 5
+ },
+ {
+  "id": "perchlorate_pcm",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py pcm --key perchlorate --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 90
+ },
+ {
+  "id": "dapsone_pcm",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=16 tools/env/bin/python optc/src/mol.py pcm --key dapsone --threads 16 --mem 28000",
+  "threads": 16,
+  "deps": [],
+  "est_min": 190
+ },
+ {
+  "id": "perchlorate_pair",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py pair --key perchlorate --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 40
+ },
+ {
+  "id": "perchlorate_fit_P4",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/charges.py fit --key perchlorate --point P4",
+  "threads": 4,
+  "deps": [],
+  "est_min": 5
+ },
+ {
+  "id": "perchlorate_sc_P0",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/charges.py sc --key perchlorate --point P0 --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 30
+ },
+ {
+  "id": "perchlorate_sc_P4",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/charges.py sc --key perchlorate --point P4 --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 30
+ },
+ {
+  "id": "perchlorate_embed_repeat",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key perchlorate --model repeat",
+  "threads": 4,
+  "deps": [
+   "perchlorate_fit_P0",
+   "perchlorate_fit_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "perchlorate_emb_pair_repeat",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key perchlorate --which pair --model repeat --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "perchlorate_embed_repeat"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "perchlorate_embed_sc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key perchlorate --model sc",
+  "threads": 4,
+  "deps": [
+   "perchlorate_sc_P0",
+   "perchlorate_sc_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "perchlorate_emb_pair_sc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key perchlorate --which pair --model sc --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "perchlorate_embed_sc"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "perchlorate_embed_gas",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key perchlorate --model gas",
+  "threads": 4,
+  "deps": [
+   "perchlorate_sc_P0",
+   "perchlorate_sc_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "perchlorate_emb_pair_gas",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key perchlorate --which pair --model gas --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "perchlorate_embed_gas"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "saph_fit_P0",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/charges.py fit --key saph --point P0",
+  "threads": 4,
+  "deps": [],
+  "est_min": 5
+ },
+ {
+  "id": "saph_pair",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py pair --key saph --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 40
+ },
+ {
+  "id": "saph_fit_P4",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/charges.py fit --key saph --point P4",
+  "threads": 4,
+  "deps": [],
+  "est_min": 5
+ },
+ {
+  "id": "saph_sc_P0",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/charges.py sc --key saph --point P0 --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 30
+ },
+ {
+  "id": "saph_sc_P4",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/charges.py sc --key saph --point P4 --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 30
+ },
+ {
+  "id": "saph_embed_repeat",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key saph --model repeat",
+  "threads": 4,
+  "deps": [
+   "saph_fit_P0",
+   "saph_fit_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "saph_emb_pair_repeat",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key saph --which pair --model repeat --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "saph_embed_repeat"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "saph_embed_sc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key saph --model sc",
+  "threads": 4,
+  "deps": [
+   "saph_sc_P0",
+   "saph_sc_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "saph_emb_pair_sc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key saph --which pair --model sc --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "saph_embed_sc"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "saph_embed_gas",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key saph --model gas",
+  "threads": 4,
+  "deps": [
+   "saph_sc_P0",
+   "saph_sc_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "saph_emb_pair_gas",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key saph --which pair --model gas --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "saph_embed_gas"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "saph_pair_qzvp",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py pair --key saph --basis def2-qzvp --threads 8 --mem 150000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 60
+ },
+ {
+  "id": "saph_pcm",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py pcm --key saph --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 90
+ },
+ {
+  "id": "saph_emb_cluster_repeat",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=24 tools/env/bin/python optc/src/mol.py emb --key saph --which cluster --model repeat --threads 24 --mem 140000 --ldb --max-atoms 150",
+  "threads": 24,
+  "deps": [
+   "saph_embed_repeat"
+  ],
+  "est_min": 80
+ },
+ {
+  "id": "saph_box",
+  "cmd": "tools/qe/bin/python optc/src/qe.py box --key saph --np 12",
+  "threads": 12,
+  "deps": [
+   "saph_pair"
+  ],
+  "est_min": 150
+ },
+ {
+  "id": "dapsone_pcm_r1.3",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=16 tools/env/bin/python optc/src/mol.py pcm --key dapsone --threads 16 --mem 28000 --radii-scale 1.3",
+  "threads": 16,
+  "deps": [],
+  "est_min": 190
+ },
+ {
+  "id": "saph_pcm_r1.1",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py pcm --key saph --threads 8 --mem 28000 --radii-scale 1.1",
+  "threads": 8,
+  "deps": [],
+  "est_min": 90
+ },
+ {
+  "id": "saph_pcm_r1.3",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py pcm --key saph --threads 8 --mem 28000 --radii-scale 1.3",
+  "threads": 8,
+  "deps": [],
+  "est_min": 90
+ },
+ {
+  "id": "perchlorate_emb_cluster_repeat",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=20 timeout 3h tools/env/bin/python optc/src/mol.py emb --key perchlorate --which cluster --model repeat --threads 20 --mem 140000 --ldb --max-atoms 150",
+  "threads": 20,
+  "deps": [
+   "perchlorate_embed_repeat"
+  ],
+  "est_min": 120
+ },
+ {
+  "id": "saph_vc",
+  "cmd": "tools/qe/bin/python optc/src/qe.py vc --key saph --np 24",
+  "threads": 24,
+  "deps": [],
+  "est_min": 120
+ },
+ {
+  "id": "chloro_emb_pairout",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key chloro --which pairout --model repeat_site --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 15
+ },
+ {
+  "id": "chloro_emb_pairshellq",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key chloro --which pairshellq --model repeat_site --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 12
+ },
+ {
+  "id": "chloro_embed_sc_site",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key chloro --model sc --site --tag site",
+  "threads": 4,
+  "deps": [],
+  "est_min": 15
+ },
+ {
+  "id": "chloro_emb_cluster_sc_site",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=24 tools/env/bin/python optc/src/mol.py emb --key chloro --which cluster --model sc_site --vac-from repeat_site --threads 24 --mem 60000",
+  "threads": 24,
+  "deps": [
+   "chloro_embed_sc_site"
+  ],
+  "est_min": 17
+ },
+ {
+  "id": "chloro_emb_pairout_sc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key chloro --which pairout --model sc_site --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "chloro_embed_sc_site"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "chloro_embed_Ncluster",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key chloro --model repeat --site --tag site --configs N_cluster",
+  "threads": 4,
+  "deps": [],
+  "est_min": 10
+ },
+ {
+  "id": "chloro_emb_cluster_site_rev",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=24 tools/env/bin/python optc/src/mol.py emb --key chloro --which cluster --model repeat_site --reverse --threads 24 --mem 60000",
+  "threads": 24,
+  "deps": [
+   "chloro_embed_Ncluster"
+  ],
+  "est_min": 29
+ },
+ {
+  "id": "chloro_emb_pair_rev_repeat",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key chloro --which pair --model repeat --reverse --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 5
+ },
+ {
+  "id": "chloro_emb_pair_rev_sc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key chloro --which pair --model sc --reverse --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 5
+ },
+ {
+  "id": "chloro_emb_pair_rev_gas",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key chloro --which pair --model gas --reverse --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 5
+ },
+ {
+  "id": "chloro_monomers",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py monomers --key chloro --threads 8 --mem 36000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 27
+ },
+ {
+  "id": "sulfamate_emb_pairout",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key sulfamate --which pairout --model repeat_site --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 15
+ },
+ {
+  "id": "sulfamate_embed_sc_site",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key sulfamate --model sc --site --tag site",
+  "threads": 4,
+  "deps": [],
+  "est_min": 15
+ },
+ {
+  "id": "sulfamate_emb_cluster_sc_site",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=24 tools/env/bin/python optc/src/mol.py emb --key sulfamate --which cluster --model sc_site --vac-from repeat_site --threads 24 --mem 60000",
+  "threads": 24,
+  "deps": [
+   "sulfamate_embed_sc_site"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "sulfamate_emb_pairout_sc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key sulfamate --which pairout --model sc_site --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "sulfamate_embed_sc_site"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "sulfamate_embed_Ncluster",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key sulfamate --model repeat --site --tag site --configs N_cluster",
+  "threads": 4,
+  "deps": [],
+  "est_min": 10
+ },
+ {
+  "id": "sulfamate_emb_cluster_site_rev",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=24 tools/env/bin/python optc/src/mol.py emb --key sulfamate --which cluster --model repeat_site --reverse --threads 24 --mem 60000",
+  "threads": 24,
+  "deps": [
+   "sulfamate_embed_Ncluster"
+  ],
+  "est_min": 26
+ },
+ {
+  "id": "sulfamate_emb_pair_rev_repeat",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key sulfamate --which pair --model repeat --reverse --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 5
+ },
+ {
+  "id": "sulfamate_emb_pair_rev_sc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key sulfamate --which pair --model sc --reverse --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 5
+ },
+ {
+  "id": "sulfamate_emb_pair_rev_gas",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key sulfamate --which pair --model gas --reverse --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 5
+ },
+ {
+  "id": "sulfamate_monomers",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py monomers --key sulfamate --threads 8 --mem 36000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 48
+ },
+ {
+  "id": "clsalt_emb_pairout",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key clsalt --which pairout --model repeat_site --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 15
+ },
+ {
+  "id": "clsalt_emb_pairshellq",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key clsalt --which pairshellq --model repeat_site --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 12
+ },
+ {
+  "id": "clsalt_embed_sc_site",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key clsalt --model sc --site --tag site",
+  "threads": 4,
+  "deps": [],
+  "est_min": 15
+ },
+ {
+  "id": "clsalt_emb_cluster_sc_site",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=24 tools/env/bin/python optc/src/mol.py emb --key clsalt --which cluster --model sc_site --vac-from repeat_site --threads 24 --mem 60000",
+  "threads": 24,
+  "deps": [
+   "clsalt_embed_sc_site"
+  ],
+  "est_min": 37
+ },
+ {
+  "id": "clsalt_emb_pairout_sc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key clsalt --which pairout --model sc_site --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "clsalt_embed_sc_site"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "clsalt_emb_pair_rev_repeat",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key clsalt --which pair --model repeat --reverse --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 10
+ },
+ {
+  "id": "clsalt_emb_pair_rev_sc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key clsalt --which pair --model sc --reverse --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 10
+ },
+ {
+  "id": "clsalt_emb_pair_rev_gas",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key clsalt --which pair --model gas --reverse --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 10
+ },
+ {
+  "id": "clsalt_runner",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py runner --key clsalt --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 51
+ },
+ {
+  "id": "clsalt_monomers",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py monomers --key clsalt --threads 8 --mem 36000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 98
+ },
+ {
+  "id": "chloro_vert",
+  "cmd": "tools/qe/bin/python optc/src/qe.py vert --key chloro --np 12",
+  "threads": 12,
+  "deps": [],
+  "est_min": 270
+ },
+ {
+  "id": "sulfamate_vert",
+  "cmd": "tools/qe/bin/python optc/src/qe.py vert --key sulfamate --np 12",
+  "threads": 12,
+  "deps": [],
+  "est_min": 60
+ },
+ {
+  "id": "clsalt_vert",
+  "cmd": "tools/qe/bin/python optc/src/qe.py vert --key clsalt --np 12",
+  "threads": 12,
+  "deps": [],
+  "est_min": 180
+ },
+ {
+  "id": "mppcp_vert",
+  "cmd": "tools/qe/bin/python optc/src/qe.py vert --key mppcp --np 12",
+  "threads": 12,
+  "deps": [],
+  "est_min": 110
+ },
+ {
+  "id": "dapsone_pair_qzvp",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=16 tools/env/bin/python optc/src/mol.py pair --key dapsone --basis def2-qzvp --threads 16 --mem 150000",
+  "threads": 16,
+  "deps": [],
+  "est_min": 150
+ },
+ {
+  "id": "saph_embed_rc35",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key saph --model repeat --rc 35 --tag rc35",
+  "threads": 4,
+  "deps": [
+   "saph_fit_P0",
+   "saph_fit_P4"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "saph_emb_pair_rc35",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key saph --which pair --model repeat_rc35 --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "saph_embed_rc35"
+  ],
+  "est_min": 40
+ },
+ {
+  "id": "cyano_embed_repeat_site",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key cyano --model repeat --site --tag site",
+  "threads": 4,
+  "deps": [
+   "cyano_fit_P0",
+   "cyano_fit_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "cyano_emb_cluster_repeat_site_tz",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=24 tools/env/bin/python optc/src/mol.py emb --key cyano --which cluster --model repeat_site --threads 24 --mem 100000",
+  "threads": 24,
+  "deps": [
+   "cyano_embed_repeat_site"
+  ],
+  "est_min": 45
+ },
+ {
+  "id": "cyano_emb_cluster_repeat_site_ldb",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=24 tools/env/bin/python optc/src/mol.py emb --key cyano --which cluster --model repeat_site --threads 24 --mem 100000 --ldb",
+  "threads": 24,
+  "deps": [
+   "cyano_embed_repeat_site"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "carboxy_embed_repeat_site",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key carboxy --model repeat --site --tag site",
+  "threads": 4,
+  "deps": [
+   "carboxy_fit_P0",
+   "carboxy_fit_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "carboxy_emb_cluster_repeat_site_tz",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=24 tools/env/bin/python optc/src/mol.py emb --key carboxy --which cluster --model repeat_site --threads 24 --mem 100000",
+  "threads": 24,
+  "deps": [
+   "carboxy_embed_repeat_site"
+  ],
+  "est_min": 45
+ },
+ {
+  "id": "carboxy_emb_cluster_repeat_site_ldb",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=24 tools/env/bin/python optc/src/mol.py emb --key carboxy --which cluster --model repeat_site --threads 24 --mem 100000 --ldb",
+  "threads": 24,
+  "deps": [
+   "carboxy_embed_repeat_site"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "anis_embed_repeat_site",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key anis --model repeat --site --tag site",
+  "threads": 4,
+  "deps": [
+   "anis_fit_P0",
+   "anis_fit_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "anis_emb_cluster_repeat_site_tz",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=24 tools/env/bin/python optc/src/mol.py emb --key anis --which cluster --model repeat_site --threads 24 --mem 100000",
+  "threads": 24,
+  "deps": [
+   "anis_embed_repeat_site"
+  ],
+  "est_min": 45
+ },
+ {
+  "id": "anis_emb_cluster_repeat_site_ldb",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=24 tools/env/bin/python optc/src/mol.py emb --key anis --which cluster --model repeat_site --threads 24 --mem 100000 --ldb",
+  "threads": 24,
+  "deps": [
+   "anis_embed_repeat_site"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "brsalt_embed_repeat_site",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key brsalt --model repeat --site --tag site",
+  "threads": 4,
+  "deps": [
+   "brsalt_fit_P0",
+   "brsalt_fit_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "brsalt_emb_cluster_repeat_site_tz",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=24 tools/env/bin/python optc/src/mol.py emb --key brsalt --which cluster --model repeat_site --threads 24 --mem 100000",
+  "threads": 24,
+  "deps": [
+   "brsalt_embed_repeat_site"
+  ],
+  "est_min": 45
+ },
+ {
+  "id": "brsalt_emb_cluster_repeat_site_ldb",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=24 tools/env/bin/python optc/src/mol.py emb --key brsalt --which cluster --model repeat_site --threads 24 --mem 100000 --ldb",
+  "threads": 24,
+  "deps": [
+   "brsalt_embed_repeat_site"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "saph_embed_repeat_site",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key saph --model repeat --site --tag site",
+  "threads": 4,
+  "deps": [
+   "saph_fit_P0",
+   "saph_fit_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "saph_emb_cluster_repeat_site_tz",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=24 tools/env/bin/python optc/src/mol.py emb --key saph --which cluster --model repeat_site --threads 24 --mem 100000",
+  "threads": 24,
+  "deps": [
+   "saph_embed_repeat_site"
+  ],
+  "est_min": 45
+ },
+ {
+  "id": "perchlorate_embed_repeat_site",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key perchlorate --model repeat --site --tag site",
+  "threads": 4,
+  "deps": [
+   "perchlorate_fit_P0",
+   "perchlorate_fit_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "perchlorate_emb_cluster_repeat_site_tz",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=24 tools/env/bin/python optc/src/mol.py emb --key perchlorate --which cluster --model repeat_site --threads 24 --mem 100000",
+  "threads": 24,
+  "deps": [
+   "perchlorate_embed_repeat_site"
+  ],
+  "est_min": 45
+ },
+ {
+  "id": "perchlorate_emb_cluster_repeat_site_ldb",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=24 tools/env/bin/python optc/src/mol.py emb --key perchlorate --which cluster --model repeat_site --threads 24 --mem 100000 --ldb",
+  "threads": 24,
+  "deps": [
+   "perchlorate_embed_repeat_site"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "saph_embed_sc_site",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key saph --model sc --site --tag site",
+  "threads": 4,
+  "deps": [
+   "saph_sc_P0",
+   "saph_sc_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "saph_emb_cluster_sc_site_tz",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=24 tools/env/bin/python optc/src/mol.py emb --key saph --which cluster --model sc_site --threads 24 --mem 100000",
+  "threads": 24,
+  "deps": [
+   "saph_embed_sc_site"
+  ],
+  "est_min": 45
+ },
+ {
+  "id": "cyano_emb_pairout",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key cyano --which pairout --model repeat_site --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 15
+ },
+ {
+  "id": "cyano_embed_sc_site",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key cyano --model sc --site --tag site",
+  "threads": 4,
+  "deps": [],
+  "est_min": 15
+ },
+ {
+  "id": "cyano_emb_cluster_sc_site",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=24 tools/env/bin/python optc/src/mol.py emb --key cyano --which cluster --model sc_site --vac-from repeat_site --threads 24 --mem 60000",
+  "threads": 24,
+  "deps": [
+   "cyano_embed_sc_site"
+  ],
+  "est_min": 23
+ },
+ {
+  "id": "cyano_emb_pairout_sc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key cyano --which pairout --model sc_site --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "cyano_embed_sc_site"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "cyano_embed_Ncluster",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key cyano --model repeat --site --tag site --configs N_cluster",
+  "threads": 4,
+  "deps": [],
+  "est_min": 10
+ },
+ {
+  "id": "cyano_emb_cluster_site_rev",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=24 tools/env/bin/python optc/src/mol.py emb --key cyano --which cluster --model repeat_site --reverse --threads 24 --mem 60000",
+  "threads": 24,
+  "deps": [
+   "cyano_embed_Ncluster"
+  ],
+  "est_min": 38
+ },
+ {
+  "id": "cyano_embed_gas_site",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key cyano --model gas --site --tag site",
+  "threads": 4,
+  "deps": [],
+  "est_min": 15
+ },
+ {
+  "id": "cyano_emb_cluster_gas_site",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=24 tools/env/bin/python optc/src/mol.py emb --key cyano --which cluster --model gas_site --vac-from repeat_site --threads 24 --mem 60000",
+  "threads": 24,
+  "deps": [
+   "cyano_embed_gas_site"
+  ],
+  "est_min": 23
+ },
+ {
+  "id": "cyano_emb_pair_rev_repeat",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key cyano --which pair --model repeat --reverse --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 5
+ },
+ {
+  "id": "cyano_emb_pair_rev_sc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key cyano --which pair --model sc --reverse --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 5
+ },
+ {
+  "id": "cyano_emb_pair_rev_gas",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key cyano --which pair --model gas --reverse --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 5
+ },
+ {
+  "id": "cyano_runner",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py runner --key cyano --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 19
+ },
+ {
+  "id": "cyano_monomers",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py monomers --key cyano --threads 8 --mem 36000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 34
+ },
+ {
+  "id": "cyano_embed_smear05",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key cyano --model repeat --tag smear05 --smear-radius 0.5",
+  "threads": 4,
+  "deps": [],
+  "est_min": 20
+ },
+ {
+  "id": "cyano_emb_pair_smear05",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key cyano --which pair --model repeat_smear05 --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "cyano_embed_smear05"
+  ],
+  "est_min": 8
+ },
+ {
+  "id": "cyano_embed_smear12",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key cyano --model repeat --tag smear12 --smear-radius 1.2",
+  "threads": 4,
+  "deps": [],
+  "est_min": 20
+ },
+ {
+  "id": "cyano_emb_pair_smear12",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key cyano --which pair --model repeat_smear12 --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "cyano_embed_smear12"
+  ],
+  "est_min": 8
+ },
+ {
+  "id": "carboxy_emb_pairout",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key carboxy --which pairout --model repeat_site --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 15
+ },
+ {
+  "id": "carboxy_embed_sc_site",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key carboxy --model sc --site --tag site",
+  "threads": 4,
+  "deps": [],
+  "est_min": 15
+ },
+ {
+  "id": "carboxy_emb_cluster_sc_site",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=24 tools/env/bin/python optc/src/mol.py emb --key carboxy --which cluster --model sc_site --vac-from repeat_site --threads 24 --mem 60000",
+  "threads": 24,
+  "deps": [
+   "carboxy_embed_sc_site"
+  ],
+  "est_min": 47
+ },
+ {
+  "id": "carboxy_emb_pairout_sc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key carboxy --which pairout --model sc_site --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "carboxy_embed_sc_site"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "carboxy_embed_Ncluster",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key carboxy --model repeat --site --tag site --configs N_cluster",
+  "threads": 4,
+  "deps": [],
+  "est_min": 10
+ },
+ {
+  "id": "carboxy_emb_cluster_site_rev",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=24 tools/env/bin/python optc/src/mol.py emb --key carboxy --which cluster --model repeat_site --reverse --threads 24 --mem 60000",
+  "threads": 24,
+  "deps": [
+   "carboxy_embed_Ncluster"
+  ],
+  "est_min": 79
+ },
+ {
+  "id": "carboxy_emb_pair_rev_repeat",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key carboxy --which pair --model repeat --reverse --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 5
+ },
+ {
+  "id": "carboxy_emb_pair_rev_sc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key carboxy --which pair --model sc --reverse --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 5
+ },
+ {
+  "id": "carboxy_emb_pair_rev_gas",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key carboxy --which pair --model gas --reverse --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 5
+ },
+ {
+  "id": "carboxy_monomers",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py monomers --key carboxy --threads 8 --mem 36000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 47
+ },
+ {
+  "id": "carboxy_embed_smear05",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key carboxy --model repeat --tag smear05 --smear-radius 0.5",
+  "threads": 4,
+  "deps": [],
+  "est_min": 20
+ },
+ {
+  "id": "carboxy_emb_pair_smear05",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key carboxy --which pair --model repeat_smear05 --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "carboxy_embed_smear05"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "carboxy_embed_smear12",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key carboxy --model repeat --tag smear12 --smear-radius 1.2",
+  "threads": 4,
+  "deps": [],
+  "est_min": 20
+ },
+ {
+  "id": "carboxy_emb_pair_smear12",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key carboxy --which pair --model repeat_smear12 --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "carboxy_embed_smear12"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "anis_emb_pairout",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key anis --which pairout --model repeat_site --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 15
+ },
+ {
+  "id": "anis_embed_sc_site",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key anis --model sc --site --tag site",
+  "threads": 4,
+  "deps": [],
+  "est_min": 15
+ },
+ {
+  "id": "anis_emb_cluster_sc_site",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=24 tools/env/bin/python optc/src/mol.py emb --key anis --which cluster --model sc_site --vac-from repeat_site --threads 24 --mem 60000",
+  "threads": 24,
+  "deps": [
+   "anis_embed_sc_site"
+  ],
+  "est_min": 20
+ },
+ {
+  "id": "anis_emb_pairout_sc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key anis --which pairout --model sc_site --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "anis_embed_sc_site"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "anis_embed_Ncluster",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key anis --model repeat --site --tag site --configs N_cluster",
+  "threads": 4,
+  "deps": [],
+  "est_min": 10
+ },
+ {
+  "id": "anis_emb_cluster_site_rev",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=24 tools/env/bin/python optc/src/mol.py emb --key anis --which cluster --model repeat_site --reverse --threads 24 --mem 60000",
+  "threads": 24,
+  "deps": [
+   "anis_embed_Ncluster"
+  ],
+  "est_min": 32
+ },
+ {
+  "id": "anis_embed_gas_site",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key anis --model gas --site --tag site",
+  "threads": 4,
+  "deps": [],
+  "est_min": 15
+ },
+ {
+  "id": "anis_emb_cluster_gas_site",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=24 tools/env/bin/python optc/src/mol.py emb --key anis --which cluster --model gas_site --vac-from repeat_site --threads 24 --mem 60000",
+  "threads": 24,
+  "deps": [
+   "anis_embed_gas_site"
+  ],
+  "est_min": 20
+ },
+ {
+  "id": "anis_emb_pair_rev_repeat",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key anis --which pair --model repeat --reverse --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 5
+ },
+ {
+  "id": "anis_emb_pair_rev_sc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key anis --which pair --model sc --reverse --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 5
+ },
+ {
+  "id": "anis_emb_pair_rev_gas",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key anis --which pair --model gas --reverse --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 5
+ },
+ {
+  "id": "anis_runner",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py runner --key anis --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 21
+ },
+ {
+  "id": "anis_monomers",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py monomers --key anis --threads 8 --mem 36000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 37
+ },
+ {
+  "id": "anis_embed_smear05",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key anis --model repeat --tag smear05 --smear-radius 0.5",
+  "threads": 4,
+  "deps": [],
+  "est_min": 20
+ },
+ {
+  "id": "anis_emb_pair_smear05",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key anis --which pair --model repeat_smear05 --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "anis_embed_smear05"
+  ],
+  "est_min": 9
+ },
+ {
+  "id": "anis_embed_smear12",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key anis --model repeat --tag smear12 --smear-radius 1.2",
+  "threads": 4,
+  "deps": [],
+  "est_min": 20
+ },
+ {
+  "id": "anis_emb_pair_smear12",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key anis --which pair --model repeat_smear12 --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "anis_embed_smear12"
+  ],
+  "est_min": 9
+ },
+ {
+  "id": "perchlorate_emb_pairout",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key perchlorate --which pairout --model repeat_site --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 15
+ },
+ {
+  "id": "perchlorate_embed_sc_site",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key perchlorate --model sc --site --tag site",
+  "threads": 4,
+  "deps": [],
+  "est_min": 15
+ },
+ {
+  "id": "perchlorate_emb_cluster_sc_site",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=24 tools/env/bin/python optc/src/mol.py emb --key perchlorate --which cluster --model sc_site --vac-from repeat_site --threads 24 --mem 60000",
+  "threads": 24,
+  "deps": [
+   "perchlorate_embed_sc_site"
+  ],
+  "est_min": 50
+ },
+ {
+  "id": "perchlorate_emb_pairout_sc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key perchlorate --which pairout --model sc_site --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "perchlorate_embed_sc_site"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "perchlorate_emb_pair_rev_repeat",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key perchlorate --which pair --model repeat --reverse --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 5
+ },
+ {
+  "id": "perchlorate_emb_pair_rev_sc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key perchlorate --which pair --model sc --reverse --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 5
+ },
+ {
+  "id": "perchlorate_emb_pair_rev_gas",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key perchlorate --which pair --model gas --reverse --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 5
+ },
+ {
+  "id": "perchlorate_monomers",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py monomers --key perchlorate --threads 8 --mem 36000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 35
+ },
+ {
+  "id": "brsalt_emb_pairout",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key brsalt --which pairout --model repeat_site --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 15
+ },
+ {
+  "id": "brsalt_embed_sc_site",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key brsalt --model sc --site --tag site",
+  "threads": 4,
+  "deps": [],
+  "est_min": 15
+ },
+ {
+  "id": "brsalt_emb_cluster_sc_site",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=24 tools/env/bin/python optc/src/mol.py emb --key brsalt --which cluster --model sc_site --vac-from repeat_site --threads 24 --mem 60000",
+  "threads": 24,
+  "deps": [
+   "brsalt_embed_sc_site"
+  ],
+  "est_min": 60
+ },
+ {
+  "id": "brsalt_emb_pairout_sc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key brsalt --which pairout --model sc_site --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "brsalt_embed_sc_site"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "brsalt_emb_pair_rev_repeat",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key brsalt --which pair --model repeat --reverse --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 16
+ },
+ {
+  "id": "brsalt_emb_pair_rev_sc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key brsalt --which pair --model sc --reverse --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 16
+ },
+ {
+  "id": "brsalt_emb_pair_rev_gas",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key brsalt --which pair --model gas --reverse --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 16
+ },
+ {
+  "id": "brsalt_runner",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py runner --key brsalt --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 57
+ },
+ {
+  "id": "brsalt_monomers",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py monomers --key brsalt --threads 8 --mem 36000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 109
+ },
+ {
+  "id": "saph_emb_pairout",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key saph --which pairout --model repeat_site --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 15
+ },
+ {
+  "id": "saph_emb_pairout_sc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key saph --which pairout --model sc_site --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "saph_embed_sc_site"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "saph_emb_pair_rev_repeat",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key saph --which pair --model repeat --reverse --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 5
+ },
+ {
+  "id": "saph_emb_pair_rev_sc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key saph --which pair --model sc --reverse --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 5
+ },
+ {
+  "id": "saph_emb_pair_rev_gas",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key saph --which pair --model gas --reverse --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 5
+ },
+ {
+  "id": "saph_runner",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py runner --key saph --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 9
+ },
+ {
+  "id": "saph_monomers",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py monomers --key saph --threads 8 --mem 36000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 13
+ },
+ {
+  "id": "saph_vert",
+  "cmd": "tools/qe/bin/python optc/src/qe.py vert --key saph --np 12",
+  "threads": 12,
+  "deps": [],
+  "est_min": 60
+ },
+ {
+  "id": "cyano_vert",
+  "cmd": "tools/qe/bin/python optc/src/qe.py vert --key cyano --np 12",
+  "threads": 12,
+  "deps": [
+   "saph_vert"
+  ],
+  "est_min": 50
+ },
+ {
+  "id": "carboxy_vert",
+  "cmd": "tools/qe/bin/python optc/src/qe.py vert --key carboxy --np 12",
+  "threads": 12,
+  "deps": [
+   "saph_vert"
+  ],
+  "est_min": 50
+ },
+ {
+  "id": "anis_vert",
+  "cmd": "tools/qe/bin/python optc/src/qe.py vert --key anis --np 12",
+  "threads": 12,
+  "deps": [
+   "saph_vert"
+  ],
+  "est_min": 50
+ },
+ {
+  "id": "perchlorate_vert",
+  "cmd": "tools/qe/bin/python optc/src/qe.py vert --key perchlorate --np 12",
+  "threads": 12,
+  "deps": [
+   "saph_vert"
+  ],
+  "est_min": 55
+ },
+ {
+  "id": "brsalt_vert",
+  "cmd": "tools/qe/bin/python optc/src/qe.py vert --key brsalt --np 12",
+  "threads": 12,
+  "deps": [
+   "saph_vert"
+  ],
+  "est_min": 210
+ },
+ {
+  "id": "cyano_pbe50_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key cyano --np 12 --point P0 --exx 0.5",
+  "threads": 12,
+  "deps": [
+   "saph_vert"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "cyano_pbe50_P4",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key cyano --np 12 --point P4 --exx 0.5",
+  "threads": 12,
+  "deps": [
+   "saph_vert"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "cyano_summary_x",
+  "cmd": "tools/qe/bin/python optc/src/qe.py summary --key cyano --np 1",
+  "threads": 1,
+  "deps": [
+   "cyano_pbe50_P0",
+   "cyano_pbe50_P4"
+  ],
+  "est_min": 1
+ },
+ {
+  "id": "carboxy_pbe50_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key carboxy --np 12 --point P0 --exx 0.5",
+  "threads": 12,
+  "deps": [
+   "saph_vert"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "carboxy_pbe50_P4",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key carboxy --np 12 --point P4 --exx 0.5",
+  "threads": 12,
+  "deps": [
+   "saph_vert"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "carboxy_summary_x",
+  "cmd": "tools/qe/bin/python optc/src/qe.py summary --key carboxy --np 1",
+  "threads": 1,
+  "deps": [
+   "carboxy_pbe50_P0",
+   "carboxy_pbe50_P4"
+  ],
+  "est_min": 1
+ },
+ {
+  "id": "cyano_embcorr",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py embcorr --key cyano --model repeat --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 15
+ },
+ {
+  "id": "saph_embcorr",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py embcorr --key saph --model repeat --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 8
+ },
+ {
+  "id": "carboxy_embcorr",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py embcorr --key carboxy --model repeat --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 18
+ },
+ {
+  "id": "chloro_embcorr",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py embcorr --key chloro --model repeat --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 12
+ },
+ {
+  "id": "anis_embcorr",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py embcorr --key anis --model repeat --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 15
+ },
+ {
+  "id": "perchlorate_embcorr",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py embcorr --key perchlorate --model repeat --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 14
+ },
+ {
+  "id": "brsalt_embcorr",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py embcorr --key brsalt --model repeat --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 40
+ },
+ {
+  "id": "sulfamate_embcorr",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py embcorr --key sulfamate --model repeat --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 18
+ },
+ {
+  "id": "clsalt_embcorr",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py embcorr --key clsalt --model repeat --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 35
+ },
+ {
+  "id": "cyano_pair_pbe50",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py pair --key cyano --pbe50 --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 12
+ },
+ {
+  "id": "carboxy_pair_pbe50",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py pair --key carboxy --pbe50 --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 12
+ },
+ {
+  "id": "pcplut_relax",
+  "cmd": "tools/qe/bin/python optc/src/qe.py relax --key pcplut --np 12",
+  "threads": 12,
+  "deps": [],
+  "est_min": 30
+ },
+ {
+  "id": "pcplut_hyb_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key pcplut --point P0 --np 12 --keep",
+  "threads": 12,
+  "deps": [
+   "pcplut_relax"
+  ],
+  "est_min": 20
+ },
+ {
+  "id": "pcplut_esp_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py esp --key pcplut --point P0 --np 8",
+  "threads": 8,
+  "deps": [
+   "pcplut_hyb_P0"
+  ],
+  "est_min": 3
+ },
+ {
+  "id": "pcplut_req",
+  "cmd": "OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py req --key pcplut --threads 8",
+  "threads": 8,
+  "deps": [],
+  "est_min": 15
+ },
+ {
+  "id": "pcplut_P1",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key pcplut --point P1 --np 12",
+  "threads": 12,
+  "deps": [
+   "pcplut_relax",
+   "pcplut_req"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "pcplut_P2",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key pcplut --point P2 --np 12",
+  "threads": 12,
+  "deps": [
+   "pcplut_relax",
+   "pcplut_req"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "pcplut_P3",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key pcplut --point P3 --np 12",
+  "threads": 12,
+  "deps": [
+   "pcplut_relax",
+   "pcplut_req"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "pcplut_P4",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key pcplut --point P4 --np 12",
+  "threads": 12,
+  "deps": [
+   "pcplut_relax",
+   "pcplut_req"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "pcplut_hyb_P1",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key pcplut --point P1 --np 12",
+  "threads": 12,
+  "deps": [
+   "pcplut_P1"
+  ],
+  "est_min": 20
+ },
+ {
+  "id": "pcplut_hyb_P2",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key pcplut --point P2 --np 12",
+  "threads": 12,
+  "deps": [
+   "pcplut_P2"
+  ],
+  "est_min": 20
+ },
+ {
+  "id": "pcplut_hyb_P3",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key pcplut --point P3 --np 12",
+  "threads": 12,
+  "deps": [
+   "pcplut_P3"
+  ],
+  "est_min": 20
+ },
+ {
+  "id": "pcplut_hyb_P4",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key pcplut --point P4 --np 12 --keep",
+  "threads": 12,
+  "deps": [
+   "pcplut_P4"
+  ],
+  "est_min": 20
+ },
+ {
+  "id": "pcplut_esp_P4",
+  "cmd": "tools/qe/bin/python optc/src/qe.py esp --key pcplut --point P4 --np 8",
+  "threads": 8,
+  "deps": [
+   "pcplut_hyb_P4"
+  ],
+  "est_min": 3
+ },
+ {
+  "id": "pcplut_kcheck",
+  "cmd": "tools/qe/bin/python optc/src/qe.py kcheck --key pcplut --np 12",
+  "threads": 12,
+  "deps": [
+   "pcplut_relax",
+   "pcplut_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "pcplut_summary",
+  "cmd": "tools/qe/bin/python optc/src/qe.py summary --key pcplut",
+  "threads": 1,
+  "deps": [
+   "pcplut_hyb_P0",
+   "pcplut_hyb_P1",
+   "pcplut_hyb_P2",
+   "pcplut_hyb_P3",
+   "pcplut_hyb_P4",
+   "pcplut_kcheck",
+   "pcplut_esp_P0",
+   "pcplut_esp_P4"
+  ],
+  "est_min": 1
+ },
+ {
+  "id": "pcplut_P4r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py p4r --key pcplut --np 12",
+  "threads": 12,
+  "deps": [
+   "pcplut_P4"
+  ],
+  "est_min": 25
+ },
+ {
+  "id": "pcplut_pair",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py pair --key pcplut --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "pcplut_relax",
+   "pcplut_P1",
+   "pcplut_P2",
+   "pcplut_P3",
+   "pcplut_P4"
+  ],
+  "est_min": 40
+ },
+ {
+  "id": "pcplut_pcm",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py pcm --key pcplut --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "pcplut_relax",
+   "pcplut_P4"
+  ],
+  "est_min": 60
+ },
+ {
+  "id": "pcplut_fit_P0",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/charges.py fit --key pcplut --point P0",
+  "threads": 4,
+  "deps": [
+   "pcplut_esp_P0"
+  ],
+  "est_min": 5
+ },
+ {
+  "id": "pcplut_fit_P4",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/charges.py fit --key pcplut --point P4",
+  "threads": 4,
+  "deps": [
+   "pcplut_esp_P4"
+  ],
+  "est_min": 5
+ },
+ {
+  "id": "pcplut_sc_P0",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/charges.py sc --key pcplut --point P0 --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "pcplut_relax"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "pcplut_sc_P4",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/charges.py sc --key pcplut --point P4 --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "pcplut_P4"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "pcplut_embed_repeat",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key pcplut --model repeat",
+  "threads": 4,
+  "deps": [
+   "pcplut_fit_P0",
+   "pcplut_fit_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "pcplut_emb_pair_repeat",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key pcplut --which pair --model repeat --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "pcplut_embed_repeat"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "pcplut_embed_sc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key pcplut --model sc",
+  "threads": 4,
+  "deps": [
+   "pcplut_sc_P0",
+   "pcplut_sc_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "pcplut_emb_pair_sc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key pcplut --which pair --model sc --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "pcplut_embed_sc"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "pcplut_embed_gas",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key pcplut --model gas",
+  "threads": 4,
+  "deps": [
+   "pcplut_sc_P0",
+   "pcplut_sc_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "pcplut_emb_pair_gas",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key pcplut --which pair --model gas --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "pcplut_embed_gas"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "pcplut_hyb_P4r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key pcplut --point P4r --np 12",
+  "threads": 12,
+  "deps": [
+   "pcplut_P4r"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "pcplut_pair_P4r",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py pair --key pcplut --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "pcplut_P4r",
+   "pcplut_pair"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "pcplut_summary_P4r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py summary --key pcplut",
+  "threads": 1,
+  "deps": [
+   "pcplut_hyb_P4r",
+   "pcplut_summary"
+  ],
+  "est_min": 1
+ },
+ {
+  "id": "pcplut_embed_repeat_site",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key pcplut --model repeat --site --tag site",
+  "threads": 4,
+  "deps": [
+   "pcplut_fit_P0",
+   "pcplut_fit_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "pcplut_emb_cluster_repeat_site_tz",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=24 tools/env/bin/python optc/src/mol.py emb --key pcplut --which cluster --model repeat_site --threads 24 --mem 60000",
+  "threads": 24,
+  "deps": [
+   "pcplut_embed_repeat_site"
+  ],
+  "est_min": 40
+ },
+ {
+  "id": "pcplut_emb_pair_rev_repeat",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key pcplut --which pair --model repeat --reverse --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "pcplut_emb_pair_repeat"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "pcplut_emb_pair_rev_sc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key pcplut --which pair --model sc --reverse --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "pcplut_emb_pair_sc"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "pcplut_emb_pair_rev_gas",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key pcplut --which pair --model gas --reverse --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "pcplut_emb_pair_gas"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "pcplut_monomers",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py monomers --key pcplut --threads 8 --mem 36000",
+  "threads": 8,
+  "deps": [
+   "pcplut_P4r",
+   "pcplut_pair_P4r"
+  ],
+  "est_min": 60
+ },
+ {
+  "id": "pcplut_embcorr",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py embcorr --key pcplut --model repeat --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "pcplut_emb_pair_repeat"
+  ],
+  "est_min": 25
+ },
+ {
+  "id": "pcplut_vert",
+  "cmd": "tools/qe/bin/python optc/src/qe.py vert --key pcplut --np 12",
+  "threads": 12,
+  "deps": [
+   "pcplut_hyb_P0",
+   "pcplut_P4"
+  ],
+  "est_min": 80
+ },
+ {
+  "id": "pcplut_hscan_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hscan --key pcplut --np 12 --point P0",
+  "threads": 12,
+  "deps": [],
+  "est_min": 40
+ },
+ {
+  "id": "pcplut_hess_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hess --key pcplut --np 12 --point P0",
+  "threads": 12,
+  "deps": [],
+  "est_min": 60
+ },
+ {
+  "id": "pcplut_hscanpair_P0",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py hscanpair --key pcplut --point P0 --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "pcplut_hscan_P0",
+   "pcplut_pair"
+  ],
+  "est_min": 90
+ },
+ {
+  "id": "pcplut_hscan_P4r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hscan --key pcplut --np 12 --point P4r",
+  "threads": 12,
+  "deps": [
+   "pcplut_P4r"
+  ],
+  "est_min": 40
+ },
+ {
+  "id": "pcplut_hess_P4r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hess --key pcplut --np 12 --point P4r",
+  "threads": 12,
+  "deps": [
+   "pcplut_P4r"
+  ],
+  "est_min": 60
+ },
+ {
+  "id": "pcplut_hscanpair_P4r",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py hscanpair --key pcplut --point P4r --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "pcplut_hscan_P4r",
+   "pcplut_pair"
+  ],
+  "est_min": 90
+ },
+ {
+  "id": "chloro_pair",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py pair --key chloro --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "chloro_relax",
+   "chloro_P1",
+   "chloro_P2",
+   "chloro_P3",
+   "chloro_P4"
+  ],
+  "est_min": 40
+ },
+ {
+  "id": "chloro_fit_P0",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/charges.py fit --key chloro --point P0",
+  "threads": 4,
+  "deps": [
+   "chloro_esp_P0"
+  ],
+  "est_min": 5
+ },
+ {
+  "id": "chloro_fit_P4",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/charges.py fit --key chloro --point P4",
+  "threads": 4,
+  "deps": [
+   "chloro_esp_P4"
+  ],
+  "est_min": 5
+ },
+ {
+  "id": "chloro_sc_P0",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/charges.py sc --key chloro --point P0 --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "chloro_relax"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "chloro_sc_P4",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/charges.py sc --key chloro --point P4 --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "chloro_P4"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "chloro_embed_repeat",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key chloro --model repeat",
+  "threads": 4,
+  "deps": [
+   "chloro_fit_P0",
+   "chloro_fit_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "chloro_emb_pair_repeat",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key chloro --which pair --model repeat --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "chloro_embed_repeat"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "chloro_embed_sc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key chloro --model sc",
+  "threads": 4,
+  "deps": [
+   "chloro_sc_P0",
+   "chloro_sc_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "chloro_emb_pair_sc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key chloro --which pair --model sc --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "chloro_embed_sc"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "chloro_embed_gas",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key chloro --model gas",
+  "threads": 4,
+  "deps": [
+   "chloro_sc_P0",
+   "chloro_sc_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "chloro_emb_pair_gas",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key chloro --which pair --model gas --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "chloro_embed_gas"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "chloro_relax",
+  "cmd": "tools/qe/bin/python optc/src/qe.py relax --key chloro --np 12",
+  "threads": 12,
+  "deps": [],
+  "est_min": 200
+ },
+ {
+  "id": "chloro_hyb_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key chloro --point P0 --np 12 --keep",
+  "threads": 12,
+  "deps": [
+   "chloro_relax"
+  ],
+  "est_min": 120
+ },
+ {
+  "id": "chloro_esp_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py esp --key chloro --point P0 --np 8",
+  "threads": 8,
+  "deps": [
+   "chloro_hyb_P0"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "chloro_P1",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key chloro --point P1 --np 12",
+  "threads": 12,
+  "deps": [
+   "chloro_relax"
+  ],
+  "est_min": 90
+ },
+ {
+  "id": "chloro_P2",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key chloro --point P2 --np 12",
+  "threads": 12,
+  "deps": [
+   "chloro_relax"
+  ],
+  "est_min": 90
+ },
+ {
+  "id": "chloro_P3",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key chloro --point P3 --np 12",
+  "threads": 12,
+  "deps": [
+   "chloro_relax"
+  ],
+  "est_min": 90
+ },
+ {
+  "id": "chloro_P4",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key chloro --point P4 --np 12",
+  "threads": 12,
+  "deps": [
+   "chloro_relax"
+  ],
+  "est_min": 90
+ },
+ {
+  "id": "chloro_hyb_P1",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key chloro --point P1 --np 12",
+  "threads": 12,
+  "deps": [
+   "chloro_P1"
+  ],
+  "est_min": 120
+ },
+ {
+  "id": "chloro_hyb_P2",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key chloro --point P2 --np 12",
+  "threads": 12,
+  "deps": [
+   "chloro_P2"
+  ],
+  "est_min": 120
+ },
+ {
+  "id": "chloro_hyb_P3",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key chloro --point P3 --np 12",
+  "threads": 12,
+  "deps": [
+   "chloro_P3"
+  ],
+  "est_min": 120
+ },
+ {
+  "id": "chloro_hyb_P4",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key chloro --point P4 --np 12 --keep",
+  "threads": 12,
+  "deps": [
+   "chloro_P4"
+  ],
+  "est_min": 120
+ },
+ {
+  "id": "chloro_esp_P4",
+  "cmd": "tools/qe/bin/python optc/src/qe.py esp --key chloro --point P4 --np 8",
+  "threads": 8,
+  "deps": [
+   "chloro_hyb_P4"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "chloro_kcheck",
+  "cmd": "tools/qe/bin/python optc/src/qe.py kcheck --key chloro --np 12",
+  "threads": 12,
+  "deps": [
+   "chloro_relax",
+   "chloro_P4"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "chloro_summary",
+  "cmd": "tools/qe/bin/python optc/src/qe.py summary --key chloro",
+  "threads": 1,
+  "deps": [
+   "chloro_hyb_P0",
+   "chloro_hyb_P1",
+   "chloro_hyb_P2",
+   "chloro_hyb_P3",
+   "chloro_hyb_P4",
+   "chloro_kcheck",
+   "chloro_esp_P0",
+   "chloro_esp_P4"
+  ],
+  "est_min": 1
+ },
+ {
+  "id": "chloro_P4r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py p4r --key chloro --np 12",
+  "threads": 12,
+  "deps": [
+   "chloro_P4"
+  ],
+  "est_min": 150
+ },
+ {
+  "id": "chloro_pcm",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py pcm --key chloro --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "chloro_relax",
+   "chloro_P4"
+  ],
+  "est_min": 150
+ },
+ {
+  "id": "chloro_emb_cluster_repeat",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=24 tools/env/bin/python optc/src/mol.py emb --key chloro --which cluster --model repeat --threads 24 --mem 140000 --ldb --max-atoms 150",
+  "threads": 24,
+  "deps": [
+   "chloro_embed_repeat"
+  ],
+  "est_min": 80
+ },
+ {
+  "id": "sulfamate_pair",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py pair --key sulfamate --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "sulfamate_relax",
+   "sulfamate_P1",
+   "sulfamate_P2",
+   "sulfamate_P3",
+   "sulfamate_P4"
+  ],
+  "est_min": 40
+ },
+ {
+  "id": "sulfamate_pcm",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py pcm --key sulfamate --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "sulfamate_relax",
+   "sulfamate_P4"
+  ],
+  "est_min": 90
+ },
+ {
+  "id": "sulfamate_fit_P0",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/charges.py fit --key sulfamate --point P0",
+  "threads": 4,
+  "deps": [
+   "sulfamate_esp_P0"
+  ],
+  "est_min": 5
+ },
+ {
+  "id": "sulfamate_fit_P4",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/charges.py fit --key sulfamate --point P4",
+  "threads": 4,
+  "deps": [
+   "sulfamate_esp_P4"
+  ],
+  "est_min": 5
+ },
+ {
+  "id": "sulfamate_sc_P0",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/charges.py sc --key sulfamate --point P0 --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "sulfamate_relax"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "sulfamate_sc_P4",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/charges.py sc --key sulfamate --point P4 --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "sulfamate_P4"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "sulfamate_embed_repeat",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key sulfamate --model repeat",
+  "threads": 4,
+  "deps": [
+   "sulfamate_fit_P0",
+   "sulfamate_fit_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "sulfamate_emb_pair_repeat",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key sulfamate --which pair --model repeat --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "sulfamate_embed_repeat"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "sulfamate_embed_sc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key sulfamate --model sc",
+  "threads": 4,
+  "deps": [
+   "sulfamate_sc_P0",
+   "sulfamate_sc_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "sulfamate_emb_pair_sc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key sulfamate --which pair --model sc --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "sulfamate_embed_sc"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "sulfamate_embed_gas",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key sulfamate --model gas",
+  "threads": 4,
+  "deps": [
+   "sulfamate_sc_P0",
+   "sulfamate_sc_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "sulfamate_emb_pair_gas",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key sulfamate --which pair --model gas --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "sulfamate_embed_gas"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "sulfamate_emb_cluster_repeat",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=24 tools/env/bin/python optc/src/mol.py emb --key sulfamate --which cluster --model repeat --threads 24 --mem 140000 --ldb --max-atoms 150",
+  "threads": 24,
+  "deps": [
+   "sulfamate_embed_repeat"
+  ],
+  "est_min": 80
+ },
+ {
+  "id": "clsalt_pair",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py pair --key clsalt --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "clsalt_relax",
+   "clsalt_P1",
+   "clsalt_P2",
+   "clsalt_P3",
+   "clsalt_P4"
+  ],
+  "est_min": 40
+ },
+ {
+  "id": "clsalt_pcm",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py pcm --key clsalt --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "clsalt_relax",
+   "clsalt_P4"
+  ],
+  "est_min": 120
+ },
+ {
+  "id": "clsalt_fit_P0",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/charges.py fit --key clsalt --point P0",
+  "threads": 4,
+  "deps": [
+   "clsalt_esp_P0"
+  ],
+  "est_min": 5
+ },
+ {
+  "id": "clsalt_fit_P4",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/charges.py fit --key clsalt --point P4",
+  "threads": 4,
+  "deps": [
+   "clsalt_esp_P4"
+  ],
+  "est_min": 5
+ },
+ {
+  "id": "clsalt_sc_P0",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/charges.py sc --key clsalt --point P0 --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "clsalt_relax"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "clsalt_sc_P4",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/charges.py sc --key clsalt --point P4 --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "clsalt_P4"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "clsalt_embed_repeat",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key clsalt --model repeat",
+  "threads": 4,
+  "deps": [
+   "clsalt_fit_P0",
+   "clsalt_fit_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "clsalt_emb_pair_repeat",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key clsalt --which pair --model repeat --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "clsalt_embed_repeat"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "clsalt_embed_sc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key clsalt --model sc",
+  "threads": 4,
+  "deps": [
+   "clsalt_sc_P0",
+   "clsalt_sc_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "clsalt_emb_pair_sc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key clsalt --which pair --model sc --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "clsalt_embed_sc"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "clsalt_embed_gas",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key clsalt --model gas",
+  "threads": 4,
+  "deps": [
+   "clsalt_sc_P0",
+   "clsalt_sc_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "clsalt_emb_pair_gas",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key clsalt --which pair --model gas --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "clsalt_embed_gas"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "clsalt_emb_cluster_repeat",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=24 tools/env/bin/python optc/src/mol.py emb --key clsalt --which cluster --model repeat --threads 24 --mem 140000 --ldb --max-atoms 150",
+  "threads": 24,
+  "deps": [
+   "clsalt_embed_repeat"
+  ],
+  "est_min": 80
+ },
+ {
+  "id": "brcoc_relax",
+  "cmd": "tools/qe/bin/python optc/src/qe.py relax --key brcoc --np 12",
+  "threads": 12,
+  "deps": [],
+  "est_min": 90
+ },
+ {
+  "id": "brcoc_hyb_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key brcoc --point P0 --np 12 --keep",
+  "threads": 12,
+  "deps": [
+   "brcoc_relax"
+  ],
+  "est_min": 120
+ },
+ {
+  "id": "brcoc_esp_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py esp --key brcoc --point P0 --np 8",
+  "threads": 8,
+  "deps": [
+   "brcoc_hyb_P0"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "brcoc_kcheck",
+  "cmd": "tools/qe/bin/python optc/src/qe.py kcheck --key brcoc --np 12",
+  "threads": 12,
+  "deps": [
+   "brcoc_relax"
+  ],
+  "est_min": 20
+ },
+ {
+  "id": "brcoc_summary",
+  "cmd": "tools/qe/bin/python optc/src/qe.py summary --key brcoc",
+  "threads": 1,
+  "deps": [
+   "brcoc_hyb_P0",
+   "brcoc_kcheck",
+   "brcoc_esp_P0"
+  ],
+  "est_min": 1
+ },
+ {
+  "id": "sulfamate_relax",
+  "cmd": "tools/qe/bin/python optc/src/qe.py relax --key sulfamate --np 12",
+  "threads": 12,
+  "deps": [],
+  "est_min": 30
+ },
+ {
+  "id": "sulfamate_hyb_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key sulfamate --point P0 --np 12 --keep",
+  "threads": 12,
+  "deps": [
+   "sulfamate_relax"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "sulfamate_esp_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py esp --key sulfamate --point P0 --np 8",
+  "threads": 8,
+  "deps": [
+   "sulfamate_hyb_P0"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "sulfamate_req",
+  "cmd": "OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py req --key sulfamate --threads 8",
+  "threads": 8,
+  "deps": [],
+  "est_min": 15
+ },
+ {
+  "id": "sulfamate_P1",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key sulfamate --point P1 --np 12",
+  "threads": 12,
+  "deps": [
+   "sulfamate_relax",
+   "sulfamate_req"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "sulfamate_P2",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key sulfamate --point P2 --np 12",
+  "threads": 12,
+  "deps": [
+   "sulfamate_relax",
+   "sulfamate_req"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "sulfamate_P3",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key sulfamate --point P3 --np 12",
+  "threads": 12,
+  "deps": [
+   "sulfamate_relax",
+   "sulfamate_req"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "sulfamate_P4",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key sulfamate --point P4 --np 12",
+  "threads": 12,
+  "deps": [
+   "sulfamate_relax",
+   "sulfamate_req"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "sulfamate_hyb_P1",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key sulfamate --point P1 --np 12",
+  "threads": 12,
+  "deps": [
+   "sulfamate_P1"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "sulfamate_hyb_P2",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key sulfamate --point P2 --np 12",
+  "threads": 12,
+  "deps": [
+   "sulfamate_P2"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "sulfamate_hyb_P3",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key sulfamate --point P3 --np 12",
+  "threads": 12,
+  "deps": [
+   "sulfamate_P3"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "sulfamate_hyb_P4",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key sulfamate --point P4 --np 12 --keep",
+  "threads": 12,
+  "deps": [
+   "sulfamate_P4"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "sulfamate_esp_P4",
+  "cmd": "tools/qe/bin/python optc/src/qe.py esp --key sulfamate --point P4 --np 8",
+  "threads": 8,
+  "deps": [
+   "sulfamate_hyb_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "sulfamate_kcheck",
+  "cmd": "tools/qe/bin/python optc/src/qe.py kcheck --key sulfamate --np 12",
+  "threads": 12,
+  "deps": [
+   "sulfamate_relax",
+   "sulfamate_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "sulfamate_summary",
+  "cmd": "tools/qe/bin/python optc/src/qe.py summary --key sulfamate",
+  "threads": 1,
+  "deps": [
+   "sulfamate_hyb_P0",
+   "sulfamate_hyb_P1",
+   "sulfamate_hyb_P2",
+   "sulfamate_hyb_P3",
+   "sulfamate_hyb_P4",
+   "sulfamate_kcheck",
+   "sulfamate_esp_P0",
+   "sulfamate_esp_P4"
+  ],
+  "est_min": 1
+ },
+ {
+  "id": "clsalt_relax",
+  "cmd": "tools/qe/bin/python optc/src/qe.py relax --key clsalt --np 12",
+  "threads": 12,
+  "deps": [],
+  "est_min": 90
+ },
+ {
+  "id": "clsalt_hyb_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key clsalt --point P0 --np 12 --keep",
+  "threads": 12,
+  "deps": [
+   "clsalt_relax"
+  ],
+  "est_min": 60
+ },
+ {
+  "id": "clsalt_esp_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py esp --key clsalt --point P0 --np 8",
+  "threads": 8,
+  "deps": [
+   "clsalt_hyb_P0"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "clsalt_req",
+  "cmd": "OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py req --key clsalt --threads 8",
+  "threads": 8,
+  "deps": [],
+  "est_min": 15
+ },
+ {
+  "id": "clsalt_P1",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key clsalt --point P1 --np 12",
+  "threads": 12,
+  "deps": [
+   "clsalt_relax",
+   "clsalt_req"
+  ],
+  "est_min": 60
+ },
+ {
+  "id": "clsalt_P2",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key clsalt --point P2 --np 12",
+  "threads": 12,
+  "deps": [
+   "clsalt_relax",
+   "clsalt_req"
+  ],
+  "est_min": 60
+ },
+ {
+  "id": "clsalt_P3",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key clsalt --point P3 --np 12",
+  "threads": 12,
+  "deps": [
+   "clsalt_relax",
+   "clsalt_req"
+  ],
+  "est_min": 60
+ },
+ {
+  "id": "clsalt_P4",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key clsalt --point P4 --np 12",
+  "threads": 12,
+  "deps": [
+   "clsalt_relax",
+   "clsalt_req"
+  ],
+  "est_min": 60
+ },
+ {
+  "id": "clsalt_hyb_P1",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key clsalt --point P1 --np 12",
+  "threads": 12,
+  "deps": [
+   "clsalt_P1"
+  ],
+  "est_min": 60
+ },
+ {
+  "id": "clsalt_hyb_P2",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key clsalt --point P2 --np 12",
+  "threads": 12,
+  "deps": [
+   "clsalt_P2"
+  ],
+  "est_min": 60
+ },
+ {
+  "id": "clsalt_hyb_P3",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key clsalt --point P3 --np 12",
+  "threads": 12,
+  "deps": [
+   "clsalt_P3"
+  ],
+  "est_min": 60
+ },
+ {
+  "id": "clsalt_hyb_P4",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key clsalt --point P4 --np 12 --keep",
+  "threads": 12,
+  "deps": [
+   "clsalt_P4"
+  ],
+  "est_min": 60
+ },
+ {
+  "id": "clsalt_esp_P4",
+  "cmd": "tools/qe/bin/python optc/src/qe.py esp --key clsalt --point P4 --np 8",
+  "threads": 8,
+  "deps": [
+   "clsalt_hyb_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "clsalt_kcheck",
+  "cmd": "tools/qe/bin/python optc/src/qe.py kcheck --key clsalt --np 12",
+  "threads": 12,
+  "deps": [
+   "clsalt_relax",
+   "clsalt_P4"
+  ],
+  "est_min": 20
+ },
+ {
+  "id": "clsalt_summary",
+  "cmd": "tools/qe/bin/python optc/src/qe.py summary --key clsalt",
+  "threads": 1,
+  "deps": [
+   "clsalt_hyb_P0",
+   "clsalt_hyb_P1",
+   "clsalt_hyb_P2",
+   "clsalt_hyb_P3",
+   "clsalt_hyb_P4",
+   "clsalt_kcheck",
+   "clsalt_esp_P0",
+   "clsalt_esp_P4"
+  ],
+  "est_min": 1
+ },
+ {
+  "id": "sulfamate_P4r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py p4r --key sulfamate --np 12",
+  "threads": 12,
+  "deps": [
+   "sulfamate_P4"
+  ],
+  "est_min": 60
+ },
+ {
+  "id": "clsalt_P4r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py p4r --key clsalt --np 12",
+  "threads": 12,
+  "deps": [
+   "clsalt_P4"
+  ],
+  "est_min": 100
+ },
+ {
+  "id": "mppcp_pcm",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py pcm --key mppcp --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 90
+ },
+ {
+  "id": "mppcp_emb_cluster_repeat",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=24 tools/env/bin/python optc/src/mol.py emb --key mppcp --which cluster --model repeat --threads 24 --mem 140000 --ldb --max-atoms 150",
+  "threads": 24,
+  "deps": [],
+  "est_min": 80
+ },
+ {
+  "id": "mppcp_box",
+  "cmd": "tools/qe/bin/python optc/src/qe.py box --key mppcp --np 12",
+  "threads": 12,
+  "deps": [],
+  "est_min": 150
+ },
+ {
+  "id": "dapsone_pcm_r1.1",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py pcm --key dapsone --threads 8 --mem 28000 --radii-scale 1.1",
+  "threads": 8,
+  "deps": [],
+  "est_min": 150
+ },
+ {
+  "id": "dapsone_emb_cluster_repeat",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=24 tools/env/bin/python optc/src/mol.py emb --key dapsone --which cluster --model repeat --threads 24 --mem 140000 --ldb --max-atoms 150",
+  "threads": 24,
+  "deps": [],
+  "est_min": 80
+ },
+ {
+  "id": "dapsone_hyb_P4r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key dapsone --point P4r --np 12",
+  "threads": 12,
+  "deps": [],
+  "est_min": 120
+ },
+ {
+  "id": "dapsone_pair_P4r",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py pair --key dapsone --threads 8 --mem 60000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 60
+ },
+ {
+  "id": "dapsone_summary_P4r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py summary --key dapsone",
+  "threads": 1,
+  "deps": [
+   "dapsone_hyb_P4r"
+  ],
+  "est_min": 1
+ },
+ {
+  "id": "mppcp_vc",
+  "cmd": "tools/qe/bin/python optc/src/qe.py vc --key mppcp --np 12",
+  "threads": 12,
+  "deps": [],
+  "est_min": 240
+ },
+ {
+  "id": "dapsone_vc",
+  "cmd": "tools/qe/bin/python optc/src/qe.py vc --key dapsone --np 36",
+  "threads": 36,
+  "deps": [],
+  "est_min": 300
+ },
+ {
+  "id": "sulfamate_embed_repeat_site",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key sulfamate --model repeat --site --tag site",
+  "threads": 4,
+  "deps": [
+   "sulfamate_fit_P0",
+   "sulfamate_fit_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "sulfamate_emb_cluster_repeat_site_tz",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=24 tools/env/bin/python optc/src/mol.py emb --key sulfamate --which cluster --model repeat_site --threads 24 --mem 100000",
+  "threads": 24,
+  "deps": [
+   "sulfamate_embed_repeat_site"
+  ],
+  "est_min": 45
+ },
+ {
+  "id": "clsalt_embed_repeat_site",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key clsalt --model repeat --site --tag site",
+  "threads": 4,
+  "deps": [
+   "clsalt_fit_P0",
+   "clsalt_fit_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "clsalt_emb_cluster_repeat_site_tz",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=24 tools/env/bin/python optc/src/mol.py emb --key clsalt --which cluster --model repeat_site --threads 24 --mem 100000",
+  "threads": 24,
+  "deps": [
+   "clsalt_embed_repeat_site"
+  ],
+  "est_min": 45
+ },
+ {
+  "id": "clsalt_emb_cluster_repeat_site_ldb",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=24 tools/env/bin/python optc/src/mol.py emb --key clsalt --which cluster --model repeat_site --threads 24 --mem 100000 --ldb",
+  "threads": 24,
+  "deps": [
+   "clsalt_embed_repeat_site"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "chloro_embed_repeat_site",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key chloro --model repeat --site --tag site",
+  "threads": 4,
+  "deps": [
+   "chloro_fit_P0",
+   "chloro_fit_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "chloro_emb_cluster_repeat_site_tz",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=24 tools/env/bin/python optc/src/mol.py emb --key chloro --which cluster --model repeat_site --threads 24 --mem 100000",
+  "threads": 24,
+  "deps": [
+   "chloro_embed_repeat_site"
+  ],
+  "est_min": 45
+ },
+ {
+  "id": "chloro_emb_cluster_repeat_site_ldb",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=24 tools/env/bin/python optc/src/mol.py emb --key chloro --which cluster --model repeat_site --threads 24 --mem 100000 --ldb",
+  "threads": 24,
+  "deps": [
+   "chloro_embed_repeat_site"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "sulfamate_P1pin",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key sulfamate --point P1 --pin-ha --np 12",
+  "threads": 12,
+  "deps": [],
+  "est_min": 40
+ },
+ {
+  "id": "sulfamate_hyb_P1pin",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key sulfamate --point P1 --np 12",
+  "threads": 12,
+  "deps": [
+   "sulfamate_P1pin"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "sulfamate_summary2",
+  "cmd": "tools/qe/bin/python optc/src/qe.py summary --key sulfamate",
+  "threads": 1,
+  "deps": [
+   "sulfamate_hyb_P1pin"
+  ],
+  "est_min": 1
+ },
+ {
+  "id": "sulfamate_pair2",
+  "cmd": "tools/env/bin/python -c \"import json,os; f='optc/results/sulfamate/mol/pair.json'; d=json.load(open(f)) if os.path.exists(f) else None; (d and d['points'].pop('P1', None)); (d and json.dump(d, open(f,'w'), indent=1))\" && mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py pair --key sulfamate --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "sulfamate_P1pin",
+   "sulfamate_pair"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "dapsone_emb_pair_rev_repeat",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key dapsone --which pair --model repeat --reverse --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 27
+ },
+ {
+  "id": "dapsone_emb_pair_rev_sc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key dapsone --which pair --model sc --reverse --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 27
+ },
+ {
+  "id": "dapsone_emb_pair_rev_gas",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key dapsone --which pair --model gas --reverse --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 27
+ },
+ {
+  "id": "dapsone_monomers",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py monomers --key dapsone --threads 8 --mem 36000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 226
+ },
+ {
+  "id": "dapsone_embed_smear05",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key dapsone --model repeat --tag smear05 --smear-radius 0.5",
+  "threads": 4,
+  "deps": [],
+  "est_min": 20
+ },
+ {
+  "id": "dapsone_emb_pair_smear05",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key dapsone --which pair --model repeat_smear05 --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "dapsone_embed_smear05"
+  ],
+  "est_min": 54
+ },
+ {
+  "id": "dapsone_embed_smear12",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key dapsone --model repeat --tag smear12 --smear-radius 1.2",
+  "threads": 4,
+  "deps": [],
+  "est_min": 20
+ },
+ {
+  "id": "dapsone_emb_pair_smear12",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key dapsone --which pair --model repeat_smear12 --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "dapsone_embed_smear12"
+  ],
+  "est_min": 54
+ },
+ {
+  "id": "mppcp_emb_pair_rev_repeat",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key mppcp --which pair --model repeat --reverse --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 8
+ },
+ {
+  "id": "mppcp_emb_pair_rev_sc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key mppcp --which pair --model sc --reverse --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 8
+ },
+ {
+  "id": "mppcp_emb_pair_rev_gas",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key mppcp --which pair --model gas --reverse --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 8
+ },
+ {
+  "id": "mppcp_monomers",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py monomers --key mppcp --threads 8 --mem 36000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 67
+ },
+ {
+  "id": "mppcp_pair_qzvp_P4r",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py pair --key mppcp --basis def2-qzvp --threads 8 --mem 120000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 25
+ },
+ {
+  "id": "mppcp_X1193r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py xpoint --key mppcp --np 12 --name X1193r --dh 1.193 --seed P4r",
+  "threads": 12,
+  "deps": [],
+  "est_min": 45
+ },
+ {
+  "id": "mppcp_hyb_X1193r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key mppcp --np 12 --point X1193r",
+  "threads": 12,
+  "deps": [
+   "mppcp_X1193r"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "mppcp_X1310r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py xpoint --key mppcp --np 12 --name X1310r --dh 1.31 --seed P4r",
+  "threads": 12,
+  "deps": [],
+  "est_min": 45
+ },
+ {
+  "id": "mppcp_hyb_X1310r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key mppcp --np 12 --point X1310r",
+  "threads": 12,
+  "deps": [
+   "mppcp_X1310r"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "mppcp_X1260s",
+  "cmd": "tools/qe/bin/python optc/src/qe.py xpoint --key mppcp --np 12 --name X1260s --dh 1.26 --seed P0",
+  "threads": 12,
+  "deps": [],
+  "est_min": 45
+ },
+ {
+  "id": "mppcp_hyb_X1260s",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key mppcp --np 12 --point X1260s",
+  "threads": 12,
+  "deps": [
+   "mppcp_X1260s"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "mppcp_X1260r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py xpoint --key mppcp --np 12 --name X1260r --dh 1.26 --seed P4r",
+  "threads": 12,
+  "deps": [],
+  "est_min": 45
+ },
+ {
+  "id": "mppcp_hyb_X1260r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key mppcp --np 12 --point X1260r",
+  "threads": 12,
+  "deps": [
+   "mppcp_X1260r"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "mppcp_X1017s",
+  "cmd": "tools/qe/bin/python optc/src/qe.py xpoint --key mppcp --np 12 --name X1017s --dh 1.017 --seed P0",
+  "threads": 12,
+  "deps": [],
+  "est_min": 45
+ },
+ {
+  "id": "mppcp_hyb_X1017s",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key mppcp --np 12 --point X1017s",
+  "threads": 12,
+  "deps": [
+   "mppcp_X1017s"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "mppcp_X1654r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py xpoint --key mppcp --np 12 --name X1654r --dh 1.654 --seed P4r",
+  "threads": 12,
+  "deps": [],
+  "est_min": 45
+ },
+ {
+  "id": "mppcp_hyb_X1654r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key mppcp --np 12 --point X1654r",
+  "threads": 12,
+  "deps": [
+   "mppcp_X1654r"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "mppcp_hscan_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hscan --key mppcp --np 12 --point P0",
+  "threads": 12,
+  "deps": [],
+  "est_min": 35
+ },
+ {
+  "id": "mppcp_hess_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hess --key mppcp --np 12 --point P0",
+  "threads": 12,
+  "deps": [],
+  "est_min": 55
+ },
+ {
+  "id": "mppcp_hscan_P4r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hscan --key mppcp --np 12 --point P4r",
+  "threads": 12,
+  "deps": [],
+  "est_min": 35
+ },
+ {
+  "id": "mppcp_hess_P4r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hess --key mppcp --np 12 --point P4r",
+  "threads": 12,
+  "deps": [],
+  "est_min": 55
+ },
+ {
+  "id": "mppcp_kcheck_P4r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py kcheck --key mppcp --np 12 --point P4r",
+  "threads": 12,
+  "deps": [],
+  "est_min": 10
+ },
+ {
+  "id": "mppcp_vcfree_P4r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py vcfree --key mppcp --np 12 --point P4r",
+  "threads": 12,
+  "deps": [],
+  "est_min": 150
+ },
+ {
+  "id": "mppcp_vcfree_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py vcfree --key mppcp --np 12 --point P0",
+  "threads": 12,
+  "deps": [
+   "mppcp_vc"
+  ],
+  "est_min": 40
+ },
+ {
+  "id": "mppcp_pbe50_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key mppcp --np 12 --point P0 --exx 0.5",
+  "threads": 12,
+  "deps": [],
+  "est_min": 30
+ },
+ {
+  "id": "mppcp_pbe50_P1",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key mppcp --np 12 --point P1 --exx 0.5",
+  "threads": 12,
+  "deps": [],
+  "est_min": 30
+ },
+ {
+  "id": "mppcp_pbe50_P2",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key mppcp --np 12 --point P2 --exx 0.5",
+  "threads": 12,
+  "deps": [],
+  "est_min": 30
+ },
+ {
+  "id": "mppcp_pbe50_P3",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key mppcp --np 12 --point P3 --exx 0.5",
+  "threads": 12,
+  "deps": [],
+  "est_min": 30
+ },
+ {
+  "id": "mppcp_pbe50_P4",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key mppcp --np 12 --point P4 --exx 0.5",
+  "threads": 12,
+  "deps": [],
+  "est_min": 30
+ },
+ {
+  "id": "mppcp_pbe50_P4r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key mppcp --np 12 --point P4r --exx 0.5",
+  "threads": 12,
+  "deps": [],
+  "est_min": 30
+ },
+ {
+  "id": "mppcp_pair_x",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py pair --key mppcp --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "mppcp_X1193r",
+   "mppcp_X1310r",
+   "mppcp_X1260s",
+   "mppcp_X1260r",
+   "mppcp_X1017s",
+   "mppcp_X1654r",
+   "mppcp_vcfree_P4r",
+   "mppcp_vcfree_P0"
+  ],
+  "est_min": 50
+ },
+ {
+  "id": "mppcp_summary_x",
+  "cmd": "tools/qe/bin/python optc/src/qe.py summary --key mppcp --np 1",
+  "threads": 1,
+  "deps": [
+   "mppcp_hyb_X1193r",
+   "mppcp_hyb_X1310r",
+   "mppcp_hyb_X1260s",
+   "mppcp_hyb_X1260r",
+   "mppcp_hyb_X1017s",
+   "mppcp_hyb_X1654r",
+   "mppcp_pbe50_P0",
+   "mppcp_pbe50_P1",
+   "mppcp_pbe50_P2",
+   "mppcp_pbe50_P3",
+   "mppcp_pbe50_P4",
+   "mppcp_pbe50_P4r",
+   "mppcp_kcheck_P4r"
+  ],
+  "est_min": 1
+ },
+ {
+  "id": "dapsone_X1318r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py xpoint --key dapsone --np 12 --name X1318r --dh 1.318 --seed P4r",
+  "threads": 12,
+  "deps": [
+   "mppcp_X1193r"
+  ],
+  "est_min": 200
+ },
+ {
+  "id": "dapsone_X1380r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py xpoint --key dapsone --np 12 --name X1380r --dh 1.38 --seed P4r",
+  "threads": 12,
+  "deps": [
+   "mppcp_X1193r"
+  ],
+  "est_min": 200
+ },
+ {
+  "id": "dapsone_hyb_X1318r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key dapsone --np 12 --point X1318r",
+  "threads": 12,
+  "deps": [
+   "dapsone_X1318r",
+   "mppcp_hyb_X1193r"
+  ],
+  "est_min": 125
+ },
+ {
+  "id": "dapsone_hscan_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hscan --key dapsone --np 12 --point P0",
+  "threads": 12,
+  "deps": [
+   "mppcp_hscan_P0"
+  ],
+  "est_min": 100
+ },
+ {
+  "id": "dapsone_hess_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hess --key dapsone --np 12 --point P0",
+  "threads": 12,
+  "deps": [
+   "mppcp_hess_P0"
+  ],
+  "est_min": 165
+ },
+ {
+  "id": "dapsone_hscan_P4r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hscan --key dapsone --np 12 --point P4r",
+  "threads": 12,
+  "deps": [
+   "mppcp_hscan_P4r"
+  ],
+  "est_min": 100
+ },
+ {
+  "id": "dapsone_hess_P4r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hess --key dapsone --np 12 --point P4r",
+  "threads": 12,
+  "deps": [
+   "mppcp_hess_P4r"
+  ],
+  "est_min": 165
+ },
+ {
+  "id": "dapsone_kcheck_P4r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py kcheck --key dapsone --np 12 --point P4r",
+  "threads": 12,
+  "deps": [],
+  "est_min": 30
+ },
+ {
+  "id": "dapsone_vcfree_P4r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py vcfree --key dapsone --np 32 --point P4r",
+  "threads": 32,
+  "deps": [
+   "mppcp_vcfree_P4r"
+  ],
+  "est_min": 330
+ },
+ {
+  "id": "dapsone_vcfree_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py vcfree --key dapsone --np 12 --point P0",
+  "threads": 12,
+  "deps": [
+   "dapsone_vc",
+   "mppcp_vcfree_P0"
+  ],
+  "est_min": 130
+ },
+ {
+  "id": "dapsone_pbe50_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key dapsone --np 12 --point P0 --exx 0.5",
+  "threads": 12,
+  "deps": [
+   "mppcp_pbe50_P0"
+  ],
+  "est_min": 125
+ },
+ {
+  "id": "dapsone_pbe50_P4r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key dapsone --np 12 --point P4r --exx 0.5",
+  "threads": 12,
+  "deps": [
+   "mppcp_pbe50_P0"
+  ],
+  "est_min": 125
+ },
+ {
+  "id": "dapsone_pair_x",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py pair --key dapsone --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "dapsone_X1318r",
+   "dapsone_X1380r",
+   "dapsone_vcfree_P4r",
+   "dapsone_vcfree_P0"
+  ],
+  "est_min": 90
+ },
+ {
+  "id": "dapsone_summary_x",
+  "cmd": "tools/qe/bin/python optc/src/qe.py summary --key dapsone --np 1",
+  "threads": 1,
+  "deps": [
+   "dapsone_hyb_X1318r",
+   "dapsone_pbe50_P0",
+   "dapsone_pbe50_P4r",
+   "dapsone_kcheck_P4r"
+  ],
+  "est_min": 1
+ },
+ {
+  "id": "dapsone_vert",
+  "cmd": "tools/qe/bin/python optc/src/qe.py vert --key dapsone --np 12",
+  "threads": 12,
+  "deps": [
+   "mppcp_hscan_P0"
+  ],
+  "est_min": 470
+ },
+ {
+  "id": "mppcp_pair_pbe50",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py pair --key mppcp --pbe50 --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "mppcp_pair_x"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "dapsone_pair_pbe50",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py pair --key dapsone --pbe50 --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "dapsone_pair_x"
+  ],
+  "est_min": 60
+ },
+ {
+  "id": "dapsone_embed_sitesym",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key dapsone --model repeat --site --site-sym --tag sitesym",
+  "threads": 4,
+  "deps": [],
+  "est_min": 15
+ },
+ {
+  "id": "dapsone_emb_cluster_sitesym",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=20 tools/env/bin/python optc/src/mol.py emb --key dapsone --which cluster --model repeat_sitesym --threads 20 --mem 100000",
+  "threads": 20,
+  "deps": [
+   "dapsone_embed_sitesym"
+  ],
+  "est_min": 180
+ },
+ {
+  "id": "dapsone_emb_pairout_sitesym",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key dapsone --which pairout --model repeat_sitesym --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "dapsone_embed_sitesym"
+  ],
+  "est_min": 40
+ },
+ {
+  "id": "dapsone_emb_pairshellq_sitesym",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key dapsone --which pairshellq --model repeat_sitesym --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "dapsone_embed_sitesym"
+  ],
+  "est_min": 40
+ },
+ {
+  "id": "dapsone_embcorr",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py embcorr --key dapsone --model repeat --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 80
+ },
+ {
+  "id": "mppcp_embcorr",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py embcorr --key mppcp --model repeat --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [],
+  "est_min": 25
+ },
+ {
+  "id": "mppcp_hscan2_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hscan --key mppcp --np 12 --point P0",
+  "threads": 12,
+  "deps": [
+   "mppcp_hscan_P0"
+  ],
+  "est_min": 25
+ },
+ {
+  "id": "mppcp_hscanpair_P0",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py hscanpair --key mppcp --point P0 --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "mppcp_hscan2_P0"
+  ],
+  "est_min": 90
+ },
+ {
+  "id": "mppcp_hscan2_P4r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hscan --key mppcp --np 12 --point P4r",
+  "threads": 12,
+  "deps": [
+   "mppcp_hscan_P4r"
+  ],
+  "est_min": 25
+ },
+ {
+  "id": "mppcp_hscanpair_P4r",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py hscanpair --key mppcp --point P4r --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "mppcp_hscan2_P4r"
+  ],
+  "est_min": 90
+ },
+ {
+  "id": "dapsone_hscan2_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hscan --key dapsone --np 12 --point P0",
+  "threads": 12,
+  "deps": [
+   "dapsone_hscan_P0"
+  ],
+  "est_min": 80
+ },
+ {
+  "id": "dapsone_hscanpair_P0",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=16 tools/env/bin/python optc/src/mol.py hscanpair --key dapsone --point P0 --threads 16 --mem 28000",
+  "threads": 16,
+  "deps": [
+   "dapsone_hscan2_P0"
+  ],
+  "est_min": 240
+ },
+ {
+  "id": "dapsone_hscan2_P4r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hscan --key dapsone --np 12 --point P4r",
+  "threads": 12,
+  "deps": [
+   "dapsone_hscan_P4r"
+  ],
+  "est_min": 80
+ },
+ {
+  "id": "dapsone_hscanpair_P4r",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=16 tools/env/bin/python optc/src/mol.py hscanpair --key dapsone --point P4r --threads 16 --mem 28000",
+  "threads": 16,
+  "deps": [
+   "dapsone_hscan2_P4r"
+  ],
+  "est_min": 240
+ },
+ {
+  "id": "nbaetpy_relax",
+  "cmd": "tools/qe/bin/python optc/src/qe.py relax --key nbaetpy --np 12",
+  "threads": 12,
+  "deps": [],
+  "est_min": 30
+ },
+ {
+  "id": "nbaetpy_hyb_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key nbaetpy --point P0 --np 12 --keep",
+  "threads": 12,
+  "deps": [
+   "nbaetpy_relax"
+  ],
+  "est_min": 20
+ },
+ {
+  "id": "nbaetpy_esp_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py esp --key nbaetpy --point P0 --np 8",
+  "threads": 8,
+  "deps": [
+   "nbaetpy_hyb_P0"
+  ],
+  "est_min": 3
+ },
+ {
+  "id": "nbaetpy_req",
+  "cmd": "OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py req --key nbaetpy --threads 8",
+  "threads": 8,
+  "deps": [],
+  "est_min": 15
+ },
+ {
+  "id": "nbaetpy_P1",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key nbaetpy --point P1 --np 12",
+  "threads": 12,
+  "deps": [
+   "nbaetpy_relax",
+   "nbaetpy_req"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "nbaetpy_P2",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key nbaetpy --point P2 --np 12",
+  "threads": 12,
+  "deps": [
+   "nbaetpy_relax",
+   "nbaetpy_req"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "nbaetpy_P3",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key nbaetpy --point P3 --np 12",
+  "threads": 12,
+  "deps": [
+   "nbaetpy_relax",
+   "nbaetpy_req"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "nbaetpy_P4",
+  "cmd": "tools/qe/bin/python optc/src/qe.py point --key nbaetpy --point P4 --np 12",
+  "threads": 12,
+  "deps": [
+   "nbaetpy_relax",
+   "nbaetpy_req"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "nbaetpy_hyb_P1",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key nbaetpy --point P1 --np 12",
+  "threads": 12,
+  "deps": [
+   "nbaetpy_P1"
+  ],
+  "est_min": 20
+ },
+ {
+  "id": "nbaetpy_hyb_P2",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key nbaetpy --point P2 --np 12",
+  "threads": 12,
+  "deps": [
+   "nbaetpy_P2"
+  ],
+  "est_min": 20
+ },
+ {
+  "id": "nbaetpy_hyb_P3",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key nbaetpy --point P3 --np 12",
+  "threads": 12,
+  "deps": [
+   "nbaetpy_P3"
+  ],
+  "est_min": 20
+ },
+ {
+  "id": "nbaetpy_hyb_P4",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key nbaetpy --point P4 --np 12 --keep",
+  "threads": 12,
+  "deps": [
+   "nbaetpy_P4"
+  ],
+  "est_min": 20
+ },
+ {
+  "id": "nbaetpy_esp_P4",
+  "cmd": "tools/qe/bin/python optc/src/qe.py esp --key nbaetpy --point P4 --np 8",
+  "threads": 8,
+  "deps": [
+   "nbaetpy_hyb_P4"
+  ],
+  "est_min": 3
+ },
+ {
+  "id": "nbaetpy_kcheck",
+  "cmd": "tools/qe/bin/python optc/src/qe.py kcheck --key nbaetpy --np 12",
+  "threads": 12,
+  "deps": [
+   "nbaetpy_relax",
+   "nbaetpy_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "nbaetpy_summary",
+  "cmd": "tools/qe/bin/python optc/src/qe.py summary --key nbaetpy",
+  "threads": 1,
+  "deps": [
+   "nbaetpy_hyb_P0",
+   "nbaetpy_hyb_P1",
+   "nbaetpy_hyb_P2",
+   "nbaetpy_hyb_P3",
+   "nbaetpy_hyb_P4",
+   "nbaetpy_kcheck",
+   "nbaetpy_esp_P0",
+   "nbaetpy_esp_P4"
+  ],
+  "est_min": 1
+ },
+ {
+  "id": "nbaetpy_P4r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py p4r --key nbaetpy --np 12",
+  "threads": 12,
+  "deps": [
+   "nbaetpy_P4"
+  ],
+  "est_min": 25
+ },
+ {
+  "id": "nbaetpy_pair",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py pair --key nbaetpy --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "nbaetpy_relax",
+   "nbaetpy_P1",
+   "nbaetpy_P2",
+   "nbaetpy_P3",
+   "nbaetpy_P4"
+  ],
+  "est_min": 40
+ },
+ {
+  "id": "nbaetpy_pcm",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py pcm --key nbaetpy --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "nbaetpy_relax",
+   "nbaetpy_P4"
+  ],
+  "est_min": 60
+ },
+ {
+  "id": "nbaetpy_fit_P0",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/charges.py fit --key nbaetpy --point P0",
+  "threads": 4,
+  "deps": [
+   "nbaetpy_esp_P0"
+  ],
+  "est_min": 5
+ },
+ {
+  "id": "nbaetpy_fit_P4",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/charges.py fit --key nbaetpy --point P4",
+  "threads": 4,
+  "deps": [
+   "nbaetpy_esp_P4"
+  ],
+  "est_min": 5
+ },
+ {
+  "id": "nbaetpy_sc_P0",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/charges.py sc --key nbaetpy --point P0 --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "nbaetpy_relax"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "nbaetpy_sc_P4",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/charges.py sc --key nbaetpy --point P4 --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "nbaetpy_P4"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "nbaetpy_embed_repeat",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key nbaetpy --model repeat",
+  "threads": 4,
+  "deps": [
+   "nbaetpy_fit_P0",
+   "nbaetpy_fit_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "nbaetpy_emb_pair_repeat",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key nbaetpy --which pair --model repeat --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "nbaetpy_embed_repeat"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "nbaetpy_embed_sc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key nbaetpy --model sc",
+  "threads": 4,
+  "deps": [
+   "nbaetpy_sc_P0",
+   "nbaetpy_sc_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "nbaetpy_emb_pair_sc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key nbaetpy --which pair --model sc --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "nbaetpy_embed_sc"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "nbaetpy_embed_gas",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key nbaetpy --model gas",
+  "threads": 4,
+  "deps": [
+   "nbaetpy_sc_P0",
+   "nbaetpy_sc_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "nbaetpy_emb_pair_gas",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key nbaetpy --which pair --model gas --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "nbaetpy_embed_gas"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "nbaetpy_hyb_P4r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key nbaetpy --point P4r --np 12",
+  "threads": 12,
+  "deps": [
+   "nbaetpy_P4r"
+  ],
+  "est_min": 30
+ },
+ {
+  "id": "nbaetpy_pair_P4r",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py pair --key nbaetpy --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "nbaetpy_P4r",
+   "nbaetpy_pair"
+  ],
+  "est_min": 15
+ },
+ {
+  "id": "nbaetpy_summary_P4r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py summary --key nbaetpy",
+  "threads": 1,
+  "deps": [
+   "nbaetpy_hyb_P4r",
+   "nbaetpy_summary"
+  ],
+  "est_min": 1
+ },
+ {
+  "id": "nbaetpy_embed_repeat_site",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=4 tools/env/bin/python optc/src/embed.py build --key nbaetpy --model repeat --site --tag site",
+  "threads": 4,
+  "deps": [
+   "nbaetpy_fit_P0",
+   "nbaetpy_fit_P4"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "nbaetpy_emb_cluster_repeat_site_tz",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=24 tools/env/bin/python optc/src/mol.py emb --key nbaetpy --which cluster --model repeat_site --threads 24 --mem 60000",
+  "threads": 24,
+  "deps": [
+   "nbaetpy_embed_repeat_site"
+  ],
+  "est_min": 40
+ },
+ {
+  "id": "nbaetpy_emb_pair_rev_repeat",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key nbaetpy --which pair --model repeat --reverse --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "nbaetpy_emb_pair_repeat"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "nbaetpy_emb_pair_rev_sc",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key nbaetpy --which pair --model sc --reverse --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "nbaetpy_emb_pair_sc"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "nbaetpy_emb_pair_rev_gas",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py emb --key nbaetpy --which pair --model gas --reverse --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "nbaetpy_emb_pair_gas"
+  ],
+  "est_min": 10
+ },
+ {
+  "id": "nbaetpy_monomers",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py monomers --key nbaetpy --threads 8 --mem 36000",
+  "threads": 8,
+  "deps": [
+   "nbaetpy_P4r",
+   "nbaetpy_pair_P4r"
+  ],
+  "est_min": 60
+ },
+ {
+  "id": "nbaetpy_embcorr",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py embcorr --key nbaetpy --model repeat --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "nbaetpy_emb_pair_repeat"
+  ],
+  "est_min": 25
+ },
+ {
+  "id": "nbaetpy_vert",
+  "cmd": "tools/qe/bin/python optc/src/qe.py vert --key nbaetpy --np 12",
+  "threads": 12,
+  "deps": [
+   "nbaetpy_hyb_P0",
+   "nbaetpy_P4"
+  ],
+  "est_min": 80
+ },
+ {
+  "id": "nbaetpy_hscan_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hscan --key nbaetpy --np 12 --point P0",
+  "threads": 12,
+  "deps": [],
+  "est_min": 60
+ },
+ {
+  "id": "nbaetpy_hess_P0",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hess --key nbaetpy --np 12 --point P0",
+  "threads": 12,
+  "deps": [],
+  "est_min": 80
+ },
+ {
+  "id": "nbaetpy_hscanpair_P0",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py hscanpair --key nbaetpy --point P0 --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "nbaetpy_hscan_P0",
+   "nbaetpy_pair"
+  ],
+  "est_min": 100
+ },
+ {
+  "id": "nbaetpy_hscan_P4r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hscan --key nbaetpy --np 12 --point P4r",
+  "threads": 12,
+  "deps": [
+   "nbaetpy_P4r"
+  ],
+  "est_min": 60
+ },
+ {
+  "id": "nbaetpy_hess_P4r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hess --key nbaetpy --np 12 --point P4r",
+  "threads": 12,
+  "deps": [
+   "nbaetpy_P4r"
+  ],
+  "est_min": 80
+ },
+ {
+  "id": "nbaetpy_hscanpair_P4r",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=8 tools/env/bin/python optc/src/mol.py hscanpair --key nbaetpy --point P4r --threads 8 --mem 28000",
+  "threads": 8,
+  "deps": [
+   "nbaetpy_hscan_P4r",
+   "nbaetpy_pair"
+  ],
+  "est_min": 100
+ },
+ {
+  "id": "dapsone_hyb_X1380r",
+  "cmd": "tools/qe/bin/python optc/src/qe.py hybrid --key dapsone --np 12 --point X1380r",
+  "threads": 12,
+  "deps": [
+   "dapsone_X1380r"
+  ],
+  "est_min": 165
+ },
+ {
+  "id": "mppcp_cc_P4r",
+  "cmd": "mkdir -p /mnt/scratch/pyscf && PYSCF_TMPDIR=/mnt/scratch/pyscf OMP_NUM_THREADS=32 tools/env/bin/python optc/src/mol.py cc --key mppcp --threads 32 --mem 60000 --points P4r",
+  "threads": 32,
+  "deps": [],
+  "est_min": 130
+ }
+]

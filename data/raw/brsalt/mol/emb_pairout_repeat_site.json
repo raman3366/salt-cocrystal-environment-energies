@@ -1,0 +1,35 @@
+{
+ "key": "brsalt",
+ "which": "pairout",
+ "model": "repeat_site",
+ "runs": {
+  "S_pairout_emb": {
+   "E": -3729.228767319326,
+   "converged": true,
+   "nao": 833,
+   "natm": 36,
+   "charge": 0,
+   "E_int": -0.08148138309999098,
+   "E_int_el": -35.6682335884968,
+   "E_int_nuc": 35.586752205396806,
+   "n_charges": 6540,
+   "sum_charges": 2.000003999999999
+  },
+  "T_pairout_emb": {
+   "E": -3729.2653772745734,
+   "converged": true,
+   "nao": 833,
+   "natm": 36,
+   "charge": 0,
+   "E_int": -0.08200438925454279,
+   "E_int_el": -34.95747882844402,
+   "E_int_nuc": 34.875474439189475,
+   "n_charges": 6540,
+   "sum_charges": 2.000003999999999
+  }
+ },
+ "basis": "def2-TZVP",
+ "derived": {
+  "embedded_single_site_kJ": -96.119
+ }
+}

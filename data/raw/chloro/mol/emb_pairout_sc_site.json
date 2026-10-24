@@ -1,0 +1,35 @@
+{
+ "key": "chloro",
+ "which": "pairout",
+ "model": "sc_site",
+ "runs": {
+  "S_pairout_emb": {
+   "E": -1390.8480564769384,
+   "converged": true,
+   "nao": 469,
+   "natm": 22,
+   "charge": 0,
+   "E_int": -0.17852343738954346,
+   "E_int_el": -9.339157072821394,
+   "E_int_nuc": 9.16063363543185,
+   "n_charges": 6863,
+   "sum_charges": 1.0000030000000018
+  },
+  "T_pairout_emb": {
+   "E": -1390.8910707836746,
+   "converged": true,
+   "nao": 469,
+   "natm": 22,
+   "charge": 0,
+   "E_int": -0.19278066112226888,
+   "E_int_el": -9.424003032892214,
+   "E_int_nuc": 9.231222371769945,
+   "n_charges": 6863,
+   "sum_charges": 1.0000030000000018
+  }
+ },
+ "basis": "def2-TZVP",
+ "derived": {
+  "embedded_single_site_kJ": -112.934
+ }
+}

@@ -1,0 +1,50 @@
+{
+ "key": "nbaetpy",
+ "which": "cluster",
+ "model": "repeat_site",
+ "runs": {
+  "S_cluster_vac": {
+   "E": -951.5778919160866,
+   "converged": true,
+   "nao": 704,
+   "natm": 34,
+   "charge": 0
+  },
+  "S_cluster_emb": {
+   "E": -951.5978334370111,
+   "converged": true,
+   "nao": 704,
+   "natm": 34,
+   "charge": 0,
+   "E_int": -0.02250646834270853,
+   "E_int_el": -0.24769009582176338,
+   "E_int_nuc": 0.22518362747905485,
+   "n_charges": 7332,
+   "sum_charges": 3.774758283725532e-15
+  },
+  "T_cluster_vac": {
+   "E": -951.5608854924394,
+   "converged": true,
+   "nao": 704,
+   "natm": 34,
+   "charge": 0
+  },
+  "T_cluster_emb": {
+   "E": -951.5823153503825,
+   "converged": true,
+   "nao": 704,
+   "natm": 34,
+   "charge": 0,
+   "E_int": -0.02399939651170424,
+   "E_int_el": -0.25543401173647506,
+   "E_int_nuc": 0.23143461522477082,
+   "n_charges": 7332,
+   "sum_charges": 3.774758283725532e-15
+  }
+ },
+ "basis": "def2-TZVP",
+ "derived": {
+  "vacuum_kJ": 44.65,
+  "embedded_single_site_kJ": 40.743
+ }
+}

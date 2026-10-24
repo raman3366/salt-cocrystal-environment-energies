@@ -1,0 +1,48 @@
+{
+ "key": "anis",
+ "runner_up": {
+  "D": 12,
+  "H": 30,
+  "A": 5,
+  "labels": "N1-H2...O2",
+  "DA": 2.7292,
+  "HA": 1.8357,
+  "DH": 0.9173,
+  "angle": 163.98,
+  "inter": true
+ },
+ "r_eq_A": 0.97422,
+ "n_fu": 2,
+ "moved_proton_nearest_A": [
+  [
+   0.9742,
+   5
+  ],
+  [
+   1.717,
+   12
+  ],
+  [
+   2.0987,
+   29
+  ]
+ ],
+ "runs": {
+  "Rv": {
+   "E_pbe_Ry": -772.38453241,
+   "E_pbe_sg15_Ry": -574.34590655,
+   "E_pbe0_sg15_Ry": -574.19859848
+  },
+  "T1v": {
+   "E_pbe_sg15_Ry": -574.32779459,
+   "E_pbe0_sg15_Ry": -574.17792689
+  }
+ },
+ "derived": {
+  "Rv_pbe_kJ": 103.926,
+  "T1v_pbe_kJ": 127.437,
+  "runner_minus_chosen_pbe_kJ": -23.51,
+  "runner_minus_chosen_pbe0_kJ": -26.87
+ },
+ "units": "kJ/mol per moved proton (one proton of the cell), relative to P0; T1v from vert.json"
+}

@@ -1,0 +1,21 @@
+{
+ "key": "nbaetpy",
+ "E_Ry": {
+  "x80_P0": -963.35380606,
+  "x80_P4r": -963.35233225,
+  "vc_S": -963.35388038,
+  "vc_P4r": -963.35376827,
+  "pbe_sg15_vcS": -687.29022668,
+  "pbe_sg15_vcP4r": -687.29058194,
+  "pbe0_sg15_vcS": -686.98496394,
+  "pbe0_sg15_vcP4r": -686.98187745
+ },
+ "units": "kJ/mol per formula unit, E(P4r state) - E(S state)",
+ "dE_xray_cell_pbe80": 0.967,
+ "dE_relaxed_cells_pbe80": 0.074,
+ "dE_relaxed_cells_pbe0": 2.333,
+ "volume_change_pct": {
+  "vc_S": -0.54,
+  "vc_P4r": -2.15
+ }
+}

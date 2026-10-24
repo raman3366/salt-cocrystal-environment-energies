@@ -1,0 +1,35 @@
+{
+ "key": "sulfamate",
+ "which": "pairout",
+ "model": "sc_site",
+ "runs": {
+  "S_pairout_emb": {
+   "E": -1571.3623752504118,
+   "converged": true,
+   "nao": 574,
+   "natm": 27,
+   "charge": 0,
+   "E_int": -0.17331695681683712,
+   "E_int_el": -12.388626570061081,
+   "E_int_nuc": 12.215309613244244,
+   "n_charges": 7370,
+   "sum_charges": 0.9999979999999982
+  },
+  "T_pairout_emb": {
+   "E": -1571.3990359418829,
+   "converged": true,
+   "nao": 574,
+   "natm": 27,
+   "charge": 0,
+   "E_int": -0.1782596696801697,
+   "E_int_el": -12.217581478207972,
+   "E_int_nuc": 12.039321808527802,
+   "n_charges": 7370,
+   "sum_charges": 0.9999979999999982
+  }
+ },
+ "basis": "def2-TZVP",
+ "derived": {
+  "embedded_single_site_kJ": -96.253
+ }
+}

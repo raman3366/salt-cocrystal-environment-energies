@@ -1,0 +1,11 @@
+&INPUTPP
+  prefix = 'pbe0_sg15_P4'
+  outdir = '/mnt/scratch/optc/brsalt/pbe0_sg15_P4'
+  filplot = 'optc/results/brsalt/runs/esp_P4/vtot.dat'
+  plot_num = 11
+/
+&PLOT
+  iflag = 3
+  output_format = 6
+  fileout = 'optc/results/brsalt/runs/esp_P4/vtot_P4.cube'
+/

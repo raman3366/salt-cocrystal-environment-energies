@@ -1,0 +1,463 @@
+{
+ "key": "mppcp",
+ "generated_utc": "2026-10-22T23:41:19+00:00",
+ "nat": 54,
+ "n_fu": 2,
+ "kgrid": [
+  1,
+  1,
+  2
+ ],
+ "ecut_sssp": [
+  70,
+  560
+ ],
+ "ecut_sg15": [
+  100,
+  400
+ ],
+ "path": {
+  "d_S": 1.0770485500580602,
+  "L_S": 2.5648755026570313,
+  "r_eq": 1.0222,
+  "r_eq_source": "optc/src/mol.py req (first computed for mppcp)",
+  "dS_copies": [
+   1.0770485500580602,
+   1.0770485500580602
+  ],
+  "LS_copies": [
+   2.564875502657032,
+   2.564875502657031
+  ]
+ },
+ "points": {
+  "P0": {
+   "E_pbe_Ry": -918.49440257,
+   "proton": [
+    {
+     "D-H": 1.077,
+     "H...A": 1.5043,
+     "D...A": 2.5649,
+     "angle": 166.87,
+     "delta": -0.4272
+    },
+    {
+     "D-H": 1.077,
+     "H...A": 1.5043,
+     "D...A": 2.5649,
+     "angle": 166.87,
+     "delta": -0.4272
+    }
+   ],
+   "other_protons_moved": [],
+   "target": null,
+   "extra": false,
+   "target_source": "recomputed",
+   "E_pbe_sg15_Ry": -698.4565679,
+   "E_pbe0_sg15_Ry": -698.475469,
+   "E_pbe50_sg15_Ry": -698.57630632,
+   "dE_pbe_kJmol_fu": 0.0,
+   "hybrid_corr_kJmol_fu": 0.0,
+   "dE_pbe0_kJmol_fu": 0.0,
+   "dE_pbe50_kJmol_fu": 0.0
+  },
+  "P1": {
+   "E_pbe_Ry": -918.49188469,
+   "proton": [
+    {
+     "D-H": 1.1935,
+     "H...A": 1.307,
+     "D...A": 2.4893,
+     "angle": 169.18,
+     "delta": -0.1136
+    },
+    {
+     "D-H": 1.1935,
+     "H...A": 1.307,
+     "D...A": 2.4893,
+     "angle": 169.18,
+     "delta": -0.1136
+    }
+   ],
+   "other_protons_moved": [],
+   "target": [
+    "D-H",
+    1.19345529
+   ],
+   "extra": false,
+   "target_source": "input",
+   "target_recomputed": [
+    "D-H",
+    1.1934552882078031
+   ],
+   "E_pbe_sg15_Ry": -698.45424391,
+   "E_pbe0_sg15_Ry": -698.46840443,
+   "E_pbe50_sg15_Ry": -698.56494606,
+   "dE_pbe_kJmol_fu": 1.653,
+   "hybrid_corr_kJmol_fu": 3.112,
+   "dE_pbe0_kJmol_fu": 4.765,
+   "dE_pbe50_kJmol_fu": 7.584
+  },
+  "P2": {
+   "E_pbe_Ry": -918.49484286,
+   "proton": [
+    {
+     "D-H": 1.3099,
+     "H...A": 1.1885,
+     "D...A": 2.4899,
+     "angle": 170.55,
+     "delta": 0.1214
+    },
+    {
+     "D-H": 1.3099,
+     "H...A": 1.1885,
+     "D...A": 2.4899,
+     "angle": 170.55,
+     "delta": 0.1214
+    }
+   ],
+   "other_protons_moved": [],
+   "target": [
+    "D-H",
+    1.30986203
+   ],
+   "extra": false,
+   "target_source": "input",
+   "target_recomputed": [
+    "D-H",
+    1.3098620263575458
+   ],
+   "E_pbe_sg15_Ry": -698.45739759,
+   "E_pbe0_sg15_Ry": -698.47091108,
+   "E_pbe50_sg15_Ry": -698.56714791,
+   "dE_pbe_kJmol_fu": -0.289,
+   "hybrid_corr_kJmol_fu": 3.536,
+   "dE_pbe0_kJmol_fu": 3.247,
+   "dE_pbe50_kJmol_fu": 6.267
+  },
+  "P3": {
+   "E_pbe_Ry": -918.49670443,
+   "proton": [
+    {
+     "D-H": 1.4263,
+     "H...A": 1.1272,
+     "D...A": 2.5448,
+     "angle": 170.53,
+     "delta": 0.2991
+    },
+    {
+     "D-H": 1.4263,
+     "H...A": 1.1272,
+     "D...A": 2.5448,
+     "angle": 170.53,
+     "delta": 0.2991
+    }
+   ],
+   "other_protons_moved": [],
+   "target": [
+    "D-H",
+    1.42626876
+   ],
+   "extra": false,
+   "target_source": "input",
+   "target_recomputed": [
+    "D-H",
+    1.4262687645072885
+   ],
+   "E_pbe_sg15_Ry": -698.45938985,
+   "E_pbe0_sg15_Ry": -698.47297261,
+   "E_pbe50_sg15_Ry": -698.56948575,
+   "dE_pbe_kJmol_fu": -1.511,
+   "hybrid_corr_kJmol_fu": 3.491,
+   "dE_pbe0_kJmol_fu": 1.98,
+   "dE_pbe50_kJmol_fu": 4.818
+  },
+  "P4": {
+   "E_pbe_Ry": -918.4842745,
+   "proton": [
+    {
+     "D-H": 1.5944,
+     "H...A": 1.0222,
+     "D...A": 2.6065,
+     "angle": 169.7,
+     "delta": 0.5722
+    },
+    {
+     "D-H": 1.5944,
+     "H...A": 1.0222,
+     "D...A": 2.6065,
+     "angle": 169.7,
+     "delta": 0.5722
+    }
+   ],
+   "other_protons_moved": [],
+   "target": [
+    "A-H",
+    1.0222
+   ],
+   "extra": false,
+   "target_source": "input",
+   "target_recomputed": [
+    "A-H",
+    1.0222
+   ],
+   "E_pbe_sg15_Ry": -698.44738802,
+   "E_pbe0_sg15_Ry": -698.46432171,
+   "E_pbe50_sg15_Ry": -698.56423899,
+   "dE_pbe_kJmol_fu": 6.648,
+   "hybrid_corr_kJmol_fu": 1.291,
+   "dE_pbe0_kJmol_fu": 7.939,
+   "dE_pbe50_kJmol_fu": 8.543
+  },
+  "X1017s": {
+   "E_pbe_Ry": -918.49106388,
+   "proton": [
+    {
+     "D-H": 1.017,
+     "H...A": 1.597,
+     "D...A": 2.5943,
+     "angle": 165.58,
+     "delta": -0.58
+    },
+    {
+     "D-H": 1.017,
+     "H...A": 1.597,
+     "D...A": 2.5943,
+     "angle": 165.58,
+     "delta": -0.58
+    }
+   ],
+   "other_protons_moved": [],
+   "target": [
+    "D-H",
+    1.017
+   ],
+   "extra": true,
+   "target_source": "input",
+   "target_from_name": [
+    "D-H",
+    1.017
+   ],
+   "E_pbe_sg15_Ry": -698.45343504,
+   "E_pbe0_sg15_Ry": -698.47695813,
+   "dE_pbe_kJmol_fu": 2.191,
+   "hybrid_corr_kJmol_fu": -3.034,
+   "dE_pbe0_kJmol_fu": -0.843
+  },
+  "X1193r": {
+   "E_pbe_Ry": -918.49217659,
+   "proton": [
+    {
+     "D-H": 1.193,
+     "H...A": 1.3011,
+     "D...A": 2.4857,
+     "angle": 170.57,
+     "delta": -0.1081
+    },
+    {
+     "D-H": 1.193,
+     "H...A": 1.3011,
+     "D...A": 2.4857,
+     "angle": 170.57,
+     "delta": -0.1081
+    }
+   ],
+   "other_protons_moved": [],
+   "target": [
+    "D-H",
+    1.193
+   ],
+   "extra": true,
+   "target_source": "input",
+   "target_from_name": [
+    "D-H",
+    1.193
+   ],
+   "E_pbe_sg15_Ry": -698.45456744,
+   "E_pbe0_sg15_Ry": -698.46910001,
+   "dE_pbe_kJmol_fu": 1.461,
+   "hybrid_corr_kJmol_fu": 2.867,
+   "dE_pbe0_kJmol_fu": 4.328
+  },
+  "X1260r": {
+   "E_pbe_Ry": -918.49354311,
+   "proton": [
+    {
+     "D-H": 1.26,
+     "H...A": 1.2306,
+     "D...A": 2.4834,
+     "angle": 171.33,
+     "delta": 0.0294
+    },
+    {
+     "D-H": 1.26,
+     "H...A": 1.2306,
+     "D...A": 2.4834,
+     "angle": 171.33,
+     "delta": 0.0294
+    }
+   ],
+   "other_protons_moved": [],
+   "target": [
+    "D-H",
+    1.26
+   ],
+   "extra": true,
+   "target_source": "input",
+   "target_from_name": [
+    "D-H",
+    1.26
+   ],
+   "E_pbe_sg15_Ry": -698.45598665,
+   "E_pbe0_sg15_Ry": -698.46942021,
+   "dE_pbe_kJmol_fu": 0.564,
+   "hybrid_corr_kJmol_fu": 3.589,
+   "dE_pbe0_kJmol_fu": 4.153
+  },
+  "X1260s": {
+   "E_pbe_Ry": -918.49328368,
+   "proton": [
+    {
+     "D-H": 1.26,
+     "H...A": 1.2293,
+     "D...A": 2.4805,
+     "angle": 170.37,
+     "delta": 0.0307
+    },
+    {
+     "D-H": 1.26,
+     "H...A": 1.2293,
+     "D...A": 2.4805,
+     "angle": 170.37,
+     "delta": 0.0307
+    }
+   ],
+   "other_protons_moved": [],
+   "target": [
+    "D-H",
+    1.26
+   ],
+   "extra": true,
+   "target_source": "input",
+   "target_from_name": [
+    "D-H",
+    1.26
+   ],
+   "E_pbe_sg15_Ry": -698.45579133,
+   "E_pbe0_sg15_Ry": -698.46952991,
+   "dE_pbe_kJmol_fu": 0.734,
+   "hybrid_corr_kJmol_fu": 3.389,
+   "dE_pbe0_kJmol_fu": 4.123
+  },
+  "X1310r": {
+   "E_pbe_Ry": -918.49533069,
+   "proton": [
+    {
+     "D-H": 1.31,
+     "H...A": 1.1897,
+     "D...A": 2.4932,
+     "angle": 171.73,
+     "delta": 0.1203
+    },
+    {
+     "D-H": 1.31,
+     "H...A": 1.1897,
+     "D...A": 2.4932,
+     "angle": 171.73,
+     "delta": 0.1203
+    }
+   ],
+   "other_protons_moved": [],
+   "target": [
+    "D-H",
+    1.31
+   ],
+   "extra": true,
+   "target_source": "input",
+   "target_from_name": [
+    "D-H",
+    1.31
+   ],
+   "E_pbe_sg15_Ry": -698.4578389,
+   "E_pbe0_sg15_Ry": -698.47115178,
+   "dE_pbe_kJmol_fu": -0.609,
+   "hybrid_corr_kJmol_fu": 3.668,
+   "dE_pbe0_kJmol_fu": 3.059
+  },
+  "X1654r": {
+   "E_pbe_Ry": -918.48937054,
+   "proton": [
+    {
+     "D-H": 1.654,
+     "H...A": 1.0675,
+     "D...A": 2.7124,
+     "angle": 170.39,
+     "delta": 0.5865
+    },
+    {
+     "D-H": 1.654,
+     "H...A": 1.0675,
+     "D...A": 2.7124,
+     "angle": 170.39,
+     "delta": 0.5865
+    }
+   ],
+   "other_protons_moved": [],
+   "target": [
+    "D-H",
+    1.654
+   ],
+   "extra": true,
+   "target_source": "input",
+   "target_from_name": [
+    "D-H",
+    1.654
+   ],
+   "E_pbe_sg15_Ry": -698.45210164,
+   "E_pbe0_sg15_Ry": -698.46618004,
+   "dE_pbe_kJmol_fu": 3.303,
+   "hybrid_corr_kJmol_fu": 3.165,
+   "dE_pbe0_kJmol_fu": 6.468
+  }
+ },
+ "P4r": {
+  "E_pbe_Ry": -918.49731409,
+  "dE_pbe_kJmol_fu": -1.911,
+  "proton": [
+   {
+    "D-H": 1.4193,
+    "H...A": 1.1286,
+    "D...A": 2.5415,
+    "angle": 171.85,
+    "delta": 0.2907
+   },
+   {
+    "D-H": 1.4193,
+    "H...A": 1.1286,
+    "D...A": 2.5415,
+    "angle": 171.85,
+    "delta": 0.2907
+   }
+  ],
+  "other_protons_moved": [],
+  "dE_pbe0_kJmol_fu": 1.461,
+  "dE_pbe50_kJmol_fu": 4.242
+ },
+ "kcheck": {
+  "k_dense": [
+   2,
+   2,
+   3
+  ],
+  "E_dense_Ry": {
+   "P0": -918.48941047,
+   "P4": -918.47901746,
+   "P4r": -918.49167939
+  },
+  "dE_P4_dense_kJmol_fu": 6.822,
+  "dE_P4_kJmol_fu": 6.648,
+  "dE_P4r_dense_kJmol_fu": -1.489,
+  "dE_P4r_kJmol_fu": -1.911
+ },
+ "units": "kJ/mol per formula unit (all copies move: per cell / n_fu)"
+}

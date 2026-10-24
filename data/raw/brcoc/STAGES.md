@@ -1,0 +1,12 @@
+- 2026-10-18T18:09:42+00:00  relax_S: start relax ecut 70/560 k (2, 2, 1) (4 irr) np 12 nk 4 host machine C
+- 2026-10-18T19:52:23+00:00  relax_S: done rc=0 wall 102.7 min E = -1258.97588292 Ry
+- 2026-10-18T19:52:28+00:00  pbe_sg15_P0: start scf ecut 100/400 k (2, 2, 1) (4 irr) np 12 nk 4 host machine C
+- 2026-10-18T19:57:08+00:00  pbe0_sg15_P0: start scf PBE0 ecut 100/400 k (2, 2, 1) (4 irr) np 12 nk 4 host machine C
+- 2026-10-18T19:57:08+00:00  pbe_sg15_P0: done rc=0 wall 4.7 min E = -903.69432705 Ry
+- 2026-10-18T20:13:43+00:00  kcheck_P0: start scf ecut 70/560 k (3, 3, 2) (10 irr) np 12 nk 6 host machine C
+- 2026-10-18T20:26:09+00:00  kcheck_P0: done rc=0 wall 12.4 min E = -1258.97579239 Ry
+- 2026-10-18T21:55:21+00:00  pbe0_sg15_P0: done rc=0 wall 118.2 min E = -903.23294048 Ry
+- 2026-10-18T21:57:03+00:00  esp_P0: cube written (vtot_P0.cube.gz)
+- 2026-10-22T02:09:33+00:00  pbe0_sg15_P0_nq221: start scf PBE0 ecut 100/400 k (2, 2, 1) (4 irr) np 12 nk 4 host machine F
+- 2026-10-22T02:09:33+00:00  pbe_sg15_P0: finished earlier, reused
+- 2026-10-22T11:11:21+00:00  pbe0_sg15_P0_nq221: done rc=0 wall 541.8 min E = -903.22866744 Ry

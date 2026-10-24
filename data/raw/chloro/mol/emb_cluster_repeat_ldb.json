@@ -1,0 +1,48 @@
+{
+ "key": "chloro",
+ "which": "cluster",
+ "model": "repeat",
+ "runs": {
+  "S_cluster_vac": {
+   "E": -6845.696634038587,
+   "converged": true,
+   "nao": 1342,
+   "natm": 102,
+   "charge": -2
+  },
+  "S_cluster_emb": {
+   "E": -6846.942985276447,
+   "converged": true,
+   "nao": 1342,
+   "natm": 102,
+   "charge": -2,
+   "E_int": -1.4439949019788259,
+   "E_int_el": -84.52718528660533,
+   "E_int_nuc": 83.0831903846265,
+   "n_charges": 6812
+  },
+  "T_cluster_vac": {
+   "E": -6845.644888721532,
+   "converged": true,
+   "nao": 1342,
+   "natm": 102,
+   "charge": -2
+  },
+  "T_cluster_emb": {
+   "E": -6846.907265532936,
+   "converged": true,
+   "nao": 1342,
+   "natm": 102,
+   "charge": -2,
+   "E_int": -1.4597870422391281,
+   "E_int_el": -84.52698747831951,
+   "E_int_nuc": 83.06720043608038,
+   "n_charges": 6812
+  }
+ },
+ "basis": "def2-TZVP pair + def2-SVP shell",
+ "derived": {
+  "vacuum_kJ": 135.857,
+  "embedded_single_site_kJ": 93.782
+ }
+}

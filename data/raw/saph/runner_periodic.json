@@ -1,0 +1,41 @@
+{
+ "key": "saph",
+ "runner_up": {
+  "D": 20,
+  "H": 44,
+  "A": 25,
+  "labels": "N1-H1C...O6",
+  "DA": 2.8555,
+  "HA": 1.9998,
+  "DH": 0.8581,
+  "angle": 174.85,
+  "inter": true
+ },
+ "r_eq_A": 0.97422,
+ "n_fu": 2,
+ "moved_proton_nearest_A": [
+  [
+   0.9742,
+   25
+  ],
+  [
+   1.8444,
+   20
+  ],
+  [
+   2.2777,
+   37
+  ]
+ ],
+ "runs": {
+  "Rv": {
+   "E_pbe_Ry": -905.06319173
+  }
+ },
+ "derived": {
+  "Rv_pbe_kJ": 114.601,
+  "T1v_pbe_kJ": 116.796,
+  "runner_minus_chosen_pbe_kJ": -2.196
+ },
+ "units": "kJ/mol per moved proton (one proton of the cell), relative to P0; T1v from vert.json"
+}

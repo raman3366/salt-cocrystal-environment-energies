@@ -1,0 +1,52 @@
+{
+ "key": "sulfamate",
+ "which": "cluster",
+ "model": "sc_site",
+ "runs": {
+  "S_cluster_vac": {
+   "E": -3822.136324007921,
+   "converged": true,
+   "nao": 1321,
+   "natm": 61,
+   "charge": -1,
+   "copied_from": "emb_cluster_repeat_site.json"
+  },
+  "T_cluster_vac": {
+   "E": -3822.092717124564,
+   "converged": true,
+   "nao": 1321,
+   "natm": 61,
+   "charge": -1,
+   "copied_from": "emb_cluster_repeat_site.json"
+  },
+  "S_cluster_emb": {
+   "E": -3822.792331528287,
+   "converged": true,
+   "nao": 1321,
+   "natm": 61,
+   "charge": -1,
+   "E_int": -0.7486718174681855,
+   "E_int_el": -34.70318101480867,
+   "E_int_nuc": 33.954509197340485,
+   "n_charges": 7370,
+   "sum_charges": 0.9999979999999982
+  },
+  "T_cluster_emb": {
+   "E": -3822.7619333099547,
+   "converged": true,
+   "nao": 1321,
+   "natm": 61,
+   "charge": -1,
+   "E_int": -0.7601148001443647,
+   "E_int_el": -34.538636192767044,
+   "E_int_nuc": 33.77852139262268,
+   "n_charges": 7370,
+   "sum_charges": 0.9999979999999982
+  }
+ },
+ "basis": "def2-TZVP",
+ "derived": {
+  "vacuum_kJ": 114.49,
+  "embedded_single_site_kJ": 79.811
+ }
+}

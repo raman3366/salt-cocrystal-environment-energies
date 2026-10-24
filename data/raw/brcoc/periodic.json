@@ -1,0 +1,47 @@
+{
+ "key": "brcoc",
+ "generated_utc": "2026-10-22T23:41:33+00:00",
+ "nat": 72,
+ "n_fu": 2,
+ "kgrid": [
+  2,
+  2,
+  1
+ ],
+ "ecut_sssp": [
+  70,
+  560
+ ],
+ "ecut_sg15": [
+  100,
+  400
+ ],
+ "path": null,
+ "points": {
+  "P0": {
+   "E_pbe_Ry": -1258.97588292,
+   "proton": [],
+   "other_protons_moved": [],
+   "target": null,
+   "extra": false,
+   "target_source": "recomputed",
+   "E_pbe_sg15_Ry": -903.69432705,
+   "E_pbe0_sg15_Ry": -903.23294048,
+   "dE_pbe_kJmol_fu": 0.0,
+   "hybrid_corr_kJmol_fu": 0.0,
+   "dE_pbe0_kJmol_fu": 0.0
+  }
+ },
+ "P4r": null,
+ "kcheck": {
+  "k_dense": [
+   3,
+   3,
+   2
+  ],
+  "E_dense_Ry": {
+   "P0": -1258.97579239
+  }
+ },
+ "units": "kJ/mol per formula unit (all copies move: per cell / n_fu)"
+}

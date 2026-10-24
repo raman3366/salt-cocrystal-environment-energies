@@ -1,0 +1,8 @@
+{
+ "key": "dapsone",
+ "which": "cluster",
+ "model": "repeat",
+ "runs": {},
+ "basis": "def2-TZVP pair + def2-SVP shell",
+ "skipped": "cluster of 337 atoms > 150: not computed"
+}

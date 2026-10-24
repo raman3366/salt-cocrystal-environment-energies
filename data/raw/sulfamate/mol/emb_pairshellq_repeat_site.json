@@ -1,0 +1,50 @@
+{
+ "key": "sulfamate",
+ "which": "pairshellq",
+ "model": "repeat_site",
+ "runs": {
+  "S_pairshellq_emb": {
+   "E": -1571.4080989690633,
+   "converged": true,
+   "nao": 574,
+   "natm": 27,
+   "charge": 0,
+   "E_int": -0.21803244919959042,
+   "E_int_el": 10.111895531689761,
+   "E_int_nuc": -10.329927980889352,
+   "n_charges": 34,
+   "sum_charges": -1.0000019999999998
+  },
+  "T_pairshellq_emb": {
+   "E": -1571.3669028861275,
+   "converged": true,
+   "nao": 574,
+   "natm": 27,
+   "charge": 0,
+   "radii_from": "S",
+   "E_int": -0.1445602776412045,
+   "E_int_el": 9.964091029779837,
+   "E_int_nuc": -10.108651307421042,
+   "n_charges": 34,
+   "sum_charges": -1.0000019999999998
+  }
+ },
+ "basis": "def2-TZVP",
+ "superseded": {
+  "T_pairshellq_emb": {
+   "E": -1571.3669027635829,
+   "converged": true,
+   "nao": 574,
+   "natm": 27,
+   "charge": 0,
+   "E_int": -0.14455981515506444,
+   "E_int_el": 9.964091492266204,
+   "E_int_nuc": -10.108651307421269,
+   "n_charges": 34,
+   "sum_charges": -1.0000019999999998
+  }
+ },
+ "derived": {
+  "embedded_single_site_kJ": 108.16
+ }
+}

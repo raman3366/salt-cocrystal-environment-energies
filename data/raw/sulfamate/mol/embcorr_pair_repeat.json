@@ -1,0 +1,60 @@
+{
+ "key": "sulfamate",
+ "model": "repeat",
+ "runs": {
+  "S_pair": {
+   "E_PBE0_D3": -1571.473437812124,
+   "E_wB97X_D3BJ": -1572.8162397561453,
+   "E_HF": -1566.847732952063,
+   "E_MP2": -1569.9525704756538,
+   "E_SCS_MP2": -1569.8616026595603,
+   "converged": [
+    true,
+    true,
+    true
+   ],
+   "done": true
+  },
+  "T_pair": {
+   "E_PBE0_D3": -1571.4392260414918,
+   "E_wB97X_D3BJ": -1572.7785920092356,
+   "E_HF": -1566.808811200167,
+   "E_MP2": -1569.9143372394735,
+   "E_SCS_MP2": -1569.821977326705,
+   "converged": [
+    true,
+    true,
+    true
+   ],
+   "done": true
+  },
+  "N_pair": {
+   "E_PBE0_D3": -1571.3707192165234,
+   "E_wB97X_D3BJ": -1572.7107466420669,
+   "E_HF": -1566.7397212630424,
+   "E_MP2": -1569.8463648173722,
+   "E_SCS_MP2": -1569.754386240354,
+   "converged": [
+    true,
+    true,
+    true
+   ],
+   "done": true
+  }
+ },
+ "derived": {
+  "T": {
+   "corr_wB97X_D3BJ_kJ": 9.021,
+   "corr_MP2_kJ": 10.558,
+   "corr_SCS_MP2_kJ": 14.213,
+   "dPBE0_kJ": 89.823
+  },
+  "N": {
+   "corr_wB97X_D3BJ_kJ": 7.284,
+   "corr_MP2_kJ": 9.155,
+   "corr_SCS_MP2_kJ": 11.809,
+   "dPBE0_kJ": 269.688
+  }
+ },
+ "note": "T: single site (P4 pair in the P0 field); N: every atom at P4 with the P4 field (plain difference, no E_int/2)"
+}

@@ -1,0 +1,41 @@
+{
+ "key": "carboxy",
+ "runner_up": {
+  "D": 16,
+  "H": 22,
+  "A": 12,
+  "labels": "N-H3N...O1",
+  "DA": 2.8562,
+  "HA": 1.9831,
+  "DH": 0.8895,
+  "angle": 166.73,
+  "inter": true
+ },
+ "r_eq_A": 0.97422,
+ "n_fu": 2,
+ "moved_proton_nearest_A": [
+  [
+   0.9742,
+   12
+  ],
+  [
+   1.8254,
+   16
+  ],
+  [
+   1.9046,
+   21
+  ]
+ ],
+ "runs": {
+  "Rv": {
+   "E_pbe_Ry": -851.05948662
+  }
+ },
+ "derived": {
+  "Rv_pbe_kJ": 130.971,
+  "T1v_pbe_kJ": 107.403,
+  "runner_minus_chosen_pbe_kJ": 23.567
+ },
+ "units": "kJ/mol per moved proton (one proton of the cell), relative to P0; T1v from vert.json"
+}

@@ -1,0 +1,60 @@
+
+     Program POST-PROC v.7.5 starts on 18Oct2026 at 17:17:10 
+
+     This program is part of the open-source Quantum ESPRESSO suite
+     for quantum simulation of materials; please cite
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 21 395502 (2009);
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 29 465901 (2017);
+         "P. Giannozzi et al., J. Chem. Phys. 152 154105 (2020);
+          URL http://www.quantum-espresso.org", 
+     in publications or presentations arising from this work. More details at
+     http://www.quantum-espresso.org/quote
+
+     Parallel version (MPI & OpenMP), running on     384 processor cores
+     Number of MPI processes:                 8
+     Threads/MPI process:                    48
+
+     MPI processes distributed on     1 nodes
+     R & G space division:  proc/nbgrp/npool/nimage =       8
+     219189 MiB available memory on the printing compute node when the environment starts
+
+
+     Reading xml data from directory:
+
+     /mnt/scratch/optc/mppcp/pbe0_sg15_P0/pbe0_sg15_P0.save/
+     EXX fraction changed:   0.25
+     EXX Screening parameter changed:    0.0000000
+
+     IMPORTANT: XC functional enforced from input :
+     Exchange-correlation= PBE0
+                           (   6   4   8   4   0   0   0)
+     EXX-fraction              =        0.25
+     Any further DFT definition will be discarded
+     Please, verify this is what you really want
+
+
+     Parallelization info
+     --------------------
+     sticks:   dense  smooth     PW     G-vecs:    dense   smooth      PW
+     Min        1514    1514    397                76348    76348   10310
+     Max        1515    1515    398                76349    76349   10311
+     Sum       12119   12119   3181               610789   610789   82483
+
+     Using Slab Decomposition
+
+
+     Calling punch_plot, plot_num =  11
+     Writing data to file  optc/results/mppcp/runs/esp_P0/vtot.dat
+     Reading data from file  optc/results/mppcp/runs/esp_P0/vtot.dat
+
+     Writing data to be plotted to file optc/results/mppcp/runs/esp_P0/vtot_P0.cube
+     Plot Type: 3D                     Output format: Gaussian cube
+
+     POST-PROC    :   2m13.41s CPU   1m38.38s WALL
+
+
+   This run was terminated on:  17:18:48  18Oct2026            
+
+=------------------------------------------------------------------------------=
+   JOB DONE.
+=------------------------------------------------------------------------------=

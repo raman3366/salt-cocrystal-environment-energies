@@ -1,0 +1,41 @@
+{
+ "key": "cyano",
+ "runner_up": {
+  "D": 0,
+  "H": 2,
+  "A": 44,
+  "labels": "N1-H1A...O1",
+  "DA": 2.73,
+  "HA": 1.8717,
+  "DH": 0.8904,
+  "angle": 161.3,
+  "inter": true
+ },
+ "r_eq_A": 0.97422,
+ "n_fu": 2,
+ "moved_proton_nearest_A": [
+  [
+   0.9742,
+   44
+  ],
+  [
+   1.7129,
+   0
+  ],
+  [
+   2.0098,
+   7
+  ]
+ ],
+ "runs": {
+  "Rv": {
+   "E_pbe_Ry": -722.26364186
+  }
+ },
+ "derived": {
+  "Rv_pbe_kJ": 79.615,
+  "T1v_pbe_kJ": 78.818,
+  "runner_minus_chosen_pbe_kJ": 0.797
+ },
+ "units": "kJ/mol per moved proton (one proton of the cell), relative to P0; T1v from vert.json"
+}

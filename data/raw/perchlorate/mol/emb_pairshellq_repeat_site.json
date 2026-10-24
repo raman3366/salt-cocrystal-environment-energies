@@ -1,0 +1,50 @@
+{
+ "key": "perchlorate",
+ "which": "pairshellq",
+ "model": "repeat_site",
+ "runs": {
+  "S_pairshellq_emb": {
+   "E": -1652.3359909289845,
+   "converged": true,
+   "nao": 562,
+   "natm": 25,
+   "charge": 0,
+   "E_int": -0.14388491617280952,
+   "E_int_el": 7.004363654236314,
+   "E_int_nuc": -7.148248570409123,
+   "n_charges": 50,
+   "sum_charges": 6.000000000172534e-06
+  },
+  "T_pairshellq_emb": {
+   "E": -1652.3080422851792,
+   "converged": true,
+   "nao": 562,
+   "natm": 25,
+   "charge": 0,
+   "radii_from": "S",
+   "E_int": -0.10200223578735379,
+   "E_int_el": 7.051287243781103,
+   "E_int_nuc": -7.153289479568457,
+   "n_charges": 50,
+   "sum_charges": 6.000000000172534e-06
+  }
+ },
+ "basis": "def2-TZVP",
+ "superseded": {
+  "T_pairshellq_emb": {
+   "E": -1652.3080417768397,
+   "converged": true,
+   "nao": 562,
+   "natm": 25,
+   "charge": 0,
+   "E_int": -0.10200382650948558,
+   "E_int_el": 7.051285653059199,
+   "E_int_nuc": -7.153289479568684,
+   "n_charges": 50,
+   "sum_charges": 6.000000000172534e-06
+  }
+ },
+ "derived": {
+  "embedded_single_site_kJ": 73.379
+ }
+}

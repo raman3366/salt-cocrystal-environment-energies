@@ -1,0 +1,60 @@
+
+     Program POST-PROC v.7.5 starts on 21Oct2026 at  8: 3:19 
+
+     This program is part of the open-source Quantum ESPRESSO suite
+     for quantum simulation of materials; please cite
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 21 395502 (2009);
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 29 465901 (2017);
+         "P. Giannozzi et al., J. Chem. Phys. 152 154105 (2020);
+          URL http://www.quantum-espresso.org", 
+     in publications or presentations arising from this work. More details at
+     http://www.quantum-espresso.org/quote
+
+     Parallel version (MPI & OpenMP), running on      96 processor cores
+     Number of MPI processes:                 8
+     Threads/MPI process:                    12
+
+     MPI processes distributed on     1 nodes
+     R & G space division:  proc/nbgrp/npool/nimage =       8
+     90759 MiB available memory on the printing compute node when the environment starts
+
+
+     Reading xml data from directory:
+
+     /mnt/scratch/optc/nbaetpy/pbe0_sg15_P4r/pbe0_sg15_P4r.save/
+     EXX fraction changed:   0.25
+     EXX Screening parameter changed:    0.0000000
+
+     IMPORTANT: XC functional enforced from input :
+     Exchange-correlation= PBE0
+                           (   6   4   8   4   0   0   0)
+     EXX-fraction              =        0.25
+     Any further DFT definition will be discarded
+     Please, verify this is what you really want
+
+
+     Parallelization info
+     --------------------
+     sticks:   dense  smooth     PW     G-vecs:    dense   smooth      PW
+     Min         651     651    173                74375    74375   10214
+     Max         652     652    174                74383    74383   10217
+     Sum        5213    5213   1391               595035   595035   81729
+
+     Using Slab Decomposition
+
+
+     Calling punch_plot, plot_num =  11
+     Writing data to file  optc/results/nbaetpy/runs/esp_P4r/vtot.dat
+     Reading data from file  optc/results/nbaetpy/runs/esp_P4r/vtot.dat
+
+     Writing data to be plotted to file optc/results/nbaetpy/runs/esp_P4r/vtot_P4r.cube
+     Plot Type: 3D                     Output format: Gaussian cube
+
+     POST-PROC    :      6.58s CPU      5.82s WALL
+
+
+   This run was terminated on:   8: 3:24  21Oct2026            
+
+=------------------------------------------------------------------------------=
+   JOB DONE.
+=------------------------------------------------------------------------------=

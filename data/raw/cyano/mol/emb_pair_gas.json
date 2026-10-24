@@ -1,0 +1,74 @@
+{
+ "key": "cyano",
+ "which": "pair",
+ "model": "gas",
+ "runs": {
+  "S_pair_vac": {
+   "E": -1023.4067965522337,
+   "converged": true,
+   "nao": 494,
+   "natm": 23,
+   "charge": 0
+  },
+  "S_pair_emb": {
+   "E": -1023.6400217170801,
+   "converged": true,
+   "nao": 494,
+   "natm": 23,
+   "charge": 0,
+   "E_int": -0.2626337138968573,
+   "E_int_el": -4.566942285439122,
+   "E_int_nuc": 4.304308571542265,
+   "n_charges": 6925
+  },
+  "T_pair_vac": {
+   "E": -1023.4531674826876,
+   "converged": true,
+   "nao": 494,
+   "natm": 23,
+   "charge": 0
+  },
+  "T_pair_emb": {
+   "E": -1023.6149522573144,
+   "converged": true,
+   "nao": 494,
+   "natm": 23,
+   "charge": 0,
+   "E_int": -0.18897248694754332,
+   "E_int_el": -4.333293951471498,
+   "E_int_nuc": 4.144321464523955,
+   "n_charges": 6925
+  },
+  "N_pair_emb": {
+   "E": -1023.5507151996957,
+   "converged": true,
+   "nao": 494,
+   "natm": 23,
+   "charge": 0,
+   "E_int": -0.11214352909168479,
+   "E_int_el": -2.3229692430933424,
+   "E_int_nuc": 2.2108257140016576,
+   "n_charges": 6971
+  },
+  "Tr_pair_emb": {
+   "E": -1023.5291200191525,
+   "converged": true,
+   "nao": 494,
+   "natm": 23,
+   "charge": 0,
+   "E_int": -0.13733308141330092,
+   "E_int_el": -2.444019821834088,
+   "E_int_nuc": 2.306686740420787,
+   "n_charges": 6971,
+   "sum_charges": -9.999999984744434e-07
+  }
+ },
+ "derived": {
+  "vacuum_kJ": -121.747,
+  "embedded_single_site_kJ": 65.82,
+  "embedded_collective_kJ": 36.918,
+  "reverse_kJ": -56.698,
+  "lr_mean_kJ": 4.561,
+  "lambda_kJ": 61.259
+ }
+}

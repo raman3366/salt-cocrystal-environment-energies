@@ -1,0 +1,41 @@
+{
+ "key": "brsalt",
+ "runner_up": {
+  "D": 28,
+  "H": 70,
+  "A": 33,
+  "labels": "N1-H1C...O1",
+  "DA": 2.7447,
+  "HA": 1.8745,
+  "DH": 0.9015,
+  "angle": 161.57,
+  "inter": true
+ },
+ "r_eq_A": 0.97958,
+ "n_fu": 2,
+ "moved_proton_nearest_A": [
+  [
+   0.9796,
+   33
+  ],
+  [
+   1.7507,
+   28
+  ],
+  [
+   2.1051,
+   31
+  ]
+ ],
+ "runs": {
+  "Rv": {
+   "E_pbe_Ry": -1258.89898604
+  }
+ },
+ "derived": {
+  "Rv_pbe_kJ": 114.315,
+  "T1v_pbe_kJ": 103.927,
+  "runner_minus_chosen_pbe_kJ": 10.388
+ },
+ "units": "kJ/mol per moved proton (one proton of the cell), relative to P0; T1v from vert.json"
+}

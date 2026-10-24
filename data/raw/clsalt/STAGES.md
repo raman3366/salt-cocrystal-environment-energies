@@ -1,0 +1,78 @@
+- 2026-10-18T18:09:57+00:00  relax_S: start relax ecut 70/560 k (1, 2, 1) (2 irr) np 12 nk 2 host machine C
+- 2026-10-18T19:18:15+00:00  relax_S: done rc=0 wall 68.3 min E = -1231.93926628 Ry
+- 2026-10-18T22:41:15+00:00  pbe_sg15_P0: start scf ecut 100/400 k (1, 2, 1) (2 irr) np 12 nk 2 host machine C
+- 2026-10-18T22:43:31+00:00  pbe0_sg15_P0: start scf PBE0 ecut 100/400 k (1, 2, 1) (2 irr) np 12 nk 2 host machine C
+- 2026-10-18T22:43:31+00:00  pbe_sg15_P0: done rc=0 wall 2.3 min E = -910.20089562 Ry
+- 2026-10-19T08:03:04+00:00  pbe0_sg15_P0: start scf PBE0 ecut 100/400 k (1, 2, 1) (2 irr) np 12 nk 2 host machine C
+- 2026-10-19T08:03:04+00:00  pbe_sg15_P0: finished earlier, reused
+- 2026-10-19T08:07:19+00:00  path_P1: start relax ecut 70/560 k (1, 2, 1) (2 irr) np 12 nk 2 host machine C
+- 2026-10-19T08:30:49+00:00  path_P2: start relax ecut 70/560 k (1, 2, 1) (2 irr) np 12 nk 2 host machine C
+- 2026-10-19T08:47:51+00:00  pbe0_sg15_P0: done rc=0 wall 44.8 min E = -909.758407 Ry
+- 2026-10-19T08:50:40+00:00  esp_P0: cube written (vtot_P0.cube.gz)
+- 2026-10-19T08:59:46+00:00  path_P1: done rc=0 wall 52.5 min E = -1231.91326578 Ry
+- 2026-10-19T08:59:50+00:00  path_P3: start relax ecut 70/560 k (1, 2, 1) (2 irr) np 12 nk 2 host machine C
+- 2026-10-19T09:08:05+00:00  path_P4: start relax ecut 70/560 k (1, 2, 1) (2 irr) np 12 nk 2 host machine C
+- 2026-10-19T09:50:51+00:00  path_P2: done rc=0 wall 80.0 min E = -1231.89389916 Ry
+- 2026-10-19T09:51:06+00:00  pbe_sg15_P1: start scf ecut 100/400 k (1, 2, 1) (2 irr) np 12 nk 2 host machine C
+- 2026-10-19T09:53:14+00:00  pbe0_sg15_P1: start scf PBE0 ecut 100/400 k (1, 2, 1) (2 irr) np 12 nk 2 host machine C
+- 2026-10-19T09:53:14+00:00  pbe_sg15_P1: done rc=0 wall 2.1 min E = -910.17469961 Ry
+- 2026-10-19T10:23:41+00:00  path_P3: done rc=0 wall 83.9 min E = -1231.88776978 Ry
+- 2026-10-19T10:23:51+00:00  pbe_sg15_P2: start scf ecut 100/400 k (1, 2, 1) (2 irr) np 12 nk 2 host machine C
+- 2026-10-19T10:26:15+00:00  pbe0_sg15_P2: start scf PBE0 ecut 100/400 k (1, 2, 1) (2 irr) np 12 nk 2 host machine C
+- 2026-10-19T10:26:15+00:00  pbe_sg15_P2: done rc=0 wall 2.4 min E = -910.15501201 Ry
+- 2026-10-19T10:40:16+00:00  pbe0_sg15_P1: done rc=0 wall 47.0 min E = -909.72719739 Ry
+- 2026-10-19T10:40:22+00:00  pbe_sg15_P3: start scf ecut 100/400 k (1, 2, 1) (2 irr) np 12 nk 2 host machine C
+- 2026-10-19T10:42:33+00:00  pbe0_sg15_P3: start scf PBE0 ecut 100/400 k (1, 2, 1) (2 irr) np 12 nk 2 host machine C
+- 2026-10-19T10:42:33+00:00  pbe_sg15_P3: done rc=0 wall 2.2 min E = -910.14873128 Ry
+- 2026-10-19T10:58:55+00:00  path_P4: done rc=0 wall 110.8 min E = -1231.87350706 Ry
+- 2026-10-19T10:59:07+00:00  pbe_sg15_P4: start scf ecut 100/400 k (1, 2, 1) (2 irr) np 12 nk 2 host machine C
+- 2026-10-19T11:01:31+00:00  pbe0_sg15_P4: start scf PBE0 ecut 100/400 k (1, 2, 1) (2 irr) np 12 nk 2 host machine C
+- 2026-10-19T11:01:31+00:00  pbe_sg15_P4: done rc=0 wall 2.4 min E = -910.13525109 Ry
+- 2026-10-19T11:14:15+00:00  pbe0_sg15_P2: done rc=0 wall 48.0 min E = -909.7097428 Ry
+- 2026-10-19T11:30:25+00:00  pbe0_sg15_P3: done rc=0 wall 47.9 min E = -909.70807863 Ry
+- 2026-10-19T11:49:38+00:00  pbe0_sg15_P4: done rc=0 wall 48.1 min E = -909.70256231 Ry
+- 2026-10-19T11:51:47+00:00  esp_P4: cube written (vtot_P4.cube.gz)
+- 2026-10-19T11:51:53+00:00  relax_P4r: start relax ecut 70/560 k (1, 2, 1) (2 irr) np 12 nk 2 host machine C
+- 2026-10-19T14:07:16+00:00  relax_P4r: done rc=0 wall 135.4 min E = -1231.93935252 Ry
+- 2026-10-19T14:07:16+00:00  relax_P4r: proton returns to the donor (delta [-0.6141, -0.6141])
+- 2026-10-19T14:26:26+00:00  kcheck_P0: start scf ecut 70/560 k (2, 3, 2) (8 irr) np 12 nk 4 host machine C
+- 2026-10-19T14:33:36+00:00  kcheck_P0: done rc=0 wall 7.2 min E = -1231.94023706 Ry
+- 2026-10-19T14:33:36+00:00  kcheck_P4: start scf ecut 70/560 k (2, 3, 2) (8 irr) np 12 nk 4 host machine C
+- 2026-10-19T14:40:09+00:00  kcheck_P4: done rc=0 wall 6.6 min E = -1231.87480469 Ry
+- 2026-10-20T09:01:15+00:00  vert_P0: start scf ecut 70/560 k (1, 2, 1) (2 irr) np 12 nk 2 host machine B
+- 2026-10-20T09:04:19+00:00  pbe0_sg15_P0: finished earlier, reused
+- 2026-10-20T09:04:19+00:00  pbe_sg15_P0: finished earlier, reused
+- 2026-10-20T09:04:19+00:00  vert_P0: done rc=0 wall 3.1 min E = -1231.93926628 Ry
+- 2026-10-20T09:04:19+00:00  vert_T1: start scf ecut 70/560 k (1, 2, 1) (2 irr) np 12 nk 2 host machine B
+- 2026-10-20T09:07:30+00:00  pbe_sg15_vT1: start scf ecut 100/400 k (1, 2, 1) (2 irr) np 12 nk 2 host machine B
+- 2026-10-20T09:07:30+00:00  vert_T1: done rc=0 wall 3.2 min E = -1231.89776195 Ry
+- 2026-10-20T09:10:08+00:00  pbe0_sg15_vT1: start scf PBE0 ecut 100/400 k (1, 2, 1) (2 irr) np 12 nk 2 host machine B
+- 2026-10-20T09:10:08+00:00  pbe_sg15_vT1: done rc=0 wall 2.6 min E = -910.15939012 Ry
+- 2026-10-20T10:02:34+00:00  pbe0_sg15_vT1: done rc=0 wall 52.4 min E = -909.72142535 Ry
+- 2026-10-20T10:02:34+00:00  vert_T1v: start scf ecut 70/560 k (1, 2, 1) (2 irr) np 12 nk 2 host machine B
+- 2026-10-20T10:05:37+00:00  vert_Nv: start scf ecut 70/560 k (1, 2, 1) (2 irr) np 12 nk 2 host machine B
+- 2026-10-20T10:05:37+00:00  vert_T1v: done rc=0 wall 3.1 min E = -1231.86016832 Ry
+- 2026-10-20T10:08:40+00:00  pbe_sg15_vNv: start scf ecut 100/400 k (1, 2, 1) (2 irr) np 12 nk 2 host machine B
+- 2026-10-20T10:08:40+00:00  vert_Nv: done rc=0 wall 3.0 min E = -1231.78540798 Ry
+- 2026-10-20T10:11:09+00:00  pbe0_sg15_vNv: start scf PBE0 ecut 100/400 k (1, 2, 1) (2 irr) np 12 nk 2 host machine B
+- 2026-10-20T10:11:09+00:00  pbe_sg15_vNv: done rc=0 wall 2.5 min E = -910.04660453 Ry
+- 2026-10-20T11:01:15+00:00  pbe0_sg15_vNv: done rc=0 wall 50.1 min E = -909.60324658 Ry
+- 2026-10-20T11:01:15+00:00  vert_T2: start scf ecut 70/560 k (1, 1, 1) (1 irr) np 12 nk 1 host machine B
+- 2026-10-20T11:17:00+00:00  vert: {'T1_pbe_kJ': 54.485, 'T1v_pbe_kJ': 103.836, 'Nv_pbe_kJ_per_pair': 100.989, 'T1_pbe0_kJ': 48.546, 'Nv_pbe0_kJ_per_pair': 101.559, 'T2_pbe_kJ': 535.184, 'cooperativity_vertical_pbe_kJ': -2.847}
+- 2026-10-20T11:17:00+00:00  vert_T2: done rc=0 wall 15.7 min E = -2463.47085063 Ry
+- 2026-10-20T11:20:36+00:00  pbe0_sg15_P0: finished earlier, reused
+- 2026-10-20T11:20:36+00:00  pbe0_sg15_vNv: finished earlier, reused
+- 2026-10-20T11:20:36+00:00  pbe0_sg15_vT1: finished earlier, reused
+- 2026-10-20T11:20:36+00:00  pbe_sg15_P0: finished earlier, reused
+- 2026-10-20T11:20:36+00:00  pbe_sg15_vNv: finished earlier, reused
+- 2026-10-20T11:20:36+00:00  pbe_sg15_vT1: finished earlier, reused
+- 2026-10-20T11:20:36+00:00  vert_Nv: finished earlier, reused
+- 2026-10-20T11:20:36+00:00  vert_P0: finished earlier, reused
+- 2026-10-20T11:20:36+00:00  vert_T1: finished earlier, reused
+- 2026-10-20T11:20:36+00:00  vert_T1v: finished earlier, reused
+- 2026-10-20T11:20:36+00:00  vert_T2s: start scf ecut 70/560 k (1, 1, 1) (1 irr) np 12 nk 1 host machine B
+- 2026-10-20T11:36:10+00:00  vert: {'T1_pbe_kJ': 54.485, 'T1v_pbe_kJ': 103.836, 'Nv_pbe_kJ_per_pair': 100.989, 'T1_pbe0_kJ': 48.546, 'Nv_pbe0_kJ_per_pair': 101.559, 'T2_pbe_kJ': 70.473, 'cooperativity_vertical_pbe_kJ': -2.847}
+- 2026-10-20T11:36:10+00:00  vert_T2s: done rc=0 wall 15.6 min E = -2463.82484936 Ry
+- 2026-10-21T02:54:33+00:00  vert_Rv: start scf ecut 70/560 k (1, 2, 1) (2 irr) np 12 nk 2 host machine D
+- 2026-10-21T02:57:05+00:00  runner (periodic, vertical): {'Rv_pbe_kJ': 115.625, 'T1v_pbe_kJ': 103.836, 'runner_minus_chosen_pbe_kJ': 11.789}
+- 2026-10-21T02:57:05+00:00  vert_Rv: done rc=0 wall 2.5 min E = -1231.85118805 Ry

@@ -1,0 +1,50 @@
+{
+ "key": "saph",
+ "which": "pairshellq",
+ "model": "repeat_site",
+ "runs": {
+  "S_pairshellq_emb": {
+   "E": -1535.137409346368,
+   "converged": true,
+   "nao": 574,
+   "natm": 27,
+   "charge": 0,
+   "E_int": -0.18644839606626107,
+   "E_int_el": 35.348009892409856,
+   "E_int_nuc": -35.53445828847612,
+   "n_charges": 21,
+   "sum_charges": -3.0000030000000004
+  },
+  "T_pairshellq_emb": {
+   "E": -1535.1243443351036,
+   "converged": true,
+   "nao": 574,
+   "natm": 27,
+   "charge": 0,
+   "radii_from": "S",
+   "E_int": -0.1321910985453414,
+   "E_int_el": 35.1721328514008,
+   "E_int_nuc": -35.30432394994614,
+   "n_charges": 21,
+   "sum_charges": -3.0000030000000004
+  }
+ },
+ "basis": "def2-TZVP",
+ "superseded": {
+  "T_pairshellq_emb": {
+   "E": -1535.1243443108078,
+   "converged": true,
+   "nao": 574,
+   "natm": 27,
+   "charge": 0,
+   "E_int": -0.13219375253383703,
+   "E_int_el": 35.1721301974123,
+   "E_int_nuc": -35.30432394994614,
+   "n_charges": 21,
+   "sum_charges": -3.0000030000000004
+  }
+ },
+ "derived": {
+  "embedded_single_site_kJ": 34.302
+ }
+}

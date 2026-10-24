@@ -1,0 +1,1018 @@
+
+     Program PWSCF v.7.5 starts on 18Oct2026 at 23:57:23 
+
+     This program is part of the open-source Quantum ESPRESSO suite
+     for quantum simulation of materials; please cite
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 21 395502 (2009);
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 29 465901 (2017);
+         "P. Giannozzi et al., J. Chem. Phys. 152 154105 (2020);
+          URL http://www.quantum-espresso.org", 
+     in publications or presentations arising from this work. More details at
+     http://www.quantum-espresso.org/quote
+
+     Parallel version (MPI & OpenMP), running on      12 processor cores
+     Number of MPI processes:                12
+     Threads/MPI process:                     1
+
+     MPI processes distributed on     1 nodes
+     222498 MiB available memory on the printing compute node when the environment starts
+
+     Reading input from optc/results/perchlorate/runs/pbe0_sg15_P2/pbe0_sg15_P2.in
+
+     Current dimensions of program PWSCF are:
+     Max number of different atomic species (ntypx) = 10
+     Max number of k-points (npk) =  40000
+     Max angular momentum in pseudopotentials (lmaxx) =  4
+
+     IMPORTANT: XC functional enforced from input :
+     Exchange-correlation= PBE0
+                           (   6   4   8   4   0   0   0)
+     EXX-fraction              =        0.25
+     Any further DFT definition will be discarded
+     Please, verify this is what you really want
+
+     Message from routine setup:
+     using ibrav=0 with symmetry is DISCOURAGED, use correct ibrav instead
+
+     K-points division:     npool     =       2
+     R & G space division:  proc/nbgrp/npool/nimage =       6
+     Subspace diagonalization in iterative solution of the eigenvalue problem:
+     a serial algorithm will be used
+
+     EXX: q-point mesh:     1    1    1
+     EXX: setup a grid of 2 q-points centered on each k-point
+     (k+q)-points:
+   0.0000000   0.0000000   0.0000000         1    1
+  -0.5000000   0.0000000  -0.0324738         2    1
+
+     Parallelization info
+     --------------------
+     sticks:   dense  smooth     PW     G-vecs:    dense   smooth      PW
+     Min         978     978    263                76924    76924   10630
+     Max         979     979    264                76929    76929   10633
+     Sum        5873    5873   1579               461565   461565   63787
+
+     Using Slab Decomposition
+
+
+
+     bravais-lattice index     =            0
+     lattice parameter (alat)  =       9.2895  a.u.
+     unit-cell volume          =    3415.7871 (a.u.)^3
+     number of atoms/cell      =           50
+     number of atomic types    =            6
+     number of electrons       =       184.00
+     number of Kohn-Sham states=           92
+     kinetic-energy cutoff     =     100.0000  Ry
+     charge density cutoff     =     400.0000  Ry
+     cutoff for Fock operator  =     400.0000  Ry
+     scf convergence threshold =      1.0E-06
+     mixing beta               =       0.4000
+     number of iterations used =            8  plain     mixing
+     Exchange-correlation= PBE0
+                           (   6   4   8   4   0   0   0)
+     EXX-fraction              =        0.25
+
+     celldm(1)=   9.289516  celldm(2)=   0.000000  celldm(3)=   0.000000
+     celldm(4)=   0.000000  celldm(5)=   0.000000  celldm(6)=   0.000000
+
+     crystal axes: (cart. coord. in units of alat)
+               a(1) = (   1.000000   0.000000   0.000000 )  
+               a(2) = (   0.000000   2.138818   0.000000 )  
+               a(3) = (  -0.129390   0.000000   1.992222 )  
+
+     reciprocal axes: (cart. coord. in units 2 pi/alat)
+               b(1) = (  1.000000 -0.000000  0.064948 )  
+               b(2) = (  0.000000  0.467548 -0.000000 )  
+               b(3) = (  0.000000  0.000000  0.501952 )  
+
+
+     PseudoPot. # 1 for H  read from file:
+     tools/qe/pseudo_sg15/H_ONCV_PBE-1.2.upf
+     MD5 check sum: bf21e08b90ac4ce7d0149ac4e8138190
+     Pseudo is Norm-conserving, Zval =  1.0
+     Generated using ONCVPSP code by D. R. Hamann
+     Using radial grid of  602 points,  2 beta functions with: 
+                l(1) =   0
+                l(2) =   0
+
+     PseudoPot. # 2 for C  read from file:
+     tools/qe/pseudo_sg15/C_ONCV_PBE-1.2.upf
+     MD5 check sum: 1a5f83a7b1f58d24996abe00ed223ac6
+     Pseudo is Norm-conserving, Zval =  4.0
+     Generated using ONCVPSP code by D. R. Hamann
+     Using radial grid of  602 points,  4 beta functions with: 
+                l(1) =   0
+                l(2) =   0
+                l(3) =   1
+                l(4) =   1
+
+     PseudoPot. # 3 for N  read from file:
+     tools/qe/pseudo_sg15/N_ONCV_PBE-1.2.upf
+     MD5 check sum: c233fa8df51455e992258b7c3dee8a9f
+     Pseudo is Norm-conserving, Zval =  5.0
+     Generated using ONCVPSP code by D. R. Hamann
+     Using radial grid of  602 points,  4 beta functions with: 
+                l(1) =   0
+                l(2) =   0
+                l(3) =   1
+                l(4) =   1
+
+     PseudoPot. # 4 for O  read from file:
+     tools/qe/pseudo_sg15/O_ONCV_PBE-1.2.upf
+     MD5 check sum: e36c48deb68f4e355fffe4602be2c42c
+     Pseudo is Norm-conserving, Zval =  6.0
+     Generated using ONCVPSP code by D. R. Hamann
+     Using radial grid of  602 points,  4 beta functions with: 
+                l(1) =   0
+                l(2) =   0
+                l(3) =   1
+                l(4) =   1
+
+     PseudoPot. # 5 for S  read from file:
+     tools/qe/pseudo_sg15/S_ONCV_PBE-1.2.upf
+     MD5 check sum: f9d020296ee6110346977bfd66d424f6
+     Pseudo is Norm-conserving, Zval =  6.0
+     Generated using ONCVPSP code by D. R. Hamann
+     Using radial grid of  602 points,  4 beta functions with: 
+                l(1) =   0
+                l(2) =   0
+                l(3) =   1
+                l(4) =   1
+
+     PseudoPot. # 6 for Cl read from file:
+     tools/qe/pseudo_sg15/Cl_ONCV_PBE-1.2.upf
+     MD5 check sum: 0f993535b366f580ecbcdacce103c843
+     Pseudo is Norm-conserving, Zval =  7.0
+     Generated using ONCVPSP code by D. R. Hamann
+     Using radial grid of  602 points,  4 beta functions with: 
+                l(1) =   0
+                l(2) =   0
+                l(3) =   1
+                l(4) =   1
+
+     atomic species   valence    mass     pseudopotential
+     H                 1.00     1.00800     H ( 1.00)
+     C                 4.00    12.01100     C ( 1.00)
+     N                 5.00    14.00700     N ( 1.00)
+     O                 6.00    15.99900     O ( 1.00)
+     S                 6.00    32.06000     S ( 1.00)
+     Cl                7.00    35.45000     Cl( 1.00)
+
+      2 Sym. Ops. (no inversion) found ( 1 have fractional translation)
+
+
+
+   Cartesian axes
+
+     site n.     atom                  positions (alat units)
+         1        C      tau(   1) = (   0.7144670   1.1367286   1.0786747  )
+         2        C      tau(   2) = (   0.1561431   0.0673197   0.9135476  )
+         3        C      tau(   3) = (   0.9191573   0.9752479   0.9678288  )
+         4        C      tau(   4) = (  -0.0485472   2.0446567   1.0243936  )
+         5        H      tau(   5) = (  -0.0011318   0.8032149   1.0813722  )
+         6        H      tau(   6) = (   0.8717419   1.8726237   0.9108502  )
+         7        C      tau(   7) = (   0.0212763   1.0393699   0.7123504  )
+         8        C      tau(   8) = (   0.8493338   2.1087787   1.2798719  )
+         9        H      tau(   9) = (   0.1837883   0.9184711   0.6251171  )
+        10        H      tau(  10) = (   0.6868218   1.9878800   1.3671052  )
+        11        C      tau(  11) = (   0.9180406   1.2600715   0.5687877  )
+        12        C      tau(  12) = (  -0.0474305   0.1906626   1.4234347  )
+        13        C      tau(  13) = (   0.7072728   1.4175466   0.6779070  )
+        14        C      tau(  14) = (   0.1633373   0.3481377   1.3143154  )
+        15        H      tau(  15) = (   0.6212990   1.5857219   0.5622429  )
+        16        H      tau(  16) = (   0.2493111   0.5163130   1.4299794  )
+        17        C      tau(  17) = (   0.6049308   1.3565063   0.9352582  )
+        18        C      tau(  18) = (   0.2656793   0.2870974   1.0569642  )
+        19        H      tau(  19) = (   0.4393525   1.4756069   1.0221892  )
+        20        H      tau(  20) = (   0.4312575   0.4061980   0.9700331  )
+        21        N      tau(  21) = (   0.7867413   1.2505823   1.6241316  )
+        22        N      tau(  22) = (   0.0838688   0.1811735   0.3680908  )
+        23        N      tau(  23) = (   0.0328434   1.3211981   0.3041771  )
+        24        N      tau(  24) = (   0.8377667   0.2517892   1.6880453  )
+        25        O      tau(  25) = (   0.3261910   1.1502338   1.4416869  )
+        26        O      tau(  26) = (   0.5444191   0.0808250   0.5505355  )
+        27        O      tau(  27) = (   0.6794720   0.7812869   1.4667044  )
+        28        O      tau(  28) = (   0.1911381   1.8506957   0.5255179  )
+        29        H      tau(  29) = (  -0.0076171   1.2194640   1.5987792  )
+        30        H      tau(  30) = (   0.8782272   0.1500551   0.3934432  )
+        31        H      tau(  31) = (   0.7320438   1.4510112   1.6126697  )
+        32        H      tau(  32) = (   0.1385662   0.3816023   0.3795527  )
+        33        H      tau(  33) = (   0.2737160   1.1600739   0.2220022  )
+        34        H      tau(  34) = (   0.5968941   0.0906651   1.7702202  )
+        35        H      tau(  35) = (   0.0838460   1.5239438   0.2960773  )
+        36        H      tau(  36) = (   0.7867641   0.4545350   1.6961451  )
+        37        H      tau(  37) = (   0.8910519   1.2875029   0.1553152  )
+        38        H      tau(  38) = (  -0.0204418   0.2180941   1.8369071  )
+        39        Cl     tau(  39) = (   0.5362672   0.7685056   0.1503120  )
+        40        Cl     tau(  40) = (   0.3343429   1.8379145   1.8419103  )
+        41        O      tau(  41) = (   0.8265821   0.7463080   0.1153087  )
+        42        O      tau(  42) = (   0.0440280   1.8157168   1.8769136  )
+        43        O      tau(  43) = (   0.2559348   0.6417715   1.9257557  )
+        44        O      tau(  44) = (   0.6146753   1.7111804   0.0664667  )
+        45        O      tau(  45) = (   0.4803132   1.0817498   0.1386157  )
+        46        O      tau(  46) = (   0.3902969   2.1511586   1.8536066  )
+        47        O      tau(  47) = (   0.4501716   0.6715648   0.4156998  )
+        48        O      tau(  48) = (   0.4204385   1.7409736   1.5765226  )
+        49        S      tau(  49) = (   0.6073525   1.0630929   1.4152994  )
+        50        S      tau(  50) = (   0.2632576   2.1325017   0.5769229  )
+
+     --------------------------------------------
+     DFT-D3 Dispersion Correction (no 3-body):
+     --------------------------------------------
+       Reference C6 values for interpolation: 
+
+         atom   Coordination number   C6
+         H          0.912             6.05
+         H          0.000            15.18
+         C          0.000            98.23
+         C          0.987            86.49
+         C          1.998            58.72
+         C          2.999            51.56
+         C          3.984            36.41
+         N          0.000            50.54
+         N          0.994            44.25
+         N          2.014            39.35
+         N          2.990            31.16
+         O          0.000            31.01
+         O          0.993            25.63
+         O          1.989            20.74
+         S          0.000           268.01
+         S          0.995           261.99
+         S          1.990           251.62
+         Cl         0.000           184.69
+         Cl         0.997           180.80
+
+       Values used:
+
+         atom   Coordination number  R0_AB[au]  C6      C8
+         C          3.179            2.750     50.27   1453.95
+         C          3.179            2.750     50.27   1453.95
+         C          3.249            2.750     49.43   1429.53
+         C          3.249            2.750     49.43   1429.53
+         H          1.010            2.062      6.17     74.61
+         H          1.010            2.062      6.17     74.61
+         C          3.186            2.750     50.20   1451.89
+         C          3.186            2.750     50.20   1451.89
+         H          1.010            2.062      6.17     74.61
+         H          1.010            2.062      6.17     74.61
+         C          3.170            2.750     50.36   1456.62
+         C          3.170            2.750     50.36   1456.62
+         C          3.175            2.750     50.32   1455.28
+         C          3.175            2.750     50.32   1455.28
+         H          1.007            2.062      6.17     74.64
+         H          1.007            2.062      6.17     74.64
+         C          3.223            2.750     49.79   1439.99
+         C          3.223            2.750     49.79   1439.99
+         H          1.007            2.062      6.17     74.64
+         H          1.007            2.062      6.17     74.64
+         N          3.040            2.478     31.28    689.99
+         N          3.040            2.478     31.28    689.99
+         N          3.322            2.478     31.18    687.77
+         N          3.322            2.478     31.18    687.77
+         O          1.049            2.345     25.54    515.48
+         O          1.049            2.345     25.54    515.48
+         O          1.045            2.345     25.55    515.59
+         O          1.045            2.345     25.55    515.59
+         H          1.046            2.062      6.15     74.28
+         H          1.046            2.062      6.15     74.28
+         H          1.044            2.062      6.15     74.30
+         H          1.044            2.062      6.15     74.30
+         H          1.072            2.062      6.13     74.10
+         H          1.072            2.062      6.13     74.10
+         H          1.012            2.062      6.17     74.59
+         H          1.012            2.062      6.17     74.59
+         H          1.011            2.062      6.17     74.60
+         H          1.011            2.062      6.17     74.60
+         Cl         4.061            2.933    180.80   7543.49
+         Cl         4.061            2.933    180.80   7543.49
+         O          1.041            2.345     25.56    515.72
+         O          1.041            2.345     25.56    515.72
+         O          1.038            2.345     25.56    515.84
+         O          1.038            2.345     25.56    515.84
+         O          1.853            2.345     20.98    423.42
+         O          1.853            2.345     20.98    423.42
+         O          1.041            2.345     25.56    515.74
+         O          1.041            2.345     25.56    515.74
+         S          4.315            3.128    251.62  12327.25
+         S          4.315            3.128    251.62  12327.25
+
+         Molecular C6 ( Ry / a.u.^6 ) =     72267.42
+
+
+     number of k points=     2
+                       cart. coord. in units 2pi/alat
+        k(    1) = (   0.0000000   0.0000000   0.0000000), wk =   1.0000000
+        k(    2) = (  -0.5000000   0.0000000  -0.0324738), wk =   1.0000000
+
+     Dense  grid:   461565 G-vectors     FFT dimensions: (  60, 128, 120)
+
+     Estimated max dynamical RAM per process >     647.55 MB
+
+     Estimated total dynamical RAM >       7.48 GB
+     EXX: ACE will be initialized later
+
+     Initial potential from superposition of free atoms
+
+     starting charge     183.8262, renormalised to     184.0000
+     Starting wfcs are random
+
+     total cpu time spent up to now is        1.9 secs
+
+     per-process dynamical memory:   116.9 Mb
+
+     Self-consistent Calculation
+
+     iteration #  1     ecut=   100.00 Ry     beta= 0.40
+     Davidson diagonalization with overlap
+     ethr =  1.00E-02,  avg # of iterations = 16.0
+
+     total cpu time spent up to now is       10.0 secs
+
+     total energy              =    -720.19374241 Ry
+     estimated scf accuracy    <       6.69460200 Ry
+
+     iteration #  2     ecut=   100.00 Ry     beta= 0.40
+     Davidson diagonalization with overlap
+     ethr =  3.64E-03,  avg # of iterations =  2.0
+
+     total cpu time spent up to now is       13.0 secs
+
+     total energy              =    -721.07905204 Ry
+     estimated scf accuracy    <       0.54571467 Ry
+
+     iteration #  3     ecut=   100.00 Ry     beta= 0.40
+     Davidson diagonalization with overlap
+     ethr =  2.97E-04,  avg # of iterations =  3.0
+
+     total cpu time spent up to now is       16.1 secs
+
+     total energy              =    -721.18111803 Ry
+     estimated scf accuracy    <       0.14933459 Ry
+
+     iteration #  4     ecut=   100.00 Ry     beta= 0.40
+     Davidson diagonalization with overlap
+     ethr =  8.12E-05,  avg # of iterations =  4.5
+
+     total cpu time spent up to now is       19.1 secs
+
+     total energy              =    -721.20858051 Ry
+     estimated scf accuracy    <       0.06727021 Ry
+
+     iteration #  5     ecut=   100.00 Ry     beta= 0.40
+     Davidson diagonalization with overlap
+     ethr =  3.66E-05,  avg # of iterations =  3.0
+
+     total cpu time spent up to now is       21.5 secs
+
+     total energy              =    -721.21533121 Ry
+     estimated scf accuracy    <       0.00491670 Ry
+
+     iteration #  6     ecut=   100.00 Ry     beta= 0.40
+     Davidson diagonalization with overlap
+     ethr =  2.67E-06,  avg # of iterations =  5.0
+
+     total cpu time spent up to now is       25.7 secs
+
+     total energy              =    -721.21738378 Ry
+     estimated scf accuracy    <       0.00634339 Ry
+
+     iteration #  7     ecut=   100.00 Ry     beta= 0.40
+     Davidson diagonalization with overlap
+     ethr =  2.67E-06,  avg # of iterations =  3.0
+
+     total cpu time spent up to now is       28.4 secs
+
+     total energy              =    -721.21877271 Ry
+     estimated scf accuracy    <       0.00007255 Ry
+
+     iteration #  8     ecut=   100.00 Ry     beta= 0.40
+     Davidson diagonalization with overlap
+     ethr =  3.94E-08,  avg # of iterations =  6.0
+
+     total cpu time spent up to now is       32.1 secs
+
+     total energy              =    -721.21883049 Ry
+     estimated scf accuracy    <       0.00011653 Ry
+
+     iteration #  9     ecut=   100.00 Ry     beta= 0.40
+     Davidson diagonalization with overlap
+     ethr =  3.94E-08,  avg # of iterations =  3.0
+
+     total cpu time spent up to now is       34.4 secs
+
+     total energy              =    -721.21880117 Ry
+     estimated scf accuracy    <       0.00007695 Ry
+
+     iteration # 10     ecut=   100.00 Ry     beta= 0.40
+     Davidson diagonalization with overlap
+     ethr =  3.94E-08,  avg # of iterations =  3.0
+
+     total cpu time spent up to now is       37.3 secs
+
+     total energy              =    -721.21881049 Ry
+     estimated scf accuracy    <       0.00000639 Ry
+
+     iteration # 11     ecut=   100.00 Ry     beta= 0.40
+     Davidson diagonalization with overlap
+     ethr =  3.47E-09,  avg # of iterations =  5.0
+
+     total cpu time spent up to now is       41.2 secs
+
+     total energy              =    -721.21881322 Ry
+     estimated scf accuracy    <       0.00001572 Ry
+
+     iteration # 12     ecut=   100.00 Ry     beta= 0.40
+     Davidson diagonalization with overlap
+     ethr =  3.47E-09,  avg # of iterations =  3.0
+
+     total cpu time spent up to now is       44.0 secs
+
+     total energy              =    -721.21881416 Ry
+     estimated scf accuracy    <       0.00000170 Ry
+
+     iteration # 13     ecut=   100.00 Ry     beta= 0.40
+     Davidson diagonalization with overlap
+     ethr =  9.22E-10,  avg # of iterations =  3.5
+
+     total cpu time spent up to now is       46.9 secs
+
+     End of self-consistent calculation
+
+          k = 0.0000 0.0000 0.0000 ( 57711 PWs)   bands (ev):
+
+   -25.6318 -25.6287 -20.7559 -20.7550 -19.6745 -19.6712 -19.6159 -19.6148
+   -19.0838 -19.0618 -17.8142 -17.8137 -15.8014 -15.7936 -15.1043 -15.0967
+   -14.0047 -13.9651 -11.3962 -11.3878 -11.3622 -11.2981 -10.2190 -10.1426
+    -9.0525  -9.0330  -8.0057  -7.9868  -7.7701  -7.7235  -7.4166  -7.3554
+    -6.6570  -6.6523  -6.4766  -6.4689  -6.3090  -6.1413  -5.9252  -5.8812
+    -5.5234  -5.4058  -5.1949  -5.1284  -4.6209  -4.5674  -4.3626  -4.2664
+    -3.8891  -3.8207  -3.5563  -3.4536  -3.2448  -3.2114  -3.1334  -2.9342
+    -2.5361  -2.5294  -2.4133  -2.3564  -2.3053  -2.2376  -2.1953  -2.1188
+    -2.0211  -1.9732  -1.7916  -1.7437  -1.5119  -1.4956  -1.0231  -0.9729
+    -0.7307  -0.7284  -0.6293  -0.5702  -0.4973  -0.2673  -0.1895  -0.1448
+    -0.1056  -0.0914  -0.0461  -0.0067   0.0940   0.1666   0.2643   0.3454
+     0.6283   0.6450   1.1184   1.1428
+
+          k =-0.5000 0.0000-0.0325 ( 57742 PWs)   bands (ev):
+
+   -25.6208 -25.6179 -20.7170 -20.7157 -19.7287 -19.7256 -19.6102 -19.6092
+   -19.0736 -19.0547 -17.8405 -17.8401 -15.8045 -15.7904 -15.2568 -15.2450
+   -13.9685 -13.9357 -11.4615 -11.4006 -11.3986 -11.3155 -10.1470 -10.0319
+    -8.8908  -8.8568  -8.0402  -7.9517  -7.7136  -7.6372  -7.2657  -7.2215
+    -6.5748  -6.5674  -6.3583  -6.3473  -6.1487  -6.1259  -5.6916  -5.6359
+    -5.3839  -5.3708  -5.2646  -5.2527  -4.5994  -4.5730  -4.4736  -4.4727
+    -3.9734  -3.9661  -3.7453  -3.6683  -3.6396  -3.3280  -3.1109  -3.0326
+    -2.6833  -2.6480  -2.5061  -2.4503  -2.3888  -2.3729  -2.2472  -2.2115
+    -2.1529  -2.0926  -2.0513  -1.9302  -1.5950  -1.4967  -1.1568  -1.0342
+    -0.7696  -0.6976  -0.5407  -0.4182  -0.3734  -0.3081  -0.1803  -0.1478
+    -0.0306   0.0269   0.0525   0.0934   0.1083   0.1761   0.2437   0.2504
+     1.0004   1.0398   1.2292   1.2574
+
+     highest occupied level (ev):     1.2574
+
+!    total energy              =    -721.21881460 Ry
+     estimated scf accuracy    <       0.00000003 Ry
+
+     convergence has been achieved in  13 iterations
+
+     Using ACE for calculation of exact exchange
+
+     EXX grid:   461565 G-vectors     FFT dimensions: (  60, 128, 120)
+     ACE projected onto    92 (nbndproj) and applied to    92 (nbnd) bands
+
+     EXX: now go back to refine exchange calculation
+
+     total cpu time spent up to now is      139.2 secs
+
+     per-process dynamical memory:   642.0 Mb
+
+     Self-consistent Calculation
+
+     iteration #  1     ecut=   100.00 Ry     beta= 0.40
+     Davidson diagonalization with overlap
+     ethr =  9.22E-10,  avg # of iterations = 15.0
+
+     total cpu time spent up to now is      151.7 secs
+
+     total energy              =    -720.93039263 Ry
+     estimated scf accuracy    <       0.01277689 Ry
+
+     iteration #  2     ecut=   100.00 Ry     beta= 0.40
+     Davidson diagonalization with overlap
+     ethr =  6.94E-06,  avg # of iterations =  2.0
+
+     total cpu time spent up to now is      154.3 secs
+
+     total energy              =    -720.93156668 Ry
+     estimated scf accuracy    <       0.00168334 Ry
+
+     iteration #  3     ecut=   100.00 Ry     beta= 0.40
+     Davidson diagonalization with overlap
+     ethr =  9.15E-07,  avg # of iterations =  2.0
+
+     total cpu time spent up to now is      156.6 secs
+
+     total energy              =    -720.93156730 Ry
+     estimated scf accuracy    <       0.00035448 Ry
+
+     iteration #  4     ecut=   100.00 Ry     beta= 0.40
+     Davidson diagonalization with overlap
+     ethr =  1.93E-07,  avg # of iterations =  2.0
+
+     total cpu time spent up to now is      158.9 secs
+
+     total energy              =    -720.93159707 Ry
+     estimated scf accuracy    <       0.00001437 Ry
+
+     iteration #  5     ecut=   100.00 Ry     beta= 0.40
+     Davidson diagonalization with overlap
+     ethr =  7.81E-09,  avg # of iterations =  3.5
+
+     total cpu time spent up to now is      161.9 secs
+
+     total energy              =    -720.93159879 Ry
+     estimated scf accuracy    <       0.00000181 Ry
+
+     iteration #  6     ecut=   100.00 Ry     beta= 0.40
+     Davidson diagonalization with overlap
+     ethr =  9.85E-10,  avg # of iterations =  3.0
+
+     total cpu time spent up to now is      165.1 secs
+
+     End of self-consistent calculation
+
+          k = 0.0000 0.0000 0.0000 ( 57711 PWs)   bands (ev):
+
+   -29.2231 -29.2193 -24.0839 -24.0829 -22.9979 -22.9928 -22.9499 -22.9479
+   -22.4436 -22.4217 -21.0797 -21.0792 -18.7769 -18.7692 -18.0301 -18.0217
+   -16.8592 -16.8158 -14.0287 -13.9925 -13.9664 -13.9264 -12.7587 -12.6848
+   -11.3784 -11.3464 -10.2450 -10.2190  -9.9848  -9.9325  -9.5527  -9.4838
+    -8.8490  -8.8418  -8.6540  -8.6370  -8.2874  -8.1260  -7.8783  -7.8198
+    -7.4054  -7.2937  -7.0244  -6.9712  -6.5572  -6.4581  -6.2954  -6.1581
+    -5.7428  -5.6818  -5.3632  -5.2740  -5.0737  -5.0482  -4.8942  -4.6842
+    -4.3664  -4.3491  -4.2667  -4.1468  -4.0618  -4.0267  -4.0024  -3.8789
+    -3.7248  -3.7122  -3.3535  -3.3120  -3.1787  -3.1175  -2.7129  -2.6538
+    -2.4054  -2.3994  -2.3294  -2.2529  -2.1558  -1.9769  -1.9016  -1.8343
+    -1.8214  -1.7900  -1.7138  -1.6651  -1.4690  -1.3638  -1.2387  -1.1793
+    -0.4978  -0.4649  -0.0063   0.0049
+
+          k =-0.5000 0.0000-0.0325 ( 57742 PWs)   bands (ev):
+
+   -29.2129 -29.2094 -24.0457 -24.0442 -23.0668 -23.0638 -22.9392 -22.9382
+   -22.4384 -22.4191 -21.1233 -21.1229 -18.7785 -18.7626 -18.2039 -18.1903
+   -16.8203 -16.7835 -14.1035 -14.0331 -14.0033 -13.9231 -12.6811 -12.5621
+   -11.1987 -11.1598 -10.2826 -10.1860  -9.9280  -9.8620  -9.3879  -9.3415
+    -8.7307  -8.7162  -8.5307  -8.5148  -8.1060  -8.0923  -7.6099  -7.5456
+    -7.2458  -7.2211  -7.1285  -7.1127  -6.5471  -6.5021  -6.3837  -6.3428
+    -5.8852  -5.8494  -5.6051  -5.5062  -5.4789  -5.1389  -4.8723  -4.7749
+    -4.5087  -4.4768  -4.3609  -4.3293  -4.1310  -4.0950  -3.9770  -3.9683
+    -3.7952  -3.7006  -3.6647  -3.6263  -3.2458  -3.1549  -2.8380  -2.6906
+    -2.4608  -2.3633  -2.2524  -2.1248  -2.0149  -1.9695  -1.9013  -1.8038
+    -1.7319  -1.6377  -1.6374  -1.5688  -1.5399  -1.4391  -1.2825  -1.2803
+    -0.0768  -0.0349   0.1177   0.1296
+
+     highest occupied level (ev):     0.1296
+
+!    total energy              =    -720.93159916 Ry
+     estimated scf accuracy    <       0.00000044 Ry
+
+     convergence has been achieved in   6 iterations
+
+     Using ACE for calculation of exact exchange
+     ACE projected onto    92 (nbndproj) and applied to    92 (nbnd) bands
+
+     total energy              =    -720.93749805 Ry
+     Harris-Foulkes estimate   =    -720.93749841 Ry
+     est. exchange err (dexx)  =       0.00589888 Ry
+     - averaged Fock potential =      82.80224441 Ry
+     + Fock energy (ACE)       =     -41.43927451 Ry
+
+     EXX: now go back to refine exchange calculation
+
+     total cpu time spent up to now is      260.5 secs
+
+     per-process dynamical memory:   642.0 Mb
+
+     Self-consistent Calculation
+
+     iteration #  1     ecut=   100.00 Ry     beta= 0.40
+     Davidson diagonalization with overlap
+     ethr =  9.85E-10,  avg # of iterations = 11.0
+
+     total cpu time spent up to now is      269.8 secs
+
+     total energy              =    -720.93857540 Ry
+     estimated scf accuracy    <       0.00048004 Ry
+
+     iteration #  2     ecut=   100.00 Ry     beta= 0.40
+     Davidson diagonalization with overlap
+     ethr =  2.61E-07,  avg # of iterations =  2.0
+
+     total cpu time spent up to now is      272.6 secs
+
+     total energy              =    -720.93865200 Ry
+     estimated scf accuracy    <       0.00003935 Ry
+
+     iteration #  3     ecut=   100.00 Ry     beta= 0.40
+     Davidson diagonalization with overlap
+     ethr =  2.14E-08,  avg # of iterations =  2.0
+
+     total cpu time spent up to now is      275.0 secs
+
+     total energy              =    -720.93865116 Ry
+     estimated scf accuracy    <       0.00001149 Ry
+
+     iteration #  4     ecut=   100.00 Ry     beta= 0.40
+     Davidson diagonalization with overlap
+     ethr =  6.24E-09,  avg # of iterations =  2.0
+
+     total cpu time spent up to now is      277.7 secs
+
+     End of self-consistent calculation
+
+          k = 0.0000 0.0000 0.0000 ( 57711 PWs)   bands (ev):
+
+   -29.2344 -29.2306 -24.0789 -24.0778 -23.0061 -23.0010 -22.9570 -22.9550
+   -22.4567 -22.4350 -21.0739 -21.0735 -18.7808 -18.7733 -18.0310 -18.0226
+   -16.8652 -16.8219 -14.0361 -13.9990 -13.9733 -13.9338 -12.7609 -12.6874
+   -11.3778 -11.3455 -10.2512 -10.2253  -9.9855  -9.9336  -9.5535  -9.4844
+    -8.8483  -8.8413  -8.6534  -8.6359  -8.2868  -8.1252  -7.8709  -7.8138
+    -7.4003  -7.2899  -7.0247  -6.9740  -6.5586  -6.4637  -6.2923  -6.1567
+    -5.7493  -5.6870  -5.3687  -5.2798  -5.0725  -5.0478  -4.9003  -4.6915
+    -4.3760  -4.3590  -4.2728  -4.1536  -4.0664  -4.0324  -4.0080  -3.8864
+    -3.7323  -3.7172  -3.3541  -3.3143  -3.1852  -3.1246  -2.7109  -2.6525
+    -2.4087  -2.4057  -2.3291  -2.2547  -2.1594  -1.9824  -1.9105  -1.8433
+    -1.8211  -1.7912  -1.7167  -1.6671  -1.4790  -1.3747  -1.2495  -1.1904
+    -0.4958  -0.4629  -0.0111  -0.0000
+
+          k =-0.5000 0.0000-0.0325 ( 57742 PWs)   bands (ev):
+
+   -29.2249 -29.2214 -24.0408 -24.0393 -23.0737 -23.0706 -22.9463 -22.9453
+   -22.4515 -22.4322 -21.1173 -21.1169 -18.7819 -18.7661 -18.2035 -18.1900
+   -16.8267 -16.7901 -14.1120 -14.0418 -14.0096 -13.9299 -12.6834 -12.5650
+   -11.1997 -11.1609 -10.2884 -10.1928  -9.9289  -9.8628  -9.3885  -9.3419
+    -8.7298  -8.7147  -8.5295  -8.5138  -8.1049  -8.0924  -7.6048  -7.5401
+    -7.2421  -7.2174  -7.1254  -7.1103  -6.5434  -6.5017  -6.3823  -6.3463
+    -5.8855  -5.8518  -5.6031  -5.5081  -5.4845  -5.1451  -4.8805  -4.7827
+    -4.5114  -4.4806  -4.3693  -4.3400  -4.1354  -4.1014  -3.9841  -3.9753
+    -3.8022  -3.7019  -3.6673  -3.6337  -3.2525  -3.1607  -2.8375  -2.6919
+    -2.4685  -2.3726  -2.2511  -2.1256  -2.0244  -1.9705  -1.9094  -1.8048
+    -1.7343  -1.6455  -1.6441  -1.5691  -1.5502  -1.4467  -1.2913  -1.2890
+    -0.0763  -0.0354   0.1147   0.1255
+
+     highest occupied level (ev):     0.1255
+
+!    total energy              =    -720.93865196 Ry
+     estimated scf accuracy    <       0.00000085 Ry
+
+     convergence has been achieved in   4 iterations
+
+     Using ACE for calculation of exact exchange
+     ACE projected onto    92 (nbndproj) and applied to    92 (nbnd) bands
+
+     total energy              =    -720.93893376 Ry
+     Harris-Foulkes estimate   =    -720.93893436 Ry
+     est. exchange err (dexx)  =       0.00028179 Ry
+     - averaged Fock potential =      82.89555322 Ry
+     + Fock energy (ACE)       =     -41.45656050 Ry
+
+     EXX: now go back to refine exchange calculation
+
+     total cpu time spent up to now is      376.7 secs
+
+     per-process dynamical memory:   642.0 Mb
+
+     Self-consistent Calculation
+
+     iteration #  1     ecut=   100.00 Ry     beta= 0.40
+     Davidson diagonalization with overlap
+     ethr =  6.24E-09,  avg # of iterations =  6.0
+
+     total cpu time spent up to now is      381.7 secs
+
+     total energy              =    -720.93900554 Ry
+     estimated scf accuracy    <       0.00001940 Ry
+
+     iteration #  2     ecut=   100.00 Ry     beta= 0.40
+     Davidson diagonalization with overlap
+     ethr =  1.05E-08,  avg # of iterations =  2.0
+
+     total cpu time spent up to now is      384.4 secs
+
+     total energy              =    -720.93900738 Ry
+     estimated scf accuracy    <       0.00000251 Ry
+
+     iteration #  3     ecut=   100.00 Ry     beta= 0.40
+     Davidson diagonalization with overlap
+     ethr =  1.36E-09,  avg # of iterations =  3.0
+
+     total cpu time spent up to now is      387.0 secs
+
+     End of self-consistent calculation
+
+          k = 0.0000 0.0000 0.0000 ( 57711 PWs)   bands (ev):
+
+   -29.2389 -29.2351 -24.0758 -24.0747 -23.0065 -23.0014 -22.9574 -22.9554
+   -22.4608 -22.4391 -21.0696 -21.0691 -18.7806 -18.7731 -18.0292 -18.0209
+   -16.8652 -16.8219 -14.0366 -13.9991 -13.9736 -13.9342 -12.7614 -12.6880
+   -11.3765 -11.3441 -10.2516 -10.2259  -9.9855  -9.9337  -9.5526  -9.4835
+    -8.8471  -8.8401  -8.6519  -8.6342  -8.2858  -8.1241  -7.8680  -7.8113
+    -7.3984  -7.2882  -7.0242  -6.9739  -6.5584  -6.4646  -6.2902  -6.1551
+    -5.7505  -5.6879  -5.3693  -5.2806  -5.0705  -5.0459  -4.9011  -4.6925
+    -4.3785  -4.3619  -4.2736  -4.1546  -4.0667  -4.0328  -4.0079  -3.8869
+    -3.7330  -3.7171  -3.3535  -3.3142  -3.1858  -3.1256  -2.7089  -2.6507
+    -2.4084  -2.4065  -2.3278  -2.2538  -2.1596  -1.9833  -1.9122  -1.8445
+    -1.8195  -1.7903  -1.7160  -1.6665  -1.4809  -1.3769  -1.2516  -1.1925
+    -0.4947  -0.4618  -0.0124  -0.0014
+
+          k =-0.5000 0.0000-0.0325 ( 57742 PWs)   bands (ev):
+
+   -29.2296 -29.2261 -24.0377 -24.0362 -23.0740 -23.0709 -22.9466 -22.9456
+   -22.4556 -22.4364 -21.1130 -21.1126 -18.7815 -18.7658 -18.2016 -18.1881
+   -16.8268 -16.7903 -14.1129 -14.0427 -14.0096 -13.9299 -12.6841 -12.5657
+   -11.1987 -11.1600 -10.2888 -10.1934  -9.9289  -9.8627  -9.3876  -9.3408
+    -8.7283  -8.7130  -8.5283  -8.5126  -8.1036  -8.0914  -7.6028  -7.5379
+    -7.2405  -7.2160  -7.1238  -7.1089  -6.5413  -6.5008  -6.3807  -6.3464
+    -5.8849  -5.8518  -5.6009  -5.5070  -5.4853  -5.1459  -4.8820  -4.7840
+    -4.5109  -4.4808  -4.3711  -4.3428  -4.1353  -4.1018  -3.9852  -3.9763
+    -3.8029  -3.7015  -3.6672  -3.6347  -3.2534  -3.1612  -2.8358  -2.6904
+    -2.4697  -2.3741  -2.2495  -2.1244  -2.0268  -1.9698  -1.9109  -1.8039
+    -1.7337  -1.6467  -1.6447  -1.5680  -1.5522  -1.4478  -1.2923  -1.2900
+    -0.0758  -0.0350   0.1139   0.1246
+
+     highest occupied level (ev):     0.1246
+
+!    total energy              =    -720.93900736 Ry
+     estimated scf accuracy    <       0.00000055 Ry
+
+     convergence has been achieved in   3 iterations
+
+     Using ACE for calculation of exact exchange
+     ACE projected onto    92 (nbndproj) and applied to    92 (nbnd) bands
+
+     total energy              =    -720.93902988 Ry
+     Harris-Foulkes estimate   =    -720.93903012 Ry
+     est. exchange err (dexx)  =       0.00002252 Ry
+     - averaged Fock potential =      82.91687614 Ry
+     + Fock energy (ACE)       =     -41.46033816 Ry
+
+     EXX: now go back to refine exchange calculation
+
+     total cpu time spent up to now is      482.4 secs
+
+     per-process dynamical memory:   642.0 Mb
+
+     Self-consistent Calculation
+
+     iteration #  1     ecut=   100.00 Ry     beta= 0.40
+     Davidson diagonalization with overlap
+     ethr =  1.36E-09,  avg # of iterations =  5.0
+
+     total cpu time spent up to now is      486.7 secs
+
+     total energy              =    -720.93903604 Ry
+     estimated scf accuracy    <       0.00000200 Ry
+
+     iteration #  2     ecut=   100.00 Ry     beta= 0.40
+     Davidson diagonalization with overlap
+     ethr =  1.09E-09,  avg # of iterations =  2.0
+
+     total cpu time spent up to now is      489.0 secs
+
+     End of self-consistent calculation
+
+          k = 0.0000 0.0000 0.0000 ( 57711 PWs)   bands (ev):
+
+   -29.2391 -29.2353 -24.0751 -24.0740 -23.0062 -23.0010 -22.9571 -22.9551
+   -22.4616 -22.4399 -21.0687 -21.0682 -18.7809 -18.7733 -18.0288 -18.0204
+   -16.8652 -16.8220 -14.0367 -13.9992 -13.9737 -13.9343 -12.7616 -12.6882
+   -11.3762 -11.3438 -10.2517 -10.2259  -9.9852  -9.9334  -9.5525  -9.4833
+    -8.8465  -8.8396  -8.6513  -8.6336  -8.2856  -8.1238  -7.8674  -7.8107
+    -7.3982  -7.2880  -7.0243  -6.9739  -6.5585  -6.4649  -6.2898  -6.1548
+    -5.7508  -5.6882  -5.3695  -5.2809  -5.0700  -5.0455  -4.9012  -4.6927
+    -4.3793  -4.3628  -4.2737  -4.1548  -4.0666  -4.0330  -4.0079  -3.8870
+    -3.7331  -3.7169  -3.3534  -3.3143  -3.1861  -3.1259  -2.7086  -2.6504
+    -2.4085  -2.4069  -2.3277  -2.2538  -2.1599  -1.9840  -1.9131  -1.8452
+    -1.8193  -1.7905  -1.7161  -1.6667  -1.4816  -1.3777  -1.2523  -1.1933
+    -0.4944  -0.4615  -0.0130  -0.0020
+
+          k =-0.5000 0.0000-0.0325 ( 57742 PWs)   bands (ev):
+
+   -29.2299 -29.2264 -24.0370 -24.0355 -23.0736 -23.0706 -22.9463 -22.9453
+   -22.4564 -22.4372 -21.1121 -21.1117 -18.7816 -18.7659 -18.2011 -18.1876
+   -16.8268 -16.7903 -14.1132 -14.0429 -14.0096 -13.9299 -12.6843 -12.5659
+   -11.1985 -11.1597 -10.2888 -10.1935  -9.9287  -9.8624  -9.3874  -9.3406
+    -8.7277  -8.7124  -8.5278  -8.5120  -8.1033  -8.0911  -7.6024  -7.5375
+    -7.2403  -7.2158  -7.1234  -7.1086  -6.5408  -6.5007  -6.3804  -6.3465
+    -5.8848  -5.8519  -5.6004  -5.5068  -5.4855  -5.1460  -4.8824  -4.7844
+    -4.5107  -4.4809  -4.3716  -4.3436  -4.1353  -4.1019  -3.9855  -3.9765
+    -3.8029  -3.7015  -3.6671  -3.6349  -3.2537  -3.1614  -2.8356  -2.6902
+    -2.4702  -2.3747  -2.2493  -2.1245  -2.0277  -1.9698  -1.9116  -1.8040
+    -1.7339  -1.6474  -1.6452  -1.5680  -1.5529  -1.4484  -1.2927  -1.2903
+    -0.0757  -0.0350   0.1135   0.1241
+
+     highest occupied level (ev):     0.1241
+
+!    total energy              =    -720.93903626 Ry
+     estimated scf accuracy    <       0.00000021 Ry
+
+     convergence has been achieved in   2 iterations
+
+     Using ACE for calculation of exact exchange
+     ACE projected onto    92 (nbndproj) and applied to    92 (nbnd) bands
+
+     total energy              =    -720.93903851 Ry
+     Harris-Foulkes estimate   =    -720.93903861 Ry
+     est. exchange err (dexx)  =       0.00000225 Ry
+     - averaged Fock potential =      82.92177616 Ry
+     + Fock energy (ACE)       =     -41.46144026 Ry
+
+     EXX: now go back to refine exchange calculation
+
+     total cpu time spent up to now is      583.6 secs
+
+     per-process dynamical memory:   642.0 Mb
+
+     Self-consistent Calculation
+
+     iteration #  1     ecut=   100.00 Ry     beta= 0.40
+     Davidson diagonalization with overlap
+     ethr =  1.09E-09,  avg # of iterations =  4.0
+
+     Threshold (ethr) on eigenvalues was too large:
+     Diagonalizing with lowered threshold
+
+     Davidson diagonalization with overlap
+     ethr =  3.72E-11,  avg # of iterations =  4.0
+
+     total cpu time spent up to now is      589.3 secs
+
+     End of self-consistent calculation
+
+          k = 0.0000 0.0000 0.0000 ( 57711 PWs)   bands (ev):
+
+   -29.2390 -29.2352 -24.0748 -24.0738 -23.0062 -23.0011 -22.9570 -22.9550
+   -22.4614 -22.4398 -21.0685 -21.0680 -18.7810 -18.7735 -18.0283 -18.0200
+   -16.8651 -16.8219 -14.0367 -13.9991 -13.9736 -13.9343 -12.7615 -12.6882
+   -11.3760 -11.3436 -10.2517 -10.2259  -9.9850  -9.9333  -9.5523  -9.4831
+    -8.8463  -8.8394  -8.6512  -8.6335  -8.2854  -8.1236  -7.8670  -7.8103
+    -7.3982  -7.2880  -7.0243  -6.9740  -6.5585  -6.4649  -6.2896  -6.1547
+    -5.7508  -5.6881  -5.3695  -5.2809  -5.0698  -5.0454  -4.9013  -4.6928
+    -4.3795  -4.3630  -4.2737  -4.1548  -4.0666  -4.0330  -4.0080  -3.8870
+    -3.7330  -3.7168  -3.3533  -3.3142  -3.1862  -3.1259  -2.7085  -2.6503
+    -2.4086  -2.4070  -2.3277  -2.2538  -2.1600  -1.9841  -1.9133  -1.8455
+    -1.8192  -1.7907  -1.7161  -1.6667  -1.4818  -1.3778  -1.2523  -1.1933
+    -0.4943  -0.4614  -0.0131  -0.0021
+
+          k =-0.5000 0.0000-0.0325 ( 57742 PWs)   bands (ev):
+
+   -29.2298 -29.2263 -24.0367 -24.0352 -23.0736 -23.0706 -22.9462 -22.9453
+   -22.4563 -22.4371 -21.1119 -21.1115 -18.7817 -18.7660 -18.2006 -18.1871
+   -16.8268 -16.7903 -14.1132 -14.0429 -14.0095 -13.9298 -12.6843 -12.5659
+   -11.1983 -11.1596 -10.2888 -10.1935  -9.9286  -9.8623  -9.3872  -9.3404
+    -8.7275  -8.7122  -8.5276  -8.5119  -8.1030  -8.0908  -7.6023  -7.5374
+    -7.2403  -7.2157  -7.1231  -7.1084  -6.5407  -6.5006  -6.3802  -6.3465
+    -5.8847  -5.8519  -5.6003  -5.5067  -5.4856  -5.1460  -4.8825  -4.7844
+    -4.5107  -4.4810  -4.3718  -4.3438  -4.1353  -4.1019  -3.9855  -3.9765
+    -3.8029  -3.7014  -3.6671  -3.6348  -3.2538  -3.1614  -2.8355  -2.6902
+    -2.4703  -2.3748  -2.2493  -2.1245  -2.0279  -1.9696  -1.9118  -1.8040
+    -1.7340  -1.6476  -1.6454  -1.5680  -1.5531  -1.4486  -1.2926  -1.2902
+    -0.0757  -0.0349   0.1135   0.1241
+
+     highest occupied level (ev):     0.1241
+
+!    total energy              =    -720.93903910 Ry
+     estimated scf accuracy    <       0.00000008 Ry
+
+     convergence has been achieved in   1 iterations
+
+     Using ACE for calculation of exact exchange
+     ACE projected onto    92 (nbndproj) and applied to    92 (nbnd) bands
+
+!!   total energy              =    -720.93903933 Ry
+     Harris-Foulkes estimate   =    -720.93903938 Ry
+     est. exchange err (dexx)  =       0.00000022 Ry
+     - averaged Fock potential =      82.92314128 Ry
+     + Fock energy (ACE)       =     -41.46170124 Ry
+
+     EXX self-consistency reached
+
+     Forces acting on atoms (cartesian axes, Ry/au):
+
+     atom    1 type  2   force =     0.00547452    0.00019995   -0.00891158
+     atom    2 type  2   force =    -0.00547452    0.00019995    0.00891158
+     atom    3 type  2   force =    -0.00501712    0.00839376   -0.00199180
+     atom    4 type  2   force =     0.00501712    0.00839376    0.00199180
+     atom    5 type  1   force =    -0.00494033    0.00945128   -0.00538187
+     atom    6 type  1   force =     0.00494033    0.00945128    0.00538187
+     atom    7 type  2   force =    -0.00465851    0.00640687    0.00272802
+     atom    8 type  2   force =     0.00465851    0.00640687   -0.00272802
+     atom    9 type  1   force =    -0.00859560    0.00549807    0.00533881
+     atom   10 type  1   force =     0.00859560    0.00549807   -0.00533881
+     atom   11 type  2   force =    -0.00218197   -0.00174100    0.00534185
+     atom   12 type  2   force =     0.00218197   -0.00174100   -0.00534185
+     atom   13 type  2   force =     0.00376515   -0.00756710    0.00407059
+     atom   14 type  2   force =    -0.00376515   -0.00756710   -0.00407059
+     atom   15 type  1   force =     0.00529865   -0.00849401    0.00567898
+     atom   16 type  1   force =    -0.00529865   -0.00849401   -0.00567898
+     atom   17 type  2   force =     0.00502011   -0.00608388   -0.00319676
+     atom   18 type  2   force =    -0.00502011   -0.00608388    0.00319676
+     atom   19 type  1   force =     0.00908929   -0.00556726   -0.00463531
+     atom   20 type  1   force =    -0.00908929   -0.00556726    0.00463531
+     atom   21 type  3   force =    -0.00090038    0.00035441   -0.01489306
+     atom   22 type  3   force =     0.00090038    0.00035441    0.01489306
+     atom   23 type  3   force =     0.02699744   -0.01713303   -0.01118057
+     atom   24 type  3   force =    -0.02699744   -0.01713303    0.01118057
+     atom   25 type  4   force =     0.03575243   -0.01380513   -0.00323235
+     atom   26 type  4   force =    -0.03575243   -0.01380513    0.00323235
+     atom   27 type  4   force =    -0.01128431    0.03943789   -0.00685885
+     atom   28 type  4   force =     0.01128431    0.03943789    0.00685885
+     atom   29 type  1   force =    -0.01446722    0.00106769    0.00027318
+     atom   30 type  1   force =     0.01446722    0.00106769   -0.00027318
+     atom   31 type  1   force =     0.00337708   -0.01609735    0.00012290
+     atom   32 type  1   force =    -0.00337708   -0.01609735   -0.00012290
+     atom   33 type  1   force =    -0.02819374    0.02141746    0.01021208
+     atom   34 type  1   force =     0.02819374    0.02141746   -0.01021208
+     atom   35 type  1   force =    -0.00364110   -0.01504120    0.00129916
+     atom   36 type  1   force =     0.00364110   -0.01504120   -0.00129916
+     atom   37 type  1   force =     0.00906632    0.00300655    0.01115996
+     atom   38 type  1   force =    -0.00906632    0.00300655   -0.01115996
+     atom   39 type  6   force =    -0.00212305    0.00807917    0.00067021
+     atom   40 type  6   force =     0.00212305    0.00807917   -0.00067021
+     atom   41 type  4   force =    -0.01345483   -0.00065254    0.00215372
+     atom   42 type  4   force =     0.01345483   -0.00065254   -0.00215372
+     atom   43 type  4   force =     0.00775901    0.00739451    0.01411812
+     atom   44 type  4   force =    -0.00775901    0.00739451   -0.01411812
+     atom   45 type  4   force =    -0.00761770   -0.01568905    0.00570440
+     atom   46 type  4   force =     0.00761770   -0.01568905   -0.00570440
+     atom   47 type  4   force =     0.00369504    0.00717156   -0.01738264
+     atom   48 type  4   force =    -0.00369504    0.00717156    0.01738264
+     atom   49 type  5   force =    -0.00857120   -0.01000761    0.01047153
+     atom   50 type  5   force =     0.00857120   -0.01000761   -0.01047153
+
+     Total force =     0.137489     Total SCF correction =     0.000543
+
+     Writing all to output data dir /mnt/scratch/optc/perchlorate/pbe0_sg15_P2/pbe0_sg15_P2.save/ :
+     XML data file, charge density, pseudopotentials, collected wavefunctions
+
+     init_run     :      1.61s CPU      1.75s WALL (       1 calls)
+     electrons    :    103.80s CPU    111.12s WALL (       6 calls)
+     forces       :      1.26s CPU      1.36s WALL (       1 calls)
+     force_dftd3  :      0.18s CPU      0.21s WALL (       1 calls)
+
+     Called by init_run:
+     aceinit0     :      0.00s CPU      0.00s WALL (       1 calls)
+     wfcinit      :      0.69s CPU      0.78s WALL (       1 calls)
+     potinit      :      0.13s CPU      0.15s WALL (       1 calls)
+     hinit0       :      0.61s CPU      0.63s WALL (       1 calls)
+
+     Called by electrons:
+     c_bands      :     92.53s CPU     98.63s WALL (      30 calls)
+     sum_band     :      7.53s CPU      8.27s WALL (      30 calls)
+     v_of_rho     :      2.86s CPU      3.08s WALL (      31 calls)
+     mix_rho      :      0.46s CPU      0.55s WALL (      30 calls)
+     energy_dftd3 :      0.13s CPU      0.13s WALL (       6 calls)
+
+     Called by c_bands:
+     init_us_2    :      1.54s CPU      1.66s WALL (      62 calls)
+     cegterg      :     88.61s CPU     94.61s WALL (      30 calls)
+
+     Called by *egterg:
+     cdiaghg      :      2.21s CPU      2.21s WALL (     153 calls)
+     h_psi        :     63.94s CPU     69.24s WALL (     160 calls)
+     g_psi        :      0.47s CPU      0.47s WALL (     129 calls)
+
+     Called by h_psi:
+     h_psi:calbec :      9.10s CPU      9.22s WALL (     160 calls)
+     vloc_psi     :     43.14s CPU     47.64s WALL (     160 calls)
+                                        0.00s GPU  (     160 calls)
+     add_vuspsi   :      7.41s CPU      7.42s WALL (     160 calls)
+
+     General routines
+     calbec       :     12.43s CPU     12.62s WALL (     279 calls)
+     fft          :      1.58s CPU      1.80s WALL (     305 calls)
+     ffts         :      0.09s CPU      0.12s WALL (      30 calls)
+     fftw         :     42.33s CPU     47.06s WALL (   23296 calls)
+     fftc         :    371.42s CPU    427.99s WALL (  101568 calls)
+     fftcw        :      3.50s CPU      3.87s WALL (    1656 calls)
+
+     Parallel routines
+
+     EXX routines
+     exx_grid     :      0.00s CPU      0.00s WALL (       1 calls)
+     exxinit      :      8.30s CPU     11.99s WALL (       6 calls)
+     vexx         :    493.41s CPU    553.64s WALL (       6 calls)
+     matcalc      :      3.01s CPU      3.08s WALL (     115 calls)
+     aceupdate    :      0.12s CPU      0.12s WALL (       6 calls)
+     vexxace      :      4.78s CPU      4.98s WALL (      98 calls)
+     aceinit      :    493.75s CPU    554.01s WALL (       6 calls)
+
+     PWSCF        :  10m17.08s CPU  11m28.95s WALL
+
+
+   This run was terminated on:   0: 8:52  19Oct2026            
+
+=------------------------------------------------------------------------------=
+   JOB DONE.
+=------------------------------------------------------------------------------=

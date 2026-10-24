@@ -1,0 +1,92 @@
+{
+ "key": "chloro",
+ "which": "cluster",
+ "model": "repeat_site",
+ "runs": {
+  "S_cluster_vac": {
+   "E": -3424.802739129742,
+   "converged": true,
+   "nao": 1111,
+   "natm": 51,
+   "charge": -1
+  },
+  "S_cluster_emb": {
+   "E": -3425.5237228505566,
+   "converged": true,
+   "nao": 1111,
+   "natm": 51,
+   "charge": -1,
+   "E_int": -0.8489536848196693,
+   "E_int_el": -30.69847049058945,
+   "E_int_nuc": 29.84951680576978,
+   "n_charges": 6863
+  },
+  "T_cluster_vac": {
+   "E": -3424.7376701910775,
+   "converged": true,
+   "nao": 1111,
+   "natm": 51,
+   "charge": -1
+  },
+  "T_cluster_emb": {
+   "E": -3425.481695233953,
+   "converged": true,
+   "nao": 1111,
+   "natm": 51,
+   "charge": -1,
+   "E_int": -0.8704123375171342,
+   "E_int_el": -30.773980657280642,
+   "E_int_nuc": 29.903568319763508,
+   "n_charges": 6863
+  },
+  "N_cluster_vac": {
+   "E": -3425.413282361892,
+   "converged": true,
+   "nao": 1117,
+   "natm": 52,
+   "charge": 0
+  },
+  "N_cluster_emb": {
+   "E": -3425.6742228963003,
+   "converged": true,
+   "nao": 1117,
+   "natm": 52,
+   "charge": 0,
+   "E_int": -0.30432504585692843,
+   "E_int_el": 6.227064951920368,
+   "E_int_nuc": -6.531389997777296,
+   "n_charges": 6862,
+   "sum_charges": -9.99999991702083e-07
+  },
+  "Tr_cluster_vac": {
+   "E": -3425.4140991435165,
+   "converged": true,
+   "nao": 1117,
+   "natm": 52,
+   "charge": 0
+  },
+  "Tr_cluster_emb": {
+   "E": -3425.6779909879447,
+   "converged": true,
+   "nao": 1117,
+   "natm": 52,
+   "charge": 0,
+   "E_int": -0.3080783260063127,
+   "E_int_el": 6.295544875211175,
+   "E_int_nuc": -6.603623201217488,
+   "n_charges": 6862,
+   "sum_charges": -9.99999991702083e-07
+  }
+ },
+ "basis": "def2-TZVP",
+ "derived": {
+  "vacuum_kJ": 170.838,
+  "embedded_single_site_kJ": 110.343,
+  "reverse_kJ": 9.893,
+  "lr_mean_kJ": 60.118,
+  "lambda_kJ": 50.225,
+  "reverse_vacuum_kJ": 2.144,
+  "lr_mean_vacuum_kJ": 86.491,
+  "lambda_vacuum_kJ": 84.347
+ }
+}

@@ -1,0 +1,21 @@
+{
+ "key": "dapsone",
+ "E_Ry": {
+  "x80_P0": -1614.32166267,
+  "x80_P4r": -1614.31626142,
+  "vc_S": -1614.32235052,
+  "vc_P4r": -1614.32014529,
+  "pbe_sg15_vcS": -1181.60384384,
+  "pbe_sg15_vcP4r": -1181.60197568,
+  "pbe0_sg15_vcS": -1180.99535141,
+  "pbe0_sg15_vcP4r": -1180.99459354
+ },
+ "units": "kJ/mol per formula unit, E(P4r state) - E(S state)",
+ "dE_xray_cell_pbe80": 3.545,
+ "dE_relaxed_cells_pbe80": 1.447,
+ "dE_relaxed_cells_pbe0": 0.718,
+ "volume_change_pct": {
+  "vc_S": -0.11,
+  "vc_P4r": -1.68
+ }
+}

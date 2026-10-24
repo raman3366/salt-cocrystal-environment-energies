@@ -1,0 +1,60 @@
+{
+ "key": "chloro",
+ "model": "repeat",
+ "runs": {
+  "S_pair": {
+   "E_PBE0_D3": -1390.9082493953804,
+   "E_wB97X_D3BJ": -1392.0204287352547,
+   "E_HF": -1387.1482537687154,
+   "E_MP2": -1389.5726338294069,
+   "E_SCS_MP2": -1389.5073875385235,
+   "converged": [
+    true,
+    true,
+    true
+   ],
+   "done": true
+  },
+  "T_pair": {
+   "E_PBE0_D3": -1390.8634470880527,
+   "E_wB97X_D3BJ": -1391.9737003722782,
+   "E_HF": -1387.1040328022955,
+   "E_MP2": -1389.52561581322,
+   "E_SCS_MP2": -1389.4596219084644,
+   "converged": [
+    true,
+    true,
+    true
+   ],
+   "done": true
+  },
+  "N_pair": {
+   "E_PBE0_D3": -1390.8468462536289,
+   "E_wB97X_D3BJ": -1391.9578493095892,
+   "E_HF": -1387.0879757659984,
+   "E_MP2": -1389.5093445847933,
+   "E_SCS_MP2": -1389.4436721913507,
+   "converged": [
+    true,
+    true,
+    true
+   ],
+   "done": true
+  }
+ },
+ "derived": {
+  "T": {
+   "corr_wB97X_D3BJ_kJ": 5.057,
+   "corr_MP2_kJ": 5.817,
+   "corr_SCS_MP2_kJ": 7.78,
+   "dPBE0_kJ": 117.628
+  },
+  "N": {
+   "corr_wB97X_D3BJ_kJ": 3.088,
+   "corr_MP2_kJ": 4.952,
+   "corr_SCS_MP2_kJ": 6.071,
+   "dPBE0_kJ": 161.214
+  }
+ },
+ "note": "T: single site (P4 pair in the P0 field); N: every atom at P4 with the P4 field (plain difference, no E_int/2)"
+}

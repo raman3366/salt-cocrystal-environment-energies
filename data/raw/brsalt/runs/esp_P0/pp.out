@@ -1,0 +1,60 @@
+
+     Program POST-PROC v.7.5 starts on 18Oct2026 at 22:36:36 
+
+     This program is part of the open-source Quantum ESPRESSO suite
+     for quantum simulation of materials; please cite
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 21 395502 (2009);
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 29 465901 (2017);
+         "P. Giannozzi et al., J. Chem. Phys. 152 154105 (2020);
+          URL http://www.quantum-espresso.org", 
+     in publications or presentations arising from this work. More details at
+     http://www.quantum-espresso.org/quote
+
+     Parallel version (MPI & OpenMP), running on     384 processor cores
+     Number of MPI processes:                 8
+     Threads/MPI process:                    48
+
+     MPI processes distributed on     1 nodes
+     R & G space division:  proc/nbgrp/npool/nimage =       8
+     212323 MiB available memory on the printing compute node when the environment starts
+
+
+     Reading xml data from directory:
+
+     /mnt/scratch/optc/brsalt/pbe0_sg15_P0/pbe0_sg15_P0.save/
+     EXX fraction changed:   0.25
+     EXX Screening parameter changed:    0.0000000
+
+     IMPORTANT: XC functional enforced from input :
+     Exchange-correlation= PBE0
+                           (   6   4   8   4   0   0   0)
+     EXX-fraction              =        0.25
+     Any further DFT definition will be discarded
+     Please, verify this is what you really want
+
+
+     Parallelization info
+     --------------------
+     sticks:   dense  smooth     PW     G-vecs:    dense   smooth      PW
+     Min         862     862    227                87763    87763   11912
+     Max         864     864    228                87764    87764   11915
+     Sum        6899    6899   1817               702107   702107   95305
+
+     Using Slab Decomposition
+
+
+     Calling punch_plot, plot_num =  11
+     Writing data to file  optc/results/brsalt/runs/esp_P0/vtot.dat
+     Reading data from file  optc/results/brsalt/runs/esp_P0/vtot.dat
+
+     Writing data to be plotted to file optc/results/brsalt/runs/esp_P0/vtot_P0.cube
+     Plot Type: 3D                     Output format: Gaussian cube
+
+     POST-PROC    :   4m33.18s CPU   1m47.39s WALL
+
+
+   This run was terminated on:  22:38:24  18Oct2026            
+
+=------------------------------------------------------------------------------=
+   JOB DONE.
+=------------------------------------------------------------------------------=

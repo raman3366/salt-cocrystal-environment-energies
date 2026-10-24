@@ -1,0 +1,8 @@
+The data, derived structures and results in this repository (data/, optc/structures/, optc/results/, paper/ctc/numbers/data/,
+plan/) are licensed under the Creative Commons Attribution 4.0 International licence (CC BY 4.0):
+https://creativecommons.org/licenses/by/4.0/legalcode
+
+Copyright (c) 2026 C. Muthuselvi, Anantha Raman Lakshmipathi, D. Saravanakkumar, Venkatramanan Varadharajan.
+
+The CIFs in optc/cif/ come from the Crystallography Open Database (https://www.crystallography.net/cod/), whose data are
+in the public domain; please cite the original structure papers.

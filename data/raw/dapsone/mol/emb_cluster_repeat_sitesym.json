@@ -1,0 +1,50 @@
+{
+ "key": "dapsone",
+ "which": "cluster",
+ "model": "repeat_sitesym",
+ "runs": {
+  "S_cluster_vac": {
+   "E": -4195.328836403785,
+   "converged": true,
+   "nao": 2304,
+   "natm": 106,
+   "charge": 0
+  },
+  "S_cluster_emb": {
+   "E": -4195.463732284605,
+   "converged": true,
+   "nao": 2304,
+   "natm": 106,
+   "charge": 0,
+   "E_int": -0.16298298988593007,
+   "E_int_el": -7.951898878759747,
+   "E_int_nuc": 7.788915888873817,
+   "n_charges": 7070,
+   "sum_charges": -3.9968028886505635e-15
+  },
+  "T_cluster_vac": {
+   "E": -4195.3029207571135,
+   "converged": true,
+   "nao": 2304,
+   "natm": 106,
+   "charge": 0
+  },
+  "T_cluster_emb": {
+   "E": -4195.4456999241365,
+   "converged": true,
+   "nao": 2304,
+   "natm": 106,
+   "charge": 0,
+   "E_int": -0.17113003641024171,
+   "E_int_el": -7.985336404276305,
+   "E_int_nuc": 7.814206367866063,
+   "n_charges": 7070,
+   "sum_charges": -3.9968028886505635e-15
+  }
+ },
+ "basis": "def2-TZVP",
+ "derived": {
+  "vacuum_kJ": 68.042,
+  "embedded_single_site_kJ": 47.344
+ }
+}

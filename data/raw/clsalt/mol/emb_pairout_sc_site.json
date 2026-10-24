@@ -1,0 +1,35 @@
+{
+ "key": "clsalt",
+ "which": "pairout",
+ "model": "sc_site",
+ "runs": {
+  "S_pairout_emb": {
+   "E": -1615.4390424138394,
+   "converged": true,
+   "nao": 822,
+   "natm": 36,
+   "charge": 0,
+   "E_int": -0.08476060279620157,
+   "E_int_el": -33.24029791774772,
+   "E_int_nuc": 33.155537314951516,
+   "n_charges": 6612,
+   "sum_charges": 2.0000000000000107
+  },
+  "T_pairout_emb": {
+   "E": -1615.4742034380786,
+   "converged": true,
+   "nao": 822,
+   "natm": 36,
+   "charge": 0,
+   "E_int": -0.08381987209185837,
+   "E_int_el": -32.58504043409034,
+   "E_int_nuc": 32.50122056199848,
+   "n_charges": 6612,
+   "sum_charges": 2.0000000000000107
+  }
+ },
+ "basis": "def2-TZVP",
+ "derived": {
+  "embedded_single_site_kJ": -92.315
+ }
+}

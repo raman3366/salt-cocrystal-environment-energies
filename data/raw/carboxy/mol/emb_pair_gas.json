@@ -1,0 +1,74 @@
+{
+ "key": "carboxy",
+ "which": "pair",
+ "model": "gas",
+ "runs": {
+  "S_pair_vac": {
+   "E": -1119.703904208351,
+   "converged": true,
+   "nao": 531,
+   "natm": 25,
+   "charge": 0
+  },
+  "S_pair_emb": {
+   "E": -1119.9371684248981,
+   "converged": true,
+   "nao": 531,
+   "natm": 25,
+   "charge": 0,
+   "E_int": -0.2620250710631892,
+   "E_int_el": -0.9026606398013511,
+   "E_int_nuc": 0.640635568738162,
+   "n_charges": 7500
+  },
+  "T_pair_vac": {
+   "E": -1119.7486195716797,
+   "converged": true,
+   "nao": 531,
+   "natm": 25,
+   "charge": 0
+  },
+  "T_pair_emb": {
+   "E": -1119.891869165235,
+   "converged": true,
+   "nao": 531,
+   "natm": 25,
+   "charge": 0,
+   "E_int": -0.1689822952201251,
+   "E_int_el": -0.9808264290368737,
+   "E_int_nuc": 0.8118441338167486,
+   "n_charges": 7500
+  },
+  "N_pair_emb": {
+   "E": -1119.841879476582,
+   "converged": true,
+   "nao": 531,
+   "natm": 25,
+   "charge": 0,
+   "E_int": -0.10614688099102709,
+   "E_int_el": 0.8413393010898385,
+   "E_int_nuc": -0.9474861820808655,
+   "n_charges": 7525
+  },
+  "Tr_pair_emb": {
+   "E": -1119.8381979855894,
+   "converged": true,
+   "nao": 531,
+   "natm": 25,
+   "charge": 0,
+   "E_int": -0.14753250027803855,
+   "E_int_el": 1.0220432198761324,
+   "E_int_nuc": -1.169575720154171,
+   "n_charges": 7525,
+   "sum_charges": -9.99999994644174e-07
+  }
+ },
+ "derived": {
+  "vacuum_kJ": -117.4,
+  "embedded_single_site_kJ": 118.933,
+  "embedded_collective_kJ": 45.552,
+  "reverse_kJ": -9.666,
+  "lr_mean_kJ": 54.634,
+  "lambda_kJ": 64.3
+ }
+}

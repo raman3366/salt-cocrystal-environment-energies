@@ -1,0 +1,126 @@
+{
+ "key": "pcplut",
+ "model": "sc",
+ "pair": [
+  [
+   0,
+   [
+    0,
+    0,
+    0
+   ]
+  ],
+  [
+   2,
+   [
+    0,
+    0,
+    0
+   ]
+  ]
+ ],
+ "shell": [],
+ "n_shell": 0,
+ "align_P4_on_P0_A": [
+  -0.0,
+  -0.0,
+  -0.0
+ ],
+ "align_rms_A": 0.0378,
+ "rc_A": 25.0,
+ "smear_radius_A": 0.8,
+ "hb_ha_A": 2.5,
+ "site_sym": false,
+ "configs": {
+  "S_pair": {
+   "n_mm": 5220,
+   "n_mm_smeared": 104,
+   "n_boundary": 600,
+   "boundary_radius_A": 31.0,
+   "sum_mm_charge": 0.0,
+   "qm_charge_from_fit": 0.0,
+   "fit_rms_V": 9e-05,
+   "fit_max_V": 0.0004,
+   "fit_rms_V_at_atoms": 4e-05,
+   "constant_offset_V": 0.2121,
+   "without_boundary_rms_V": 0.0124,
+   "without_boundary_mean_V": -0.2129,
+   "n_qm": 30,
+   "qm_charge": 0,
+   "min_qm_mm_A": 2.48,
+   "pair_atoms": 30
+  },
+  "S_cluster": {
+   "n_mm": 5220,
+   "n_mm_smeared": 104,
+   "n_boundary": 600,
+   "boundary_radius_A": 31.0,
+   "sum_mm_charge": 0.0,
+   "qm_charge_from_fit": 0.0,
+   "fit_rms_V": 9e-05,
+   "fit_max_V": 0.0004,
+   "fit_rms_V_at_atoms": 4e-05,
+   "constant_offset_V": 0.2121,
+   "without_boundary_rms_V": 0.0124,
+   "without_boundary_mean_V": -0.2129,
+   "n_qm": 30,
+   "qm_charge": 0,
+   "min_qm_mm_A": 2.48,
+   "pair_atoms": 30
+  },
+  "T_pair": {
+   "n_mm": 5220,
+   "n_mm_smeared": 104,
+   "n_boundary": 600,
+   "boundary_radius_A": 31.0,
+   "sum_mm_charge": 0.0,
+   "qm_charge_from_fit": 0.0,
+   "fit_rms_V": 9e-05,
+   "fit_max_V": 0.0004,
+   "fit_rms_V_at_atoms": 4e-05,
+   "constant_offset_V": 0.2121,
+   "without_boundary_rms_V": 0.0124,
+   "without_boundary_mean_V": -0.2129,
+   "n_qm": 30,
+   "qm_charge": 0,
+   "min_qm_mm_A": 2.465,
+   "pair_atoms": 30
+  },
+  "T_cluster": {
+   "n_mm": 5220,
+   "n_mm_smeared": 104,
+   "n_boundary": 600,
+   "boundary_radius_A": 31.0,
+   "sum_mm_charge": 0.0,
+   "qm_charge_from_fit": 0.0,
+   "fit_rms_V": 9e-05,
+   "fit_max_V": 0.0004,
+   "fit_rms_V_at_atoms": 4e-05,
+   "constant_offset_V": 0.2121,
+   "without_boundary_rms_V": 0.0124,
+   "without_boundary_mean_V": -0.2129,
+   "n_qm": 30,
+   "qm_charge": 0,
+   "min_qm_mm_A": 2.465,
+   "pair_atoms": 30
+  },
+  "N_pair": {
+   "n_mm": 5220,
+   "n_mm_smeared": 103,
+   "n_boundary": 600,
+   "boundary_radius_A": 31.0,
+   "sum_mm_charge": 0.0002,
+   "qm_charge_from_fit": 0.0,
+   "fit_rms_V": 0.00023,
+   "fit_max_V": 0.00109,
+   "fit_rms_V_at_atoms": 9e-05,
+   "constant_offset_V": 0.2306,
+   "without_boundary_rms_V": 0.0324,
+   "without_boundary_mean_V": -0.2329,
+   "n_qm": 30,
+   "qm_charge": 0,
+   "min_qm_mm_A": 2.488,
+   "pair_atoms": 30
+  }
+ }
+}

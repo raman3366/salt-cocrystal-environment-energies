@@ -1,0 +1,48 @@
+{
+ "key": "carboxy",
+ "which": "cluster",
+ "model": "repeat",
+ "runs": {
+  "S_cluster_vac": {
+   "E": -5761.749353391853,
+   "converged": true,
+   "nao": 1491,
+   "natm": 114,
+   "charge": -2
+  },
+  "S_cluster_emb": {
+   "E": -5762.72046675715,
+   "converged": true,
+   "nao": 1491,
+   "natm": 114,
+   "charge": -2,
+   "E_int": -1.0939830790947838,
+   "E_int_el": -96.42223582852867,
+   "E_int_nuc": 95.32825274943389,
+   "n_charges": 7411
+  },
+  "T_cluster_vac": {
+   "E": -5761.708574872735,
+   "converged": true,
+   "nao": 1491,
+   "natm": 114,
+   "charge": -2
+  },
+  "T_cluster_emb": {
+   "E": -5762.676561786522,
+   "converged": true,
+   "nao": 1491,
+   "natm": 114,
+   "charge": -2,
+   "E_int": -1.0912320734105379,
+   "E_int_el": -96.40735852238231,
+   "E_int_nuc": 95.31612644897177,
+   "n_charges": 7411
+  }
+ },
+ "basis": "def2-TZVP pair + def2-SVP shell",
+ "derived": {
+  "vacuum_kJ": 107.064,
+  "embedded_single_site_kJ": 115.272
+ }
+}

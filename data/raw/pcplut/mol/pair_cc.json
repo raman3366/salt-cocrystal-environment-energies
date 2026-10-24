@@ -1,0 +1,29 @@
+{
+ "key": "pcplut",
+ "basis": "def2-svp",
+ "points": {
+  "P4r": {
+   "E_HF": -2923.6724531038917,
+   "E_MP2": -2926.416752539777,
+   "E_CCSD": -2926.5223850001594,
+   "E_CCSD_T": -2926.6378700959,
+   "ccsd_converged": true,
+   "nao": 350,
+   "frozen": 40,
+   "done": true
+  },
+  "P0": {
+   "E_HF": -2923.6825729344127,
+   "E_MP2": -2926.431849568961,
+   "E_CCSD": -2926.5370622904434,
+   "E_CCSD_T": -2926.652686694465,
+   "ccsd_converged": true,
+   "nao": 350,
+   "frozen": 40,
+   "done": true
+  }
+ },
+ "delta_T_P4r_kJ": -0.736,
+ "dMP2_P4r_kJ": 39.637,
+ "dCCSD_T_P4r_kJ": 38.901
+}

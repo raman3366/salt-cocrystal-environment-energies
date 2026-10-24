@@ -1,0 +1,8 @@
+{
+ "key": "nbaetpy",
+ "which": "pairout",
+ "model": "repeat_sitesym",
+ "runs": {},
+ "basis": "def2-TZVP",
+ "skipped": "empty transfer-site shell: R4a_outer = R4a and R4a_shellq = R1f by definition"
+}

@@ -1,0 +1,45 @@
+{
+ "key": "saph",
+ "align_rms_A": 0.1315,
+ "n_fu": 2,
+ "runs": {
+  "P0": {
+   "E_pbe_Ry": -905.15048984,
+   "E_pbe_sg15_Ry": -693.85329291,
+   "E_pbe0_sg15_Ry": -693.65517766
+  },
+  "T1": {
+   "E_pbe_Ry": -905.08567667,
+   "E_pbe_sg15_Ry": -693.78905034,
+   "E_pbe0_sg15_Ry": -693.59337203
+  },
+  "T1v": {
+   "E_pbe_Ry": -905.06151908
+  },
+  "Nv": {
+   "E_pbe_Ry": -905.00195701,
+   "E_pbe_sg15_Ry": -693.7054178,
+   "E_pbe0_sg15_Ry": -693.50679744
+  },
+  "T2": {
+   "E_pbe_Ry": -1810.23494324,
+   "axis": 0,
+   "construction": "vert_T2s: one whole pair instance moved (20 Oct 2026)",
+   "pair_images": {
+    "D": 0,
+    "H": 0,
+    "A": 0
+   }
+  }
+ },
+ "derived": {
+  "T1_pbe_kJ": 85.083,
+  "T1v_pbe_kJ": 116.796,
+  "Nv_pbe_kJ_per_pair": 97.493,
+  "T1_pbe0_kJ": 81.884,
+  "Nv_pbe0_kJ_per_pair": 97.825,
+  "T2_pbe_kJ": 86.689,
+  "cooperativity_vertical_pbe_kJ": -19.303
+ },
+ "units": "kJ/mol: T1, T1v, T2 per moved pair (one pair of the cell, or of the supercell); Nv per pair"
+}

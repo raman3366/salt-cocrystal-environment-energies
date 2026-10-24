@@ -1,0 +1,242 @@
+{
+ "key": "carboxy",
+ "generated_utc": "2026-10-22T23:40:14+00:00",
+ "nat": 50,
+ "n_fu": 2,
+ "kgrid": [
+  2,
+  1,
+  1
+ ],
+ "ecut_sssp": [
+  70,
+  560
+ ],
+ "ecut_sg15": [
+  100,
+  400
+ ],
+ "path": {
+  "d_S": 1.0546403397412272,
+  "L_S": 2.828523770590156,
+  "r_eq": 0.97422,
+  "r_eq_source": "optc/src/mol.py req (first computed for saph)",
+  "dS_copies": [
+   1.0546403397412272,
+   1.0546403397412272
+  ],
+  "LS_copies": [
+   2.828523770590157,
+   2.8285237705901545
+  ]
+ },
+ "points": {
+  "P0": {
+   "E_pbe_Ry": -851.15925472,
+   "proton": [
+    {
+     "D-H": 1.0546,
+     "H...A": 1.7772,
+     "D...A": 2.8285,
+     "angle": 174.29,
+     "delta": -0.7225
+    },
+    {
+     "D-H": 1.0546,
+     "H...A": 1.7772,
+     "D...A": 2.8285,
+     "angle": 174.29,
+     "delta": -0.7225
+    }
+   ],
+   "other_protons_moved": [],
+   "target": null,
+   "extra": false,
+   "target_source": "recomputed",
+   "E_pbe_sg15_Ry": -633.68385104,
+   "E_pbe0_sg15_Ry": -633.48299998,
+   "E_pbe50_sg15_Ry": -633.37430026,
+   "dE_pbe_kJmol_fu": 0.0,
+   "hybrid_corr_kJmol_fu": 0.0,
+   "dE_pbe0_kJmol_fu": 0.0,
+   "dE_pbe50_kJmol_fu": 0.0
+  },
+  "P1": {
+   "E_pbe_Ry": -851.12794565,
+   "proton": [
+    {
+     "D-H": 1.2546,
+     "H...A": 1.336,
+     "D...A": 2.5868,
+     "angle": 173.84,
+     "delta": -0.0814
+    },
+    {
+     "D-H": 1.2546,
+     "H...A": 1.336,
+     "D...A": 2.5868,
+     "angle": 173.84,
+     "delta": -0.0814
+    }
+   ],
+   "other_protons_moved": [],
+   "target": [
+    "D-H",
+    1.2545562
+   ],
+   "extra": false,
+   "target_source": "input",
+   "target_recomputed": [
+    "D-H",
+    1.2545561974534594
+   ],
+   "E_pbe_sg15_Ry": -633.6522072,
+   "E_pbe0_sg15_Ry": -633.44629252,
+   "dE_pbe_kJmol_fu": 20.55,
+   "hybrid_corr_kJmol_fu": 3.324,
+   "dE_pbe0_kJmol_fu": 23.874
+  },
+  "P2": {
+   "E_pbe_Ry": -851.10688942,
+   "proton": [
+    {
+     "D-H": 1.4545,
+     "H...A": 1.1188,
+     "D...A": 2.5673,
+     "angle": 172.1,
+     "delta": 0.3357
+    },
+    {
+     "D-H": 1.4545,
+     "H...A": 1.1188,
+     "D...A": 2.5673,
+     "angle": 172.1,
+     "delta": 0.3357
+    }
+   ],
+   "other_protons_moved": [],
+   "target": [
+    "D-H",
+    1.45447206
+   ],
+   "extra": false,
+   "target_source": "input",
+   "target_recomputed": [
+    "D-H",
+    1.4544720551656916
+   ],
+   "E_pbe_sg15_Ry": -633.63165779,
+   "E_pbe0_sg15_Ry": -633.42995619,
+   "dE_pbe_kJmol_fu": 34.371,
+   "hybrid_corr_kJmol_fu": 0.558,
+   "dE_pbe0_kJmol_fu": 34.929
+  },
+  "P3": {
+   "E_pbe_Ry": -851.093855,
+   "proton": [
+    {
+     "D-H": 1.6544,
+     "H...A": 1.0433,
+     "D...A": 2.6889,
+     "angle": 170.5,
+     "delta": 0.6111
+    },
+    {
+     "D-H": 1.6544,
+     "H...A": 1.0433,
+     "D...A": 2.6889,
+     "angle": 170.5,
+     "delta": 0.6111
+    }
+   ],
+   "other_protons_moved": [],
+   "target": [
+    "D-H",
+    1.65438791
+   ],
+   "extra": false,
+   "target_source": "input",
+   "target_recomputed": [
+    "D-H",
+    1.6543879128779237
+   ],
+   "E_pbe_sg15_Ry": -633.6190145,
+   "E_pbe0_sg15_Ry": -633.42092975,
+   "dE_pbe_kJmol_fu": 42.927,
+   "hybrid_corr_kJmol_fu": -1.816,
+   "dE_pbe0_kJmol_fu": 41.111
+  },
+  "P4": {
+   "E_pbe_Ry": -851.08280388,
+   "proton": [
+    {
+     "D-H": 1.6465,
+     "H...A": 0.9742,
+     "D...A": 2.6135,
+     "angle": 171.2,
+     "delta": 0.6723
+    },
+    {
+     "D-H": 1.6465,
+     "H...A": 0.9742,
+     "D...A": 2.6135,
+     "angle": 171.2,
+     "delta": 0.6723
+    }
+   ],
+   "other_protons_moved": [],
+   "target": [
+    "A-H",
+    0.97422
+   ],
+   "extra": false,
+   "target_source": "input",
+   "target_recomputed": [
+    "A-H",
+    0.97422
+   ],
+   "E_pbe_sg15_Ry": -633.60866038,
+   "E_pbe0_sg15_Ry": -633.41562011,
+   "E_pbe50_sg15_Ry": -633.31383546,
+   "dE_pbe_kJmol_fu": 50.18,
+   "hybrid_corr_kJmol_fu": -5.127,
+   "dE_pbe0_kJmol_fu": 45.053,
+   "dE_pbe50_kJmol_fu": 40.514
+  }
+ },
+ "P4r": {
+  "E_pbe_Ry": -851.1592677,
+  "dE_pbe_kJmol_fu": -0.009,
+  "proton": [
+   {
+    "D-H": 1.0549,
+    "H...A": 1.7755,
+    "D...A": 2.8271,
+    "angle": 174.25,
+    "delta": -0.7207
+   },
+   {
+    "D-H": 1.0549,
+    "H...A": 1.7755,
+    "D...A": 2.8271,
+    "angle": 174.25,
+    "delta": -0.7207
+   }
+  ],
+  "other_protons_moved": []
+ },
+ "kcheck": {
+  "k_dense": [
+   3,
+   2,
+   2
+  ],
+  "E_dense_Ry": {
+   "P0": -851.16221916,
+   "P4": -851.08624649
+  },
+  "dE_P4_dense_kJmol_fu": 49.867,
+  "dE_P4_kJmol_fu": 50.18
+ },
+ "units": "kJ/mol per formula unit (all copies move: per cell / n_fu)"
+}

@@ -1,0 +1,50 @@
+{
+ "key": "pcplut",
+ "which": "cluster",
+ "model": "repeat_sitesym",
+ "runs": {
+  "S_cluster_vac": {
+   "E": -2931.241422229982,
+   "converged": true,
+   "nao": 710,
+   "natm": 30,
+   "charge": 0
+  },
+  "S_cluster_emb": {
+   "E": -2931.2487879196397,
+   "converged": true,
+   "nao": 710,
+   "natm": 30,
+   "charge": 0,
+   "E_int": -0.008424727941343302,
+   "E_int_el": -0.5377058104644278,
+   "E_int_nuc": 0.5292810825230845,
+   "n_charges": 5820,
+   "sum_charges": -7.66053886991358e-15
+  },
+  "T_cluster_vac": {
+   "E": -2931.2282368342617,
+   "converged": true,
+   "nao": 710,
+   "natm": 30,
+   "charge": 0
+  },
+  "T_cluster_emb": {
+   "E": -2931.241098644492,
+   "converged": true,
+   "nao": 710,
+   "natm": 30,
+   "charge": 0,
+   "E_int": -0.013904476490071094,
+   "E_int_el": -0.5273612808700556,
+   "E_int_nuc": 0.5134568043799845,
+   "n_charges": 5820,
+   "sum_charges": -7.66053886991358e-15
+  }
+ },
+ "basis": "def2-TZVP",
+ "derived": {
+  "vacuum_kJ": 34.618,
+  "embedded_single_site_kJ": 20.188
+ }
+}

@@ -1,0 +1,52 @@
+{
+ "key": "perchlorate",
+ "which": "cluster",
+ "model": "sc_site",
+ "runs": {
+  "S_cluster_vac": {
+   "E": -4956.653250369397,
+   "converged": true,
+   "nao": 1686,
+   "natm": 75,
+   "charge": 0,
+   "copied_from": "emb_cluster_repeat_site.json"
+  },
+  "T_cluster_vac": {
+   "E": -4956.625782503662,
+   "converged": true,
+   "nao": 1686,
+   "natm": 75,
+   "charge": 0,
+   "copied_from": "emb_cluster_repeat_site.json"
+  },
+  "S_cluster_emb": {
+   "E": -4957.352679809265,
+   "converged": true,
+   "nao": 1686,
+   "natm": 75,
+   "charge": 0,
+   "E_int": -0.7888026190514239,
+   "E_int_el": -35.98085104056118,
+   "E_int_nuc": 35.19204842150975,
+   "n_charges": 7150,
+   "sum_charges": -3.0000000064145382e-06
+  },
+  "T_cluster_emb": {
+   "E": -4957.2912267901165,
+   "converged": true,
+   "nao": 1686,
+   "natm": 75,
+   "charge": 0,
+   "E_int": -0.7543721368663441,
+   "E_int_el": -36.11387971226102,
+   "E_int_nuc": 35.35950757539467,
+   "n_charges": 7150,
+   "sum_charges": -3.0000000064145382e-06
+  }
+ },
+ "basis": "def2-TZVP",
+ "derived": {
+  "vacuum_kJ": 72.117,
+  "embedded_single_site_kJ": 161.345
+ }
+}

@@ -1,0 +1,74 @@
+{
+ "key": "sulfamate",
+ "which": "pair",
+ "model": "sc",
+ "runs": {
+  "S_pair_vac": {
+   "E": -1571.2336888649552,
+   "converged": true,
+   "nao": 574,
+   "natm": 27,
+   "charge": 0
+  },
+  "S_pair_emb": {
+   "E": -1571.4858065332967,
+   "converged": true,
+   "nao": 574,
+   "natm": 27,
+   "charge": 0,
+   "E_int": -0.2862868184947045,
+   "E_int_el": -2.32305970948089,
+   "E_int_nuc": 2.0367728909861853,
+   "n_charges": 7404
+  },
+  "T_pair_vac": {
+   "E": -1571.2642045548876,
+   "converged": true,
+   "nao": 574,
+   "natm": 27,
+   "charge": 0
+  },
+  "T_pair_emb": {
+   "E": -1571.4538123067498,
+   "converged": true,
+   "nao": 574,
+   "natm": 27,
+   "charge": 0,
+   "E_int": -0.22367748515186925,
+   "E_int_el": -2.3185325598803264,
+   "E_int_nuc": 2.094855074728457,
+   "n_charges": 7404
+  },
+  "N_pair_emb": {
+   "E": -1571.4056029371795,
+   "converged": true,
+   "nao": 574,
+   "natm": 27,
+   "charge": 0,
+   "E_int": -0.1628065728008665,
+   "E_int_el": 0.19121576422716083,
+   "E_int_nuc": -0.3540223370280273,
+   "n_charges": 7404
+  },
+  "Tr_pair_emb": {
+   "E": -1571.3961761922317,
+   "converged": true,
+   "nao": 574,
+   "natm": 27,
+   "charge": 0,
+   "E_int": -0.18374311645105368,
+   "E_int_el": 0.19918773018891156,
+   "E_int_nuc": -0.38293084663996524,
+   "n_charges": 7404,
+   "sum_charges": -9.99999991702083e-07
+  }
+ },
+ "derived": {
+  "vacuum_kJ": -80.119,
+  "embedded_single_site_kJ": 84.001,
+  "embedded_collective_kJ": 48.476,
+  "reverse_kJ": -24.75,
+  "lr_mean_kJ": 29.626,
+  "lambda_kJ": 54.376
+ }
+}

@@ -1,0 +1,21 @@
+{
+ "key": "mppcp",
+ "E_Ry": {
+  "x80_P0": -918.49687872,
+  "x80_P4r": -918.49978171,
+  "vc_S": -918.50161946,
+  "vc_P4r": -918.50517631,
+  "pbe_sg15_vcS": -698.46113139,
+  "pbe_sg15_vcP4r": -698.46513608,
+  "pbe0_sg15_vcS": -698.47743025,
+  "pbe0_sg15_vcP4r": -698.47762137
+ },
+ "units": "kJ/mol per formula unit, E(P4r state) - E(S state)",
+ "dE_xray_cell_pbe80": -1.905,
+ "dE_relaxed_cells_pbe80": -2.335,
+ "dE_relaxed_cells_pbe0": 0.168,
+ "volume_change_pct": {
+  "vc_S": 2.79,
+  "vc_P4r": 1.78
+ }
+}

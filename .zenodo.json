@@ -1,0 +1,16 @@
+{
+ "title": "Environment energies of proton transfer in thirteen acid–base crystals: data and code",
+ "upload_type": "dataset",
+ "description": "Inputs, outputs, analysis code and figure scripts of a study of thirteen acid-base crystals (nine salts, four cocrystals) and a polymorph pair: the proton-transfer energy of the acid-base pair alone, in the lattice field, with its first hydrogen-bonded shell and in the periodic crystal (PBE0 with MP2, SCS-MP2 and wB97X-D3(BJ) pair corrections), the environment term, error budgets, reverse vertical gaps and the periodic closure. Includes the plan as committed before the production calculations.",
+ "creators": [
+  {"name": "Muthuselvi, C.", "orcid": "0000-0003-2935-9714", "affiliation": "Sri Ramanas College of Arts and Science for Women, Aruppukottai, India"},
+  {"name": "Lakshmipathi, Anantha Raman", "orcid": "0000-0003-3465-286X", "affiliation": "Rajalakshmi Institute of Technology, Chennai, India"},
+  {"name": "Saravanakkumar, D.", "orcid": "0009-0006-1437-0266", "affiliation": "Thiagarajar College (Autonomous), Madurai, India"},
+  {"name": "Varadharajan, Venkatramanan", "orcid": "0000-0003-1532-7762", "affiliation": "PSG College of Technology, Coimbatore, India"}
+ ],
+ "license": "cc-by-4.0",
+ "keywords": ["salt-cocrystal continuum", "proton transfer", "periodic DFT", "electrostatic embedding", "pair correction", "acid-base crystals"],
+ "related_identifiers": [
+  {"identifier": "10.5281/zenodo.23335995", "relation": "continues", "resource_type": "dataset"}
+ ]
+}

@@ -1,0 +1,48 @@
+{
+ "key": "brsalt",
+ "which": "cluster",
+ "model": "repeat_site",
+ "runs": {
+  "S_cluster_vac": {
+   "E": -5386.759736030015,
+   "converged": true,
+   "nao": 1799,
+   "natm": 72,
+   "charge": -2
+  },
+  "S_cluster_emb": {
+   "E": -5387.337041401109,
+   "converged": true,
+   "nao": 1799,
+   "natm": 72,
+   "charge": -2,
+   "E_int": -0.6519071982650786,
+   "E_int_el": -77.01399856336168,
+   "E_int_nuc": 76.3620913650966,
+   "n_charges": 6540
+  },
+  "T_cluster_vac": {
+   "E": -5386.739744722439,
+   "converged": true,
+   "nao": 1799,
+   "natm": 72,
+   "charge": -2
+  },
+  "T_cluster_emb": {
+   "E": -5387.315587688315,
+   "converged": true,
+   "nao": 1799,
+   "natm": 72,
+   "charge": -2,
+   "E_int": -0.6486590084434738,
+   "E_int_el": -76.29947260733229,
+   "E_int_nuc": 75.65081359888882,
+   "n_charges": 6540
+  }
+ },
+ "basis": "def2-TZVP",
+ "derived": {
+  "vacuum_kJ": 52.487,
+  "embedded_single_site_kJ": 56.327
+ }
+}

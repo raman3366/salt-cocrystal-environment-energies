@@ -1,0 +1,326 @@
+{
+ "key": "chloro",
+ "generated_utc": "2026-10-22T23:40:30+00:00",
+ "nat": 88,
+ "n_fu": 4,
+ "kgrid": [
+  1,
+  2,
+  1
+ ],
+ "ecut_sssp": [
+  70,
+  560
+ ],
+ "ecut_sg15": [
+  100,
+  400
+ ],
+ "path": {
+  "d_S": 1.0640781536357389,
+  "L_S": 2.7316005685509706,
+  "r_eq": 0.97422,
+  "r_eq_source": "optc/src/mol.py req (first computed for saph)",
+  "dS_copies": [
+   1.06407815363574,
+   1.0640781536357402,
+   1.064078153635737,
+   1.064078153635738
+  ],
+  "LS_copies": [
+   2.7316005685509714,
+   2.7316005685509714,
+   2.731600568550969,
+   2.7316005685509697
+  ]
+ },
+ "points": {
+  "P0": {
+   "E_pbe_Ry": -1423.67496027,
+   "proton": [
+    {
+     "D-H": 1.0641,
+     "H...A": 1.6735,
+     "D...A": 2.7316,
+     "angle": 172.25,
+     "delta": -0.6094
+    },
+    {
+     "D-H": 1.0641,
+     "H...A": 1.6735,
+     "D...A": 2.7316,
+     "angle": 172.25,
+     "delta": -0.6094
+    },
+    {
+     "D-H": 1.0641,
+     "H...A": 1.6735,
+     "D...A": 2.7316,
+     "angle": 172.25,
+     "delta": -0.6094
+    },
+    {
+     "D-H": 1.0641,
+     "H...A": 1.6735,
+     "D...A": 2.7316,
+     "angle": 172.25,
+     "delta": -0.6094
+    }
+   ],
+   "other_protons_moved": [],
+   "target": null,
+   "extra": false,
+   "target_source": "recomputed",
+   "E_pbe_sg15_Ry": -1082.22434897,
+   "E_pbe0_sg15_Ry": -1082.04599747,
+   "dE_pbe_kJmol_fu": 0.0,
+   "hybrid_corr_kJmol_fu": 0.0,
+   "dE_pbe0_kJmol_fu": 0.0
+  },
+  "P1": {
+   "E_pbe_Ry": -1423.62452431,
+   "proton": [
+    {
+     "D-H": 1.2374,
+     "H...A": 1.357,
+     "D...A": 2.5896,
+     "angle": 172.99,
+     "delta": -0.1196
+    },
+    {
+     "D-H": 1.2374,
+     "H...A": 1.357,
+     "D...A": 2.5896,
+     "angle": 172.99,
+     "delta": -0.1196
+    },
+    {
+     "D-H": 1.2374,
+     "H...A": 1.357,
+     "D...A": 2.5896,
+     "angle": 172.99,
+     "delta": -0.1196
+    },
+    {
+     "D-H": 1.2374,
+     "H...A": 1.357,
+     "D...A": 2.5896,
+     "angle": 172.99,
+     "delta": -0.1196
+    }
+   ],
+   "other_protons_moved": [],
+   "target": [
+    "D-H",
+    1.23740376
+   ],
+   "extra": false,
+   "target_source": "input",
+   "target_recomputed": [
+    "D-H",
+    1.2374037573645469
+   ],
+   "E_pbe_sg15_Ry": -1082.17357706,
+   "E_pbe0_sg15_Ry": -1081.98678099,
+   "dE_pbe_kJmol_fu": 16.552,
+   "hybrid_corr_kJmol_fu": 2.771,
+   "dE_pbe0_kJmol_fu": 19.323
+  },
+  "P2": {
+   "E_pbe_Ry": -1423.57493838,
+   "proton": [
+    {
+     "D-H": 1.4107,
+     "H...A": 1.1549,
+     "D...A": 2.5597,
+     "angle": 172.15,
+     "delta": 0.2559
+    },
+    {
+     "D-H": 1.4107,
+     "H...A": 1.1549,
+     "D...A": 2.5597,
+     "angle": 172.15,
+     "delta": 0.2559
+    },
+    {
+     "D-H": 1.4107,
+     "H...A": 1.1549,
+     "D...A": 2.5597,
+     "angle": 172.15,
+     "delta": 0.2559
+    },
+    {
+     "D-H": 1.4107,
+     "H...A": 1.1549,
+     "D...A": 2.5597,
+     "angle": 172.15,
+     "delta": 0.2559
+    }
+   ],
+   "other_protons_moved": [],
+   "target": [
+    "D-H",
+    1.41072936
+   ],
+   "extra": false,
+   "target_source": "input",
+   "target_recomputed": [
+    "D-H",
+    1.4107293610933547
+   ],
+   "E_pbe_sg15_Ry": -1082.12457924,
+   "E_pbe0_sg15_Ry": -1081.94453712,
+   "dE_pbe_kJmol_fu": 32.826,
+   "hybrid_corr_kJmol_fu": 0.555,
+   "dE_pbe0_kJmol_fu": 33.381
+  },
+  "P3": {
+   "E_pbe_Ry": -1423.54329552,
+   "proton": [
+    {
+     "D-H": 1.5841,
+     "H...A": 1.0681,
+     "D...A": 2.6446,
+     "angle": 171.2,
+     "delta": 0.516
+    },
+    {
+     "D-H": 1.5841,
+     "H...A": 1.0681,
+     "D...A": 2.6446,
+     "angle": 171.2,
+     "delta": 0.516
+    },
+    {
+     "D-H": 1.5841,
+     "H...A": 1.0681,
+     "D...A": 2.6446,
+     "angle": 171.2,
+     "delta": 0.516
+    },
+    {
+     "D-H": 1.5841,
+     "H...A": 1.0681,
+     "D...A": 2.6446,
+     "angle": 171.2,
+     "delta": 0.516
+    }
+   ],
+   "other_protons_moved": [],
+   "target": [
+    "D-H",
+    1.58405496
+   ],
+   "extra": false,
+   "target_source": "input",
+   "target_recomputed": [
+    "D-H",
+    1.5840549648221627
+   ],
+   "E_pbe_sg15_Ry": -1082.09316106,
+   "E_pbe0_sg15_Ry": -1081.92162126,
+   "dE_pbe_kJmol_fu": 43.211,
+   "hybrid_corr_kJmol_fu": -2.236,
+   "dE_pbe0_kJmol_fu": 40.975
+  },
+  "P4": {
+   "E_pbe_Ry": -1423.5047245,
+   "proton": [
+    {
+     "D-H": 1.6102,
+     "H...A": 0.9742,
+     "D...A": 2.5772,
+     "angle": 171.17,
+     "delta": 0.636
+    },
+    {
+     "D-H": 1.6102,
+     "H...A": 0.9742,
+     "D...A": 2.5772,
+     "angle": 171.17,
+     "delta": 0.636
+    },
+    {
+     "D-H": 1.6102,
+     "H...A": 0.9742,
+     "D...A": 2.5772,
+     "angle": 171.17,
+     "delta": 0.636
+    },
+    {
+     "D-H": 1.6102,
+     "H...A": 0.9742,
+     "D...A": 2.5772,
+     "angle": 171.17,
+     "delta": 0.636
+    }
+   ],
+   "other_protons_moved": [],
+   "target": [
+    "A-H",
+    0.97422
+   ],
+   "extra": false,
+   "target_source": "input",
+   "target_recomputed": [
+    "A-H",
+    0.97422
+   ],
+   "E_pbe_sg15_Ry": -1082.05619964,
+   "E_pbe0_sg15_Ry": -1081.89853015,
+   "dE_pbe_kJmol_fu": 55.869,
+   "hybrid_corr_kJmol_fu": -6.788,
+   "dE_pbe0_kJmol_fu": 49.081
+  }
+ },
+ "P4r": {
+  "E_pbe_Ry": -1423.6749303,
+  "dE_pbe_kJmol_fu": 0.01,
+  "proton": [
+   {
+    "D-H": 1.0638,
+    "H...A": 1.6736,
+    "D...A": 2.7314,
+    "angle": 172.17,
+    "delta": -0.6098
+   },
+   {
+    "D-H": 1.0638,
+    "H...A": 1.6736,
+    "D...A": 2.7314,
+    "angle": 172.17,
+    "delta": -0.6098
+   },
+   {
+    "D-H": 1.0638,
+    "H...A": 1.6736,
+    "D...A": 2.7314,
+    "angle": 172.17,
+    "delta": -0.6098
+   },
+   {
+    "D-H": 1.0638,
+    "H...A": 1.6736,
+    "D...A": 2.7314,
+    "angle": 172.17,
+    "delta": -0.6098
+   }
+  ],
+  "other_protons_moved": []
+ },
+ "kcheck": {
+  "k_dense": [
+   2,
+   3,
+   2
+  ],
+  "E_dense_Ry": {
+   "P0": -1423.67527447,
+   "P4": -1423.50439971
+  },
+  "dE_P4_dense_kJmol_fu": 56.079,
+  "dE_P4_kJmol_fu": 55.869
+ },
+ "units": "kJ/mol per formula unit (all copies move: per cell / n_fu)"
+}

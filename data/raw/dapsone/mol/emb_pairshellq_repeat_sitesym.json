@@ -1,0 +1,35 @@
+{
+ "key": "dapsone",
+ "which": "pairshellq",
+ "model": "repeat_sitesym",
+ "runs": {
+  "S_pairshellq_emb": {
+   "E": -1951.3214835921576,
+   "converged": true,
+   "nao": 1094,
+   "natm": 48,
+   "charge": 0,
+   "E_int": -0.0379368053528486,
+   "E_int_el": 4.504986708412042,
+   "E_int_nuc": -4.54292351376489,
+   "n_charges": 58,
+   "sum_charges": -2.220446049250313e-16
+  },
+  "T_pairshellq_emb": {
+   "E": -1951.291809064235,
+   "converged": true,
+   "nao": 1094,
+   "natm": 48,
+   "charge": 0,
+   "E_int": -0.04361080682257068,
+   "E_int_el": 4.523424219062136,
+   "E_int_nuc": -4.567035025884707,
+   "n_charges": 58,
+   "sum_charges": -2.220446049250313e-16
+  }
+ },
+ "basis": "def2-TZVP",
+ "derived": {
+  "embedded_single_site_kJ": 77.91
+ }
+}

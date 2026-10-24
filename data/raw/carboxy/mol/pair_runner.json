@@ -1,0 +1,190 @@
+{
+ "key": "carboxy",
+ "runner_up": {
+  "D": 16,
+  "H": 22,
+  "A": 12,
+  "labels": "N-H3N...O1",
+  "DA": 2.8562,
+  "HA": 1.9831,
+  "DH": 0.8895,
+  "angle": 166.73,
+  "inter": true
+ },
+ "bonds": {
+  "chosen": {
+   "D": 16,
+   "H": 20,
+   "A": 13,
+   "r_eq_A": 0.97422,
+   "r_eq_from": "req.json",
+   "DA_A": 2.8285,
+   "points": {
+    "P0": {
+     "E_PBE0_D3": -1119.7039042083502,
+     "pbe0_converged": true,
+     "nao": 531,
+     "E_wB97X_D3BJ": -1120.8962205025193,
+     "wb97x_converged": true,
+     "E_PBE_D3": -1119.6726750928462,
+     "pbe_converged": true,
+     "E_HF": -1115.7058015238272,
+     "E_MP2": -1118.5677047792628,
+     "E_SCS_MP2": -1118.4879682112914,
+     "e_corr_os": -2.109460310368139,
+     "e_corr_ss": -0.7524429450675907,
+     "frozen": 19,
+     "hf_converged": true,
+     "done": true
+    },
+    "vert": {
+     "E_PBE0_D3": -1119.735983334232,
+     "pbe0_converged": true,
+     "nao": 531,
+     "E_wB97X_D3BJ": -1120.927525537884,
+     "wb97x_converged": true,
+     "E_PBE_D3": -1119.7026782199107,
+     "pbe_converged": true,
+     "E_HF": -1115.7411664955764,
+     "E_MP2": -1118.5972278648528,
+     "E_SCS_MP2": -1118.5175610839394,
+     "e_corr_os": -2.1050470753124393,
+     "e_corr_ss": -0.7510142939640747,
+     "frozen": 19,
+     "hf_converged": true,
+     "done": true
+    }
+   },
+   "vertical_kJ": {
+    "PBE0_D3": -84.224,
+    "PBE_D3": -78.773,
+    "wB97X_D3BJ": -82.191,
+    "MP2": -77.513,
+    "SCS_MP2": -77.696
+   },
+   "A_image": [
+    0,
+    -1,
+    0
+   ]
+  },
+  "runner": {
+   "D": 16,
+   "H": 22,
+   "A": 12,
+   "A_image": [
+    -1,
+    0,
+    0
+   ],
+   "r_eq_A": 0.97422,
+   "r_eq_from": "req.json",
+   "DA_A": 2.7996,
+   "points": {
+    "P0": {
+     "E_PBE0_D3": -1119.7021268770707,
+     "pbe0_converged": true,
+     "nao": 531,
+     "E_wB97X_D3BJ": -1120.8947230603662,
+     "wb97x_converged": true,
+     "E_PBE_D3": -1119.6711616267635,
+     "pbe_converged": true,
+     "E_HF": -1115.7001411879626,
+     "E_MP2": -1118.566378200043,
+     "E_SCS_MP2": -1118.48599454182,
+     "e_corr_os": -2.112047326727556,
+     "e_corr_ss": -0.754189685352656,
+     "frozen": 19,
+     "hf_converged": true,
+     "done": true
+    },
+    "vert": {
+     "E_PBE0_D3": -1119.7312707421215,
+     "pbe0_converged": true,
+     "nao": 531,
+     "E_wB97X_D3BJ": -1120.9233623609546,
+     "wb97x_converged": true,
+     "E_PBE_D3": -1119.698218960797,
+     "pbe_converged": true,
+     "E_HF": -1115.7330052229952,
+     "E_MP2": -1118.5933406309907,
+     "E_SCS_MP2": -1118.5130602937456,
+     "e_corr_os": -2.107626847790675,
+     "e_corr_ss": -0.7527085602048573,
+     "frozen": 19,
+     "hf_converged": true,
+     "done": true
+    }
+   },
+   "vertical_kJ": {
+    "PBE0_D3": -76.517,
+    "PBE_D3": -71.039,
+    "wB97X_D3BJ": -75.192,
+    "MP2": -70.79,
+    "SCS_MP2": -71.061
+   }
+  }
+ },
+ "superseded": [
+  {
+   "D": 16,
+   "H": 18,
+   "A": 13,
+   "r_eq_A": 0.97422,
+   "r_eq_from": "req.json",
+   "DA_A": 2.8285,
+   "points": {
+    "P0": {
+     "E_PBE0_D3": -1119.703904208351,
+     "pbe0_converged": true,
+     "nao": 531,
+     "E_wB97X_D3BJ": -1120.8962205025207,
+     "wb97x_converged": true,
+     "E_PBE_D3": -1119.6726750928458,
+     "pbe_converged": true,
+     "E_HF": -1115.705801523825,
+     "E_MP2": -1118.5677047792606,
+     "E_SCS_MP2": -1118.4879682112892,
+     "e_corr_os": -2.1094603103681218,
+     "e_corr_ss": -0.7524429450675836,
+     "frozen": 19,
+     "hf_converged": true,
+     "done": true
+    },
+    "vert": {
+     "E_PBE0_D3": -1119.6436560912296,
+     "pbe0_converged": true,
+     "nao": 531,
+     "E_wB97X_D3BJ": -1120.8335183219538,
+     "wb97x_converged": true,
+     "E_PBE_D3": -1119.6131495533589,
+     "pbe_converged": true,
+     "E_HF": -1115.6374777938718,
+     "E_MP2": -1118.5021478057226,
+     "E_SCS_MP2": -1118.4215817240254,
+     "e_corr_os": -2.110631453311331,
+     "e_corr_ss": -0.7540385585395661,
+     "frozen": 19,
+     "hf_converged": true,
+     "done": true
+    }
+   },
+   "vertical_kJ": {
+    "PBE0_D3": 158.181,
+    "PBE_D3": 156.284,
+    "wB97X_D3BJ": 164.625,
+    "MP2": 172.12,
+    "SCS_MP2": 174.298
+   },
+   "tag": "runner",
+   "superseded": "21 Oct 2026: acceptor image bonded through H (bond_pair fix)"
+  }
+ ],
+ "runner_minus_chosen_kJ": {
+  "PBE0_D3": 7.707,
+  "PBE_D3": 7.734,
+  "wB97X_D3BJ": 6.999,
+  "MP2": 6.723,
+  "SCS_MP2": 6.635
+ }
+}

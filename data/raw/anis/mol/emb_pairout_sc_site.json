@@ -1,0 +1,35 @@
+{
+ "key": "anis",
+ "which": "pairout",
+ "model": "sc_site",
+ "runs": {
+  "S_pairout_emb": {
+   "E": -1045.8129026312167,
+   "converged": true,
+   "nao": 512,
+   "natm": 26,
+   "charge": 0,
+   "E_int": -0.1409566349240734,
+   "E_int_el": -11.40627814566978,
+   "E_int_nuc": 11.265321510745707,
+   "n_charges": 7535,
+   "sum_charges": 0.9999990000000027
+  },
+  "T_pairout_emb": {
+   "E": -1045.8234994184731,
+   "converged": true,
+   "nao": 512,
+   "natm": 26,
+   "charge": 0,
+   "E_int": -0.11675313179926405,
+   "E_int_el": -11.3860400133156,
+   "E_int_nuc": 11.269286881516337,
+   "n_charges": 7535,
+   "sum_charges": 0.9999990000000027
+  }
+ },
+ "basis": "def2-TZVP",
+ "derived": {
+  "embedded_single_site_kJ": -27.822
+ }
+}

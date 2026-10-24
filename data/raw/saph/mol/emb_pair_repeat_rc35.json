@@ -1,0 +1,63 @@
+{
+ "key": "saph",
+ "which": "pair",
+ "model": "repeat_rc35",
+ "runs": {
+  "S_pair_vac": {
+   "E": -1534.989460252812,
+   "converged": true,
+   "nao": 574,
+   "natm": 27,
+   "charge": 0
+  },
+  "S_pair_emb": {
+   "E": -1535.2411594408666,
+   "converged": true,
+   "nao": 574,
+   "natm": 27,
+   "charge": 0,
+   "E_int": -0.2842220633134911,
+   "E_int_el": -10.07643091075708,
+   "E_int_nuc": 9.79220884744359,
+   "n_charges": 18798,
+   "sum_charges": 9.999999637244628e-07
+  },
+  "T_pair_vac": {
+   "E": -1535.0303113265159,
+   "converged": true,
+   "nao": 574,
+   "natm": 27,
+   "charge": 0
+  },
+  "T_pair_emb": {
+   "E": -1535.2027601499747,
+   "converged": true,
+   "nao": 574,
+   "natm": 27,
+   "charge": 0,
+   "E_int": -0.20289451191794683,
+   "E_int_el": -10.096637561257893,
+   "E_int_nuc": 9.893743049339946,
+   "n_charges": 18798,
+   "sum_charges": 9.999999637244628e-07
+  },
+  "N_pair_emb": {
+   "E": -1535.126352235473,
+   "converged": true,
+   "nao": 574,
+   "natm": 27,
+   "charge": 0,
+   "E_int": -0.1077689898439802,
+   "E_int_el": -4.965199040684301,
+   "E_int_nuc": 4.857430050840321,
+   "n_charges": 18798,
+   "sum_charges": -1.0000000196797032e-06
+  }
+ },
+ "basis": "def2-TZVP",
+ "derived": {
+  "vacuum_kJ": -107.254,
+  "embedded_single_site_kJ": 100.817,
+  "embedded_collective_kJ": 69.788
+ }
+}

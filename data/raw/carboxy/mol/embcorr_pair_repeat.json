@@ -1,0 +1,60 @@
+{
+ "key": "carboxy",
+ "model": "repeat",
+ "runs": {
+  "S_pair": {
+   "E_PBE0_D3": -1119.9737016341314,
+   "E_wB97X_D3BJ": -1121.1672583269576,
+   "E_HF": -1115.9921438277265,
+   "E_MP2": -1118.8367827810487,
+   "E_SCS_MP2": -1118.7575458899191,
+   "converged": [
+    true,
+    true,
+    true
+   ],
+   "done": true
+  },
+  "T_pair": {
+   "E_PBE0_D3": -1119.9042402324967,
+   "E_wB97X_D3BJ": -1121.0938431779232,
+   "E_HF": -1115.9203101991714,
+   "E_MP2": -1118.761913483991,
+   "E_SCS_MP2": -1118.6811703264304,
+   "converged": [
+    true,
+    true,
+    true
+   ],
+   "done": true
+  },
+  "N_pair": {
+   "E_PBE0_D3": -1119.8262363402446,
+   "E_wB97X_D3BJ": -1121.0163768329148,
+   "E_HF": -1115.8391383397704,
+   "E_MP2": -1118.684703426663,
+   "E_SCS_MP2": -1118.6043021252299,
+   "converged": [
+    true,
+    true,
+    true
+   ],
+   "done": true
+  }
+ },
+ "derived": {
+  "T": {
+   "corr_wB97X_D3BJ_kJ": 10.381,
+   "corr_MP2_kJ": 14.198,
+   "corr_SCS_MP2_kJ": 18.153,
+   "dPBE0_kJ": 182.371
+  },
+  "N": {
+   "corr_wB97X_D3BJ_kJ": 8.969,
+   "corr_MP2_kJ": 12.114,
+   "corr_SCS_MP2_kJ": 15.171,
+   "dPBE0_kJ": 387.17
+  }
+ },
+ "note": "T: single site (P4 pair in the P0 field); N: every atom at P4 with the P4 field (plain difference, no E_int/2)"
+}

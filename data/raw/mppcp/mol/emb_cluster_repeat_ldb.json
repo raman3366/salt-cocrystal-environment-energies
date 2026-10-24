@@ -1,0 +1,48 @@
+{
+ "key": "mppcp",
+ "which": "cluster",
+ "model": "repeat",
+ "runs": {
+  "S_cluster_vac": {
+   "E": -2891.9522754453715,
+   "converged": true,
+   "nao": 667,
+   "natm": 27,
+   "charge": 0
+  },
+  "S_cluster_emb": {
+   "E": -2891.9612448267285,
+   "converged": true,
+   "nao": 667,
+   "natm": 27,
+   "charge": 0,
+   "E_int": -0.0102333000777447,
+   "E_int_el": -0.5017925619704341,
+   "E_int_nuc": 0.4915592618926894,
+   "n_charges": 5757
+  },
+  "T_cluster_vac": {
+   "E": -2891.935848449084,
+   "converged": true,
+   "nao": 667,
+   "natm": 27,
+   "charge": 0
+  },
+  "T_cluster_emb": {
+   "E": -2891.950720419336,
+   "converged": true,
+   "nao": 667,
+   "natm": 27,
+   "charge": 0,
+   "E_int": -0.01613694638283003,
+   "E_int_el": -0.5043943148982357,
+   "E_int_nuc": 0.4882573685154057,
+   "n_charges": 5757
+  }
+ },
+ "basis": "def2-TZVP pair + def2-SVP shell",
+ "derived": {
+  "vacuum_kJ": 43.129,
+  "embedded_single_site_kJ": 27.632
+ }
+}

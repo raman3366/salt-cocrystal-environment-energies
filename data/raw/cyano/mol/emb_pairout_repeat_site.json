@@ -1,0 +1,35 @@
+{
+ "key": "cyano",
+ "which": "pairout",
+ "model": "repeat_site",
+ "runs": {
+  "S_pairout_emb": {
+   "E": -1023.5060136559359,
+   "converged": true,
+   "nao": 494,
+   "natm": 23,
+   "charge": 0,
+   "E_int": -0.12851494305671807,
+   "E_int_el": -17.356205044149153,
+   "E_int_nuc": 17.227690101092435,
+   "n_charges": 6895,
+   "sum_charges": 1.0000000000000022
+  },
+  "T_pairout_emb": {
+   "E": -1023.5338626416587,
+   "converged": true,
+   "nao": 494,
+   "natm": 23,
+   "charge": 0,
+   "E_int": -0.1092183409497629,
+   "E_int_el": -17.44010110568949,
+   "E_int_nuc": 17.330882764739727,
+   "n_charges": 6895,
+   "sum_charges": 1.0000000000000022
+  }
+ },
+ "basis": "def2-TZVP",
+ "derived": {
+  "embedded_single_site_kJ": -73.118
+ }
+}

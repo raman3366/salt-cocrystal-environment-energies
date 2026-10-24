@@ -1,0 +1,42 @@
+{
+ "key": "mppcp",
+ "basis": "def2-svp",
+ "points": {
+  "P0": {
+   "E_HF": -2884.6696888377423,
+   "E_MP2": -2887.2719062137467,
+   "E_CCSD": -2887.366022847159,
+   "E_CCSD_T": -2887.475958017446,
+   "ccsd_converged": true,
+   "nao": 326,
+   "frozen": 39,
+   "done": true
+  },
+  "P4r": {
+   "E_HF": -2884.6569843899642,
+   "E_MP2": -2887.256932729414,
+   "E_CCSD": -2887.3506829418484,
+   "E_CCSD_T": -2887.4607465798836,
+   "ccsd_converged": true,
+   "nao": 326,
+   "frozen": 39,
+   "done": true
+  },
+  "P4": {
+   "E_HF": -2884.6541053288374,
+   "E_MP2": -2887.2483668585583,
+   "E_CCSD": -2887.343495956834,
+   "E_CCSD_T": -2887.4529408369463,
+   "ccsd_converged": true,
+   "nao": 326,
+   "frozen": 39,
+   "done": true
+  }
+ },
+ "delta_T_P4r_kJ": 0.625,
+ "dMP2_P4r_kJ": 39.313,
+ "dCCSD_T_P4r_kJ": 39.938,
+ "delta_T_P4_kJ": -1.371,
+ "dMP2_P4_kJ": 61.803,
+ "dCCSD_T_P4_kJ": 60.432
+}

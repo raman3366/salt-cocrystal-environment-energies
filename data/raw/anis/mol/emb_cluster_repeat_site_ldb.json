@@ -1,0 +1,48 @@
+{
+ "key": "anis",
+ "which": "cluster",
+ "model": "repeat_site",
+ "runs": {
+  "S_cluster_vac": {
+   "E": -2733.35898938112,
+   "converged": true,
+   "nao": 856,
+   "natm": 59,
+   "charge": -1
+  },
+  "S_cluster_emb": {
+   "E": -2733.805580323736,
+   "converged": true,
+   "nao": 856,
+   "natm": 59,
+   "charge": -1,
+   "E_int": -0.5024482940435107,
+   "E_int_el": -28.96280906044199,
+   "E_int_nuc": 28.46036076639848,
+   "n_charges": 7535
+  },
+  "T_cluster_vac": {
+   "E": -2733.326720962106,
+   "converged": true,
+   "nao": 856,
+   "natm": 59,
+   "charge": -1
+  },
+  "T_cluster_emb": {
+   "E": -2733.756759384342,
+   "converged": true,
+   "nao": 856,
+   "natm": 59,
+   "charge": -1,
+   "E_int": -0.48566482420785917,
+   "E_int_el": -28.893830236087823,
+   "E_int_nuc": 28.408165411879963,
+   "n_charges": 7535
+  }
+ },
+ "basis": "def2-TZVP pair + def2-SVP shell",
+ "derived": {
+  "vacuum_kJ": 84.721,
+  "embedded_single_site_kJ": 128.179
+ }
+}

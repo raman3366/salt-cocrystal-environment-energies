@@ -1,0 +1,50 @@
+{
+ "key": "carboxy",
+ "which": "pairshellq",
+ "model": "repeat_site",
+ "runs": {
+  "S_pairshellq_emb": {
+   "E": -1119.927719975819,
+   "converged": true,
+   "nao": 531,
+   "natm": 25,
+   "charge": 0,
+   "E_int": -0.27469291079406455,
+   "E_int_el": -3.2233385621249995,
+   "E_int_nuc": 2.948645651330935,
+   "n_charges": 50,
+   "sum_charges": -3.3306690738754696e-16
+  },
+  "T_pairshellq_emb": {
+   "E": -1119.858107138389,
+   "converged": true,
+   "nao": 531,
+   "natm": 25,
+   "charge": 0,
+   "radii_from": "S",
+   "E_int": -0.1559338959694756,
+   "E_int_el": -3.0004748807137744,
+   "E_int_nuc": 2.844540984744299,
+   "n_charges": 50,
+   "sum_charges": -3.3306690738754696e-16
+  }
+ },
+ "basis": "def2-TZVP",
+ "superseded": {
+  "T_pairshellq_emb": {
+   "E": -1119.8581064686273,
+   "converged": true,
+   "nao": 531,
+   "natm": 25,
+   "charge": 0,
+   "E_int": -0.1559330491497266,
+   "E_int_el": -3.000474033891979,
+   "E_int_nuc": 2.8445409847422525,
+   "n_charges": 50,
+   "sum_charges": -3.3306690738754696e-16
+  }
+ },
+ "derived": {
+  "embedded_single_site_kJ": 182.768
+ }
+}

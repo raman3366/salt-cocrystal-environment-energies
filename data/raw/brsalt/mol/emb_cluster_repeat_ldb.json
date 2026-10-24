@@ -1,0 +1,42 @@
+{
+ "key": "brsalt",
+ "which": "cluster",
+ "model": "repeat",
+ "runs": {
+  "S_cluster_emb": {
+   "E": -12841.07824881584,
+   "converged": true,
+   "nao": 2111,
+   "natm": 144,
+   "charge": -2,
+   "level_shift_Eh": 0.3,
+   "E_int": -1.130107436650789,
+   "E_int_el": -104.10234110012395,
+   "E_int_nuc": 102.97223366347316,
+   "n_charges": 6468,
+   "sum_charges": 2.0000080000000016
+  },
+  "T_cluster_emb": {
+   "E": -12841.045887885604,
+   "converged": true,
+   "nao": 2111,
+   "natm": 144,
+   "charge": -2,
+   "level_shift_Eh": 0.3,
+   "E_int": -1.1530566120194408,
+   "E_int_el": -104.3433323638377,
+   "E_int_nuc": 103.19027575181826,
+   "n_charges": 6468,
+   "sum_charges": 2.0000080000000016
+  }
+ },
+ "basis": "def2-TZVP pair + def2-SVP shell",
+ "vacuum_not_computed": "negative HOMO-LUMO gap of the whole-shell cluster in vacuum at PBE0 (HOMO -0.0003 Eh, LUMO 1.5 eV below it after ~45 cycles with a 0.3 Eh level shift, energy still falling 3-4e-4 Eh per cycle; 21 Oct 2026): the vacuum state is charge-transferred, R3 whole shell not obtainable",
+ "dm0_chk": {
+  "file": "brsalt_S_cluster_emb.chk",
+  "e_tot": -12841.07824881584
+ },
+ "derived": {
+  "embedded_single_site_kJ": 84.964
+ }
+}

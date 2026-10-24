@@ -1,0 +1,169 @@
+{
+ "key": "sulfamate",
+ "model": "repeat",
+ "pair": [
+  [
+   2,
+   [
+    0,
+    0,
+    0
+   ]
+  ],
+  [
+   1,
+   [
+    0,
+    -1,
+    0
+   ]
+  ]
+ ],
+ "shell": [
+  [
+   1,
+   [
+    -1,
+    -1,
+    0
+   ]
+  ],
+  [
+   2,
+   [
+    1,
+    0,
+    0
+   ]
+  ],
+  [
+   0,
+   [
+    0,
+    -1,
+    0
+   ]
+  ]
+ ],
+ "n_shell": 3,
+ "align_P4_on_P0_A": [
+  0.0,
+  -0.00296,
+  0.0
+ ],
+ "align_rms_A": 0.133,
+ "rc_A": 25.0,
+ "smear_radius_A": 0.8,
+ "hb_ha_A": 2.5,
+ "site_sym": false,
+ "configs": {
+  "S_pair": {
+   "n_mm": 6804,
+   "n_mm_smeared": 135,
+   "n_boundary": 600,
+   "boundary_radius_A": 31.0,
+   "sum_mm_charge": -0.0005,
+   "qm_charge_from_fit": -0.0,
+   "fit_rms_V": 0.00019,
+   "fit_max_V": 0.00111,
+   "fit_rms_V_at_atoms": 6e-05,
+   "constant_offset_V": 0.1835,
+   "without_boundary_rms_V": 1.3574,
+   "without_boundary_mean_V": -0.1772,
+   "n_qm": 27,
+   "qm_charge": 0,
+   "min_qm_mm_A": 1.873,
+   "pair_atoms": 27
+  },
+  "S_cluster": {
+   "n_mm": 6770,
+   "n_mm_smeared": 229,
+   "n_boundary": 600,
+   "boundary_radius_A": 31.0,
+   "sum_mm_charge": 0.9995,
+   "qm_charge_from_fit": -1.0,
+   "fit_rms_V": 0.0003,
+   "fit_max_V": 0.00146,
+   "fit_rms_V_at_atoms": 0.00017,
+   "constant_offset_V": 0.1836,
+   "without_boundary_rms_V": 1.8965,
+   "without_boundary_mean_V": 0.2931,
+   "n_qm": 61,
+   "qm_charge": -1,
+   "min_qm_mm_A": 1.764,
+   "pair_atoms": 27
+  },
+  "T_pair": {
+   "n_mm": 6804,
+   "n_mm_smeared": 135,
+   "n_boundary": 600,
+   "boundary_radius_A": 31.0,
+   "sum_mm_charge": -0.0005,
+   "qm_charge_from_fit": -0.0,
+   "fit_rms_V": 0.00019,
+   "fit_max_V": 0.00111,
+   "fit_rms_V_at_atoms": 6e-05,
+   "constant_offset_V": 0.1835,
+   "without_boundary_rms_V": 1.3574,
+   "without_boundary_mean_V": -0.1772,
+   "n_qm": 27,
+   "qm_charge": 0,
+   "min_qm_mm_A": 1.904,
+   "pair_atoms": 27
+  },
+  "T_cluster": {
+   "n_mm": 6770,
+   "n_mm_smeared": 229,
+   "n_boundary": 600,
+   "boundary_radius_A": 31.0,
+   "sum_mm_charge": 0.9995,
+   "qm_charge_from_fit": -1.0,
+   "fit_rms_V": 0.0003,
+   "fit_max_V": 0.00146,
+   "fit_rms_V_at_atoms": 0.00017,
+   "constant_offset_V": 0.1836,
+   "without_boundary_rms_V": 1.8965,
+   "without_boundary_mean_V": 0.2931,
+   "n_qm": 61,
+   "qm_charge": -1,
+   "min_qm_mm_A": 1.764,
+   "pair_atoms": 27
+  },
+  "N_pair": {
+   "n_mm": 6804,
+   "n_mm_smeared": 127,
+   "n_boundary": 600,
+   "boundary_radius_A": 31.0,
+   "sum_mm_charge": 0.0,
+   "qm_charge_from_fit": 0.0,
+   "fit_rms_V": 0.00012,
+   "fit_max_V": 0.00076,
+   "fit_rms_V_at_atoms": 6e-05,
+   "constant_offset_V": 0.4353,
+   "without_boundary_rms_V": 1.0022,
+   "without_boundary_mean_V": -0.442,
+   "n_qm": 27,
+   "qm_charge": 0,
+   "min_qm_mm_A": 1.893,
+   "pair_atoms": 27
+  },
+  "N_cluster": {
+   "n_mm": 6769,
+   "n_mm_smeared": 221,
+   "n_boundary": 600,
+   "boundary_radius_A": 31.0,
+   "sum_mm_charge": -0.0,
+   "qm_charge_from_fit": 0.0,
+   "fit_rms_V": 0.00024,
+   "fit_max_V": 0.00133,
+   "fit_rms_V_at_atoms": 0.00012,
+   "constant_offset_V": 0.4354,
+   "without_boundary_rms_V": 1.463,
+   "without_boundary_mean_V": -0.02,
+   "n_qm": 62,
+   "qm_charge": 0,
+   "min_qm_mm_A": 1.647,
+   "pair_atoms": 27
+  }
+ }
+}

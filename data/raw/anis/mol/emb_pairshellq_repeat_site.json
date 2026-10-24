@@ -1,0 +1,50 @@
+{
+ "key": "anis",
+ "which": "pairshellq",
+ "model": "repeat_site",
+ "runs": {
+  "S_pairshellq_emb": {
+   "E": -1045.8331147553693,
+   "converged": true,
+   "nao": 512,
+   "natm": 26,
+   "charge": 0,
+   "E_int": -0.15692087289721002,
+   "E_int_el": 10.48195681676453,
+   "E_int_nuc": -10.63887768966174,
+   "n_charges": 33,
+   "sum_charges": -0.9999960000000011
+  },
+  "T_pairshellq_emb": {
+   "E": -1045.7883637506436,
+   "converged": true,
+   "nao": 512,
+   "natm": 26,
+   "charge": 0,
+   "radii_from": "S",
+   "E_int": -0.07548584684929871,
+   "E_int_el": 10.093166552288656,
+   "E_int_nuc": -10.168652399137954,
+   "n_charges": 33,
+   "sum_charges": -0.9999960000000011
+  }
+ },
+ "basis": "def2-TZVP",
+ "superseded": {
+  "T_pairshellq_emb": {
+   "E": -1045.7883636919219,
+   "converged": true,
+   "nao": 512,
+   "natm": 26,
+   "charge": 0,
+   "E_int": -0.07548599776403364,
+   "E_int_el": 10.093166401374148,
+   "E_int_nuc": -10.168652399138182,
+   "n_charges": 33,
+   "sum_charges": -0.9999960000000011
+  }
+ },
+ "derived": {
+  "embedded_single_site_kJ": 117.494
+ }
+}

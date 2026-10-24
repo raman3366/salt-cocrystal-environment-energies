@@ -1,0 +1,48 @@
+{
+ "key": "chloro",
+ "runner_up": {
+  "D": 4,
+  "H": 8,
+  "A": 84,
+  "labels": "N1-H1A...O4",
+  "DA": 2.8351,
+  "HA": 1.9543,
+  "DH": 0.8903,
+  "angle": 169.87,
+  "inter": true
+ },
+ "r_eq_A": 0.97422,
+ "n_fu": 4,
+ "moved_proton_nearest_A": [
+  [
+   0.9742,
+   84
+  ],
+  [
+   1.8532,
+   4
+  ],
+  [
+   2.0598,
+   60
+  ]
+ ],
+ "runs": {
+  "Rv": {
+   "E_pbe_Ry": -1423.60349907,
+   "E_pbe_sg15_Ry": -1082.15303774,
+   "E_pbe0_sg15_Ry": -1081.97479486
+  },
+  "T1v": {
+   "E_pbe_sg15_Ry": -1082.15441679,
+   "E_pbe0_sg15_Ry": -1081.97710808
+  }
+ },
+ "derived": {
+  "Rv_pbe_kJ": 93.811,
+  "T1v_pbe_kJ": 91.859,
+  "runner_minus_chosen_pbe_kJ": 1.951,
+  "runner_minus_chosen_pbe0_kJ": 3.178
+ },
+ "units": "kJ/mol per moved proton (one proton of the cell), relative to P0; T1v from vert.json"
+}

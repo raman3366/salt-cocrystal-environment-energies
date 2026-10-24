@@ -1,0 +1,75 @@
+{
+ "key": "dapsone",
+ "which": "pair",
+ "model": "sc",
+ "runs": {
+  "S_pair_vac": {
+   "E": -1951.287878015315,
+   "converged": true,
+   "nao": 1094,
+   "natm": 48,
+   "charge": 0
+  },
+  "S_pair_emb": {
+   "E": -1951.394699923248,
+   "converged": true,
+   "nao": 1094,
+   "natm": 48,
+   "charge": 0,
+   "E_int": -0.12291131547906486,
+   "E_int_el": -2.849129306471674,
+   "E_int_nuc": 2.726217990992609,
+   "n_charges": 7128
+  },
+  "T_pair_vac": {
+   "E": -1951.252374982257,
+   "converged": true,
+   "nao": 1094,
+   "natm": 48,
+   "charge": 0
+  },
+  "T_pair_emb": {
+   "E": -1951.374498745273,
+   "converged": true,
+   "nao": 1094,
+   "natm": 48,
+   "charge": 0,
+   "E_int": -0.13781448595992218,
+   "E_int_el": -2.8579322957483844,
+   "E_int_nuc": 2.720117809788462,
+   "n_charges": 7128
+  },
+  "N_pair_emb": {
+   "E": -1951.4411000430512,
+   "converged": true,
+   "nao": 1094,
+   "natm": 48,
+   "charge": 0,
+   "E_int": -0.2163008194229672,
+   "E_int_el": -6.072994009130097,
+   "E_int_nuc": 5.85669318970713,
+   "n_charges": 7128
+  },
+  "Tr_pair_emb": {
+   "E": -1951.4259345688783,
+   "converged": true,
+   "nao": 1094,
+   "natm": 48,
+   "charge": 0,
+   "E_int": -0.16292932357300494,
+   "E_int_el": -5.945982691180413,
+   "E_int_nuc": 5.783053367607408,
+   "n_charges": 7128,
+   "sum_charges": -2.999999987540747e-06
+  }
+ },
+ "basis": "def2-TZVP",
+ "derived": {
+  "vacuum_kJ": 93.213,
+  "embedded_single_site_kJ": 53.038,
+  "embedded_collective_kJ": 0.774,
+  "reverse_kJ": -39.817,
+  "lr_mean_kJ": 6.61,
+  "lambda_kJ": 46.427
+ }
+}

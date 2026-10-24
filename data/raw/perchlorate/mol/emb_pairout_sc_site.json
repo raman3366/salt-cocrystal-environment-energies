@@ -1,0 +1,35 @@
+{
+ "key": "perchlorate",
+ "which": "pairout",
+ "model": "sc_site",
+ "runs": {
+  "S_pairout_emb": {
+   "E": -1652.3545579214233,
+   "converged": true,
+   "nao": 562,
+   "natm": 25,
+   "charge": 0,
+   "E_int": -0.16806255727104258,
+   "E_int_el": -16.917888052957125,
+   "E_int_nuc": 16.749825495686082,
+   "n_charges": 7150,
+   "sum_charges": -3.0000000064145382e-06
+  },
+  "T_pairout_emb": {
+   "E": -1652.3297422731698,
+   "converged": true,
+   "nao": 562,
+   "natm": 25,
+   "charge": 0,
+   "E_int": -0.12877399968528636,
+   "E_int_el": -17.04605864925515,
+   "E_int_nuc": 16.917284649569865,
+   "n_charges": 7150,
+   "sum_charges": -3.0000000064145382e-06
+  }
+ },
+ "basis": "def2-TZVP",
+ "derived": {
+  "embedded_single_site_kJ": 65.153
+ }
+}

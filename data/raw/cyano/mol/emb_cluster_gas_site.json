@@ -1,0 +1,52 @@
+{
+ "key": "cyano",
+ "which": "cluster",
+ "model": "gas_site",
+ "runs": {
+  "S_cluster_vac": {
+   "E": -2690.324583468343,
+   "converged": true,
+   "nao": 1161,
+   "natm": 53,
+   "charge": -1,
+   "copied_from": "emb_cluster_repeat_site.json"
+  },
+  "T_cluster_vac": {
+   "E": -2690.2982780762864,
+   "converged": true,
+   "nao": 1161,
+   "natm": 53,
+   "charge": -1,
+   "copied_from": "emb_cluster_repeat_site.json"
+  },
+  "S_cluster_emb": {
+   "E": -2690.8171270627736,
+   "converged": true,
+   "nao": 1161,
+   "natm": 53,
+   "charge": -1,
+   "E_int": -0.5521316571137973,
+   "E_int_el": -40.62961017907205,
+   "E_int_nuc": 40.077478521958255,
+   "n_charges": 6895,
+   "sum_charges": 0.9999979999999876
+  },
+  "T_cluster_emb": {
+   "E": -2690.7795095978677,
+   "converged": true,
+   "nao": 1161,
+   "natm": 53,
+   "charge": -1,
+   "E_int": -0.5404408108433287,
+   "E_int_el": -40.63305949090857,
+   "E_int_nuc": 40.09261868006524,
+   "n_charges": 6895,
+   "sum_charges": 0.9999979999999876
+  }
+ },
+ "basis": "def2-TZVP",
+ "derived": {
+  "vacuum_kJ": 69.065,
+  "embedded_single_site_kJ": 98.765
+ }
+}

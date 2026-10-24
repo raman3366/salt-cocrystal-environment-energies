@@ -1,0 +1,60 @@
+
+     Program POST-PROC v.7.5 starts on 20Oct2026 at  2: 8:48 
+
+     This program is part of the open-source Quantum ESPRESSO suite
+     for quantum simulation of materials; please cite
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 21 395502 (2009);
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 29 465901 (2017);
+         "P. Giannozzi et al., J. Chem. Phys. 152 154105 (2020);
+          URL http://www.quantum-espresso.org", 
+     in publications or presentations arising from this work. More details at
+     http://www.quantum-espresso.org/quote
+
+     Parallel version (MPI & OpenMP), running on     384 processor cores
+     Number of MPI processes:                 8
+     Threads/MPI process:                    48
+
+     MPI processes distributed on     1 nodes
+     R & G space division:  proc/nbgrp/npool/nimage =       8
+     201084 MiB available memory on the printing compute node when the environment starts
+
+
+     Reading xml data from directory:
+
+     /mnt/scratch/optc/pcplut/pbe0_sg15_P4/pbe0_sg15_P4.save/
+     EXX fraction changed:   0.25
+     EXX Screening parameter changed:    0.0000000
+
+     IMPORTANT: XC functional enforced from input :
+     Exchange-correlation= PBE0
+                           (   6   4   8   4   0   0   0)
+     EXX-fraction              =        0.25
+     Any further DFT definition will be discarded
+     Please, verify this is what you really want
+
+
+     Parallelization info
+     --------------------
+     sticks:   dense  smooth     PW     G-vecs:    dense   smooth      PW
+     Min         883     883    233                83744    83744   11448
+     Max         884     884    234                83748    83748   11451
+     Sum        7069    7069   1869               669965   669965   91595
+
+     Using Slab Decomposition
+
+
+     Calling punch_plot, plot_num =  11
+     Writing data to file  optc/results/pcplut/runs/esp_P4/vtot.dat
+     Reading data from file  optc/results/pcplut/runs/esp_P4/vtot.dat
+
+     Writing data to be plotted to file optc/results/pcplut/runs/esp_P4/vtot_P4.cube
+     Plot Type: 3D                     Output format: Gaussian cube
+
+     POST-PROC    :   2m30.47s CPU   1m 2.83s WALL
+
+
+   This run was terminated on:   2: 9:51  20Oct2026            
+
+=------------------------------------------------------------------------------=
+   JOB DONE.
+=------------------------------------------------------------------------------=

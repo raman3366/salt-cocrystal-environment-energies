@@ -1,0 +1,48 @@
+{
+ "key": "perchlorate",
+ "which": "cluster",
+ "model": "repeat_site",
+ "runs": {
+  "S_cluster_vac": {
+   "E": -4956.653250369397,
+   "converged": true,
+   "nao": 1686,
+   "natm": 75,
+   "charge": 0
+  },
+  "S_cluster_emb": {
+   "E": -4957.339059213332,
+   "converged": true,
+   "nao": 1686,
+   "natm": 75,
+   "charge": 0,
+   "E_int": -0.7737504006981908,
+   "E_int_el": -37.002372387014475,
+   "E_int_nuc": 36.228621986316284,
+   "n_charges": 7150
+  },
+  "T_cluster_vac": {
+   "E": -4956.625782503662,
+   "converged": true,
+   "nao": 1686,
+   "natm": 75,
+   "charge": 0
+  },
+  "T_cluster_emb": {
+   "E": -4957.280378126378,
+   "converged": true,
+   "nao": 1686,
+   "natm": 75,
+   "charge": 0,
+   "E_int": -0.7421683121676921,
+   "E_int_el": -37.11384717787338,
+   "E_int_nuc": 36.37167886570569,
+   "n_charges": 7150
+  }
+ },
+ "basis": "def2-TZVP",
+ "derived": {
+  "vacuum_kJ": 72.117,
+  "embedded_single_site_kJ": 154.067
+ }
+}

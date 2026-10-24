@@ -1,0 +1,291 @@
+{
+ "key": "dapsone",
+ "model": "repeat",
+ "pair": [
+  [
+   2,
+   [
+    0,
+    0,
+    0
+   ]
+  ],
+  [
+   0,
+   [
+    -1,
+    0,
+    0
+   ]
+  ]
+ ],
+ "shell": [
+  [
+   0,
+   [
+    -2,
+    0,
+    0
+   ]
+  ],
+  [
+   0,
+   [
+    -1,
+    0,
+    -1
+   ]
+  ],
+  [
+   2,
+   [
+    0,
+    0,
+    1
+   ]
+  ],
+  [
+   0,
+   [
+    0,
+    0,
+    0
+   ]
+  ],
+  [
+   3,
+   [
+    -2,
+    0,
+    -1
+   ]
+  ],
+  [
+   3,
+   [
+    -2,
+    0,
+    0
+   ]
+  ],
+  [
+   1,
+   [
+    -1,
+    -1,
+    0
+   ]
+  ],
+  [
+   1,
+   [
+    -1,
+    0,
+    -1
+   ]
+  ],
+  [
+   1,
+   [
+    -1,
+    0,
+    0
+   ]
+  ],
+  [
+   1,
+   [
+    0,
+    -1,
+    0
+   ]
+  ],
+  [
+   1,
+   [
+    0,
+    0,
+    0
+   ]
+  ]
+ ],
+ "n_shell": 11,
+ "align_P4_on_P0_A": [
+  0.0,
+  -0.0102,
+  0.0
+ ],
+ "align_rms_A": 0.1873,
+ "rc_A": 25.0,
+ "smear_radius_A": 0.8,
+ "hb_ha_A": 2.5,
+ "site_sym": false,
+ "configs": {
+  "S_pair": {
+   "n_mm": 6528,
+   "n_mm_smeared": 189,
+   "n_boundary": 600,
+   "boundary_radius_A": 31.0,
+   "sum_mm_charge": 0.0,
+   "qm_charge_from_fit": 0.0,
+   "fit_rms_V": 0.00066,
+   "fit_max_V": 0.00419,
+   "fit_rms_V_at_atoms": 0.00031,
+   "constant_offset_V": -0.0495,
+   "without_boundary_rms_V": 0.5804,
+   "without_boundary_mean_V": 0.0664,
+   "n_qm": 48,
+   "qm_charge": 0,
+   "min_qm_mm_A": 2.071,
+   "pair_atoms": 48
+  },
+  "S_cluster": {
+   "n_mm": 6239,
+   "n_mm_smeared": 660,
+   "n_boundary": 600,
+   "boundary_radius_A": 31.0,
+   "sum_mm_charge": 0.0,
+   "qm_charge_from_fit": 0.0,
+   "fit_rms_V": 0.00328,
+   "fit_max_V": 0.03174,
+   "fit_rms_V_at_atoms": 0.00196,
+   "constant_offset_V": -0.0498,
+   "without_boundary_rms_V": 1.4867,
+   "without_boundary_mean_V": -0.1364,
+   "n_qm": 337,
+   "qm_charge": 0,
+   "min_qm_mm_A": 1.56,
+   "pair_atoms": 48
+  },
+  "T_pair": {
+   "n_mm": 6528,
+   "n_mm_smeared": 189,
+   "n_boundary": 600,
+   "boundary_radius_A": 31.0,
+   "sum_mm_charge": 0.0,
+   "qm_charge_from_fit": 0.0,
+   "fit_rms_V": 0.00066,
+   "fit_max_V": 0.00419,
+   "fit_rms_V_at_atoms": 0.00031,
+   "constant_offset_V": -0.0495,
+   "without_boundary_rms_V": 0.5804,
+   "without_boundary_mean_V": 0.0664,
+   "n_qm": 48,
+   "qm_charge": 0,
+   "min_qm_mm_A": 2.01,
+   "pair_atoms": 48
+  },
+  "T_cluster": {
+   "n_mm": 6239,
+   "n_mm_smeared": 660,
+   "n_boundary": 600,
+   "boundary_radius_A": 31.0,
+   "sum_mm_charge": 0.0,
+   "qm_charge_from_fit": 0.0,
+   "fit_rms_V": 0.00328,
+   "fit_max_V": 0.03174,
+   "fit_rms_V_at_atoms": 0.00196,
+   "constant_offset_V": -0.0498,
+   "without_boundary_rms_V": 1.4867,
+   "without_boundary_mean_V": -0.1364,
+   "n_qm": 337,
+   "qm_charge": 0,
+   "min_qm_mm_A": 1.56,
+   "pair_atoms": 48
+  },
+  "N_pair": {
+   "n_mm": 6528,
+   "n_mm_smeared": 198,
+   "n_boundary": 600,
+   "boundary_radius_A": 31.0,
+   "sum_mm_charge": -0.0004,
+   "qm_charge_from_fit": -0.0,
+   "fit_rms_V": 0.00086,
+   "fit_max_V": 0.00589,
+   "fit_rms_V_at_atoms": 0.00039,
+   "constant_offset_V": -0.5217,
+   "without_boundary_rms_V": 0.1488,
+   "without_boundary_mean_V": 0.5327,
+   "n_qm": 48,
+   "qm_charge": 0,
+   "min_qm_mm_A": 1.709,
+   "pair_atoms": 48
+  },
+  "R_pair": {
+   "n_mm": 6528,
+   "n_mm_smeared": 189,
+   "n_boundary": 600,
+   "boundary_radius_A": 31.0,
+   "sum_mm_charge": 0.0,
+   "qm_charge_from_fit": 0.0,
+   "fit_rms_V": 0.00066,
+   "fit_max_V": 0.00419,
+   "fit_rms_V_at_atoms": 0.00031,
+   "constant_offset_V": -0.0495,
+   "without_boundary_rms_V": 0.5804,
+   "without_boundary_mean_V": 0.0664,
+   "n_qm": 48,
+   "qm_charge": 0,
+   "min_qm_mm_A": 2.041,
+   "pair_atoms": 48,
+   "note": "the P4r pair (aligned on P0) in the P0 environment with the P0 charges: single site at P4r, as T at P4"
+  },
+  "NR_pair": {
+   "n_mm": 6528,
+   "n_mm_smeared": 193,
+   "n_boundary": 600,
+   "boundary_radius_A": 31.0,
+   "sum_mm_charge": 0.0001,
+   "qm_charge_from_fit": 0.0,
+   "fit_rms_V": 0.00086,
+   "fit_max_V": 0.00583,
+   "fit_rms_V_at_atoms": 0.0004,
+   "constant_offset_V": -0.5182,
+   "without_boundary_rms_V": 0.1422,
+   "without_boundary_mean_V": 0.5291,
+   "n_qm": 48,
+   "qm_charge": 0,
+   "min_qm_mm_A": 1.828,
+   "pair_atoms": 48,
+   "note": "every atom at P4r (aligned on P0), the N composition, the P4r charges: the P4r pair in its own field, as N at P4 (its pair geometry is pair.json P4r)"
+  },
+  "VS_pair": {
+   "n_mm": 6528,
+   "n_mm_smeared": 191,
+   "n_boundary": 600,
+   "boundary_radius_A": 31.0,
+   "sum_mm_charge": 0.0,
+   "qm_charge_from_fit": 0.0,
+   "fit_rms_V": 0.00098,
+   "fit_max_V": 0.00694,
+   "fit_rms_V_at_atoms": 0.00046,
+   "constant_offset_V": 0.0615,
+   "without_boundary_rms_V": 0.5925,
+   "without_boundary_mean_V": -0.0515,
+   "n_qm": 48,
+   "qm_charge": 0,
+   "min_qm_mm_A": 2.046,
+   "pair_atoms": 48,
+   "note": "every atom at vcS in the relaxed S lattice (own Ewald sum), the P0 charges fitted in the X-ray cell: the vcS pair in its own field (its pair geometry is pair.json vcS)"
+  },
+  "VR_pair": {
+   "n_mm": 6624,
+   "n_mm_smeared": 201,
+   "n_boundary": 600,
+   "boundary_radius_A": 31.0,
+   "sum_mm_charge": 0.0001,
+   "qm_charge_from_fit": 0.0,
+   "fit_rms_V": 0.0011,
+   "fit_max_V": 0.00873,
+   "fit_rms_V_at_atoms": 0.00053,
+   "constant_offset_V": -0.1757,
+   "without_boundary_rms_V": 0.2436,
+   "without_boundary_mean_V": 0.1828,
+   "n_qm": 48,
+   "qm_charge": 0,
+   "min_qm_mm_A": 1.864,
+   "pair_atoms": 48,
+   "note": "every atom at vcP4r in the relaxed P4r lattice (own Ewald sum), the N composition, the P4r charges fitted in the X-ray cell: the vcP4r pair in its own field (its pair geometry is pair.json vcP4r)"
+  }
+ }
+}

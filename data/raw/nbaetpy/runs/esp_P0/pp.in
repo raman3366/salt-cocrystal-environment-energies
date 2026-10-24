@@ -1,0 +1,11 @@
+&INPUTPP
+  prefix = 'pbe0_sg15_P0'
+  outdir = '/mnt/scratch/optc/nbaetpy/pbe0_sg15_P0'
+  filplot = 'optc/results/nbaetpy/runs/esp_P0/vtot.dat'
+  plot_num = 11
+/
+&PLOT
+  iflag = 3
+  output_format = 6
+  fileout = 'optc/results/nbaetpy/runs/esp_P0/vtot_P0.cube'
+/

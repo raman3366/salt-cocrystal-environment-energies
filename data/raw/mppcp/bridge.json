@@ -1,0 +1,18 @@
+{
+ "edge_A": 21.0,
+ "points": {
+  "P0": {
+   "E_pbe_Ry": -349.11734033,
+   "E_pbe0_Ry": -349.11875004
+  },
+  "P4": {
+   "E_pbe_Ry": -349.0887559,
+   "E_pbe0_Ry": -349.08811337
+  }
+ },
+ "dE_pbe_kJ": 37.524,
+ "dE_pbe0_kJ": 40.218,
+ "pyscf_dE_pbe0_kJ": 43.129,
+ "difference_kJ": -2.911,
+ "gate_G2b_pass": true
+}

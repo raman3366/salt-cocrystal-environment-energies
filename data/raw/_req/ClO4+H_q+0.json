@@ -1,0 +1,50 @@
+{
+ "r_eq_A": 0.98312,
+ "molecule": "ClO4+H",
+ "charge": 0,
+ "A_index_in_molecule": 3,
+ "level": "PBE-D3(BJ)/def2-TZVP, density fitting, grid 3, geomeTRIC",
+ "E_Eh": -761.1020723557643,
+ "converged": true,
+ "source": "optc/src/mol.py req (first computed for perchlorate)",
+ "utc": "2026-10-18T16:19:40+00:00",
+ "wall_min": 3.0,
+ "xyz_A": [
+  [
+   "Cl",
+   2.860978,
+   3.591327,
+   0.812101
+  ],
+  [
+   "O",
+   4.280934,
+   3.642062,
+   0.679681
+  ],
+  [
+   "O",
+   2.169087,
+   2.937422,
+   -0.2647
+  ],
+  [
+   "O",
+   2.478901,
+   5.225523,
+   0.650575
+  ],
+  [
+   "O",
+   2.381169,
+   3.221968,
+   2.115627
+  ],
+  [
+   "H",
+   1.499428,
+   5.25237,
+   0.730845
+  ]
+ ]
+}

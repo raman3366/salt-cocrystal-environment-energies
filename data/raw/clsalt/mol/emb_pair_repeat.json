@@ -1,0 +1,75 @@
+{
+ "key": "clsalt",
+ "which": "pair",
+ "model": "repeat",
+ "runs": {
+  "S_pair_vac": {
+   "E": -1615.392889147939,
+   "converged": true,
+   "nao": 822,
+   "natm": 36,
+   "charge": 0
+  },
+  "S_pair_emb": {
+   "E": -1615.565663362528,
+   "converged": true,
+   "nao": 822,
+   "natm": 36,
+   "charge": 0,
+   "E_int": -0.19719796839510417,
+   "E_int_el": -3.6507489158641158,
+   "E_int_nuc": 3.4535509474690116,
+   "n_charges": 6648
+  },
+  "T_pair_vac": {
+   "E": -1615.4269965726976,
+   "converged": true,
+   "nao": 822,
+   "natm": 36,
+   "charge": 0
+  },
+  "T_pair_emb": {
+   "E": -1615.5301101905097,
+   "converged": true,
+   "nao": 822,
+   "natm": 36,
+   "charge": 0,
+   "E_int": -0.12400399716376276,
+   "E_int_el": -3.437425156757635,
+   "E_int_nuc": 3.3134211595938723,
+   "n_charges": 6648
+  },
+  "N_pair_emb": {
+   "E": -1615.4690957961213,
+   "converged": true,
+   "nao": 822,
+   "natm": 36,
+   "charge": 0,
+   "E_int": -0.04707412207523198,
+   "E_int_el": -5.112612414913487,
+   "E_int_nuc": 5.065538292838255,
+   "n_charges": 6648
+  },
+  "Tr_pair_emb": {
+   "E": -1615.4458022453211,
+   "converged": true,
+   "nao": 822,
+   "natm": 36,
+   "charge": 0,
+   "E_int": -0.05822413724345843,
+   "E_int_el": -5.152657814806988,
+   "E_int_nuc": 5.094433677563529,
+   "n_charges": 6648,
+   "sum_charges": 1.9999999920639056e-06
+  }
+ },
+ "basis": "def2-TZVP",
+ "derived": {
+  "vacuum_kJ": -89.549,
+  "embedded_single_site_kJ": 93.345,
+  "embedded_collective_kJ": 56.463,
+  "reverse_kJ": -61.157,
+  "lr_mean_kJ": 16.094,
+  "lambda_kJ": 77.251
+ }
+}

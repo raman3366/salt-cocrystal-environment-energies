@@ -1,0 +1,48 @@
+{
+ "key": "cyano",
+ "which": "cluster",
+ "model": "repeat_site",
+ "runs": {
+  "S_cluster_vac": {
+   "E": -2688.8614643947803,
+   "converged": true,
+   "nao": 823,
+   "natm": 53,
+   "charge": -1
+  },
+  "S_cluster_emb": {
+   "E": -2689.413517898264,
+   "converged": true,
+   "nao": 823,
+   "natm": 53,
+   "charge": -1,
+   "E_int": -0.6284111820653493,
+   "E_int_el": -42.830118081242574,
+   "E_int_nuc": 42.201706899177225,
+   "n_charges": 6895
+  },
+  "T_cluster_vac": {
+   "E": -2688.8324122345434,
+   "converged": true,
+   "nao": 823,
+   "natm": 53,
+   "charge": -1
+  },
+  "T_cluster_emb": {
+   "E": -2689.3705092863397,
+   "converged": true,
+   "nao": 823,
+   "natm": 53,
+   "charge": -1,
+   "E_int": -0.6137541609494619,
+   "E_int_el": -42.91865372377182,
+   "E_int_nuc": 42.30489956282236,
+   "n_charges": 6895
+  }
+ },
+ "basis": "def2-TZVP pair + def2-SVP shell",
+ "derived": {
+  "vacuum_kJ": 76.276,
+  "embedded_single_site_kJ": 112.919
+ }
+}
